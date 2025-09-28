@@ -1,16 +1,160 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <title>Template HTML</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-École Rout'Art - Votre Permis, Votre Liberté</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
-    <link rel="icon" href="icon/icon.ico">
-    <script src="script/script.js"></script>
+    <link rel="icon" href="icon/icon.ico" type="image/x-icon">
 </head>
-    <body>
-        <img src="images/image.jpg" alt="image_templates">
-        <video src="videos/honte.mp4" controls></video>
-    <body>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo-routart-modern.png" alt="Logo Auto-École Rout'Art">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="tarifs.html">Tarifs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="inscription.html" class="btn btn-primary nav-cta">S'inscrire</a>
+            </nav>
+            <button class="hamburger-menu" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-bg">
+            <img src="images/hero-car-road.png" alt="Voiture sur une route côtière au lever du soleil" class="hero-image">
+        </div>
+        <div class="container hero-content">
+            <h1>VOTRE PERMIS, <br>VOTRE LIBERTÉ.</h1>
+            <p>Conduisez Votre Avenir avec Rout'Art.</p>
+            <a href="formations.html" class="btn btn-secondary hero-cta">Découvrir nos formations</a>
+        </div>
+    </section>
+
+    <section class="section formations-section">
+        <div class="container">
+            <h2 class="section-title">NOS FORMATIONS</h2>
+            <div class="formations-grid">
+                <div class="formation-card">
+                    <div class="card-icon">
+                        <img src="images/icon-car.jpg" alt="Icône voiture">
+                    </div>
+                    <h3>Permis B</h3>
+                    <p>Apprenez à conduire en toute sérénité.</p>
+                    <a href="permis-b.html" class="btn btn-link">En savoir plus</a>
+                </div>
+                <div class="formation-card">
+                    <div class="card-icon">
+                        <img src="images/icon-moto.png" alt="Icône moto">
+                    </div>
+                    <h3>Permis Moto</h3>
+                    <p>Découvrez la route sur deux roues en toute sécurité.</p>
+                    <a href="permis-moto.html" class="btn btn-link">En savoir plus</a>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="section testimonials-section bg-light-gray">
+        <div class="container">
+            <h2 class="section-title">TÉMOIGNAGES CLIENTS</h2>
+            <div class="testimonials-carousel">
+                <div class="testimonial-card">
+                    <img src="images/avatar-emma.png" alt="Avatar d'Emma D." class="testimonial-avatar">
+                    <div class="testimonial-text">
+                        <p>"Grâce à Rout'Art, j'ai obtenu mon permis du premier coup ! Les moniteurs sont super pédagogues."</p>
+                        <p class="testimonial-author">Emma D.</p>
+                        <div class="stars" aria-label="5 étoiles">
+                            <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/avatar-paul.png" alt="Avatar de Paul M." class="testimonial-avatar">
+                    <div class="testimonial-text">
+                        <p>"Une équipe au top, des conseils précieux et une ambiance conviviale. Je recommande vivement !"</p>
+                        <p class="testimonial-author">Paul M.</p>
+                        <div class="stars" aria-label="4.5 étoiles">
+                            <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">½</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav prev" aria-label="Témoignage précédent">&#10094;</button>
+                <button class="carousel-nav next" aria-label="Témoignage suivant">&#10095;</button>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline">Laisser un avis</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact-section">
+        <div class="container contact-grid">
+            <div class="contact-form-wrapper">
+                <h2 class="section-title">CONTACTEZ-NOUS</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="sr-only">Nom</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="sr-only">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+            <div class="contact-info-wrapper">
+                <h2 class="section-title">OÙ NOUS TROUVER ?</h2>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1569.1685131365955!2d6.500438286353039!3d48.59038569782746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479480ef29b6862b%3A0x276e9a8538591b0a!2sDriving%20School%20Rout&#39;art!5e0!3m2!1sen!2sfr!4v1759092759789!5m2!1sen!2sfr"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="address-details">
+                    <p><i class="icon-location"></i> 79 Rue d'Alsace, Lunéville</p>
+                    <p><i class="icon-phone"></i> 01 23 45 67 89</p>
+                    <p><i class="icon-mail"></i> contact@routart.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><img src="images/icon-facebook.ico" alt="Facebook"></a>
+                    <a href="#" aria-label="Instagram"><img src="images/icon-instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="mentions-legales.html">Mentions Légales</a>
+                <a href="politique-confidentialite.html">Politique de Confidentialité</a>
+                <a href="cgv.html">Conditions Générales de Vente</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <p>&copy; 2025 Auto-École Rout'Art. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
