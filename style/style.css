@@ -1,3 +1,253 @@
+/* Section Résultat Permis */
+.resultat-section {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 12px rgba(29,53,87,0.08);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin: var(--spacing-lg) auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.resultat-section h2.section-title {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.resultat-section h3 {
+    color: var(--accent-color);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.resultat-section ul {
+    background: var(--white-color);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 1px 4px rgba(69,123,157,0.07);
+    padding: 1.2rem 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+.resultat-section ul li {
+    margin-bottom: 0.7em;
+    line-height: 1.6;
+}
+
+.resultat-section p {
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.resultat-section .btn-primary {
+    display: inline-block;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--border-radius-sm);
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(69,123,157,0.10);
+    transition: background 0.2s;
+    text-align: center;
+}
+.resultat-section .btn-primary:hover {
+    background: var(--accent-color);
+    color: var(--white-color);
+}
+/* Section Positionnement */
+.positionnement-section {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 12px rgba(29,53,87,0.08);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin: var(--spacing-lg) auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.positionnement-section h2.section-title {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.positionnement-section ul {
+    background: var(--white-color);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 1px 4px rgba(69,123,157,0.07);
+    padding: 1.2rem 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+.positionnement-section ul li {
+    margin-bottom: 0.7em;
+    line-height: 1.6;
+}
+
+.positionnement-section p {
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+/* Section Réclamation */
+.reclamation-section {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 12px rgba(29,53,87,0.08);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin: var(--spacing-lg) auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.reclamation-section h2.section-title {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.reclamation-section ol {
+    background: var(--white-color);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 1px 4px rgba(69,123,157,0.07);
+    padding: 1.2rem 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+.reclamation-section ol li {
+    margin-bottom: 0.7em;
+    line-height: 1.6;
+}
+
+.reclamation-cloture {
+    background: var(--accent-color);
+    color: var(--white-color);
+    border-radius: var(--border-radius-sm);
+    padding: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 4px rgba(69,123,157,0.10);
+}
+
+.reclamation-contact {
+    background: var(--white-color);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 1px 4px rgba(69,123,157,0.07);
+    padding: 1.2rem 1.5rem;
+    width: 100%;
+    font-size: 1.05rem;
+    color: var(--text-color);
+}
+.reclamation-contact h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.7rem;
+    font-size: 1.2rem;
+}
+.reclamation-contact address {
+    font-style: normal;
+    margin-bottom: 0.7rem;
+    line-height: 1.6;
+}
+/* Section Garantie Financière */
+.garantie-section {
+    padding: 2rem 0;
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--light-gray);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 12px rgba(29,53,87,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Correction logo groupama */
+.logo-groupama-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+.logo-groupama {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(69,123,157,0.10);
+}
+/* Section tarifs stylisée */
+.tarifs-section {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 12px rgba(29,53,87,0.08);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin: var(--spacing-lg) auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.tarifs-section label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.tarifs-section select {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.7rem 1rem;
+    font-size: 1.1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: var(--border-radius-sm);
+    background: var(--white-color);
+    color: var(--dark-gray);
+    box-shadow: 0 1px 4px rgba(69,123,157,0.07);
+    transition: border-color 0.2s;
+}
+.tarifs-section select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+#tarif-details {
+    width: 100%;
+    min-height: 60px;
+    background: var(--white-color);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 1px 4px rgba(69,123,157,0.07);
+    padding: 1rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    text-align: left;
+}
 /* Footer modernisé */
 .main-footer {
     background: var(--secondary-color);
@@ -181,7 +431,7 @@ img {
 }
 
 .btn {
-    display: inline-block;
+    display: block;
     padding: 0.8rem 1.8rem;
     border-radius: var(--border-radius-sm);
     font-family: var(--font-heading);
@@ -197,9 +447,19 @@ img {
     color: var(--white-color);
 }
 
+
 .btn-primary:hover {
     background-color: var(--primary-color);
     color: var(--white-color); /* Garde le texte blanc au survol */
+}
+
+.center-btn .btn-primary {
+    display: block;
+    margin: 1rem 0;
+}
+
+.center-btn {
+    text-align: center;
 }
 
 .btn-secondary {

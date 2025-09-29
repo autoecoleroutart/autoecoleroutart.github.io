@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs - Auto-École Rout'Art</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="icon" href="../icon/logo_routart_modern.png" type="image/x-icon">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo_routart_modern.png" alt="Logo Auto-École Rout'Art">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><button class="nav-btn" onclick="location.href='../index.html'">Accueil</button></li>
+                    <li><button class="nav-btn" onclick="location.href='formations.html'">Formations</button></li>
+                    <li><button class="nav-btn" onclick="location.href='tarifs.html'">Tarifs</button></li>
+                    <li><button class="nav-btn" onclick="location.href='contact.html'">Contact</button></li>
+                </ul>
+                <a href="inscription.html" class="btn btn-primary nav-cta">S'inscrire</a>
+            </nav>
+            <button class="hamburger-menu" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-bg">
+            <img src="../images/hero-car-road.png" alt="Voiture sur une route côtière au lever du soleil" class="hero-image">
+        </div>
+        <div class="container hero-content">
+            <h1>Nos Tarifs</h1>
+            <p>Consultez les tarifs de nos différentes formations au permis de conduire.</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="tarifs-section container">
+            <label for="tarif-select">Choisissez un type de permis :</label>
+            <select id="tarif-select">
+                <option value="b-traditionnel">Permis B Traditionnel</option>
+                <option value="b-accompagnee">Permis B Conduite Accompagnée</option>
+                <option value="b-supervisee">Permis B - Conduite Supervisée</option>
+                <option value="b-automatique">Permis B - Boite Automatique</option>
+                <option value="am-bsr">Permis AM (BSR)</option>
+                <option value="moto-a1">Permis Moto A1</option>
+                <option value="moto-a2">Permis Moto A2</option>
+                <option value="passerelle-a2-a">Formation Moto passerelle A2 vers A</option>
+                <option value="formation-125cc">Formation 125cc</option>
+                <option value="post-permis">Formation Post Permis</option>
+            </select>
+            <div id="tarif-details">
+                <table class="horaires-table tarifs-table" id="table-b-traditionnel">
+                    <thead>
+                        <tr>
+                            <th>Prestation</th>
+                            <th>Tarif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Inscription dans l'Auto-École</td><td>70€</td></tr>
+                        <tr><td>Forfait Code (Cours de code illimité pendant 18 mois, Accès à une appli, fourniture pédagogique)</td><td>275€</td></tr>
+                        <tr><td>Option PrépaCode</td><td>30€</td></tr>
+                        <tr><td>Évaluation de départ</td><td>48€</td></tr>
+                        <tr><td>Heure de conduite (20h minimum)</td><td>48€/h</td></tr>
+                        <tr><td>Accompagnement à l'examen</td><td>48€</td></tr>
+                        <tr><td>Gestion du permis définitif</td><td>25€</td></tr>
+                    </tbody>
+                </table>
+                <table class="horaires-table tarifs-table" id="table-b-accompagnee">
+                    <thead>
+                        <tr>
+                            <th>Prestation</th>
+                            <th>Tarif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Inscription dans l'Auto-École</td><td>70€</td></tr>
+                        <tr><td>Forfait Code (Cours de code illimité pendant 18 mois, Accès à une appli, fourniture pédagogique)</td><td>275€</td></tr>
+                        <tr><td>Option PrépaCode</td><td>30€</td></tr>
+                        <tr><td>Évaluation de départ</td><td>48€</td></tr>
+                        <tr><td>Heure de conduite (20h minimum)</td><td>48€/h</td></tr>
+                        <tr><td>Accompagnement à l'examen</td><td>48€</td></tr>
+                        <tr><td>Rendez-Vous de fin de formation initial (2h)</td><td>94€</td></tr>
+                        <tr><td>RDV pédagogique n°1 (6 mois et 1000kms)</td><td>48€</td></tr>
+                        <tr><td>RDV pédagogique n°2 (1 ans et 3000kms)</td><td>48€</td></tr>
+                        <tr><td>Gestion du permis définitif</td><td>25€</td></tr>
+                    </tbody>
+                </table>
+                <table class="horaires-table tarifs-table" id="table-b-supervisee">
+                    <thead>
+                        <tr>
+                            <th>Prestation</th>
+                            <th>Tarif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Inscription dans l'Auto-École</td><td>70€</td></tr>
+                        <tr><td>Forfait Code (Cours de code illimité pendant 18 mois, Accès à une appli, fourniture pédagogique)</td><td>275€</td></tr>
+                        <tr><td>Option PrépaCode</td><td>30€</td></tr>
+                        <tr><td>Évaluation de départ</td><td>48€</td></tr>
+                        <tr><td>Heure de conduite (20h minimum)</td><td>48€/h</td></tr>
+                        <tr><td>Rendez-Vous Pédagogique préalable à la Conduite Supervisée</td><td>48€</td></tr>
+                        <tr><td>Accompagnement à l'examen</td><td>48€</td></tr>
+                        <tr><td>Gestion du permis définitif</td><td>25€</td></tr>
+                    </tbody>
+                </table>
+                <table class="horaires-table tarifs-table" id="table-b-automatique">
+                    <thead>
+                        <tr>
+                            <th>Prestation</th>
+                            <th>Tarif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Inscription dans l'Auto-École</td><td>70€</td></tr>
+                        <tr><td>Forfait Code (Cours de code illimité pendant 18 mois, Accès à une appli, fourniture pédagogique)</td><td>275€</td></tr>
+                        <tr><td>Option PrépaCode</td><td>30€</td></tr>
+                        <tr><td>Évaluation de départ</td><td>48€</td></tr>
+                        <tr><td>Heure de conduite (13h minimum)</td><td>48€/h</td></tr>
+                        <tr><td>Accompagnement à l'examen</td><td>48€</td></tr>
+                        <tr><td>Gestion du permis définitif</td><td>25€</td></tr>
+                    </tbody>
+                </table>
+                <!-- Tableau Permis Moto A2 -->
+                <table class="horaires-table tarifs-table" id="table-moto-a2">
+                    <thead>
+                        <tr>
+                            <th>Prestation</th>
+                            <th>Tarif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Forfait code<br>
+                                <ul style="margin:0.5em 0 0 1em;">
+                                    <li>- Cours de code illimité pendant 1 an</li>
+                                    <li>- Accès à PrépaCode Moto</li>
+                                    <li>- Fourniture Pédagogique</li>
+                                </ul></td>
+                            <td>90€</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Heure de conduite (20h minimum)
+                                <ul style="margin:0.5em 0 0 1em;">
+                                    <li>- 8h de plateau</li>
+                                    <li>- 12h de circulation</li>
+                                </ul>
+                            </td>
+                            <td>35€/h</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Frais d'accompagnements aux examens
+                                <ul style="margin:0.5em 0 0 1em;">
+                                    <li>- Plateau</li>
+                                    <li>- Circulation</li>
+                                </ul>
+                            </td>
+                            <td>52,5€</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="horaires-table tarifs-table" id="table-moto-a1">
+                    <thead>
+                        <tr>
+                            <th>Prestation</th>
+                            <th>Tarif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Forfait code<br>
+                                <ul style="margin:0.5em 0 0 1em;">
+                                    <li>- Cours de code illimité pendant 1 an</li>
+                                    <li>- Accès à PrépaCode Moto</li>
+                                    <li>- Fourniture Pédagogique</li>
+                                </ul></td>
+                            <td>90€</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Heure de conduite (20h minimum)
+                                <ul style="margin:0.5em 0 0 1em;">
+                                    <li>- 8h de plateau</li>
+                                    <li>- 12h de circulation</li>
+                                </ul>
+                            </td>
+                            <td>35€/h</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Frais d'accompagnements aux examens
+                                <ul style="margin:0.5em 0 0 1em;">
+                                    <li>- Plateau</li>
+                                    <li>- Circulation</li>
+                                </ul>
+                            </td>
+                            <td>52,5€</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-row">
+                <div class="footer-links">
+                    <a href="satisfaction.html">Enquête de satisfaction</a>
+                    <a href="positionnement.html">Procédé de positionnement</a>
+                    <a href="reclamation.html">Gestion des réclamations</a>
+                    <a href="resultat.html">Résultats du permis</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="garantie_financiere.html">Garantie financière</a>
+                </div>
+            </div>
+            <div class="footer-row">
+                <p>&copy; 2025 Auto-École Rout'Art. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script/script.js"></script>
+    <script>
+    // Script d'affichage dynamique des tableaux de tarifs
+    document.addEventListener('DOMContentLoaded', function() {
+        const select = document.getElementById('tarif-select');
+        const tables = document.querySelectorAll('#tarif-details table');
+        function showTable(selected) {
+            tables.forEach(table => {
+                table.style.display = 'none';
+            });
+            const table = document.getElementById('table-' + selected);
+            if (table) {
+                table.style.display = '';
+            }
+        }
+        showTable(select.value);
+        select.addEventListener('change', function() {
+            showTable(this.value);
+        });
+    });
+    </script>
+</body>
+</html>

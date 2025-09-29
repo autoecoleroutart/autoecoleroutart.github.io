@@ -44,30 +44,85 @@
     </section>
 
     <main>
-        <section class="section formations-section">
-            <div class="container">
-                <h2 class="section-title">Formations disponibles</h2>
-                <div class="formations-grid">
-                    <div class="formation-card">
-                        <div class="card-icon">
-                            <img src="../images/icon-car.jpg" alt="Icône voiture">
-                        </div>
-                        <h3>Permis B</h3>
-                        <p>Apprenez à conduire une voiture en toute sécurité avec nos moniteurs expérimentés.</p>
-                        <a href="permis-b.html" class="btn btn-link">En savoir plus</a>
-                    </div>
-                    <div class="formation-card">
-                        <div class="card-icon">
-                            <img src="../images/icon-moto.png" alt="Icône moto">
-                        </div>
-                        <h3>Permis Moto</h3>
-                        <p>Maîtrisez la conduite moto et profitez de la liberté sur deux roues.</p>
-                        <a href="permis-moto.html" class="btn btn-link">En savoir plus</a>
-                    </div>
-                    <!-- Ajoutez d'autres formations ici si besoin -->
-                </div>
+        <section class="tarifs-section container">
+            <label for="formation-select">Choisissez une formation :</label>
+            <select id="formation-select">
+                <option value="b-traditionnel">Permis B Traditionnel</option>
+                <option value="b-accompagnee">Permis B Conduite Accompagnée</option>
+                <option value="b-supervisee">Permis B - Conduite Supervisée</option>
+                <option value="b-automatique">Permis B - Boite Automatique</option>
+                <option value="am-bsr">Permis AM (BSR)</option>
+                <option value="moto-a1">Permis Moto A1</option>
+                <option value="moto-a2">Permis Moto A2</option>
+                <option value="passerelle-a2-a">Formation Moto passerelle A2 vers A</option>
+                <option value="formation-125cc">Formation 125cc</option>
+                <option value="post-permis">Formation Post Permis</option>
+            </select>
+            <div id="formation-details">
+                <table class="horaires-table formations-table" id="table-b-traditionnel">
+                    <thead>
+                        <tr>
+                            <th>Informations sur la formation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>
+                            <ul>
+                                <li>Accessible dès 17 ans</li>
+                                <li>Formation théorique au code de la route</li>
+                                <li>Formation pratique (minimum 20h de conduite)</li>
+                                <li>Accompagnement personnalisé par nos moniteurs</li>
+                                <li>Préparation à l'examen du permis B</li>
+                            </ul>
+                        </td></tr>
+                    </tbody>
+                </table>
+                <table class="horaires-table formations-table" id="table-moto-a1">
+                    <thead>
+                        <tr>
+                            <th>Informations sur la formation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>
+                            <ul>
+                                <li>Accessible dès 16 ans</li>
+                                <li>Formation théorique spécifique moto</li>
+                                <li>20h de conduite dont :
+                                    <ul>
+                                        <li>8h de plateau</li>
+                                        <li>12h de circulation</li>
+                                    </ul>
+                                </li>
+                                <li>Préparation aux épreuves plateau et circulation</li>
+                                <li>Accès à l'application PrépaCode Moto</li>
+                            </ul>
+                        </td></tr>
+                    </tbody>
+                </table>
+                <!-- Ajoutez ici les autres tableaux formations selon le même format -->
             </div>
         </section>
+        <script>
+        // Script d'affichage dynamique des tableaux de formations
+        document.addEventListener('DOMContentLoaded', function() {
+            const select = document.getElementById('formation-select');
+            const tables = document.querySelectorAll('#formation-details table');
+            function showTable(selected) {
+                tables.forEach(table => {
+                    table.style.display = 'none';
+                });
+                const table = document.getElementById('table-' + selected);
+                if (table) {
+                    table.style.display = '';
+                }
+            }
+            showTable(select.value);
+            select.addEventListener('change', function() {
+                showTable(this.value);
+            });
+        });
+        </script>
     </main>
 
     <footer class="main-footer">
@@ -77,6 +132,7 @@
                     <a href="satisfaction.html">Enquête de satisfaction</a>
                     <a href="positionnement.html">Procédé de positionnement</a>
                     <a href="reclamation.html">Gestion des réclamations</a>
+                    <a href="resultat.html">Résultats du permis</a>
                     <a href="contact.html">Contact</a>
                     <a href="garantie_financiere.html">Garantie financière</a>
                 </div>
