@@ -1,3 +1,65 @@
+/* Footer modernisé */
+.main-footer {
+    background: var(--secondary-color);
+    color: var(--white-color);
+    padding: 2rem 0 1rem 0;
+    font-size: 1rem;
+}
+.footer-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100vw;
+}
+.footer-row {
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.2rem;
+}
+.footer-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.2rem;
+}
+.footer-row:last-child {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    margin-top: 0.5rem;
+    flex-direction: column;
+}
+.footer-links {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2.5rem;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.footer-links a {
+    color: var(--white-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    text-align: center;
+}
+.footer-links a:hover, .footer-links a.active {
+    color: var(--primary-color);
+}
+.main-footer p {
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--white-color);
+    opacity: 0.85;
+}
 /* Variables CSS pour faciliter les changements */
 :root {
     --primary-color: #E63946; /* Rouge vif pour CTA, accents */
@@ -95,6 +157,29 @@ img {
 }
 
 /* Buttons */
+/* Boutons de navigation */
+.nav-list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+.nav-btn {
+    background: var(--accent-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    padding: 0.7rem 1.25rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+.nav-btn:hover, .nav-btn.active {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
 .btn {
     display: inline-block;
     padding: 0.8rem 1.8rem;
@@ -108,12 +193,12 @@ img {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--white-color);
 }
 
 .btn-primary:hover {
-    background-color: darken(var(--primary-color), 10%); /* Nécessiterait une fonction darken si pas de préprocesseur */
+    background-color: var(--primary-color);
     color: var(--white-color); /* Garde le texte blanc au survol */
 }
 
@@ -170,8 +255,8 @@ img {
 }
 
 .logo img {
-    height: 40px; /* Ajustez la taille du logo si nécessaire */
-    width: auto;
+    height: 200px; /* Ajustez la taille du logo si nécessaire */
+    width: 300px;
 }
 
 .main-nav .nav-list {
@@ -182,8 +267,9 @@ img {
 .main-nav .nav-list a {
     color: var(--white-color);
     font-weight: 600;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.5rem;
     position: relative;
+    
 }
 
 .main-nav .nav-list a.active,
@@ -433,6 +519,51 @@ img {
 
 
 /* Contact Section */
+
+/* Tableau des horaires */
+.horaires-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: var(--light-gray);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    font-size: 1.1rem;
+}
+.horaires-table th, .horaires-table td {
+    padding: 0.8rem 1.2rem;
+    text-align: left;
+}
+.horaires-table thead th {
+    background: var(--accent-color);
+    color: var(--white-color);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.horaires-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+.horaires-table tbody tr:last-child {
+    border-bottom: none;
+}
+.horaires-table td {
+    color: var(--dark-gray);
+}
+.horaires-table tbody tr td:last-child {
+    font-weight: 600;
+}
+.horaires-table tbody tr td {
+    background: var(--light-gray);
+}
+.horaires-table tbody tr:nth-child(even) td {
+    background: #f3f6fa;
+}
+/* Correction espace après le deux-points pour le numéro de Cédric */
+.space-after {
+    margin-right: 0.3em;
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr; /* Une colonne par défaut */
@@ -552,7 +683,9 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100vw;
 }
 
 .footer-links a {
@@ -586,7 +719,7 @@ img {
 .main-nav .nav-list {
     flex-direction: column;
     text-align: center;
-    gap: 0;
+    gap: 1.75rem;
 }
 
 .main-nav .nav-list li {
@@ -600,7 +733,7 @@ img {
 
 .main-nav .nav-list a {
     display: block;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.5rem;
     color: var(--white-color);
     font-size: 1.1rem;
 }
