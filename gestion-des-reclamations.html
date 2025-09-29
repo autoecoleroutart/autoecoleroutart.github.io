@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>gestion des réclamations</title>
+        <meta name="description" content="réclamations">
+        <meta name="keywords" content="Auto-Ecole Rout'Art, LUNEVILLE, Luneville, Permis à 1 Euro par jour, Formation au code en ligne, Conduite supervisée, Permis A1, Permis 125, Brevet de sécurité routière (BSR), Permis B, Permis Auto, Conduite accompagnée (AAC), Permis A2, Permis Moto, Permis A, Permis Moto, Equivalence 125 (7h), Permis AM, auto-école, auto école, scooter, cours de code, inscription permis, inscription code, classe de code, code en ligne, moniteur, permis remorque, BE, B96, cours de conduite">
+        <link rel="canonical" href="https://www.autoecoleroutart.com/gestion-des-reclamations.html">
+                <link rel="stylesheet" href="https://www.viteunsite.com/assets/modele61/css/style-MTUwODU=.css">
+        <link rel="stylesheet" href="https://www.viteunsite.com/assets/style.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/4.0.0/Control.FullScreen.min.css"
+            integrity="sha512-Dww58CIezLb4kFGtZ8Zlr85kRDwJgyPhe3gVABsvnJruZuYn3xCTpLbE3iBT5hGbrfCytJnZ4aiI3MxN0p+NVQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <script src="https://kit.fontawesome.com/a6f6684ff2.js" crossorigin="anonymous"></script>
+                    </head>
+    <body>
+                <div id="fb-root"></div>
+        <!-- Affichage de la barre d'icônes en fonction du paramètres 'barre_icone_position' -->
+
+    <div class="container">
+        <div class="row">
+            <nav id="mainNav" class="navbar navbar-expand-md navbar-dark col-md-3 col-xl-3 align-items-md-start p-md-0 order-0">
+                <div class="container-fluid flex-md-column align-items-md-stretch px-md-0">
+                    <a href="https://www.autoecoleroutart.com" class="navbar-brand align-self-md-center mx-md-0 my-md-3 text-wrap text-center"
+                        title="Auto-Ecole Rout'Art">
+                                                    <img src="https://www.autoecoleroutart.com/logo/logo-200.png" class="img-fluid" alt="Logo Auto-Ecole Rout'Art" height="80">
+                                            </a>
+                    <button type="button" class="navbar-toggler py-2" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar" aria-label="Afficher le menu">
+                        <span class="navbar-toggler-icon-bar navbar-toggler-top-bar"></span>
+                        <span class="navbar-toggler-icon-bar navbar-toggler-middle-bar"></span>
+                        <span class="navbar-toggler-icon-bar navbar-toggler-bottom-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse flex-column align-items-stretch" id="mainNavbar"><ul class="navbar-nav flex-column align-items-stretch"><li class="nav-item"><a class="nav-link text-wrap" href="https://www.autoecoleroutart.com">Accueil</a></li><li class="nav-item"><a class="nav-link text-wrap" href="https://www.autoecoleroutart.com/e.html">L'équipe</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle text-wrap" data-toggle="dropdown" data-bs-toggle="dropdown" href="https://www.autoecoleroutart.com/nos-financements.html">Nos Financements  <span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/permis-a-un-euro-par-jour.html">Permis à 1 € / jour</a></li><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/pole-emploi-aide-permis.html">Pôle Emploi</a></li></ul></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle text-wrap" data-toggle="dropdown" data-bs-toggle="dropdown" href="https://www.autoecoleroutart.com/inscription-et-formation-au-code.html">Le code de la route et évaluation de départ  <span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/inscription.html">Inscription et évaluation de départ</a></li><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/formation-au-code-de-la-route.html">Le code de la route</a></li></ul></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle text-wrap" data-toggle="dropdown" data-bs-toggle="dropdown" href="https://www.autoecoleroutart.com/nos-formations.html">Nos formations  <span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/formation-permis-b-traditionnel.html">Permis B traditionnel</a></li><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/formation-conduite-accompagnee.html">Permis B - Conduite Accompagnée</a></li><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/formation-conduite-supervisee.html">Permis B - Conduite Supervisée</a></li><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/categorie-b-boite-automatique.html">Permis B - Boîte Automatique</a></li><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/t.html">Permis AM (BSR)</a></li><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/formation-moto-a1.html">Permis Moto A1</a></li><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/a.html">Formation 125cc</a></li><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/formation-moto-a2.html">Permis Moto A2</a></li><li><a class="dropdown-item text-wrap" href="https://www.autoecoleroutart.com/post-permis.html">La formation post-permis</a></li></ul></li><li class="nav-item"><a class="nav-link text-wrap" href="https://www.autoecoleroutart.com/formation-moto-passerelle-a2-vers-a.html">Formation moto passerelle A2 vers A</a></li><li class="nav-item"><a class="nav-link text-wrap" href="https://www.autoecoleroutart.com/reglement-interieur.html">Réglement intérieur</a></li><li class="nav-item"><a class="nav-link text-wrap" href="https://www.autoecoleroutart.com/garantie-financiere.html">La Garantie Financière</a></li><li class="nav-item"><a class="nav-link text-wrap" href="https://www.autoecoleroutart.com/resultat-permis-de-conduire.html">Les résultats du permis</a></li><li class="nav-item"><a class="nav-link text-wrap" href="https://www.autoecoleroutart.com/gestion-des-reclamations.html">Gestion des réclamations</a></li><li class="nav-item"><a class="nav-link text-wrap" href="https://www.autoecoleroutart.com/enquetes-de-satisfaction.html">L'enquête de satisfaction</a></li><li class="nav-item"><a class="nav-link text-wrap" href="https://www.autoecoleroutart.com/https-www-autoecoleroutart-com.html">Procédé de positionnement</a></li><li class="nav-item"><a class="nav-link text-wrap" href="https://www.autoecoleroutart.com/nos-coordonnees.html">Contact</a></li></ul></div>                </div>
+            </nav>
+            <main id="mainContent" class="col-md-9 col-xl-9 px-0 order-1">
+                                    <header id="mainHeader">
+                                                                                                                                <h1 class="site-title">Auto-Ecole Rout'Art</h1>
+                                            </header>
+                                                    <div class="boxed">
+                                    <section>
+                                                <div class="container">
+                                
+<div class="row">
+	<div class="col-md-12">
+		<h1 class="text-center">
+    GESTION  DES RECLAMATIONS</h1>
+
+		<ol>
+	<li>Toute r&eacute;clamation exprim&eacute;e par un &eacute;l&egrave;ve (orale ou &eacute;crite ) devra &ecirc;tre enregistr&eacute;e et sign&eacute;e&nbsp;sur notre registre des r&eacute;clamations (disponible &agrave; l&#39;accueil ) afin d&#39;&ecirc;tre trait&eacute;e dans les plus brefs d&eacute;lais.</li>
+	<li>Nous&nbsp;confirmerons &agrave; l&#39;&eacute;l&egrave;ve la prise en compte de sa r&eacute;clamation pour qu&#39;il ait conscience que son probl&egrave;me est en cours de traitement.</li>
+	<li>Le traitement de la r&eacute;clamation peut parfois n&eacute;cessiter une expertise&nbsp; ou une &eacute;tude. Les documents utilis&eacute;s seront joints &agrave; la r&eacute;clamation.</li>
+	<li>Si aucune solution n&#39;est trouv&eacute;e dans les 15 jours, nous reviendrons vers l&#39;&eacute;l&egrave;ve pour lui indiquer l&#39;&eacute;tat du traitement et nous garderons une trace de cette d&eacute;marche.</li>
+	<li>Nous analyserons les causes des r&eacute;clamations afin de&nbsp;trouver les raisons ayant provoqu&eacute;es la d&eacute;faillance afin que les&nbsp;probl&egrave;mes ne se reproduisent&nbsp;plus.</li>
+</ol>
+
+<p style="text-align:center"><strong>La cl&ocirc;ture sera effective uniquement lorsque nous aurons confirmation par le client que tout est trait&eacute; correctement et que ce dernier est satisfait.</strong></p>
+
+<p>&nbsp;</p>
+
+		    
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+	</div>
+</div>
+                        </div>
+                        <footer id="mainFooter" class="py-3">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6"><div id="copyright">Auto Ecole Rout'art<br />
+79 rue d'Alsace<br />
+54300 LUNEVILLE <br />
+<br />
+Secrétariat: 06 25 39 87 22<br />
+Cédric: 06 24 07 18 39<br />
+Mail: autoecoleroutart@hotmail.com<br />
+<br />
+©Copyright 2020 par Auto-Ecole Rout' Art.</div></div><div class="col-xs-12 col-sm-6"><div id="footer-nav" class="text-md-end"><ul class="footer-menu list-inline"><li class="footer-menu-item list-inline-item"><a href="mentions-legales.html" title="Mentions légales">Mentions l&eacute;gales</a></li><li class="footer-menu-item list-inline-item"></li></ul></div></div>                                </div>
+                            </div>
+                        </footer>
+                    </section>
+                                    </div>
+                            </main>
+        </div>
+    </div>
+<button id="backToTop" class="btn btn-icon btn-lg btn-primary fade" title="Haut de page">
+    <i class="fad fa-arrow-alt-to-top fa-lg"></i>
+</button>
+<script src="https://www.viteunsite.com/assets/plugins/tarteaucitronjs/1.9.5/tarteaucitron.js"></script>
+<script>
+
+    tarteaucitron.init({
+        'privacyUrl': 'https://www.autoecoleroutart.com/mentions-legales.html#politiqueConfidentialite',
+        'hashtag': '#tarteaucitron',
+        'cookieName': 'tarteaucitron',
+        'orientation': 'bottom',
+        'groupServices': false,
+        'showAlertSmall': false,
+        'cookieslist': false,
+        'closePopup': false,
+        'showIcon': true,
+        'iconPosition': 'BottomLeft',
+        'adblocker': false,
+        'DenyAllCta' : true,
+        'AcceptAllCta' : true,
+        'highPrivacy': true,
+        'handleBrowserDNTRequest': false,
+        'removeCredit': false,
+        'moreInfoLink': true,
+        'useExternalCss': false,
+        'useExternalJs': false,
+        'readmoreLink': '',
+        'mandatory': true,
+    });
+
+</script>
+<script>
+    var viteunsiteURL = "https://www.viteunsite.com/";
+    // var gmaps = [];
+    // var gmapKey = "AIzaSyCXF5Xgv09MI9c0Pjj-xVbuGErFe_-yATA";
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/4.0.0/Control.FullScreen.min.js"
+    integrity="sha512-javanlE101qSyZ7XdaJMpB/RnKP4S/8jq1we4sy50BfBgXlcVbIJ5LIOyVa2qqnD+aGiD7J6TQ4bYKnL1Yqp5g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+<script src="https://www.viteunsite.com/assets/javascript.min.js"></script>
+    <script>
+        tarteaucitron.user.gtagUa = 'UA-25474224-1';
+        tarteaucitron.user.gtagMore = function () {};
+        (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    </script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXF5Xgv09MI9c0Pjj-xVbuGErFe_-yATA&callback=initMap" defer></script> -->
+<script>
+
+const openStreetMapEdit = function () {
+
+    const initMap = async function () {
+        var mapData = document.getElementsByClassName('oStreetView_canvas');
+
+        Array.from(mapData).map(map => {
+
+            initializeOSVMap(map);
+
+            if (map.dataset.showBtn == '1') {
+
+                addBtnMap(map);
+
+            }
+        });
+
+    }
+
+    function initializeOSVMap(map) {
+
+        var mapbox_url = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var esri_url ='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+        var lyr_satellite = L.tileLayer(esri_url, {id: 'MapID', maxZoom: 19, attribution: ""});
+        var lyr_streets   = L.tileLayer(mapbox_url, {id: 'mapbox/streets-v11', maxZoom: 19, attribution: ""});
+
+        var openMap = L.map(map['id'], {
+            center: [
+                parseFloat(map.dataset.latitude),
+                parseFloat(map.dataset.longitude)
+            ],
+            zoom: map.dataset.zoom,
+            layers: [lyr_streets, lyr_satellite]
+        });
+
+        var baseMaps = {
+            "Satellite": lyr_satellite,
+            "Rue": lyr_streets
+        };
+
+        L.control.layers(baseMaps).addTo(openMap);
+
+        L.marker([
+            parseFloat(map.dataset.latitude),
+            parseFloat(map.dataset.longitude)
+            ])
+        .bindPopup(`<strong>${map.dataset.adresse}</strong>`)
+        .addTo(openMap);
+
+        L.control
+        .fullscreen({
+        position: 'bottomright',
+        forceSeparateButton: true,
+        })
+        .addTo(openMap);
+    }
+
+    function addBtnMap(map) {
+
+        var $mapCanvas = $('#openStreetViewCanvas_' + map.dataset.mapId);
+
+        $('<button>').attr({
+            'id': 'openStreetViewBtn_' + map.dataset.mapId,
+            'class': 'btn btn-sm btn-primary btn-block'
+        }).css('margin', '15px 0').html('Afficher la carte').insertBefore($mapCanvas);
+
+        $mapCanvas.css('display', 'none');
+
+        $(document).delegate('#openStreetViewBtn_' + map.dataset.mapId, 'click', function (e) {
+
+            if ($mapCanvas.css('display') == 'none') {
+
+                $mapCanvas.fadeIn('slow', function () {
+
+                    $mapCanvas.width("100%").height(map.dataset.height);
+
+                });
+
+            } else {
+                $mapCanvas.fadeOut('slow');
+            }
+
+        });
+
+    }
+
+    return {
+        init: function () {
+
+            initMap();
+
+        }
+    }
+
+    }();
+
+    openStreetMapEdit.init();
+
+
+    // function initMap() {
+
+    //     var initializeGMAPLoaded = false;
+
+    //     if (gmaps.length > 0) {
+
+    //         function WaitForFunction() {
+
+    //             if (!$.isFunction(initializeGMAP)) {
+    //                 //console.log('waiting : initializeGMAP');
+    //                 setTimeout(WaitForFunction, 100);
+    //                 return;
+    //             }
+
+    //             //console.log('loaded : initializeGMAP');
+    //             initializeGMAPLoaded = true;
+
+    //         }
+
+    //         WaitForFunction();
+
+    //         if (initializeGMAPLoaded) {
+
+    //             gmaps.forEach(function (gmap) {
+
+    //                 var init = {};
+
+    //                 switch (gmap.g_config) {
+    //                     case 1:
+    //                         init = {
+    //                             panControl: false,
+    //                             zoomControl: true
+    //                         };
+    //                         break;
+    //                     case 3:
+    //                         init = {
+    //                             panControl: true,
+    //                             zoomControl: true
+    //                         };
+    //                         break;
+    //                     case 0:
+    //                         init = {
+    //                             panControl: false,
+    //                             zoomControl: false
+    //                         };
+    //                         break;
+    //                 }
+
+    //                 gmap.config = $.extend({}, init, gmap.g_controls);
+
+    //                 if (gmap.show_btn) {
+
+    //                     var $mapCanvas = $('#mapCanvas_' + gmap.id);
+
+    //                     $('<button>').attr({
+    //                         'id': 'mapBtn_' + gmap.id,
+    //                         'class': 'btn btn-sm btn-primary btn-block'
+    //                     }).css('margin', '15px 0').html('Afficher la carte').insertBefore($mapCanvas);
+
+    //                     $mapCanvas.css('display', 'none');
+
+    //                     $(document).delegate('#mapBtn_' + gmap.id, 'click', function (e) {
+
+    //                         if ($mapCanvas.css('display') == 'none') {
+
+    //                             $mapCanvas.fadeIn('slow', function () {
+
+    //                                 $mapCanvas.width("100%").height(gmap.height);
+
+    //                             });
+
+    //                         } else {
+    //                             $mapCanvas.fadeOut('slow');
+    //                         }
+
+    //                     });
+
+    //                 }
+
+    //                 initializeGMAP(gmap);
+
+    //             });
+
+    //         }
+
+    //     }
+
+    // }
+
+</script>
+        <script>
+
+var App = function () {
+
+    var windowHeight = $(window).height(),
+        $navbarToggler = $('.navbar-toggler'),
+        $backToTop = $('#backToTop');
+
+    var scrollBackToTop = function () {
+
+        $backToTop.on('click', function (e) {
+
+            e.preventDefault();
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+
+            return false;
+
+        });
+
+        if ($(window).scrollTop() < (windowHeight / 2)) {
+            $backToTop.removeClass('show');
+        } else {
+            $backToTop.addClass('show');
+        }
+
+        $(window).on('scroll', function () {
+
+            var position = $(window).scrollTop();
+
+            if (position < (windowHeight / 2)) {
+                $backToTop.removeClass('show');
+            } else {
+                $backToTop.addClass('show');
+            }
+
+        });
+
+    };
+
+    var initEvents = function () {
+
+        document.getElementById('mainNavbar').addEventListener('show.bs.collapse', function () {
+            $navbarToggler.addClass('open');
+        });
+
+        document.getElementById('mainNavbar').addEventListener('hide.bs.collapse', function () {
+            $navbarToggler.removeClass('open');
+        });
+
+        scrollBackToTop();
+
+    };
+
+    return {
+        init: function () {
+            initEvents();
+        }
+    };
+
+}();
+
+jQuery(document).ready(function () {
+    App.init();
+});
+
+</script>
+                    </body>
+</html>
