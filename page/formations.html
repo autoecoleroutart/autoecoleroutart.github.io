@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formations - Auto-École Rout'Art</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="icon" href="../icon/logo_routart_modern.png" type="image/x-icon">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo_routart_modern.png" alt="Logo Auto-École Rout'Art">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><button class="nav-btn" onclick="location.href='../index.html'">Accueil</button></li>
+                    <li><button class="nav-btn active" onclick="location.href='formation.html'">Formations</button></li>
+                    <li><button class="nav-btn" onclick="location.href='tarifs.html'">Tarifs</button></li>
+                    <li><button class="nav-btn" onclick="location.href='contact.html'">Contact</button></li>
+                </ul>
+                <a href="inscription.html" class="btn btn-primary nav-cta">S'inscrire</a>
+            </nav>
+            <button class="hamburger-menu" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-bg">
+            <img src="../images/hero-car-road.png" alt="Voiture sur une route côtière au lever du soleil" class="hero-image">
+        </div>
+        <div class="container hero-content">
+            <h1>Nos Formations</h1>
+            <p>Découvrez toutes les formations proposées par Rout'Art pour réussir votre permis.</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="section formations-section">
+            <div class="container">
+                <h2 class="section-title">Formations disponibles</h2>
+                <div class="formations-grid">
+                    <div class="formation-card">
+                        <div class="card-icon">
+                            <img src="../images/icon-car.jpg" alt="Icône voiture">
+                        </div>
+                        <h3>Permis B</h3>
+                        <p>Apprenez à conduire une voiture en toute sécurité avec nos moniteurs expérimentés.</p>
+                        <a href="permis-b.html" class="btn btn-link">En savoir plus</a>
+                    </div>
+                    <div class="formation-card">
+                        <div class="card-icon">
+                            <img src="../images/icon-moto.png" alt="Icône moto">
+                        </div>
+                        <h3>Permis Moto</h3>
+                        <p>Maîtrisez la conduite moto et profitez de la liberté sur deux roues.</p>
+                        <a href="permis-moto.html" class="btn btn-link">En savoir plus</a>
+                    </div>
+                    <!-- Ajoutez d'autres formations ici si besoin -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-row">
+                <div class="footer-links">
+                    <a href="satisfaction.html">Enquête de satisfaction</a>
+                    <a href="positionnement.html">Procédé de positionnement</a>
+                    <a href="reclamation.html">Gestion des réclamations</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="garantie_financiere.html">Garantie financière</a>
+                </div>
+            </div>
+            <div class="footer-row">
+                <p>&copy; 2025 Auto-École Rout'Art. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script/script.js"></script>
+</body>
+</html>
