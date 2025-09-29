@@ -131,3 +131,17 @@ Je vous propose une structure de page d'accueil classique mais modernisée, avec
 
 Voici une idée de comment le design pourrait se présenter, en se basant sur le logo actuel :
 **Une page d'accueil d'auto-école moderne et épurée. En haut, une barre de navigation grise foncée avec le logo Rout'Art sur la gauche, stylisé avec des accents rouges et oranges. À droite, des liens de menu simples (Accueil, Formations, Tarifs, Contact) et un bouton "S'inscrire" rouge vif. La section héro présente une image de haute qualité d'une voiture de sport sur une route ouverte au lever du soleil, avec un titre audacieux "Votre Permis, Votre Liberté" en blanc surimprimé. En dessous, des sections bien espacées avec des cartes de services (Permis B, Moto) utilisant des icônes minimalistes et des blocs de couleurs douces (bleu-vert clair, gris clair). Les témoignages sont présentés dans un carrousel horizontal avec des avatars d'élèves. Le pied de page est sombre, avec les informations de contact et les liens légaux. L'ensemble est "responsive", adapté aux mobiles et ordinateurs de bureau. Les éléments sont espacés, clairs et utilisent des animations subtiles au survol.**
+
+
+TOUT CE QUE JE DOIS FAIRE APPARAÎTRE : 
+* Page permis 1€
+* France Travail
+* inscription et évaluation de départ 
+* code de la route
+* Reglement Intérieur
+* Garantie Financière
+* Résultat du permis 
+* gestion réclamation
+* enquete de satisfaction
+* procédé de positionnement
+* contact
