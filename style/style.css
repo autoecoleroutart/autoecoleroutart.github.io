@@ -1,3 +1,353 @@
+/* ----------- Harmonisation page code de la route ----------- */
+.code-title {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+.code-route-section {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 16px rgba(29,53,87,0.10);
+    padding: 2.5rem 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.code-block {
+    background: var(--light-gray, #f6f8fa);
+    border-radius: 14px;
+    box-shadow: 0 1px 8px rgba(29,53,87,0.08);
+    padding: 1.7rem 2rem;
+    margin: 0 auto 1.5rem auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.code-subtitle {
+    color: var(--accent-color, #457b9d);
+    font-size: 1.5rem;
+    margin-bottom: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+}
+.code-label {
+    font-size: 1.08rem;
+    color: var(--secondary-color, #22223b);
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+}
+.code-schedule-list {
+    list-style: disc inside;
+    font-size: 1.08rem;
+    color: var(--text-color, #22223b);
+    margin-bottom: 0;
+    padding-left: 0.5rem;
+}
+.code-schedule-list li {
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+}
+.code-desc {
+    font-size: 1.08rem;
+    color: var(--text-color, #22223b);
+    text-align: justify;
+    margin-bottom: 0.7rem;
+}
+.code-themes-block {
+    background: var(--light-gray, #f6f8fa);
+    border-radius: 14px;
+    box-shadow: 0 1px 8px rgba(29,53,87,0.08);
+    padding: 1.2rem 1.5rem;
+    margin: 1.2rem 0 1.5rem 0;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.code-themes-title {
+    font-size: 1.15rem;
+    color: var(--accent-color, #457b9d);
+    margin-bottom: 1.1rem;
+    text-align: left;
+}
+.code-themes-list {
+    list-style: disc inside;
+    font-size: 1.08rem;
+    color: var(--text-color, #22223b);
+    padding-left: 0.5rem;
+    margin-bottom: 0;
+}
+.code-themes-list li {
+    margin-bottom: 0.7em;
+    line-height: 1.6;
+    padding-left: 0.2em;
+}
+.code-en-ligne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2rem 0;
+}
+.code-en-ligne img {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(29,53,87,0.10);
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width: 900px) {
+    .code-route-section {
+        padding: 1.2rem 0.5rem;
+    }
+    .code-block {
+        padding: 1rem 0.3rem;
+    }
+}
+/* ----------- Classes utilitaires pour le code de la route ----------- */
+.code-route-main {
+    max-width: 900px;
+    margin: 2rem auto;
+}
+.spacer-50 {
+    height: 50px;
+}
+.spacer-20 {
+    height: 20px;
+}
+.text-justify {
+    text-align: justify;
+}
+.text-center {
+    text-align: center;
+}
+.text-bold {
+    font-weight: bold;
+}
+/* ----------- Bloc Thèmes Code de la Route ----------- */
+.code-themes-block {
+    background: var(--light-gray, #f6f8fa);
+    border-radius: 14px;
+    box-shadow: 0 1px 8px rgba(29,53,87,0.08);
+    padding: 1.7rem 2rem;
+    margin: 2rem 0 1.5rem 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.code-themes-title {
+    font-size: 1.15rem;
+    color: var(--accent-color, #457b9d);
+    margin-bottom: 1.1rem;
+    text-align: left;
+}
+.code-themes-list {
+    list-style: disc inside;
+    font-size: 1.08rem;
+    color: var(--text-color, #22223b);
+    padding-left: 0.5rem;
+    margin-bottom: 0;
+}
+.code-themes-list li {
+    margin-bottom: 0.7em;
+    line-height: 1.6;
+    padding-left: 0.2em;
+}
+/* ----------- Page Code de la Route ----------- */
+.code-route-section {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 16px rgba(29,53,87,0.10);
+    padding: 2.5rem 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.code-route-section h1 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+.code-route-section h2 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+.code-route-section h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+.code-route-section p {
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.1rem;
+    text-align: left;
+}
+.code-route-section ul {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 1px 4px rgba(69,123,157,0.07);
+    padding: 1.2rem 1.5rem;
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    list-style: disc inside;
+}
+.code-route-section ul li {
+    margin-bottom: 0.7em;
+    line-height: 1.6;
+}
+.code-route-section .d-flex {
+    margin: 1.5rem 0;
+}
+.code-route-section img.img-fluid {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(29,53,87,0.10);
+    max-width: 100%;
+    height: auto;
+}
+.code-route-section .pl_button {
+    display: inline-block;
+    margin: 0.5rem 0.5rem 1rem 0;
+    font-size: 1.05rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(69,123,157,0.10);
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+.code-route-section .pl_button:hover {
+    filter: brightness(0.95);
+    opacity: 0.95;
+}
+.code-route-section a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.code-route-section a:hover {
+    color: var(--accent-color);
+}
+@media (max-width: 900px) {
+    .code-route-section {
+        padding: 1.2rem 0.5rem;
+    }
+}
+/* ----------- Permis B Traditionnel ----------- */
+.formation-b-section {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 16px rgba(29,53,87,0.10);
+    padding: 2.5rem 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.formation-b-section h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+.formation-b-section h3 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+.formation-b-section p {
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.1rem;
+    text-align: left;
+}
+.formation-b-section ul {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 1px 4px rgba(69,123,157,0.07);
+    padding: 1.2rem 1.5rem;
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    list-style: disc inside;
+}
+.formation-b-section ul li {
+    margin-bottom: 0.7em;
+    line-height: 1.6;
+}
+.formation-b-section .formation-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+.formation-b-section .formation-images .row {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.formation-b-section .formation-images img {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(29,53,87,0.10);
+    max-width: 100%;
+    height: auto;
+}
+.formation-b-section .pl_button {
+    display: inline-block;
+    margin: 0.5rem 0.5rem 1rem 0;
+    font-size: 1.05rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(69,123,157,0.10);
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+.formation-b-section .pl_button:hover {
+    filter: brightness(0.95);
+    opacity: 0.95;
+}
+.formation-b-section a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.formation-b-section a:hover {
+    color: var(--accent-color);
+}
+@media (max-width: 900px) {
+    .formation-b-section {
+        padding: 1.2rem 0.5rem;
+    }
+    .formation-b-section .formation-images .row {
+        gap: 0.7rem;
+    }
+}
 /* Section Résultat Permis */
 .resultat-section {
     background: var(--light-gray);
