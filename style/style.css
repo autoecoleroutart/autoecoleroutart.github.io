@@ -1475,6 +1475,82 @@ img {
     }
 }
 
+/* Financement page: sommaire et collapsible */
+.quick-nav {
+    margin: 1rem auto;
+    background: rgba(69,123,157,0.04);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+}
+.quick-nav-list {
+    display:flex;
+    gap:1rem;
+    justify-content:center;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+.quick-nav-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight:600;
+}
+.financement-block.boxed {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    padding: 1.2rem 1.2rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 6px 18px rgba(29,53,87,0.04);
+}
+.financement-section.container {
+    max-width: 980px; /* limite la largeur et centre */
+    margin: 0 auto 2rem auto;
+    text-align: center; /* centrage général du texte et des images */
+}
+.financement-section .summary {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.financement-section img {
+    display: block;
+    margin: 0.5rem auto;
+    max-width: 100%;
+    height: auto;
+}
+/* Garder le contenu détaillé aligné à gauche pour la lisibilité */
+.financement-section .more-content {
+    text-align: left;
+    margin-top: 0.6rem;
+}
+
+@media (max-width: 700px) {
+    .financement-section.container {
+        padding: 0 1rem;
+        text-align: left; /* plus lisible sur mobile */
+    }
+    .financement-section .summary {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .quick-nav-list {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
+.collapsible .summary p { margin-bottom: 0.6rem; }
+.more-content p { margin-bottom: 0.6rem; }
+.toggle-more { cursor: pointer; }
+
+/* Centre le bouton 'Voir plus' dans les blocs de financement */
+.financement-block .toggle-more {
+    display: inline-block;
+    margin: 0.8rem auto 0 auto; /* centre horizontalement */
+    padding: 0.45rem 0.9rem;
+}
+
 /* Helper class for visually hidden elements (for accessibility) */
 .sr-only {
     position: absolute;
@@ -1491,6 +1567,63 @@ img {
 /* ---------- Team cards (page équipe) ---------- */
 .team-section {
     padding: 2.5rem 0;
+}
+
+/* ---------- Règlement intérieur (page reglement.html) ---------- */
+.reglement-section.container {
+    max-width: 980px;
+    margin: 2.2rem auto;
+    padding: 1.6rem 1.4rem;
+}
+.reglement-block.boxed {
+    background: var(--white-color);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(29,53,87,0.04);
+    padding: 1.2rem 1.25rem;
+    margin-bottom: 1.1rem;
+}
+.reglement-section h2.section-title {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    text-align: left;
+}
+.reglement-section p,
+.reglement-section li {
+    font-size: 1.06rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    text-align: left;
+}
+.reglement-section ul,
+.reglement-section ol {
+    padding-left: 1.1rem;
+    margin-bottom: 0.9rem;
+}
+.reglement-section .contact p { margin-bottom: 0.4rem; }
+
+/* Impression : cacher header/footer et optimiser l'espace */
+@media print {
+    .main-header, .main-footer, .hamburger-menu, .nav-list { display: none !important; }
+    body { background: #fff; }
+    .reglement-section.container { box-shadow: none; padding: 0; margin: 0; }
+    .reglement-block.boxed { box-shadow: none; border: none; padding: 0; }
+}
+@media (max-width: 700px) {
+    .reglement-section.container {
+        padding: 0.8rem 0.9rem;
+    }
+    .reglement-block.boxed {
+        padding: 0.9rem;
+    }
+    .reglement-section h2.section-title {
+        font-size: 1.18rem;
+    }
+    .reglement-section p, .reglement-section li {
+        font-size: 1rem;
+    }
 }
 .team-section .section-title {
     text-align: center;
