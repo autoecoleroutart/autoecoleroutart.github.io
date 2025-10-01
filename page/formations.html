@@ -20,7 +20,7 @@
                 <nav class="main-nav">
                     <ul class="nav-list">
                         <li><button class="nav-btn" onclick="location.href='../index.html'">Accueil</button></li>
-                        <li><button class="nav-btn active" onclick="location.href='formation.html'">Formations</button></li>
+                        <li><button class="nav-btn active" onclick="location.href='formations.html'">Formations</button></li>
                         <li><button class="nav-btn" onclick="location.href='tarifs.html'">Tarifs</button></li>
                         <li><button class="nav-btn" onclick="location.href='financement.html'">Financement</button></li>
                         <li><button class="nav-btn" onclick="location.href='contact.html'">Contact</button></li>
@@ -48,21 +48,24 @@
 
         <main>
             <section class="tarifs-section container">
-                <label for="formation-select">Choisissez une formation :</label>
-                <select id="formation-select">
-                    <option value="b-traditionnel">Permis B - Traditionnel</option>
-                    <option value="b-accompagnee">Permis B - Conduite Accompagnée</option>
-                    <option value="b-supervisee">Permis B - Conduite Supervisée</option>
-                    <option value="b-automatique">Permis B - Boite Automatique</option>
-                    <option value="am-bsr">Permis AM (BSR)</option>
-                    <option value="moto-a1">Permis Moto A1 (125cc)</option>
-                    <option value="moto-a2">Permis Moto A2</option>
-                    <option value="passerelle-a2-a">Formation Moto passerelle A2 vers A</option>
-                    <option value="formation-125cc">Formation 125cc</option>
-                    <option value="post-permis">Formation Post Permis</option>
-                </select>
+                <div class="formation-selector-wrapper">
+                    <label for="formation-select">Choisissez une formation :</label>
+                    <select id="formation-select">
+                        <option value="b-traditionnel">Permis B - Traditionnel</option>
+                        <option value="b-accompagnee">Permis B - Conduite Accompagnée</option>
+                        <option value="b-supervisee">Permis B - Conduite Supervisée</option>
+                        <option value="b-automatique">Permis B - Boite Automatique</option>
+                        <option value="am-bsr">Permis AM (BSR)</option>
+                        <option value="moto-a1">Permis Moto A1 (125cc)</option>
+                        <option value="moto-a2">Permis Moto A2</option>
+                        <option value="passerelle-a2-a">Formation Moto passerelle A2 vers A</option>
+                        <option value="formation-125cc">Formation 125cc</option>
+                        <option value="post-permis">Formation Post Permis</option>
+                    </select>
+                </div>
                 <div id="formation-details">
                     <table class="horaires-table formations-table formation-b-section hidden" id="table-b-traditionnel">
+                        <thead>
                             <tr>
                                 <th colspan="2">Permis B - Traditionnel</th>
                             </tr>
@@ -176,7 +179,7 @@
                     <table class="horaires-table formations-table formation-b-section hidden" id="table-b-accompagnee">
                         <thead>
                             <tr>
-                                <th>APPRENTISSAGE ANTICIPÉ DE LA CONDUITE - CONDUITE ACCOMPAGNÉE</th>
+                                <th colspan="2">APPRENTISSAGE ANTICIPÉ DE LA CONDUITE - CONDUITE ACCOMPAGNÉE</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -273,7 +276,7 @@
                     <table class="horaires-table formations-table formation-b-section hidden" id="table-b-supervisee">
                         <thead>
                             <tr>
-                                <th>CONDUITE SUPERVISÉE</th>
+                                <th colspan="2">CONDUITE SUPERVISÉE</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -308,7 +311,7 @@
                     <table class="horaires-table formations-table formation-b-section hidden" id="table-b-automatique">
                         <thead>
                             <tr>
-                                <th>PERMIS B - BOÎTE AUTOMATIQUE</th>
+                                <th colspan="2">PERMIS B - BOÎTE AUTOMATIQUE</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -351,7 +354,7 @@
                     <table class="horaires-table formations-table formation-b-section hidden" id="table-am-bsr">
                         <thead>
                             <tr>
-                                <th>PERMIS AM (BSR)</th>
+                                <th colspan="2">PERMIS AM (BSR)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -391,10 +394,10 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table hidden" id="table-moto-a1">
+                    <table class="horaires-table formations-table formation-b-section hidden" id="table-moto-a1">
                         <thead>
                             <tr>
-                                <th>PERMIS MOTO A1 - PERMIS 125</th>
+                                <th colspan="2">PERMIS MOTO A1 - PERMIS 125</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -406,7 +409,7 @@
                                     <p class="text-center"><strong class="text-warning">L'élève doit venir équipé de gants, d'un casque, d'un pantalon, de chaussures montantes et d'une veste. En raison de la crise sanitaire, l'auto-école ne peut plus fournir de matériel.</strong></p>
                                     <iframe 
                                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1463.5427251546691!2d6.558745088173876!3d48.59183783549939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfr!4v1759304503819!5m2!1sen!2sfr"
-                                        width="1400" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                        width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                                     </iframe>
                                 </td>
                             </tr>
@@ -464,10 +467,10 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table hidden" id="table-moto-a2">
+                    <table class="horaires-table formations-table formation-b-section hidden" id="table-moto-a2">
                         <thead>
                             <tr>
-                                <th>PERMIS MOTO A2</th>
+                                <th colspan="2">PERMIS MOTO A2</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -502,10 +505,10 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table hidden" id="table-passerelle-a2-a">
+                    <table class="horaires-table formations-table formation-b-section hidden" id="table-passerelle-a2-a">
                         <thead>
                             <tr>
-                                <th>FORMATION PASSERELLE A2 → A</th>
+                                <th colspan="2">FORMATION MOTO PASSERELLE A2 VERS A</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -527,7 +530,7 @@
                                     <p>Les séances pratiques se déroulent en grande partie sur notre piste privée située près de l'aéroclub de Chanteheux (derrière le club Canin), à environ 3 minutes en voiture de l'auto‑école. Les cours ont lieu du lundi au vendredi de 7h à 19h et le samedi de 7h à 17h.</p>
                                     <iframe 
                                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1463.5427251546691!2d6.558745088173876!3d48.59183783549939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfr!4v1759304503819!5m2!1sen!2sfr"
-                                        width="1400" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                        width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                                     </iframe>
                                 </td>
                             </tr>
@@ -555,10 +558,10 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table hidden" id="table-formation-125cc">
+                    <table class="horaires-table formations-table formation-b-section hidden" id="table-formation-125cc">
                         <thead>
                             <tr>
-                                <th>FORMATION 125 CC</th>
+                                <th colspan="2">FORMATION 125CC</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -581,7 +584,7 @@
                                     <p>Nous disposons d'une convention avec l'aéroclub afin d'exploiter cette piste. La piste est équipée d'un bungalow mais cet abri ne contient pas de sanitaires.</p>
                                     <iframe 
                                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1463.5427251546691!2d6.558745088173876!3d48.59183783549939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfr!4v1759304503819!5m2!1sen!2sfr"
-                                        width="1400" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                        width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                                     </iframe>
                                 </td>
                             </tr>
@@ -607,10 +610,10 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table hidden" id="table-post-permis">
+                    <table class="horaires-table formations-table formation-b-section hidden" id="table-post-permis">
                         <thead>
                             <tr>
-                                <th>FORMATION POST-PERMIS</th>
+                                <th colspan="2">FORMATION POST PERMIS</th>
                             </tr>
                         </thead>
                         <tbody>

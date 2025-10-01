@@ -47,6 +47,60 @@
     text-align: left;
 }
 
+/* Financement page styles */
+.financement-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    align-items: center;
+}
+
+.financement-image {
+    flex: 1;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.financement-image img {
+    max-width: 200px;
+    height: auto;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.financement-text {
+    flex: 2;
+    text-align: left;
+    max-width: 100%;
+}
+
+.financement-text h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.financement-text p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Responsive financement layout */
+@media (min-width: 768px) {
+    .financement-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    
+    .financement-image {
+        margin-bottom: 0;
+    }
+}
+
 .content-section ul {
     background: var(--light-gray);
     border-radius: var(--border-radius-sm);
@@ -137,7 +191,8 @@
     background: var(--light-gray);
     padding: 1rem;
     border-radius: var(--border-radius-sm);
-    margin-bottom: 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
 }
 
 .quick-nav-list {
@@ -147,6 +202,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
 }
 
 .quick-nav-list a {
@@ -238,4 +294,139 @@
 .reclamation-contact address {
     font-style: normal;
     line-height: 1.6;
+}
+
+/* Section contact sur la page d'accueil */
+.contact-section {
+    padding: 3rem 0;
+    background: var(--light-gray);
+}
+
+.contact-section .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.contact-section .contact-info-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-section .address-details {
+    margin: 2rem 0;
+}
+
+.contact-section .address-details p {
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.contact-section .social-links {
+    margin-top: 2rem;
+}
+
+/* Sélecteur de formations et tarifs */
+.formation-selector-wrapper {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 600px;
+    padding: 2rem;
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.formation-selector-wrapper label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.formation-selector-wrapper select {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid var(--accent-color);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--white-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formation-selector-wrapper select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(69, 123, 157, 0.2);
+}
+
+/* Tables de formations et tarifs */
+#formation-details,
+#tarif-details {
+    margin-top: 2rem;
+}
+
+#formation-details table,
+#tarif-details table {
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Améliorer l'apparence des tableaux de formations et tarifs */
+.formations-table,
+.tarifs-table {
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.formations-table th,
+.tarifs-table th {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white-color);
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.formations-table td,
+.tarifs-table td {
+    padding: 1.2rem;
+    vertical-align: top;
+}
+
+.formations-table tr:nth-child(even),
+.tarifs-table tr:nth-child(even) {
+    background-color: var(--light-gray);
+}
+
+.formations-table ul,
+.tarifs-table ul {
+    margin: 0.5rem 0;
+    padding-left: 1.2rem;
+}
+
+.formations-table ul li,
+.tarifs-table ul li {
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
 }

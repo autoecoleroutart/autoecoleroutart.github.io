@@ -36,7 +36,7 @@
 
 .main-nav .nav-list button.active,
 .main-nav .nav-list button:hover {
-    color: var(--accent-color);
+    color: #f39c12;
 }
 
 /* Underline effect for nav buttons */
@@ -47,7 +47,7 @@
     height: 2px;
     bottom: -5px;
     left: 50%;
-    background-color: var(--accent-color);
+    background-color: #f39c12;
     transition: all 0.3s ease;
 }
 

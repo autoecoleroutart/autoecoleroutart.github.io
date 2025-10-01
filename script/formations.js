@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showTable(selected) {
         tables.forEach(table => {
-            table.style.display = 'none';
+            table.classList.add('hidden');
         });
         const table = document.getElementById('table-' + selected);
         if (table) {
-            table.style.display = '';
+            table.classList.remove('hidden');
         }
     }
 
@@ -57,8 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    showTable(select.value);
-    updateHeroImage(select.value);
+    // Ensure we have a selected value
+    const selectedValue = select.value || 'b-traditionnel';
+    
+    showTable(selectedValue);
+    updateHeroImage(selectedValue);
 
     select.addEventListener('change', function() {
         showTable(this.value);

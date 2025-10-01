@@ -24,7 +24,7 @@
                         <li><button class="nav-btn" onclick="location.href='tarifs.html'">Tarifs</button></li>
                         <li><button class="nav-btn" onclick="location.href='financement.html'">Financement</button></li>
                         <li><button class="nav-btn" onclick="location.href='contact.html'">Contact</button></li>
-                        <li><button class="nav-btn active" onclick="location.href='page/code_de_la_route.html'">Code de la Route</button></li>
+                        <li><button class="nav-btn active" onclick="location.href='code_de_la_route.html'">Code de la Route</button></li>
                         <li><button class="nav-btn" onclick="location.href='equipe.html'">Équipe</button></li>
                     </ul>
                 </nav>
@@ -35,6 +35,7 @@
                 </button>
             </div>
         </header>
+
         <section class="hero-section">
             <div class="hero-bg">
                 <img src="../images/hero-car-road.png" alt="Code de la route - Auto-École Rout'Art" class="hero-image">
@@ -44,58 +45,80 @@
                 <p>Maîtrisez le code pour réussir votre permis et rouler en toute sécurité.</p>
             </div>
         </section>
+
         <main>
-            <section class="code-route-section">
-                <h1 class="code-title">LE CODE DE LA ROUTE</h1>
-                <div class="code-block">
-                    <h2 class="code-subtitle">Les cours de code à l'auto-école</h2>
-                    <div class="code-schedule">
-                        <p class="code-label"><strong>Accès à la salle de code :</strong></p>
-                        <ul class="code-schedule-list">
-                            <li>Lundi : 18h00 - 19h00</li>
-                            <li>Mardi : 18h00 - 19h00</li>
-                            <li>Mercredi : 17h00 - 19h00</li>
-                            <li>Jeudi : fermé</li>
-                            <li>Vendredi : 18h00 - 19h00</li>
-                            <li>Samedi : 11h00 - 12h00</li>
-                            <li>Dimanche : fermé</li>
-                        </ul>
-                    </div>
-                    <p class="code-desc">La connaissance des règles relatives à la circulation routière est indispensable à la bonne compréhension de la signalisation routière, elle permet de mieux organiser la cohabitation des différentes catégories d’usagers sur nos routes.</p>
-                    <p class="code-desc"><strong>Chaque lundi de 18h à 19h, mardi 17h à 18h, jeudi 17h à 18h et samedi de 11h à 12h, un cours de code est assuré par un formateur diplômé</strong>, portant sur un thème lié à la sécurité routière. Un planning mentionnant les thèmes abordés est à disposition au bureau, celui-ci est susceptible d'évoluer et d'être modifié en fonction des besoins de nos élèves.</p>
-                    <div class="code-themes-block">
-                        <p class="code-themes-title"><em>Les thèmes abordés sont les suivants :</em></p>
-                        <ul class="code-themes-list">
-                            <li>L’arrêt et le stationnement</li>
-                            <li>L’alcool, les drogues, les médicaments, la fatigue et la conduite</li>
-                            <li>Accidents et assurances</li>
-                            <li>Le véhicule, le conducteur et la conduite (nuit, intempéries, montagne)</li>
-                            <li>La ville, la route, l’autoroute, les feux</li>
-                            <li>La vitesse : impact sur l’homme, la physique, la sécurité et l’environnement</li>
-                            <li>La signalisation : dangers, indications, interdictions, obligations, temporaires, marquages et balises</li>
-                            <li>Les priorités de passage</li>
-                            <li>Les règles de circulation : feux, agents, urgences, position sur la chaussée, croisements et dépassements</li>
-                        </ul>
-                    </div>
-                    <p class="code-desc">L'auto-école est équipée d'un dispositif permettant la mise à jour systématique des questions de code : fini les questions périmées !</p>
-                </div>
-                <div class="code-block">
-                    <h2 class="code-subtitle">Le code en ligne : Prépacode</h2>
-                    <p class="code-desc">En option lors de l'inscription au code de la route est proposée l'application Prépacode qui est disponible en ligne. Prépacode permet de vous préparer au mieux au code de la route en vous proposant des séries de code qui sont mises à jour régulièrement. C'est un véritable outil d'entraînement qui vous permet de réviser sereinement de chez vous. L'application vient en complément de la formation délivrée pendant les cours de code délivrés à l'auto-école.</p>
-                    <div class="code-en-ligne enpc-block">
-                        <a href="https://www.prepacode-enpc.fr/" target="_blank" title="Accéder à la nouvelle plateforme www.prepacode-enpc.fr">
-                            <img src="../images/prepa_code.png" class="img-fluid" alt="Prépacode">
-                        </a>
+            <section class="container">
+                <!-- Section: Cours de code -->
+                <div class="content-section">
+                    <h1 class="section-title">LE CODE DE LA ROUTE</h1>
+                    
+                    <h2>Les cours de code à l'auto-école</h2>
+                    
+                    <div class="financement-content">
+                        <div class="financement-text">
+                            <h3><strong>Accès à la salle de code :</strong></h3>
+                            <ul>
+                                <li>Lundi : 18h00 - 19h00</li>
+                                <li>Mardi : 18h00 - 19h00</li>
+                                <li>Mercredi : 17h00 - 19h00</li>
+                                <li>Jeudi : fermé</li>
+                                <li>Vendredi : 18h00 - 19h00</li>
+                                <li>Samedi : 11h00 - 12h00</li>
+                                <li>Dimanche : fermé</li>
+                            </ul>
+                            
+                            <p>La connaissance des règles relatives à la circulation routière est indispensable à la bonne compréhension de la signalisation routière, elle permet de mieux organiser la cohabitation des différentes catégories d'usagers sur nos routes.</p>
+                            
+                            <p><strong>Chaque lundi de 18h à 19h, mardi 17h à 18h, jeudi 17h à 18h et samedi de 11h à 12h, un cours de code est assuré par un formateur diplômé</strong>, portant sur un thème lié à la sécurité routière. Un planning mentionnant les thèmes abordés est à disposition au bureau, celui-ci est susceptible d'évoluer et d'être modifié en fonction des besoins de nos élèves.</p>
+                            
+                            <h3><em>Les thèmes abordés sont les suivants :</em></h3>
+                            <ul>
+                                <li>L'arrêt et le stationnement</li>
+                                <li>L'alcool, les drogues, les médicaments, la fatigue et la conduite</li>
+                                <li>Accidents et assurances</li>
+                                <li>Le véhicule, le conducteur et la conduite (nuit, intempéries, montagne)</li>
+                                <li>La ville, la route, l'autoroute, les feux</li>
+                                <li>La vitesse : impact sur l'homme, la physique, la sécurité et l'environnement</li>
+                                <li>La signalisation : dangers, indications, interdictions, obligations, temporaires, marquages et balises</li>
+                                <li>Les priorités de passage</li>
+                                <li>Les règles de circulation : feux, agents, urgences, position sur la chaussée, croisements et dépassements</li>
+                            </ul>
+                            
+                            <p>L'auto-école est équipée d'un dispositif permettant la mise à jour systématique des questions de code : fini les questions périmées !</p>
+                        </div>
                     </div>
                 </div>
-                <div class="code-block">
-                    <h2 class="code-subtitle">Information handicap</h2>
-                    <p class="code-desc"><strong>INFORMATION HANDICAP :</strong></p>
-                    <p class="code-desc">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adéquat, nous ne pouvons donc dispenser ce type de formation spécifique.</p>
-                    <p class="code-desc">Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</p>
+                
+                <!-- Section: Code en ligne -->
+                <div class="content-section">
+                    <h2 class="section-title">Le code en ligne : Prépacode</h2>
+                    
+                    <div class="financement-content">
+                        <div class="financement-image">
+                            <a href="https://www.prepacode-enpc.fr/" target="_blank" title="Accéder à la nouvelle plateforme www.prepacode-enpc.fr">
+                                <img src="../images/prepa_code.png" alt="Prépacode" style="max-width: 300px;">
+                            </a>
+                        </div>
+                        <div class="financement-text">
+                            <p>En option lors de l'inscription au code de la route est proposée l'application Prépacode qui est disponible en ligne. Prépacode permet de vous préparer au mieux au code de la route en vous proposant des séries de code qui sont mises à jour régulièrement.</p>
+                            <p>C'est un véritable outil d'entraînement qui vous permet de réviser sereinement de chez vous. L'application vient en complément de la formation délivrée pendant les cours de code délivrés à l'auto-école.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section: Information handicap -->
+                <div class="content-section">
+                    <h2 class="section-title">Information handicap</h2>
+                    
+                    <div class="financement-text">
+                        <p><strong>INFORMATION HANDICAP :</strong></p>
+                        <p>Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adéquat, nous ne pouvons donc dispenser ce type de formation spécifique.</p>
+                        <p>Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</p>
+                    </div>
                 </div>
             </section>
         </main>
+
         <footer class="main-footer">
             <div class="container footer-content">
                 <div class="footer-row">

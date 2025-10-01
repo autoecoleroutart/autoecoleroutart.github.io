@@ -190,16 +190,22 @@
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
     margin-top: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    align-items: start;
 }
 
 .contact-form-wrapper,
 .contact-info-wrapper {
     background: var(--white-color);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-md);
+    text-align: center;
+    width: 100%;
+    height: fit-content;
 }
 
 .contact-form .form-group {
@@ -252,14 +258,18 @@
 
 .map-container iframe {
     width: 100%;
-    max-width: 600px;
-    height: 450px;
+    height: 350px;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
 }
 
 .address-details p {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
     color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Placeholder icons, replace with actual SVG or FontAwesome if used */
@@ -274,6 +284,7 @@
     display: flex;
     gap: 1rem;
     justify-content: center;
+    align-items: center;
     margin-top: 1rem;
 }
 
