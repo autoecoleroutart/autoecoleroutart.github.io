@@ -1,91 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Résultats du permis - Auto-École Rout'Art</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="icon" href="../icon/logo_routart_modern.png" type="image/x-icon">
-</head>
-<body>
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">
-                <a href="../index.html">
-                    <img src="../images/logo_routart_modern.png" alt="Logo Auto-École Rout'Art">
-                </a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Résultats du permis - Auto-École Rout'Art</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../style/style.css">
+        <link rel="icon" href="../icon/logo_routart_modern.png" type="image/x-icon">
+        <script src="../script/script.js"></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="container header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/logo_routart_modern.png" alt="Logo Auto-École Rout'Art">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><button class="nav-btn" onclick="location.href='../index.html'">Accueil</button></li>
+                        <li><button class="nav-btn" onclick="location.href='formations.html'">Formations</button></li>
+                        <li><button class="nav-btn" onclick="location.href='tarifs.html'">Tarifs</button></li>
+                        <li><button class="nav-btn" onclick="location.href='financement.html'">Financement</button></li>
+                        <li><button class="nav-btn" onclick="location.href='contact.html'">Contact</button></li>
+                        <li><button class="nav-btn" onclick="location.href='page/code_de_la_route.html'">Code de la Route</button></li>
+                        <li><button class="nav-btn" onclick="location.href='equipe.html'">Équipe</button></li>
+                    </ul>
+                </nav>
+                <button class="hamburger-menu" aria-label="Ouvrir le menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><button class="nav-btn" onclick="location.href='../index.html'">Accueil</button></li>
-                    <li><button class="nav-btn" onclick="location.href='formations.html'">Formations</button></li>
-                    <li><button class="nav-btn" onclick="location.href='tarifs.html'">Tarifs</button></li>
-                    <li><button class="nav-btn" onclick="location.href='financement.html'">Financement</button></li>
-                    <li><button class="nav-btn" onclick="location.href='contact.html'">Contact</button></li>
-                    <li><button class="nav-btn" onclick="location.href='page/code_de_la_route.html'">Code de la Route</button></li>
-                    <li><button class="nav-btn" onclick="location.href='equipe.html'">Équipe</button></li>
-                </ul>
-            </nav>
-            <button class="hamburger-menu" aria-label="Ouvrir le menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <section class="hero-section">
-        <div class="hero-bg">
-            <img src="../images/hero-car-road.png" alt="Voiture sur une route côtière au lever du soleil" class="hero-image">
-        </div>
-        <div class="container hero-content">
-            <h1>Résultats du permis</h1>
-            <p>Consultez ici les démarches pour accéder à vos résultats d'examen du permis de conduire.</p>
-        </div>
-    </section>
-
-    <main>
-    <section class="container resultat-section">
-            <h2 class="section-title">Résultat au Permis de Conduire</h2>
-            <h3>Consultez votre résultat à l'examen du permis de conduire sur www.securite-routiere.gouv.fr</h3>
-            <p><strong>Depuis le 19 janvier 2015, les résultats de l'épreuve pratique du permis de conduire peuvent être consultés, 24 heures après l'examen, sur le site de <a href="http://www.securite-routiere.gouv.fr" rel="nofollow" target="_blank">la sécurité routière</a>.</strong></p>
-            <p class="text-center"><a class="btn btn-primary" href="http://www.securite-routiere.gouv.fr/permis-de-conduire/resultats-du-permis-de-conduire" rel="nofollow" target="_blank" title="Rechercher votre résultat du permis de conduire sur www.securite-routiere.gouv.fr">Recherchez votre résultat</a></p>
-            <h3>Pour savoir si l'on a été reçu à l'examen il suffit de saisir:</h3>
-            <ul>
-                <li>Le numéro de dossier NEPH</li>
-                <li>La date de naissance</li>
-                <li>La catégorie du permis passé</li>
-            </ul>
-            <p>En cas de <strong>réussite</strong>, le Certificat d'examen du permis de conduire (CEPC) peut être <strong>téléchargé</strong> et <strong>imprimé</strong>. Pendant 4 mois, il tient lieu de permis de conduire et devra être présenté, en cas de contrôle, avec <u>la pièce d'identité</u> en version papier ou directement sur smartphone ou tablette.</p>
-            <p>En cas d'échec, contactez l'auto-école pour organiser une nouvelle session.</p>
-            <h2 class="section-title">Suivi de la production de votre permis</h2>
-            <h3>Où en est votre permis de conduire ?</h3>
-            <p>Depuis le 03 mars 2014, vous pouvez suivre la production de votre permis de conduire directement en ligne sur le site de l'<strong>ANTS</strong> (Agence Nationale des Titres Sécurisés) en cliquant sur le bouton ci-dessous.</p>
-            <p class="text-center"><a class="btn btn-primary" href="https://ants.gouv.fr/monespace/s-inscrire" rel="nofollow" target="_blank" title="Suivre la production de votre permis sur l'ANTS">Suivre mon Permis</a></p>
-            <p>Pour toute question ou accompagnement, contactez-nous via la page <a href="contact.html">Contact</a>.</p>
+        </header>
+        <section class="hero-section">
+            <div class="hero-bg">
+                <img src="../images/hero-car-road.png" alt="Voiture sur une route côtière au lever du soleil" class="hero-image">
+            </div>
+            <div class="container hero-content">
+                <h1>Résultats du permis</h1>
+                <p>Consultez ici les démarches pour accéder à vos résultats d'examen du permis de conduire.</p>
+            </div>
         </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container footer-content">
-            <div class="footer-row">
-                <div class="footer-links">
-                    <a href="reglement.html">Règlement intérieur</a>
-                    <a href="satisfaction.html">Enquête de satisfaction</a>
-                    <a href="positionnement.html">Procédé de positionnement</a>
-                    <a href="reclamation.html">Gestion des réclamations</a>
-                    <a href="resultat.html" class="active">Résultats du permis</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="garantie_financiere.html">Garantie financière</a>
+        <main>
+        <section class="container resultat-section">
+                <h2 class="section-title">Résultat au Permis de Conduire</h2>
+                <h3>Consultez votre résultat à l'examen du permis de conduire sur www.securite-routiere.gouv.fr</h3>
+                <p><strong>Depuis le 19 janvier 2015, les résultats de l'épreuve pratique du permis de conduire peuvent être consultés, 24 heures après l'examen, sur le site de <a href="http://www.securite-routiere.gouv.fr" rel="nofollow" target="_blank">la sécurité routière</a>.</strong></p>
+                <p class="text-center"><a class="btn btn-primary" href="http://www.securite-routiere.gouv.fr/permis-de-conduire/resultats-du-permis-de-conduire" rel="nofollow" target="_blank" title="Rechercher votre résultat du permis de conduire sur www.securite-routiere.gouv.fr">Recherchez votre résultat</a></p>
+                <h3>Pour savoir si l'on a été reçu à l'examen il suffit de saisir:</h3>
+                <ul>
+                    <li>Le numéro de dossier NEPH</li>
+                    <li>La date de naissance</li>
+                    <li>La catégorie du permis passé</li>
+                </ul>
+                <p>En cas de <strong>réussite</strong>, le Certificat d'examen du permis de conduire (CEPC) peut être <strong>téléchargé</strong> et <strong>imprimé</strong>. Pendant 4 mois, il tient lieu de permis de conduire et devra être présenté, en cas de contrôle, avec <u>la pièce d'identité</u> en version papier ou directement sur smartphone ou tablette.</p>
+                <p>En cas d'échec, contactez l'auto-école pour organiser une nouvelle session.</p>
+                <h2 class="section-title">Suivi de la production de votre permis</h2>
+                <h3>Où en est votre permis de conduire ?</h3>
+                <p>Depuis le 03 mars 2014, vous pouvez suivre la production de votre permis de conduire directement en ligne sur le site de l'<strong>ANTS</strong> (Agence Nationale des Titres Sécurisés) en cliquant sur le bouton ci-dessous.</p>
+                <p class="text-center"><a class="btn btn-primary" href="https://ants.gouv.fr/monespace/s-inscrire" rel="nofollow" target="_blank" title="Suivre la production de votre permis sur l'ANTS">Suivre mon Permis</a></p>
+                <p>Pour toute question ou accompagnement, recontrer-nous via la page <a href="contact.html">Contact</a>.</p>
+            </section>
+        </main>
+        <footer class="main-footer">
+            <div class="container footer-content">
+                <div class="footer-row">
+                    <div class="footer-links">
+                        <a href="reglement.html">Règlement intérieur</a>
+                        <a href="satisfaction.html">Enquête de satisfaction</a>
+                        <a href="positionnement.html">Procédé de positionnement</a>
+                        <a href="reclamation.html">Gestion des réclamations</a>
+                        <a href="resultat.html" class="active">Résultats du permis</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="garantie_financiere.html">Garantie financière</a>
+                    </div>
+                </div>
+                <div class="footer-row">
+                    <p>&copy; 2025 Auto-École Rout'Art. Tous droits réservés.</p>
                 </div>
             </div>
-            <div class="footer-row">
-                <p>&copy; 2025 Auto-École Rout'Art. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../script/script.js"></script>
-</body>
+        </footer>
+    </body>
 </html>
