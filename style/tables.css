@@ -1,0 +1,170 @@
+/* Table Components - Unified styles for all tables */
+.horaires-table, .formations-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.horaires-table th, 
+.horaires-table td,
+.formations-table th,
+.formations-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.horaires-table thead th,
+.formations-table thead th {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 600;
+    text-align: center;
+}
+
+.horaires-table tbody tr,
+.formations-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.horaires-table tbody tr:last-child,
+.formations-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.horaires-table td,
+.formations-table td {
+    vertical-align: top;
+}
+
+.horaires-table tbody tr td:last-child,
+.formations-table tbody tr td:last-child {
+    border-left: 1px solid #eee;
+}
+
+.horaires-table tbody tr td,
+.formations-table tbody tr td {
+    line-height: 1.6;
+}
+
+.horaires-table tbody tr:nth-child(even) td,
+.formations-table tbody tr:nth-child(even) td {
+    background-color: var(--light-gray);
+}
+
+/* Table lists styling */
+.table-list {
+    margin: 0.5em 0 0 1em;
+    list-style: disc inside;
+}
+
+.table-list li {
+    margin-bottom: 0.3em;
+}
+
+/* Specific table content styling */
+.formations-table h3 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.formations-table p {
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.1rem;
+    text-align: left;
+}
+
+.formations-table ul {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+    padding: 1.2rem 1.5rem;
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    list-style: disc inside;
+}
+
+.formations-table ul li {
+    margin-bottom: 0.7em;
+    line-height: 1.6;
+}
+
+.formations-table .formation-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.formations-table .formation-images .row {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.formations-table .formation-images img {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    max-width: 100%;
+    height: auto;
+}
+
+.formations-table a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.formations-table a:hover {
+    color: var(--accent-color);
+}
+
+/* Section Selector */
+.tarifs-section label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.tarifs-section select {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.75rem;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    background-color: var(--white-color);
+    margin-bottom: 2rem;
+}
+
+.tarifs-section select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+#tarif-details, #formation-details {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Special spacing utility */
+.space-after {
+    margin-left: 0.2em;
+}

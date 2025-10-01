@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Formations - Auto-École Rout'Art</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../style/style.css">
+        <link rel="stylesheet" href="../style/main.css">
         <link rel="icon" href="../icon/logo_routart_modern.png" type="image/x-icon">
         <script src="../script/formations.js"></script>
     </head>
@@ -62,7 +62,7 @@
                     <option value="post-permis">Formation Post Permis</option>
                 </select>
                 <div id="formation-details">
-                    <table class="horaires-table formations-table formation-b-section" id="table-b-traditionnel" style="display:none;">
+                    <table class="horaires-table formations-table formation-b-section hidden" id="table-b-traditionnel">
                             <tr>
                                 <th colspan="2">Permis B - Traditionnel</th>
                             </tr>
@@ -70,10 +70,10 @@
                         <tbody>
                             <tr>
                                 <td colspan="2">
-                                    <strong>Le permis de conduire de la catégorie B permet la conduite de tous les véhicules de tourisme et des véhicules utilitaires dont le poids total en charge <span style="color:#e74c3c">ne dépasse pas 3,5 tonnes</span>.</strong><br>
+                                    <strong>Le permis de conduire de la catégorie B permet la conduite de tous les véhicules de tourisme et des véhicules utilitaires dont le poids total en charge <span class="text-error">ne dépasse pas 3,5 tonnes</span>.</strong><br>
                                     Pour s'inscrire au permis B, il faut être âgé de <strong>16 ans minimum</strong>.<br>
                                     Pour vous présenter à l'examen pratique, vous devez <strong>avoir 18 ans</strong> à la date de l'examen pratique et avoir obtenu l'épreuve théorique (le code).<br>
-                                    <span style="color:#ff0000"><strong>Notre formation pratique est assurée par des enseignants diplômés et avec 3 Peugeots 208 à boîte manuelle.</strong></span>
+                                    <span class="text-warning"><strong>Notre formation pratique est assurée par des enseignants diplômés et avec 3 Peugeots 208 à boîte manuelle.</strong></span>
                                 </td>
                             </tr>
                             <tr>
@@ -161,19 +161,19 @@
                             </tr>
                             <tr>
                                 <td colspan="2"><strong>Ressources utiles :</strong><br>
-                                    <a href="../files/enjeux_formation_permis_b.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#1120f5;width:230px;text-decoration:none;">LES ENJEUX DE LA FORMATION</a>
-                                    <a href="../files/parcours_formation_b.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#10ab05;width:230px;text-decoration:none;">PARCOURS DE FORMATION</a>
+                                    <a href="../files/enjeux_formation_permis_b.pdf" target="_blank" class="pl_button primary">LES ENJEUX DE LA FORMATION</a>
+                                    <a href="../files/parcours_formation_b.pdf" target="_blank" class="pl_button success">PARCOURS DE FORMATION</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2"><strong>Information handicap :</strong><br>
-                                    <span style="color:#e74c3c">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adéquat, nous ne pouvons donc dispenser ce type de formation spécifique.</span><br>
-                                    <span style="color:#e74c3c">Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</span>
+                                    <span class="text-error">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adéquat, nous ne pouvons donc dispenser ce type de formation spécifique.</span><br>
+                                    <span class="text-error">Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</span>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section" id="table-b-accompagnee" style="display:none;">
+                    <table class="horaires-table formations-table formation-b-section hidden" id="table-b-accompagnee">
                         <thead>
                             <tr>
                                 <th>APPRENTISSAGE ANTICIPÉ DE LA CONDUITE - CONDUITE ACCOMPAGNÉE</th>
@@ -261,16 +261,16 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <p style="text-align:center;">
-                                        <a href="../files/enjeux_formation_permis_b.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#1120f5;width:230px;text-decoration:none;display:inline-block;">LES ENJEUX DE LA FORMATION</a>
+                                    <p class="text-center">
+                                        <a href="../files/enjeux_formation_permis_b.pdf" target="_blank" class="pl_button primary">LES ENJEUX DE LA FORMATION</a>
                                     </p>
-                                    <p style="color:#e74c3c"><strong>INFORMATION HANDICAP :</strong></p>
-                                    <p style="color:#e74c3c">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adapté, nous ne pouvons donc dispenser ce type de formation spécifique. Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</p>
+                                    <p class="text-error"><strong>INFORMATION HANDICAP :</strong></p>
+                                    <p class="text-error">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adapté, nous ne pouvons donc dispenser ce type de formation spécifique. Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section" id="table-b-supervisee" style="display:none;">
+                    <table class="horaires-table formations-table formation-b-section hidden" id="table-b-supervisee">
                         <thead>
                             <tr>
                                 <th>CONDUITE SUPERVISÉE</th>
@@ -290,22 +290,22 @@
                                     </ul>
                                     </p>
                                     <p>La conduite supervisée vise à améliorer la sécurité des nouveaux conducteurs en augmentant leur expérience pratique avant l’examen pratique.</p>
-                                    <p style="text-align:center;">
-                                        <a href="../files/enjeux_formation_permis_b.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#1120f5;width:230px;text-decoration:none;">LES ENJEUX DE LA FORMATION</a>
+                                    <p class="text-center">
+                                        <a href="../files/enjeux_formation_permis_b.pdf" target="_blank" class="pl_button primary">LES ENJEUX DE LA FORMATION</a>
                                     </p>
-                                    <p style="text-align:center;">
-                                        <a href="../files/programme_formation_b.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#8405ab;width:230px;text-decoration:none;">PROGRAMME DE FORMATION</a>
+                                    <p class="text-center">
+                                        <a href="../files/programme_formation_b.pdf" target="_blank" class="pl_button purple">PROGRAMME DE FORMATION</a>
                                     </p>
-                                    <p style="text-align:center;">
-                                        <a href="../files/parcours_formation_b.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#10ab05;width:230px;text-decoration:none;">PARCOURS DE FORMATION</a>
+                                    <p class="text-center">
+                                        <a href="../files/parcours_formation_b.pdf" target="_blank" class="pl_button success">PARCOURS DE FORMATION</a>
                                     </p>
                                     <h4>Information handicap</h4>
-                                    <p style="color:#e74c3c">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adéquat, nous ne pouvons donc dispenser ce type de formation spécifique. Consultez <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> pour trouver une auto-école adaptée.</p>
+                                    <p class="text-error">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adéquat, nous ne pouvons donc dispenser ce type de formation spécifique. Consultez <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> pour trouver une auto-école adaptée.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section" id="table-b-automatique" style="display:none;">
+                    <table class="horaires-table formations-table formation-b-section hidden" id="table-b-automatique">
                         <thead>
                             <tr>
                                 <th>PERMIS B - BOÎTE AUTOMATIQUE</th>
@@ -333,22 +333,22 @@
                                         <li>avoir obtenu son permis depuis au moins 6 mois ;</li>
                                         <li>suivre une formation de 7 heures en auto-école.</li>
                                     </ul>
-                                    <p style="text-align:center"><strong>Après cette formation, vous pourrez demander la modification auprès de la préfecture pour obtenir le permis boîte manuelle sans nouvel examen.</strong></p>
-                                    <p style="text-align:center;">
-                                        <a href="../files/enjeux_formation_permis_b.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#1120f5;width:230px;text-decoration:none;">LES ENJEUX DE LA FORMATION</a>
+                                    <p class="text-center"><strong>Après cette formation, vous pourrez demander la modification auprès de la préfecture pour obtenir le permis boîte manuelle sans nouvel examen.</strong></p>
+                                    <p class="text-center">
+                                        <a href="../files/enjeux_formation_permis_b.pdf" target="_blank" class="pl_button primary">LES ENJEUX DE LA FORMATION</a>
                                     </p>
-                                    <p style="text-align:center;">
-                                        <a href="../files/programme_formation_b.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#8405ab;width:290px;text-decoration:none;">PROGRAMME DE FORMATION B78 vers B</a>
+                                    <p class="text-center">
+                                        <a href="../files/programme_formation_b.pdf" target="_blank" class="pl_button purple">PROGRAMME DE FORMATION B78 vers B</a>
                                     </p>
-                                    <p style="text-align:center;">
-                                        <a href="../files/parcours_formation_b.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#10ab05;width:230px;text-decoration:none;">PARCOURS DE FORMATION</a>
+                                    <p class="text-center">
+                                        <a href="../files/parcours_formation_b.pdf" target="_blank" class="pl_button success">PARCOURS DE FORMATION</a>
                                     </p>
-                                    <p style="color:#e74c3c">INFORMATION HANDICAP : chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adéquat, nous ne pouvons donc dispenser ce type de formation spécifique. Consultez <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> pour trouver une auto-école adaptée.</p>
+                                    <p class="text-error">INFORMATION HANDICAP : chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adéquat, nous ne pouvons donc dispenser ce type de formation spécifique. Consultez <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> pour trouver une auto-école adaptée.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section" id="table-am-bsr" style="display:none;">
+                    <table class="horaires-table formations-table formation-b-section hidden" id="table-am-bsr">
                         <thead>
                             <tr>
                                 <th>PERMIS AM (BSR)</th>
@@ -380,18 +380,18 @@
                                         <li>Attestation d'hébergement</li>
                                         <li>Justificatif de domicile de moins de 3 mois</li>
                                     </ul>
-                                    <p style="text-align:center;">
-                                        <a href="../files/enjeux_formation_permis_am.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#1120f5;width:230px;text-decoration:none;">LES ENJEUX DE LA FORMATION</a>
+                                    <p class="text-center">
+                                        <a href="../files/enjeux_formation_permis_am.pdf" target="_blank" class="pl_button primary">LES ENJEUX DE LA FORMATION</a>
                                     </p>
-                                    <p style="text-align:center;">
-                                        <a href="../files/programme_formation_permis_am.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#8405ab;width:230px;text-decoration:none;">PROGRAMME DE FORMATION AM</a>
+                                    <p class="text-center">
+                                        <a href="../files/programme_formation_permis_am.pdf" target="_blank" class="pl_button purple">PROGRAMME DE FORMATION AM</a>
                                     </p>
-                                    <p style="color:#e74c3c">INFORMATION HANDICAP : chaque situation étant unique et ne disposant pas de matériel évolutif et adéquat, nous ne pouvons pas dispenser ce type de formation spécifique. Consultez <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> pour trouver une auto-école adaptée.</p>
+                                    <p class="text-error">INFORMATION HANDICAP : chaque situation étant unique et ne disposant pas de matériel évolutif et adéquat, nous ne pouvons pas dispenser ce type de formation spécifique. Consultez <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> pour trouver une auto-école adaptée.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table" id="table-moto-a1" style="display:none;">
+                    <table class="horaires-table formations-table hidden" id="table-moto-a1">
                         <thead>
                             <tr>
                                 <th>PERMIS MOTO A1 - PERMIS 125</th>
@@ -402,11 +402,11 @@
                                 <td>
                                     <h3>LE PERMIS A1 - QU'EST CE QUE C'EST ?</h3>
                                     <p>Le permis A1 ou permis 125 est accessible dès l'âge de 16 ans et permet la conduite d’une cylindrée inférieure à 125cm3, d’une puissance inférieure à 15 ch. Il nécessite de passer l'examen du code de la route et d'effectuer une formation minimale de 8 heures de leçons hors circulation (plateau) et 12 heures de leçon en circulation. Après obtention du code, l'examen pratique comprend une épreuve hors circulation et une épreuve en circulation.</p>
-                                    <p style="text-align:center">Nous disposons de 2 Yamaha 125 cm3 MT125.</p>
-                                    <p style="text-align:center"><strong style="color:#c0392b">L'élève doit venir équipé de gants, d'un casque, d'un pantalon, de chaussures montantes et d'une veste. En raison de la crise sanitaire, l'auto-école ne peut plus fournir de matériel.</strong></p>
+                                    <p class="text-center">Nous disposons de 2 Yamaha 125 cm3 MT125.</p>
+                                    <p class="text-center"><strong class="text-warning">L'élève doit venir équipé de gants, d'un casque, d'un pantalon, de chaussures montantes et d'une veste. En raison de la crise sanitaire, l'auto-école ne peut plus fournir de matériel.</strong></p>
                                     <iframe 
                                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1463.5427251546691!2d6.558745088173876!3d48.59183783549939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfr!4v1759304503819!5m2!1sen!2sfr"
-                                        width="1400" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                        width="1400" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                                     </iframe>
                                 </td>
                             </tr>
@@ -455,16 +455,16 @@
                             <tr>
                                 <td>
                                     <h3>Ressources et informations complémentaires</h3>
-                                    <p style="text-align:center">
-                                        <a href="../files/programme_formation_125cm3.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#10ab05;width:230px;text-decoration:none;display:inline-block;margin:6px;">PARCOURS DE FORMATION</a>
+                                    <p class="text-center">
+                                        <a href="../files/programme_formation_125cm3.pdf" target="_blank" class="pl_button success">PARCOURS DE FORMATION</a>
                                     </p>
-                                    <p style="color:#e74c3c"><strong>INFORMATION HANDICAP :</strong></p>
-                                    <p style="color:#e74c3c">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adapté, nous ne pouvons donc dispenser ce type de formation spécifique. Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</p>
+                                    <p class="text-error"><strong>INFORMATION HANDICAP :</strong></p>
+                                    <p class="text-error">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adapté, nous ne pouvons donc dispenser ce type de formation spécifique. Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table" id="table-moto-a2" style="display:none;">
+                    <table class="horaires-table formations-table hidden" id="table-moto-a2">
                         <thead>
                             <tr>
                                 <th>PERMIS MOTO A2</th>
@@ -475,8 +475,8 @@
                                 <td>
                                     <h3>LE PERMIS A2 - QU'EST CE QUE C'EST ?</h3>
                                     <p>Le permis A2 est accessible dès l'âge de <strong>18 ans</strong> et permet la conduite de motos d'une puissance limitée (puissance brute maximale prévue par la réglementation). Il nécessite le passage de l'épreuve théorique (le code) et une formation pratique comprenant des exercices hors circulation (plateau) et en circulation.</p>
-                                    <p style="text-align:center">Nous disposons de 3 Yamaha 689 cm3 MT-07 pour les formations A2.</p>
-                                    <p style="text-align:center"><strong style="color:#c0392b">L'élève doit venir équipé de gants, d'un casque homologué, d'un pantalon, de chaussures montantes et d'une veste.</strong></p>
+                                    <p class="text-center">Nous disposons de 3 Yamaha 689 cm3 MT-07 pour les formations A2.</p>
+                                    <p class="text-center"><strong class="text-warning">L'élève doit venir équipé de gants, d'un casque homologué, d'un pantalon, de chaussures montantes et d'une veste.</strong></p>
                                     <h3>LES ENJEUX DE LA FORMATION</h3>
                                     <p>La formation vise à amener le futur conducteur à maîtriser les compétences théoriques et pratiques nécessaires pour circuler en sécurité : connaissance du véhicule, maîtrise des trajectoires, freinage, anticipation et comportements adaptés aux différents contextes routiers.</p>
                                     <h3>Lieu et organisation</h3>
@@ -491,18 +491,18 @@
                                         <li>Attestation d'hébergement (si nécessaire)</li>
                                         <li>4 timbres poste</li>
                                     </ul>
-                                    <p style="text-align:center;">
-                                        <a href="../files/enjeux_formation_a2.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#1120f5;width:230px;text-decoration:none;display:inline-block;margin:6px;">LES ENJEUX DE LA FORMATION</a>
+                                    <p class="text-center">
+                                        <a href="../files/enjeux_formation_a2.pdf" target="_blank" class="pl_button primary">LES ENJEUX DE LA FORMATION</a>
                                     </p>
-                                    <p style="text-align:center;">
-                                        <a href="../files/programme_formation_a2.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#8405ab;width:230px;text-decoration:none;display:inline-block;margin:6px;">PROGRAMME DE FORMATION A2</a>
+                                    <p class="text-center">
+                                        <a href="../files/programme_formation_a2.pdf" target="_blank" class="pl_button purple">PROGRAMME DE FORMATION A2</a>
                                     </p>
-                                    <p style="color:#e74c3c">INFORMATION HANDICAP : chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adapté, nous ne pouvons donc dispenser ce type de formation spécifique. Consultez <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> pour trouver une auto‑école adaptée.</p>
+                                    <p class="text-error">INFORMATION HANDICAP : chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adapté, nous ne pouvons donc dispenser ce type de formation spécifique. Consultez <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> pour trouver une auto‑école adaptée.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table" id="table-passerelle-a2-a" style="display:none;">
+                    <table class="horaires-table formations-table hidden" id="table-passerelle-a2-a">
                         <thead>
                             <tr>
                                 <th>FORMATION PASSERELLE A2 → A</th>
@@ -516,9 +516,9 @@
                                     <p>Les conducteurs de motocyclettes sont largement sur-exposés au risque routier. L’effort de renforcement de l’éducation et de la formation à la conduite de ce type de véhicule doit donc être poursuivi.</p>
                                     <p>L’objectif général de la formation est d’amener tout conducteur à la maîtrise de compétences en termes de savoirs, savoir-être, savoir-faire et savoir-devenir.</p>
                                     <p>Apprendre à conduire une motocyclette est une démarche éducative exigeante et ce livret va vous guider dans votre progression avec l’aide de votre formateur, enseignant diplômé de la sécurité routière.</p>
-                                    <p style="text-align:center"><strong>Une formation de <span style="color:#ff0000">7 heures</span> est obligatoire pour tous les titulaires du permis A2 qui souhaitent passer sur la catégorie A.</strong></p>
-                                    <p style="text-align:center">Nous disposons de 3 Yamaha 689 cm3 MT-07 pour les formations.</p>
-                                    <p style="text-align:center"><strong style="color:#c0392b">L'élève doit venir équipé de gants, d'un casque homologué, d'un pantalon, de chaussures montantes et d'une veste.</strong></p>
+                                    <p class="text-center"><strong>Une formation de <span class="text-warning">7 heures</span> est obligatoire pour tous les titulaires du permis A2 qui souhaitent passer sur la catégorie A.</strong></p>
+                                    <p class="text-center">Nous disposons de 3 Yamaha 689 cm3 MT-07 pour les formations.</p>
+                                    <p class="text-center"><strong class="text-warning">L'élève doit venir équipé de gants, d'un casque homologué, d'un pantalon, de chaussures montantes et d'une veste.</strong></p>
                                 </td>
                             </tr>
                             <tr>
@@ -527,7 +527,7 @@
                                     <p>Les séances pratiques se déroulent en grande partie sur notre piste privée située près de l'aéroclub de Chanteheux (derrière le club Canin), à environ 3 minutes en voiture de l'auto‑école. Les cours ont lieu du lundi au vendredi de 7h à 19h et le samedi de 7h à 17h.</p>
                                     <iframe 
                                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1463.5427251546691!2d6.558745088173876!3d48.59183783549939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfr!4v1759304503819!5m2!1sen!2sfr"
-                                        width="1400" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                        width="1400" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                                     </iframe>
                                 </td>
                             </tr>
@@ -543,19 +543,19 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="text-align:center;">
-                                    <a href="//www.autoecoleroutart.com/userfiles/files/parcours%20de%20formation%20A.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#10ab05;width:230px;text-decoration:none;display:inline-block;">PARCOURS DE FORMATION</a>
+                                <td class="text-center">
+                                    <a href="//www.autoecoleroutart.com/userfiles/files/parcours%20de%20formation%20A.pdf" target="_blank" class="pl_button success">PARCOURS DE FORMATION</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p style="color:#e74c3c"><strong>INFORMATION HANDICAP :</strong></p>
-                                    <p style="color:#e74c3c">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adapté, nous ne pouvons donc dispenser ce type de formation spécifique. Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</p>
+                                    <p class="text-error"><strong>INFORMATION HANDICAP :</strong></p>
+                                    <p class="text-error">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adapté, nous ne pouvons donc dispenser ce type de formation spécifique. Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table" id="table-formation-125cc" style="display:none;">
+                    <table class="horaires-table formations-table hidden" id="table-formation-125cc">
                         <thead>
                             <tr>
                                 <th>FORMATION 125 CC</th>
@@ -569,9 +569,9 @@
                                     <p>Les conducteurs de motocyclettes sont largement sur-exposés pour ce qui est du risque routier. L’effort de renforcement de l’éducation et de la formation à la conduite de ce type de véhicule doit donc être poursuivi.</p>
                                     <p>L’objectif général de la formation est d’amener tout conducteur à la maîtrise de compétences en termes de savoirs, savoir-être, savoir-faire, et savoir-devenir.</p>
                                     <p>Apprendre à conduire une motocyclette est une démarche éducative exigeante et ce livret va vous guider dans votre progression avec l’aide de votre formateur, enseignant diplômé de la sécurité routière.</p>
-                                    <p style="text-align:center"><strong>Une formation 125 cm3</strong> de <span style="color:#ff0000">7 heures</span> est <strong><span style="color:#ff0000">obligatoire pour tous les titulaires du permis B</span></strong> qui souhaitent commencer à conduire un deux-roues motorisé de 50 à 125 cm3 ou un « scooter à trois roues » de plus de 50 cm3.</p>
-                                    <p style="text-align:center">Nous disposons de 2 Yamaha 125 cm3 MT125.</p>
-                                    <p style="text-align:center"><strong style="color:#c0392b">L'élève doit venir équipé de gants, d'un casque, d'un pantalon, de chaussures montantes et d'une veste. En raison de la crise sanitaire, l'auto-école ne peut plus fournir de matériel.</strong></p>
+                                    <p class="text-center"><strong>Une formation 125 cm3</strong> de <span class="text-warning">7 heures</span> est <strong><span class="text-warning">obligatoire pour tous les titulaires du permis B</span></strong> qui souhaitent commencer à conduire un deux-roues motorisé de 50 à 125 cm3 ou un « scooter à trois roues » de plus de 50 cm3.</p>
+                                    <p class="text-center">Nous disposons de 2 Yamaha 125 cm3 MT125.</p>
+                                    <p class="text-center"><strong class="text-warning">L'élève doit venir équipé de gants, d'un casque, d'un pantalon, de chaussures montantes et d'une veste. En raison de la crise sanitaire, l'auto-école ne peut plus fournir de matériel.</strong></p>
                                 </td>
                             </tr>
                             <tr>
@@ -581,7 +581,7 @@
                                     <p>Nous disposons d'une convention avec l'aéroclub afin d'exploiter cette piste. La piste est équipée d'un bungalow mais cet abri ne contient pas de sanitaires.</p>
                                     <iframe 
                                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1463.5427251546691!2d6.558745088173876!3d48.59183783549939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfr!4v1759304503819!5m2!1sen!2sfr"
-                                        width="1400" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                        width="1400" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                                     </iframe>
                                 </td>
                             </tr>
@@ -598,16 +598,16 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <p style="text-align:center;">
-                                        <a href="../files/Programme%20de%20formation%20125cm3.pdf" target="_blank" class="pl_button" style="color:#ffffff;border-color:#ffffff;background-color:#8405ab;width:230px;text-decoration:none;display:inline-block;">PROGRAMME DE FORMATION</a>
+                                    <p class="text-center">
+                                        <a href="../files/Programme%20de%20formation%20125cm3.pdf" target="_blank" class="pl_button purple">PROGRAMME DE FORMATION</a>
                                     </p>
-                                    <p style="color:#e74c3c"><strong>INFORMATION HANDICAP :</strong></p>
-                                    <p style="color:#e74c3c">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adapté, nous ne pouvons donc dispenser ce type de formation spécifique. Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</p>
+                                    <p class="text-error"><strong>INFORMATION HANDICAP :</strong></p>
+                                    <p class="text-error">Chaque situation de handicap étant unique et ne disposant pas de matériel évolutif et adapté, nous ne pouvons donc dispenser ce type de formation spécifique. Cependant vous pouvez consulter le site <a href="https://www.automobile.ceremh.org" target="_blank">automobile.ceremh.org</a> afin de trouver une auto-école adaptée à vos besoins.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table" id="table-post-permis" style="display:none;">
+                    <table class="horaires-table formations-table hidden" id="table-post-permis">
                         <thead>
                             <tr>
                                 <th>FORMATION POST-PERMIS</th>

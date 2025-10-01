@@ -1,0 +1,241 @@
+/* Page-specific sections - Consolidated styles */
+
+/* Content sections - unified approach */
+.content-section {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: 2.5rem 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.content-section h1,
+.content-section h2.section-title {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.content-section h2 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.content-section h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.content-section p {
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.1rem;
+    text-align: left;
+}
+
+.content-section ul {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+    padding: 1.2rem 1.5rem;
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    list-style: disc inside;
+}
+
+.content-section ol {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+    padding: 1.2rem 1.5rem;
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    list-style: decimal inside;
+}
+
+.content-section ul li,
+.content-section ol li {
+    margin-bottom: 0.7em;
+    line-height: 1.6;
+}
+
+.content-section .d-flex {
+    margin: 1.5rem 0;
+}
+
+.content-section img.img-fluid {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    max-width: 100%;
+    height: auto;
+}
+
+.content-section a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.content-section a:hover {
+    color: var(--accent-color);
+}
+
+/* Specific content blocks */
+.content-block {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 1.7rem 2rem;
+    margin: 1.2rem 0 1.5rem 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.content-block-title {
+    font-size: 1.15rem;
+    color: var(--accent-color);
+    margin-bottom: 1.1rem;
+    text-align: left;
+}
+
+.content-block-list {
+    list-style: disc inside;
+    font-size: 1.08rem;
+    color: var(--text-color);
+    padding-left: 0.5rem;
+    margin-bottom: 0;
+}
+
+.content-block-list li {
+    margin-bottom: 0.7em;
+    line-height: 1.6;
+    padding-left: 0.2em;
+}
+
+/* Special content areas */
+.quick-nav {
+    background: var(--light-gray);
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 2rem;
+}
+
+.quick-nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.quick-nav-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.boxed {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    margin: 1rem 0;
+}
+
+.summary {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.more-content {
+    text-align: left;
+}
+
+.toggle-more {
+    cursor: pointer;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.collapsible .summary p {
+    margin-bottom: 0.6rem;
+}
+
+.more-content p {
+    margin-bottom: 0.6rem;
+}
+
+/* Specific page styles - kept for unique elements */
+.garantie-section {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: 2.5rem 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+.logo-groupama-wrapper {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+}
+
+.logo-groupama {
+    max-width: 300px;
+    height: auto;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.reclamation-cloture {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+.reclamation-contact {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.reclamation-contact h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.reclamation-contact address {
+    font-style: normal;
+    line-height: 1.6;
+}
