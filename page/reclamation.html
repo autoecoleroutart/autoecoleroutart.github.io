@@ -24,7 +24,7 @@
                         <li><button class="nav-btn" onclick="location.href='tarifs.html'">Tarifs</button></li>
                         <li><button class="nav-btn" onclick="location.href='financement.html'">Financement</button></li>
                         <li><button class="nav-btn" onclick="location.href='contact.html'">Contact</button></li>
-                        <li><button class="nav-btn" onclick="location.href='page/code_de_la_route.html'">Code de la Route</button></li>
+                        <li><button class="nav-btn" onclick="location.href='page/code_de_la_route.html'">Code de la Route de la Route</button></li>
                         <li><button class="nav-btn" onclick="location.href='equipe.html'">Équipe</button></li>
                     </ul>
                 </nav>
@@ -48,17 +48,95 @@
 
         <main>
             <section class="container reclamation-section">
-                <h2 class="section-title">GESTION DES RÉCLAMATIONS</h2>
-                <ol>
-                    <li>Toute réclamation exprimée par un élève (orale ou écrite) devra être enregistrée et signée sur notre registre des réclamations (disponible à l'accueil) afin d'être traitée dans les plus brefs délais.</li>
-                    <li>Nous confirmerons à l'élève la prise en compte de sa réclamation pour qu'il ait conscience que son problème est en cours de traitement.</li>
-                    <li>Le traitement de la réclamation peut parfois nécessiter une expertise ou une étude. Les documents utilisés seront joints à la réclamation.</li>
-                    <li>Si aucune solution n'est trouvée dans les 15 jours, nous reviendrons vers l'élève pour lui indiquer l'état du traitement et nous garderons une trace de cette démarche.</li>
-                    <li>Nous analyserons les causes des réclamations afin de trouver les raisons ayant provoqué la défaillance afin que les problèmes ne se reproduisent plus.</li>
-                </ol>
-                <p class="reclamation-cloture"><strong>La clôture sera effective uniquement lorsque nous aurons confirmation par le client que tout est traité correctement et que ce dernier est satisfait.</strong></p>
-                <div class="reclamation-contact">
-                    <h3>Vous trouverez nos informations de contact sur <a href="contact.html">cette page</a>.</h3>
+                <div class="reclamation-intro">
+                    <h2 class="section-title">Notre procédure de gestion des réclamations</h2>
+                    <p class="intro-text">Votre satisfaction est notre priorité absolue. Nous avons mis en place une procédure claire et efficace pour traiter vos réclamations dans les meilleurs délais.</p>
+                </div>
+
+                <!-- Processus de réclamation en étapes -->
+                <div class="complaint-process">
+                    <h3 class="process-title">Les étapes de traitement</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Enregistrement</h4>
+                                <p>Toute réclamation (orale ou écrite) est enregistrée et signée sur notre registre des réclamations disponible à l'accueil pour être traitée dans les plus brefs délais.</p>
+                                <div class="step-icon">📝</div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Confirmation</h4>
+                                <p>Nous confirmons immédiatement à l'élève la prise en compte de sa réclamation pour qu'il ait conscience que son problème est en cours de traitement.</p>
+                                <div class="step-icon">✅</div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Analyse & Expertise</h4>
+                                <p>Le traitement peut nécessiter une expertise ou une étude approfondie. Tous les documents utilisés sont joints à la réclamation.</p>
+                                <div class="step-icon">🔍</div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Suivi & Communication</h4>
+                                <p>Si aucune solution n'est trouvée dans les 15 jours, nous vous informons de l'état du traitement et gardons une trace de cette démarche.</p>
+                                <div class="step-icon">📞</div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Amélioration Continue</h4>
+                                <p>Nous analysons les causes des réclamations pour identifier les défaillances et éviter que les problèmes ne se reproduisent.</p>
+                                <div class="step-icon">🔄</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informations importantes -->
+                <div class="important-info">
+                    <div class="closure-info">
+                        <div class="info-icon">🎯</div>
+                        <h3>Clôture de la réclamation</h3>
+                        <p>La clôture sera effective uniquement lorsque nous aurons confirmation par le client que tout est traité correctement et que ce dernier est satisfait.</p>
+                    </div>
+                </div>
+
+                <!-- Garanties qualité -->
+                <div class="quality-guarantees">
+                    <h3 class="guarantees-title">Nos engagements qualité</h3>
+                    <div class="guarantees-grid">
+                        <div class="guarantee-item">
+                            <div class="guarantee-icon">⚡</div>
+                            <h4>Réactivité</h4>
+                            <p>Traitement rapide de votre réclamation dès sa réception.</p>
+                        </div>
+                        <div class="guarantee-item">
+                            <div class="guarantee-icon">🤝</div>
+                            <h4>Écoute</h4>
+                            <p>Une attention particulière portée à vos préoccupations.</p>
+                        </div>
+                        <div class="guarantee-item">
+                            <div class="guarantee-icon">🎯</div>
+                            <h4>Résolution</h4>
+                            <p>Recherche active de solutions adaptées à votre situation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="reclamation-contact-cta">
+                    <h3>Besoin de déposer une réclamation ?</h3>
+                    <p>Notre équipe est à votre disposition pour vous accompagner dans cette démarche.</p>
+                    <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+                    <p class="contact-info">Retrouvez toutes nos informations de contact sur notre <a href="contact.html" class="contact-link">page contact</a>.</p>
                 </div>
             </section>
         </main>

@@ -24,7 +24,7 @@
                         <li><button class="nav-btn" onclick="location.href='tarifs.html'">Tarifs</button></li>
                         <li><button class="nav-btn" onclick="location.href='financement.html'">Financement</button></li>
                         <li><button class="nav-btn" onclick="location.href='contact.html'">Contact</button></li>
-                        <li><button class="nav-btn" onclick="location.href='page/code_de_la_route.html'">Code de la Route</button></li>
+                        <li><button class="nav-btn" onclick="location.href='page/code_de_la_route.html'">Code de la Route de la Route</button></li>
                         <li><button class="nav-btn" onclick="location.href='equipe.html'">Équipe</button></li>
                     </ul>
                 </nav>
@@ -46,17 +46,126 @@
         </section>
         <main>
             <section class="container garantie-section">
-                <h2 class="section-title">LA GARANTIE FINANCIÈRE</h2>
-                <div class="logo-groupama-wrapper">
-                    <img src="../images/Logo-Groupama_300p.png" alt="Logo Groupama" class="logo-groupama">
+                <div class="garantie-intro">
+                    <h2 class="section-title">Notre garantie financière</h2>
+                    <p class="intro-text">Votre sécurité financière est notre priorité. Découvrez comment nous protégeons vos investissements formation.</p>
                 </div>
-                <h3>Qu'est-ce que la garantie financière ?</h3>
-                <p>La garantie financière est souscrite par l'auto-école au bénéfice de ses élèves auprès d'un organisme financier : ici Groupama.</p>
-                <p>C'est une couverture qui <strong>prévoyait le remboursement des prestations non réalisées pour tous les candidats au cas où l'exploitation de l'école de conduite serait rendue impossible</strong> du fait d'une décision administrative ou judiciaire entraînant une fermeture définitive ou ininterrompue d'au moins trois mois. Ce remboursement est effectué directement par l'assurance de l'auto-école.</p>
-                <p><u><strong>Cette "Garantie Financière" est offerte aux élèves inscrits dans notre établissement.</strong></u></p>
-                <p>La garantie financière des auto-écoles assure aux élèves qu’ils seront remboursés des sommes avancées si l’auto-école est défaillante et ne peut alors pas fournir de formation en cas de cessation d'activité.</p>
-                <h3>Contact et informations</h3>
-                <p>Pour toute question ou demande de justificatif, n'hésitez pas à nous recontrer via la page <a href="contact.html">Contact</a>.</p>
+
+                <!-- Logo et partenariat -->
+                <div class="partner-section">
+                    <div class="partner-card">
+                        <div class="partner-header">
+                            <div class="partner-icon">🛡️</div>
+                            <h3>Notre organisme de garantie</h3>
+                        </div>
+                        <div class="logo-groupama-wrapper">
+                            <img src="../images/Logo-Groupama_300p.png" alt="Logo Groupama" class="logo-groupama">
+                        </div>
+                        <p class="partner-desc">Votre formation est protégée grâce à la garantie financière souscrite auprès de <strong>Groupama</strong>, conformément à la réglementation en vigueur.</p>
+                    </div>
+                </div>
+
+                <!-- Explication de la garantie -->
+                <div class="guarantee-explanation">
+                    <div class="explanation-header">
+                        <div class="header-icon">💰</div>
+                        <h3>Qu'est-ce que la garantie financière ?</h3>
+                        <p class="header-desc">Une protection complète pour votre investissement formation</p>
+                    </div>
+
+                    <div class="explanation-content">
+                        <div class="explanation-card">
+                            <div class="card-icon">📋</div>
+                            <div class="card-content">
+                                <h4>Définition</h4>
+                                <p>La garantie financière est souscrite par notre auto-école au bénéfice de ses élèves auprès de <strong>Groupama</strong>, organisme agréé pour ce type de garantie.</p>
+                            </div>
+                        </div>
+
+                        <div class="explanation-card">
+                            <div class="card-icon">🔒</div>
+                            <div class="card-content">
+                                <h4>Protection</h4>
+                                <p>Cette couverture <strong>prévoit le remboursement des prestations non réalisées</strong> pour tous les candidats en cas de fermeture définitive ou d'interruption d'au moins trois mois.</p>
+                            </div>
+                        </div>
+
+                        <div class="explanation-card">
+                            <div class="card-icon">💶</div>
+                            <div class="card-content">
+                                <h4>Remboursement direct</h4>
+                                <p>Le remboursement est effectué <strong>directement par l'assurance</strong> de l'auto-école, sans démarche complexe de votre part.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avantages pour les élèves -->
+                <div class="benefits-section">
+                    <h3 class="benefits-title">Vos avantages</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✅</div>
+                            <h4>Protection obligatoire</h4>
+                            <p>Cette protection financière est <strong>souscrite par l'auto-école</strong> conformément à la réglementation pour tous les élèves inscrits.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">💸</div>
+                            <h4>Remboursement assuré</h4>
+                            <p>Récupération des sommes avancées en cas de défaillance de l'auto-école ou cessation d'activité.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🏦</div>
+                            <h4>Organisme agréé</h4>
+                            <p>Garantie souscrite auprès de Groupama, organisme agréé et reconnu pour les garanties financières des auto-écoles.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Situations couvertes -->
+                <div class="coverage-section">
+                    <h3 class="coverage-title">Situations couvertes par la garantie</h3>
+                    <div class="coverage-list">
+                        <div class="coverage-item">
+                            <div class="coverage-icon">⚖️</div>
+                            <div class="coverage-content">
+                                <h4>Décision administrative</h4>
+                                <p>Fermeture ordonnée par les autorités administratives</p>
+                            </div>
+                        </div>
+                        <div class="coverage-item">
+                            <div class="coverage-icon">🏛️</div>
+                            <div class="coverage-content">
+                                <h4>Décision judiciaire</h4>
+                                <p>Fermeture suite à une décision de justice</p>
+                            </div>
+                        </div>
+                        <div class="coverage-item">
+                            <div class="coverage-icon">🏢</div>
+                            <div class="coverage-content">
+                                <h4>Cessation d'activité</h4>
+                                <p>Arrêt définitif de l'exploitation de l'auto-école</p>
+                            </div>
+                        </div>
+                        <div class="coverage-item">
+                            <div class="coverage-icon">📅</div>
+                            <div class="coverage-content">
+                                <h4>Interruption prolongée</h4>
+                                <p>Fermeture ininterrompue d'au moins trois mois</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact et informations -->
+                <div class="contact-section">
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Questions ou justificatifs ?</h3>
+                        <p>Notre équipe est à votre disposition pour toute demande d'information ou justificatif concernant notre garantie financière.</p>
+                        <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+                    </div>
+                </div>
             </section>
         </main>
         <footer class="main-footer">

@@ -2,18 +2,12 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=de                                <h3>Aides pour les 18-25 ans en insertion professionnelle</h3>
-                                <p>Certaines catégories de personnes peuvent bénéficier d'une aide financière pour passer la catégorie B du permis de conduire. Il existe plusieurs solutions selon votre situation (chômeur, salarié, apprenti, jeune de moins de 25 ans, en situation de handicap…). Elles sont accordées par France Travail ou par le conseil départemental. L'aide vise à faciliter l'insertion professionnelle et peut atteindre 1 200 € maximum. L'aide doit être demandée avant l'inscription en auto-école.</p>
-                                </div>
-                                <p><button class="btn btn-outline small toggle-more" aria-expanded="false">Voir plus</button></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>dth, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Financement - Auto-École Rout'Art</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../style/main.css">
         <link rel="icon" href="../icon/logo_routart_modern.png" type="image/x-icon">
+        <script src="../script/script.js"></script>
         <script src="../script/financement.js"></script>
     </head>
     <body>
@@ -24,7 +18,7 @@
                         <img src="../images/logo_routart_modern.png" alt="Logo Auto-École Rout'Art">
                     </a>
                 </div>
-                <nav class="main-nav">
+                <nav class="main-nav" id="main-nav">
                     <ul class="nav-list">
                         <li><button class="nav-btn" onclick="location.href='../index.html'">Accueil</button></li>
                         <li><button class="nav-btn" onclick="location.href='formations.html'">Formations</button></li>
@@ -35,7 +29,7 @@
                         <li><button class="nav-btn" onclick="location.href='equipe.html'">Équipe</button></li>
                     </ul>
                 </nav>
-                <button class="hamburger-menu" aria-label="Ouvrir le menu">
+                <button class="hamburger-menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
                     <span></span>
                     <span></span>
                     <span></span>

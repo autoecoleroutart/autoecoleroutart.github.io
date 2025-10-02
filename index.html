@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style/main.css">
         <link rel="icon" href="icon/logo_routart_modern.png" type="image/x-icon">
-        <script src="script.js"></script>
+        <script src="script/script.js"></script>
     </head>
     <body>
         <header class="main-header">
@@ -17,7 +17,7 @@
                         <img src="images/logo_routart_modern.png" alt="Logo Auto-École Rout'Art">
                     </a>
                 </div>
-                <nav class="main-nav">
+                <nav class="main-nav" id="main-nav">
                     <ul class="nav-list">
                         <li><button class="nav-btn active" onclick="location.href='index.html'">Accueil</button></li>
                         <li><button class="nav-btn" onclick="location.href='page/formations.html'">Formations</button></li>
@@ -28,7 +28,7 @@
                         <li><button class="nav-btn" onclick="location.href='page/equipe.html'">Équipe</button></li>
                     </ul>
                 </nav>
-                <button class="hamburger-menu" aria-label="Ouvrir le menu">
+                <button class="hamburger-menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
                     <span></span>
                     <span></span>
                     <span></span>
