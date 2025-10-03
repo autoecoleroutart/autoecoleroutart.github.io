@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 // Déterminer le chemin correct selon la page actuelle
                 const isIndexPage = window.location.pathname.includes('index.html') || 
-                                   window.location.pathname.endsWith('/') || 
-                                   window.location.pathname === '/';
+                                    window.location.pathname.endsWith('/') || 
+                                    window.location.pathname === '/';
                 
                 const soundPath = isIndexPage ? 'sounds/change_page.mp3' : '../sounds/change_page.mp3';
                 
