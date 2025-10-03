@@ -1,16 +1,52 @@
 // Menu hamburger functionality
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Script loaded'); // Debug log
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const mainNav = document.querySelector('.main-nav');
     const body = document.body;
 
-    console.log('Elements found:', { hamburgerMenu, mainNav }); // Debug log
+    // Fonction pour jouer le son de changement de page au chargement
+    function playPageLoadSound() {
+        // Attendre un petit délai pour s'assurer que la page est bien chargée
+        setTimeout(() => {
+            try {
+                // Déterminer le chemin correct selon la page actuelle
+                const isIndexPage = window.location.pathname.includes('index.html') || 
+                                   window.location.pathname.endsWith('/') || 
+                                   window.location.pathname === '/';
+                
+                const soundPath = isIndexPage ? 'sounds/change_page.mp3' : '../sounds/change_page.mp3';
+                
+                const audio = new Audio(soundPath);
+                audio.volume = 0.4; // Volume modéré
+                audio.preload = 'auto';
+                
+                // Jouer le son après un court délai
+                audio.addEventListener('canplaythrough', () => {
+                    audio.play().catch(error => {
+                        // Son bloqué par le navigateur (normal pour la première visite)
+                    });
+                });
+                
+                // Forcer la lecture si l'événement ne se déclenche pas
+                setTimeout(() => {
+                    if (audio.readyState >= 2) { // HAVE_CURRENT_DATA
+                        audio.play().catch(error => {
+                            // Son bloqué (autoplay policy)
+                        });
+                    }
+                }, 100);
+                
+            } catch (error) {
+                // Erreur avec le son de chargement
+            }
+        }, 200); // Délai de 200ms après le chargement du DOM
+    }
+
+    // Jouer le son au chargement de la page
+    playPageLoadSound();
 
     if (hamburgerMenu && mainNav) {
-        console.log('Adding event listener to hamburger menu'); // Debug log
         hamburgerMenu.addEventListener('click', function() {
-            console.log('Hamburger clicked'); // Debug log
             // Toggle navigation visibility
             mainNav.classList.toggle('active');
             hamburgerMenu.classList.toggle('active');
@@ -27,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close menu when clicking on a navigation link
         const navButtons = mainNav.querySelectorAll('.nav-btn');
         navButtons.forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function(event) {
                 mainNav.classList.remove('active');
                 hamburgerMenu.classList.remove('active');
                 body.classList.remove('menu-open');
