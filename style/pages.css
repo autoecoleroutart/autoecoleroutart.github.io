@@ -1586,9 +1586,6 @@
 }
 
 /* Section partenaire - Style results-check */
-.partner-section {
-    margin-bottom: 4rem;
-}
 
 .partner-card {
     background: var(--light-gray);
@@ -1647,7 +1644,6 @@
     color: var(--white-color);
     position: relative;
     overflow: hidden;
-    margin-bottom: 4rem;
 }
 
 .guarantee-explanation::before {
@@ -1744,7 +1740,7 @@
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     border-radius: var(--border-radius-md);
     padding: 2.5rem;
-    margin: 1rem 0 4rem 0;
+    margin: 1rem 0 1rem 0;
 }
 
 .benefits-title {
@@ -1810,7 +1806,9 @@
 
 /* Section situations couvertes */
 .coverage-section {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+    background: var(--white-color);
+    border-radius: var(--border-radius-lg);
 }
 
 .coverage-title {
@@ -1930,13 +1928,6 @@
 .contact-card .btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg), 0 8px 25px var(--primary-shadow-hover);
-}
-
-.coverage-section {
-    background: var(--white-color);
-    padding: 3rem 2rem;
-    border-radius: var(--border-radius-lg);
-    margin: 3rem 0;
 }
 
 .coverage-grid {
