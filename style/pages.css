@@ -1,6 +1,9 @@
-/* Page-specific sections - Consolidated styles */
+/* =====================================================
+   ROUT'ART AUTO-ÉCOLE - STYLES DES PAGES NETTOYÉS
+   ===================================================== */
 
-/* Content sections - unified approach */
+/* ===== STYLES GÉNÉRAUX DES SECTIONS DE CONTENU ===== */
+
 .content-section {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
@@ -47,19 +50,92 @@
     text-align: left;
 }
 
-/* Financement page styles */
-.financement-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    align-items: center;
+.content-section ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    list-style-type: disc;
 }
 
-.financement-image {
-    flex: 1;
+.content-section ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    list-style-type: decimal;
+}
+
+.content-section ul li,
+.content-section ol li {
+    margin-bottom: 0.5rem;
+}
+
+.content-section a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.content-section a:hover {
+    color: var(--accent-color);
+}
+
+/* ===== NAVIGATION RAPIDE ===== */
+
+.quick-nav {
+    background: var(--light-gray);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius-md);
+}
+
+.quick-nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.quick-nav-list a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    transition: all 0.3s ease;
+}
+
+.quick-nav-list a:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* ===== UTILITAIRES ===== */
+
+.boxed {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    margin: 1rem 0;
+}
+
+.text-center {
     text-align: center;
-    margin-bottom: 1rem;
+}
+
+.more-content {
+    display: none;
+}
+
+.more-content[style*="display: block"] {
+    display: block !important;
+}
+
+/* ===== FINANCEMENT PAGE ===== */
+
+.financement-section {
+    padding: 2rem 0;
+}
+
+.financement-block {
+    margin-bottom: 2rem;
 }
 
 .financement-image img {
@@ -69,38 +145,18 @@
     box-shadow: var(--shadow-sm);
 }
 
-.financement-text {
-    flex: 2;
-    text-align: left;
-    max-width: 100%;
-}
-
 .financement-text h3 {
     color: var(--primary-color);
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
 }
 
 .financement-text p {
-    color: var(--text-color);
-    line-height: 1.6;
     margin-bottom: 1rem;
+    line-height: 1.6;
 }
 
-/* Responsive financement layout */
-@media (min-width: 768px) {
-    .financement-content {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 2rem;
-    }
-    
-    .financement-image {
-        margin-bottom: 0;
-    }
-}
-
+/* Styles spécifiques pour les listes dans content-section (code de la route) */
 .content-section ul {
     background: var(--light-gray);
     border-radius: var(--border-radius-sm);
@@ -150,200 +206,65 @@
     color: var(--accent-color);
 }
 
-/* Specific content blocks */
-.content-block {
-    background: var(--light-gray);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-sm);
-    padding: 1.7rem 2rem;
-    margin: 1.2rem 0 1.5rem 0;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+/* Layout amélioré pour financement-content (utilisé dans code de la route) */
+.financement-content {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.5rem;
+    width: 100%;
+    align-items: center;
 }
 
-.content-block-title {
-    font-size: 1.15rem;
-    color: var(--accent-color);
-    margin-bottom: 1.1rem;
-    text-align: left;
-}
-
-.content-block-list {
-    list-style: disc inside;
-    font-size: 1.08rem;
-    color: var(--text-color);
-    padding-left: 0.5rem;
-    margin-bottom: 0;
-}
-
-.content-block-list li {
-    margin-bottom: 0.7em;
-    line-height: 1.6;
-    padding-left: 0.2em;
-}
-
-/* Special content areas */
-.quick-nav {
-    background: var(--light-gray);
-    padding: 1rem;
-    border-radius: var(--border-radius-sm);
-    margin: 2rem auto;
-    max-width: 900px;
-}
-
-.quick-nav-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-}
-
-.quick-nav-list a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.boxed {
-    background: var(--white-color);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-md);
-    padding: 2rem;
-    margin: 1rem 0;
-}
-
-.summary {
-    background: var(--light-gray);
-    border-radius: var(--border-radius-sm);
-    padding: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.more-content {
-    text-align: left;
-}
-
-.toggle-more {
-    cursor: pointer;
+.financement-image {
+    flex: 1;
     text-align: center;
-    margin: 1rem 0;
-}
-
-.collapsible .summary p {
-    margin-bottom: 0.6rem;
-}
-
-.more-content p {
-    margin-bottom: 0.6rem;
-}
-
-/* Specific page styles - kept for unique elements */
-.garantie-section {
-    background: var(--white-color);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-lg);
-    padding: 2.5rem 2rem;
-    margin: 2rem auto;
-    max-width: 900px;
-    text-align: center;
-}
-
-.reclamation-cloture {
-    background: var(--light-gray);
-    border-radius: var(--border-radius-sm);
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border-left: 4px solid var(--accent-color);
-}
-
-.reclamation-contact {
-    background: var(--white-color);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-md);
-    padding: 2rem;
-    margin: 2rem 0;
-}
-
-.reclamation-contact h3 {
-    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
-.reclamation-contact address {
-    font-style: normal;
-    line-height: 1.6;
+.financement-text {
+    flex: 2;
+    text-align: left;
+    max-width: 100%;
 }
 
-/* Section contact sur la page d'accueil */
-.contact-section {
-    padding: 3rem 0;
-    background: var(--light-gray);
+/* Responsive financement layout */
+@media (min-width: 768px) {
+    .financement-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    
+    .financement-image {
+        margin-bottom: 0;
+    }
 }
 
-.contact-section .section-title {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
-}
+/* ===== FORMATIONS PAGE ===== */
 
-.contact-section .contact-info-wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.contact-section .address-details {
-    margin: 2rem 0;
-}
-
-.contact-section .address-details p {
-    justify-content: center;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.contact-section .social-links {
-    margin-top: 2rem;
-}
-
-/* Sélecteur de formations et tarifs */
 .formation-selector-wrapper {
-    text-align: center;
-    margin: 2rem auto;
-    max-width: 600px;
+    background: var(--light-gray);
     padding: 2rem;
-    background: var(--white-color);
     border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-md);
+    margin: 2rem 0;
+    text-align: center;
 }
 
 .formation-selector-wrapper label {
     display: block;
-    font-size: 1.2rem;
     font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .formation-selector-wrapper select {
-    width: 100%;
-    max-width: 400px;
-    padding: 0.75rem;
-    font-size: 1rem;
+    padding: 0.8rem 1rem;
     border: 2px solid var(--accent-color);
     border-radius: var(--border-radius-sm);
-    background-color: var(--white-color);
-    color: var(--text-color);
+    background: var(--white-color);
+    font-size: 1rem;
+    min-width: 300px;
     cursor: pointer;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .formation-selector-wrapper select:focus {
@@ -352,35 +273,16 @@
     box-shadow: 0 0 0 3px rgba(69, 123, 157, 0.2);
 }
 
-/* Tables de formations et tarifs */
-#formation-details,
-#tarif-details {
-    margin-top: 2rem;
-}
+/* ===== TABLEAUX ===== */
 
-#formation-details table,
-#tarif-details table {
-    margin: 0 auto;
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Améliorer l'apparence des tableaux de formations et tarifs */
 .formations-table,
 .tarifs-table {
+    width: 100%;
+    border-collapse: collapse;
     box-shadow: var(--shadow-lg);
     border-radius: var(--border-radius-md);
     overflow: hidden;
+    margin: 2rem 0;
 }
 
 .formations-table th,
@@ -397,6 +299,7 @@
 .tarifs-table td {
     padding: 1.2rem;
     vertical-align: top;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .formations-table tr:nth-child(even),
@@ -404,23 +307,33 @@
     background-color: var(--light-gray);
 }
 
-.formations-table ul,
-.tarifs-table ul {
-    margin: 0.5rem 0;
-    padding-left: 1.2rem;
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.formations-table ul li,
-.tarifs-table ul li {
-    margin-bottom: 0.3rem;
-    line-height: 1.5;
+#formation-details,
+#tarif-details {
+    margin-top: 2rem;
 }
 
-/* ==============================
-   POSITIONNEMENT PAGE STYLES
-   ============================== */
+#formation-details table,
+#tarif-details table {
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease-in-out;
+}
 
-/* Section principale de positionnement */
+/* ===== PAGES STYLISÉES RÉCEMMENT ===== */
+
+/* POSITIONNEMENT */
 .positionnement-section {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
@@ -433,7 +346,6 @@
     gap: 3rem;
 }
 
-/* Introduction */
 .positionnement-intro {
     text-align: center;
     margin-bottom: 2rem;
@@ -449,24 +361,15 @@
 
 .positionnement-intro .section-title::after {
     content: '';
-    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    margin: 1rem auto 0;
-    border-radius: 2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
 }
 
-.intro-text {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    line-height: 1.7;
-    max-width: 800px;
-    margin: 0 auto;
-    opacity: 0.9;
-}
-
-/* Étapes du processus */
 .process-steps {
     background: var(--light-gray);
     border-radius: var(--border-radius-md);
@@ -479,8 +382,7 @@
     color: var(--primary-color);
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 2.5rem;
-    position: relative;
+    margin-bottom: 1.5rem;
 }
 
 .process-title::before {
@@ -492,7 +394,7 @@
 
 .steps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -553,7 +455,6 @@
     opacity: 0.8;
 }
 
-/* Avantages du positionnement */
 .positioning-benefits {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     border-radius: var(--border-radius-md);
@@ -654,7 +555,6 @@
     color: var(--white-color);
     line-height: 1.6;
     opacity: 0.9;
-    margin-bottom: 0;
 }
 
 /* Call-to-action */
@@ -718,191 +618,7 @@
     transform: translateY(0);
 }
 
-/* Styles responsifs pour la page positionnement */
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* Sur tablettes, maintenir l'effet de centrage pour benefits-list */
-    .benefits-list:has(.benefit-card:nth-child(3):last-child) {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .benefits-list .benefit-card:nth-child(3):last-child {
-        grid-column: 1 / -1;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-    
-    .benefits-list:has(.benefit-card:nth-child(5):last-child) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .benefits-list .benefit-card:nth-child(5):last-child {
-        grid-column: 1 / -1;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-    
-    /* Sur tablettes, maintenir l'effet de centrage pour benefits-grid */
-    .benefits-grid:has(.benefit-item:nth-child(3):last-child) {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .benefits-grid .benefit-item:nth-child(3):last-child {
-        grid-column: 1 / -1;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .positionnement-section {
-        padding: 2rem 1.5rem;
-        gap: 2rem;
-    }
-    
-    .positionnement-intro .section-title {
-        font-size: 2rem;
-    }
-    
-    .intro-text {
-        font-size: 1.1rem;
-    }
-    
-    .process-steps {
-        padding: 2rem 1.5rem;
-    }
-    
-    .process-title {
-        font-size: 1.6rem;
-    }
-    
-    .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .step-item {
-        padding: 1.5rem;
-    }
-    
-    .step-number {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    
-    .positioning-benefits {
-        padding: 2rem 1.5rem;
-    }
-    
-    .benefits-title {
-        font-size: 1.6rem;
-    }
-    
-    .benefits-list {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    /* Réinitialiser le centrage sur mobile - tout en une colonne */
-    .benefits-list:has(.benefit-card:nth-child(3):last-child),
-    .benefits-list:has(.benefit-card:nth-child(5):last-child) {
-        grid-template-columns: 1fr;
-    }
-    
-    .benefits-list .benefit-card:nth-child(3):last-child,
-    .benefits-list .benefit-card:nth-child(5):last-child {
-        grid-column: auto;
-        max-width: none;
-        margin: 0;
-    }
-    
-    .benefit-card {
-        padding: 1.5rem;
-    }
-    
-    .positioning-cta {
-        padding: 2rem 1.5rem;
-    }
-    
-    .positioning-cta h3 {
-        font-size: 1.5rem;
-    }
-    
-    .positioning-cta .btn-primary {
-        padding: 0.8rem 2rem;
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .positionnement-section {
-        padding: 1.5rem 1rem;
-        margin: 1rem auto;
-    }
-    
-    .positionnement-intro .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .intro-text {
-        font-size: 1rem;
-    }
-    
-    .process-steps {
-        padding: 1.5rem 1rem;
-    }
-    
-    .process-title {
-        font-size: 1.4rem;
-    }
-    
-    .step-item {
-        padding: 1.2rem;
-    }
-    
-    .step-content h4 {
-        font-size: 1.2rem;
-    }
-    
-    .step-icon {
-        font-size: 2rem;
-    }
-    
-    .positioning-benefits {
-        padding: 1.5rem 1rem;
-    }
-    
-    .benefits-title {
-        font-size: 1.4rem;
-    }
-    
-    .benefit-card {
-        padding: 1.2rem;
-    }
-    
-    .benefit-card .benefit-icon {
-        font-size: 2.5rem;
-    }
-    
-    .positioning-cta {
-        padding: 1.5rem 1rem;
-    }
-    
-    .positioning-cta h3 {
-        font-size: 1.3rem;
-    }
-    
-    .positioning-cta .btn-primary {
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
-    }
-}
-
-/* ==============================
-   RECLAMATION PAGE STYLES
-   ============================== */
-
-/* Section principale de réclamation */
+/* RÉCLAMATION */
 .reclamation-section {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
@@ -915,7 +631,6 @@
     gap: 3rem;
 }
 
-/* Introduction */
 .reclamation-intro {
     text-align: center;
     margin-bottom: 2rem;
@@ -961,10 +676,10 @@
     color: var(--primary-color);
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 2.5rem;
-    position: relative;
+    margin-bottom: 1.5rem;
 }
 
+/* Suppression de l'emoji qui prenait trop de place */
 .process-title::before {
     content: '⚙️';
     display: block;
@@ -974,7 +689,6 @@
 
 .process-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -1245,237 +959,36 @@
     color: var(--accent-color);
 }
 
-/* Anciens styles pour compatibilité */
-.reclamation-cloture {
-    background: var(--light-gray);
-    border-radius: var(--border-radius-sm);
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border-left: 4px solid var(--accent-color);
-}
-
-.reclamation-contact {
+.guarantees-section {
     background: var(--white-color);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-md);
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius-lg);
+    margin: 3rem 0;
+}
+
+.guarantees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.guarantee-item {
     padding: 2rem;
-    margin: 2rem 0;
+    background: var(--light-gray);
+    border-radius: var(--border-radius-md);
+    text-align: center;
 }
 
-.reclamation-contact h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+.guarantee-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 2;
 }
 
-.reclamation-contact address {
-    font-style: normal;
-    line-height: 1.6;
-}
-
-/* Styles responsifs pour la page réclamation */
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* Sur tablettes, maintenir l'effet de centrage pour guarantees-grid */
-    .guarantees-grid:has(.guarantee-item:nth-child(3):last-child) {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .guarantees-grid .guarantee-item:nth-child(3):last-child {
-        grid-column: 1 / -1;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-    
-    /* Sur tablettes, adapter le centrage pour process-steps */
-    .process-steps:has(.process-step:nth-child(5):last-child) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .process-steps .process-step:nth-child(5):last-child {
-        grid-column: 1 / -1;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .reclamation-section {
-        padding: 2rem 1.5rem;
-        gap: 2rem;
-    }
-    
-    .reclamation-intro .section-title {
-        font-size: 2rem;
-    }
-    
-    .intro-text {
-        font-size: 1.1rem;
-    }
-    
-    .complaint-process {
-        padding: 2rem 1.5rem;
-    }
-    
-    .process-title {
-        font-size: 1.6rem;
-    }
-    
-    .process-steps {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    /* Réinitialiser le centrage sur mobile pour process-steps */
-    .process-steps:has(.process-step:nth-child(5):last-child) {
-        grid-template-columns: 1fr;
-    }
-    
-    .process-steps .process-step:nth-child(5):last-child {
-        grid-column: auto;
-        max-width: none;
-        margin: 0;
-    }
-    
-    .process-step {
-        padding: 1.5rem;
-    }
-    
-    .process-step .step-number {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    
-    .closure-info {
-        padding: 2rem 1.5rem;
-    }
-    
-    .closure-info h3 {
-        font-size: 1.4rem;
-    }
-    
-    .quality-guarantees {
-        padding: 2rem 1.5rem;
-    }
-    
-    .guarantees-title {
-        font-size: 1.6rem;
-    }
-    
-    .guarantees-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    /* Réinitialiser le centrage sur mobile */
-    .guarantees-grid:has(.guarantee-item:nth-child(3):last-child) {
-        grid-template-columns: 1fr;
-    }
-    
-    .guarantees-grid .guarantee-item:nth-child(3):last-child {
-        grid-column: auto;
-        max-width: none;
-        margin: 0;
-    }
-    
-    .guarantee-item {
-        padding: 1.5rem;
-    }
-    
-    .reclamation-contact-cta {
-        padding: 2rem 1.5rem;
-    }
-    
-    .reclamation-contact-cta h3 {
-        font-size: 1.5rem;
-    }
-    
-    .reclamation-contact-cta .btn-primary {
-        padding: 0.8rem 2rem;
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .reclamation-section {
-        padding: 1.5rem 1rem;
-        margin: 1rem auto;
-    }
-    
-    .reclamation-intro .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .intro-text {
-        font-size: 1rem;
-    }
-    
-    .complaint-process {
-        padding: 1.5rem 1rem;
-    }
-    
-    .process-title {
-        font-size: 1.4rem;
-    }
-    
-    .process-step {
-        padding: 1.2rem;
-    }
-    
-    .step-content h4 {
-        font-size: 1.2rem;
-    }
-    
-    .step-icon {
-        font-size: 2rem;
-    }
-    
-    .closure-info {
-        padding: 1.5rem 1rem;
-    }
-    
-    .closure-info h3 {
-        font-size: 1.3rem;
-    }
-    
-    .info-icon {
-        font-size: 2.5rem;
-    }
-    
-    .quality-guarantees {
-        padding: 1.5rem 1rem;
-    }
-    
-    .guarantees-title {
-        font-size: 1.4rem;
-    }
-    
-    .guarantee-item {
-        padding: 1.2rem;
-    }
-    
-    .guarantee-icon {
-        font-size: 2.5rem;
-    }
-    
-    .reclamation-contact-cta {
-        padding: 1.5rem 1rem;
-    }
-    
-    .reclamation-contact-cta h3 {
-        font-size: 1.3rem;
-    }
-    
-    .reclamation-contact-cta .btn-primary {
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
-    }
-}
-
-/* ==============================
-   RESULTAT PAGE STYLES
-   ============================== */
-
-/* Section principale des résultats */
+/* RÉSULTAT */
 .resultat-section {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
@@ -1488,7 +1001,6 @@
     gap: 3rem;
 }
 
-/* Introduction */
 .resultat-intro {
     text-align: center;
     margin-bottom: 2rem;
@@ -1638,7 +1150,7 @@
 .action-note {
     margin-top: 1rem;
     font-size: 0.9rem;
-    color: var(--white-color);
+    color: var(--text-color);
     opacity: 0.9;
     font-weight: 500;
 }
@@ -1840,6 +1352,11 @@
     opacity: 0.9;
 }
 
+.production-tracking .action-note {
+    color: var(--white-color);
+    opacity: 0.9;
+}
+
 /* Section support */
 .support-section {
     display: flex;
@@ -1895,130 +1412,7 @@
     box-shadow: var(--shadow-md);
 }
 
-/* Styles responsifs pour la page résultats */
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* Sur tablettes, maintenir l'effet de centrage pour outcomes-grid */
-    .outcomes-grid:has(.outcome-card:nth-child(2):last-child) {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .resultat-section {
-        padding: 2rem 1.5rem;
-        gap: 2rem;
-    }
-    
-    .resultat-intro .section-title {
-        font-size: 2rem;
-    }
-    
-    .intro-text {
-        font-size: 1.1rem;
-    }
-    
-    .results-check, .production-tracking {
-        padding: 2rem 1.5rem;
-    }
-    
-    .results-header h3, .tracking-header h3 {
-        font-size: 1.6rem;
-    }
-    
-    .info-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-    
-    .btn-large {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-    }
-    
-    .info-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .outcomes-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    /* Réinitialiser le centrage sur mobile */
-    .outcomes-grid:has(.outcome-card:nth-child(2):last-child) {
-        grid-template-columns: 1fr;
-    }
-    
-    .support-card {
-        padding: 2rem 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .resultat-section {
-        padding: 1.5rem 1rem;
-        margin: 1rem auto;
-    }
-    
-    .resultat-intro .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .intro-text {
-        font-size: 1rem;
-    }
-    
-    .results-check, .production-tracking {
-        padding: 1.5rem 1rem;
-    }
-    
-    .results-header h3, .tracking-header h3 {
-        font-size: 1.4rem;
-    }
-    
-    .header-icon {
-        font-size: 2.5rem;
-    }
-    
-    .info-card {
-        padding: 1.5rem;
-    }
-    
-    .btn-large {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .info-item {
-        padding: 1.2rem;
-    }
-    
-    .item-icon {
-        font-size: 1.8rem;
-    }
-    
-    .outcome-card {
-        padding: 1.5rem;
-    }
-    
-    .support-card {
-        padding: 1.5rem 1rem;
-    }
-    
-    .support-card h3 {
-        font-size: 1.4rem;
-    }
-}
-
-/* ==============================
-   SATISFACTION PAGE STYLES
-   ============================== */
-
-/* Section principale satisfaction */
+/* SATISFACTION */
 .satisfaction-section {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
@@ -2029,7 +1423,39 @@
     overflow: hidden;
 }
 
-/* Section des avantages */
+.satisfaction-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.satisfaction-encadre {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    padding: 3rem 2.5rem;
+    color: var(--white-color);
+    text-align: center;
+    position: relative;
+}
+
+.satisfaction-encadre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.satisfaction-encadre .section-title {
+    color: var(--white-color);
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    position: relative;
+    z-index: 1;
+}
+
 .satisfaction-benefits {
     background: var(--light-gray);
     border: none;
@@ -2105,256 +1531,25 @@
     margin-bottom: 0;
 }
 
-/* Conteneur avec encadré stylisé */
-.satisfaction-encadre {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-    padding: 3rem 2.5rem;
-    color: var(--white-color);
-    text-align: center;
-    position: relative;
-}
-
-.satisfaction-encadre::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
-    opacity: 0.3;
-    pointer-events: none;
-}
-
-.satisfaction-encadre .section-title {
-    color: var(--white-color);
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 1;
-}
-
-.satisfaction-encadre .section-title::after {
-    content: '⭐';
-    display: block;
-    font-size: 2rem;
-    margin-top: 0.5rem;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.8; }
-}
-
-/* Description avec style amélioré */
-.satisfaction-desc {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    color: var(--white-color);
-    opacity: 0.95;
-    position: relative;
-    z-index: 1;
-}
-
-.satisfaction-desc:last-of-type {
-    margin-bottom: 0;
-}
-
-/* Bouton d'accès au questionnaire stylisé */
-.satisfaction-encadre .btn-primary {
+.satisfaction-action {
     background: var(--white-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    border-radius: var(--border-radius-md);
-    text-decoration: none;
-    display: inline-block;
-    margin: 1.5rem 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 1;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.satisfaction-encadre .btn-primary:hover {
-    background: var(--light-gray);
-    color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-}
-
-.satisfaction-encadre .btn-primary:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-/* Liens dans la section satisfaction */
-.satisfaction-encadre a:not(.btn-primary) {
-    color: var(--white-color);
-    text-decoration: underline;
-    font-weight: 600;
-    transition: opacity 0.3s ease;
-}
-
-.satisfaction-encadre a:not(.btn-primary):hover {
-    opacity: 0.8;
-    text-decoration: none;
-}
-
-/* ==============================
-   WIDGET OPINION SYSTEM STYLES
-   ============================== */
-
-/* Conteneur du widget avis */
-.positionnement-section:has(#widgetOpinionSystem_702252) {
-    background: var(--light-gray);
-    border-radius: var(--border-radius-md);
     padding: 3rem 2rem;
-    margin: 3rem auto;
-    max-width: 1000px;
+    border-radius: var(--border-radius-lg);
+    margin: 3rem 0;
     text-align: center;
-    box-shadow: var(--shadow-md);
 }
 
-/* Style pour le widget d'avis */
-#widgetOpinionSystem_702252 {
+/* GARANTIE FINANCIÈRE */
+.garantie-section {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
-    padding: 2rem;
     box-shadow: var(--shadow-lg);
-    transition: transform 0.3s ease;
-}
-
-#widgetOpinionSystem_702252:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg), 0 8px 25px rgba(29,53,87,0.15);
-}
-
-/* Ajout d'un titre pour la section des avis */
-.positionnement-section:has(#widgetOpinionSystem_702252)::before {
-    content: "Nos avis clients";
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Styles responsifs pour la page satisfaction */
-@media (max-width: 768px) {
-    .satisfaction-encadre {
-        padding: 2rem 1.5rem;
-    }
-    
-    .satisfaction-encadre .section-title {
-        font-size: 2rem;
-    }
-    
-    .satisfaction-desc {
-        font-size: 1.05rem;
-    }
-    
-    .satisfaction-encadre .btn-primary {
-        padding: 0.8rem 2rem;
-        font-size: 1.1rem;
-    }
-    
-    .satisfaction-benefits {
-        padding: 2rem 1.5rem;
-    }
-    
-    .benefits-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    /* Réinitialiser le centrage sur mobile - tout en une colonne */
-    .benefits-grid:has(.benefit-item:nth-child(3):last-child),
-    .benefits-grid:has(.benefit-item:nth-child(5):last-child) {
-        grid-template-columns: 1fr;
-    }
-    
-    .benefits-grid .benefit-item:nth-child(3):last-child,
-    .benefits-grid .benefit-item:nth-child(5):last-child {
-        grid-column: auto;
-        max-width: none;
-        margin: 0;
-    }
-    
-    .benefit-item {
-        padding: 1.5rem;
-    }
-    
-    .benefit-icon {
-        font-size: 2.5rem;
-    }
-    
-    .positionnement-section:has(#widgetOpinionSystem_702252) {
-        padding: 2rem 1rem;
-        margin: 2rem auto;
-    }
-    
-    #widgetOpinionSystem_702252 {
-        padding: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .satisfaction-encadre {
-        padding: 1.5rem 1rem;
-    }
-    
-    .satisfaction-encadre .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .satisfaction-desc {
-        font-size: 1rem;
-    }
-    
-    .satisfaction-encadre .btn-primary {
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
-        margin: 1rem 0;
-    }
-    
-    .satisfaction-benefits {
-        padding: 1.5rem 1rem;
-    }
-    
-    .satisfaction-benefits .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .benefit-item {
-        padding: 1.2rem;
-    }
-    
-    .benefit-icon {
-        font-size: 2rem;
-    }
-    
-    .benefit-item h3 {
-        font-size: 1.2rem;
-    }
-}
-
-/* ============================================
-   Page Garantie Financière - Style Résultat
-   ============================================ */
-
-.garantie-section {
-    padding: 2rem 0;
+    padding: 3rem 2.5rem;
+    margin: 2rem auto;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .garantie-intro {
@@ -2362,13 +1557,32 @@
     margin-bottom: 3rem;
 }
 
+.garantie-intro .section-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.garantie-intro .section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
 .garantie-intro .intro-text {
     font-size: 1.2rem;
-    color: var(--text-light);
+    color: var(--text-color);
     margin-top: 1rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0.9;
 }
 
 /* Section partenaire - Style results-check */
@@ -2527,7 +1741,7 @@
 
 /* Section avantages - Style results-check */
 .benefits-section {
-    background: var(--light-gray);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     border-radius: var(--border-radius-md);
     padding: 2.5rem;
     margin: 1rem 0 4rem 0;
@@ -2535,7 +1749,7 @@
 
 .benefits-title {
     text-align: center;
-    color: var(--primary-color);
+    color: var(--white-color);
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 2rem;
@@ -2672,6 +1886,7 @@
     text-align: center;
     max-width: 500px;
     width: 100%;
+    border: 2px solid var(--accent-color);
 }
 
 .contact-icon {
@@ -2717,54 +1932,62 @@
     box-shadow: var(--shadow-lg), 0 8px 25px var(--primary-shadow-hover);
 }
 
-/* ============================================
-   Page Règlement Intérieur
-   ============================================ */
-
-.reglement-section {
-    padding: 2rem 0;
+.coverage-section {
+    background: var(--white-color);
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius-lg);
+    margin: 3rem 0;
 }
 
-.reglement-intro {
+.coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.coverage-item {
+    padding: 2rem;
+    background: var(--light-gray);
+    border-radius: var(--border-radius-md);
     text-align: center;
-    margin-bottom: 4rem;
 }
 
-.reglement-intro .intro-text {
-    font-size: 1.2rem;
-    color: var(--text-light);
-    margin-top: 1rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+.coverage-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 2;
 }
 
-/* Catégories de règlement */
+.coverage-content h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* RÈGLEMENT */
+.reglement-section {
+    padding: 4rem 0;
+    background: var(--light-gray);
+}
+
 .regulation-category {
-    margin-bottom: 4rem;
+    background: var(--white-color);
+    margin: 2rem 0;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
 }
 
 .category-header {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    border-radius: var(--border-radius-md);
-    padding: 2.5rem;
-    text-align: center;
     color: var(--white-color);
-    margin-bottom: 2rem;
+    padding: 2rem;
+    text-align: center;
     position: relative;
-    overflow: hidden;
-}
-
-.category-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
-    pointer-events: none;
 }
 
 .category-icon {
@@ -2785,33 +2008,23 @@
     z-index: 1;
 }
 
-.category-desc {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    margin: 0;
-    position: relative;
-    z-index: 1;
-}
-
-/* Grilles de cartes */
 .regulation-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    padding: 2rem;
 }
 
 .regulation-card {
-    background: var(--white-color);
-    border-radius: var(--border-radius-md);
+    background: var(--light-gray);
     padding: 2rem;
-    box-shadow: var(--shadow-md);
-    border-left: 4px solid var(--accent-color);
-    transition: all 0.3s ease;
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .regulation-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
 }
 
 .regulation-card .card-icon {
@@ -2819,7 +2032,7 @@
     margin-bottom: 1.5rem;
     display: block;
     text-align: center;
-    line-height: 1.75;
+    line-height: 2;
 }
 
 .card-content h4 {
@@ -2829,19 +2042,76 @@
     margin-bottom: 1rem;
 }
 
-.card-content p {
-    color: var(--text-color);
-    line-height: 1.6;
-    margin: 0;
+.obligations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
 }
 
-/* Section examens spéciale */
-.exam-requirements {
+.explanation-card {
     background: var(--light-gray);
+    padding: 2rem;
     border-radius: var(--border-radius-md);
-    padding: 2.5rem;
+    text-align: center;
 }
 
+.explanation-card .card-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 2;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+    .content-section {
+        padding: 1.5rem 1rem;
+        margin: 1rem;
+    }
+    
+    .financement-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .process-steps,
+    .benefits-grid,
+    .process-grid,
+    .guarantees-grid,
+    .coverage-grid,
+    .regulation-grid,
+    .obligations-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .process-grid.center-last {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-grid.center-last .process-step:last-child {
+        grid-column: 1;
+    }
+    
+    .quick-nav-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .formation-selector-wrapper select {
+        min-width: 100%;
+    }
+    
+    .positionnement-intro .section-title,
+    .reclamation-intro .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Styles pour requirements-card */
 .requirements-card h4 {
     color: var(--primary-color);
     font-size: 1.5rem;
@@ -2878,8 +2148,7 @@
 }
 
 .note-card {
-    background: rgba(var(--accent-color-rgb), 0.1);
-    border: 1px solid var(--accent-color);
+    background: rgba(69, 123, 157, 0.1);
     border-radius: var(--border-radius-md);
     padding: 1.5rem;
     color: var(--text-color);
@@ -2988,104 +2257,4 @@
 
 .btn-icon {
     font-size: 1.2rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .reglement-section {
-        padding: 1rem 0;
-    }
-    
-    .category-header,
-    .exam-requirements,
-    .download-card {
-        padding: 2rem 1.5rem;
-    }
-    
-    .regulation-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .requirements-list {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .obligations-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .category-header h3 {
-        font-size: 1.5rem;
-    }
-    
-    .download-card h3 {
-        font-size: 1.4rem;
-    }
-    
-    .download-card .btn {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-    }
-}
-@media (max-width: 768px) {
-    .garantie-section {
-        padding: 1rem 0;
-    }
-    
-    .partner-card,
-    .guarantee-explanation,
-    .benefits-section,
-    .contact-card {
-        padding: 2rem 1.5rem;
-    }
-    
-    .explanation-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .benefits-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem;
-    }
-    
-    .benefits-grid:has(.benefit-card:nth-child(3):last-child) .benefit-card:nth-child(3) {
-        grid-column: 1;
-        max-width: none;
-        margin: 0;
-    }
-    
-    .coverage-list {
-        grid-template-columns: 1fr !important;
-        gap: 1rem;
-    }
-    
-    .coverage-list:has(.coverage-item:nth-child(odd):last-child) .coverage-item:last-child {
-        grid-column: 1;
-        max-width: none;
-        margin: 0;
-    }
-    
-    .logo-groupama {
-        max-width: 200px;
-    }
-    
-    .partner-header h3,
-    .benefits-title,
-    .coverage-title,
-    .explanation-header h3 {
-        font-size: 1.5rem;
-    }
-    
-    .contact-card h3 {
-        font-size: 1.4rem;
-    }
-
-    .contact-card .btn {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-    }
 }
