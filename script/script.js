@@ -94,4 +94,50 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Fonctionnalité bouton retour en haut
+    function createBackToTopButton() {
+        // Créer le bouton
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.innerHTML = '↑';
+        backToTopBtn.className = 'back-to-top';
+        backToTopBtn.setAttribute('aria-label', 'Retour en haut de la page');
+        backToTopBtn.style.display = 'none';
+        
+        // Ajouter le bouton au body
+        document.body.appendChild(backToTopBtn);
+        
+        // Fonction pour afficher/masquer le bouton selon le scroll
+        function toggleBackToTopButton() {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = 'flex';
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+                setTimeout(() => {
+                    if (!backToTopBtn.classList.contains('show')) {
+                        backToTopBtn.style.display = 'none';
+                    }
+                }, 300); // Délai correspondant à la transition CSS
+            }
+        }
+        
+        // Fonction pour remonter en haut avec animation fluide
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Event listeners
+        window.addEventListener('scroll', toggleBackToTopButton);
+        backToTopBtn.addEventListener('click', scrollToTop);
+        
+        // Vérifier la position initiale
+        toggleBackToTopButton();
+    }
+    
+    // Initialiser le bouton retour en haut
+    createBackToTopButton();
 });

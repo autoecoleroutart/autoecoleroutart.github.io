@@ -6,18 +6,24 @@
 
 .team-section {
     padding: 4rem 0;
+    background: var(--light-gray);
 }
 
 .team-section .section-title {
     color: var(--primary-color);
     font-size: 2.2rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .team-section .lead {
     font-size: 1.2rem;
     color: var(--text-color);
     margin-bottom: 3rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .team-grid {
@@ -25,6 +31,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    margin-bottom: 3rem;
 }
 
 .team-card {
@@ -53,6 +60,46 @@
     object-fit: contain;
     object-position: center;
     border: 4px solid var(--light-gray);
+}
+
+.card-body {
+    text-align: center;
+    padding: 0 1rem;
+    margin-top: -0.5rem;
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+    color: var(--accent-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.card-text {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.team-section > .container > p {
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    border-left: 4px solid var(--accent-color);
 }
 
 .card-content h3 {
@@ -979,5 +1026,91 @@
     .download-card .btn {
         padding: 1rem 2rem;
         font-size: 1.1rem;
+    }
+}
+
+/* ===== STYLES RESPONSIFS POUR LES TABLES DE FORMATIONS ===== */
+@media (max-width: 768px) {
+    /* Transformation des tables en layout vertical sur mobile */
+    .formations-table {
+        font-size: 0.9rem;
+    }
+    
+    .formations-table thead th {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    /* Forcer toutes les cellules en mode vertical sur mobile */
+    .formations-table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+    }
+    
+    /* Alternance des couleurs de fond pour séparer visuellement les lignes */
+    .formations-table tbody tr:nth-child(even) {
+        background-color: var(--light-gray);
+        border-radius: var(--border-radius-sm);
+    }
+    
+    .formations-table tbody tr:nth-child(odd) {
+        background-color: var(--white-color);
+        border-radius: var(--border-radius-sm);
+    }
+    
+    .formations-table tbody td {
+        display: block !important;
+        width: 100% !important;
+        border-left: none !important;
+        border-bottom: none !important;
+        padding: 1.2rem;
+        box-sizing: border-box;
+        background-color: transparent !important;
+    }
+    
+    .formations-table tbody td:last-child {
+        border-bottom: none;
+    }
+    
+    /* Style spécial pour les cellules qui spans 2 colonnes */
+    .formations-table tbody td[colspan="2"] {
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Améliorer l'espacement des éléments */
+    .formations-table h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+        color: var(--primary-color);
+    }
+    
+    .formations-table p {
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+    }
+    
+    .formations-table ul {
+        margin-bottom: 1rem;
+        padding-left: 1.2rem;
+    }
+    
+    .formations-table ul li {
+        margin-bottom: 0.4rem;
+    }
+    
+    /* Boutons plus adaptés au mobile */
+    .formations-table .pl_button {
+        display: block;
+        text-align: center;
+        margin: 0.5rem 0;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Améliorer l'affichage des liens */
+    .formations-table a {
+        word-break: break-word;
     }
 }
