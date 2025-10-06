@@ -83,7 +83,36 @@ img {
     background-color: var(--light-gray);
 }
 
-.text-center {
+/* Custom text alignment utilities - replacing Bootstrap classes */
+.finance-image-center {
+    text-align: center;
+}
+
+.satisfaction-button-center {
+    text-align: center;
+}
+
+.formation-info-center {
+    text-align: center;
+}
+
+.formation-requirement-center {
+    text-align: center;
+}
+
+.formation-equipment-center {
+    text-align: center;
+}
+
+.formation-vehicle-center {
+    text-align: center;
+}
+
+.formation-table-center {
+    text-align: center;
+}
+
+.home-cta-center {
     text-align: center;
 }
 
@@ -95,7 +124,7 @@ img {
     font-weight: bold;
 }
 
-.mt-4 {
+.home-cta-spacing {
     margin-top: 2rem;
 }
 

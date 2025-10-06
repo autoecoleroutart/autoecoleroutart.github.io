@@ -108,17 +108,6 @@
 
 /* ===== UTILITAIRES ===== */
 
-.boxed {
-    background: var(--white-color);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-md);
-    padding: 2rem;
-    margin: 1rem 0;
-}
-
-.text-center {
-    text-align: center;
-}
 
 .more-content[hidden] {
     display: none;
@@ -185,11 +174,11 @@
     line-height: 1.6;
 }
 
-.content-section .d-flex {
+.content-section .financement-content-flex {
     margin: 1.5rem 0;
 }
 
-.content-section img.img-fluid {
+.content-section .content-image {
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-md);
     max-width: 100%;
@@ -592,7 +581,7 @@
     color: var(--accent-color);
 }
 
-.positioning-cta .btn-primary {
+.positioning-cta .positioning-button {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: var(--white-color);
     border: none;
@@ -609,12 +598,12 @@
     letter-spacing: 0.5px;
 }
 
-.positioning-cta .btn-primary:hover {
+.positioning-cta .positioning-button:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg), 0 8px 25px var(--primary-shadow-hover);
 }
 
-.positioning-cta .btn-primary:active {
+.positioning-cta .positioning-button:active {
     transform: translateY(0);
 }
 
@@ -916,7 +905,7 @@
     font-size: 1.1rem;
 }
 
-.reclamation-contact-cta .btn-primary {
+.reclamation-contact-cta .reclamation-button {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: var(--white-color);
     border: none;
@@ -933,12 +922,12 @@
     letter-spacing: 0.5px;
 }
 
-.reclamation-contact-cta .btn-primary:hover {
+.reclamation-contact-cta .reclamation-button:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg), 0 8px 25px var(--primary-shadow-hover);
 }
 
-.reclamation-contact-cta .btn-primary:active {
+.reclamation-contact-cta .reclamation-button:active {
     transform: translateY(0);
 }
 
@@ -1106,7 +1095,7 @@
     margin: 2.5rem 0;
 }
 
-.btn-large {
+.action-button-large {
     padding: 1.2rem 3rem;
     font-size: 1.3rem;
     font-weight: 600;
@@ -1121,24 +1110,24 @@
     letter-spacing: 0.5px;
 }
 
-.btn-primary.btn-large {
+.action-button-large.primary {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: var(--white-color);
     border: none;
 }
 
-.btn-primary.btn-large:hover {
+.action-button-large.primary:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg), 0 8px 25px var(--primary-shadow-hover);
 }
 
-.btn-secondary.btn-large {
+.action-button-large.secondary {
     background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
     color: var(--white-color);
     border: none;
 }
 
-.btn-secondary.btn-large:hover {
+.action-button-large.secondary:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg), 0 8px 25px rgba(69,123,157,0.25);
 }

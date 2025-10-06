@@ -105,7 +105,7 @@
     width: 100%;
 }
 
-.formations-table .formation-images .row {
+.formations-table .formation-images .formation-image-grid {
     display: flex;
     gap: 1.5rem;
     justify-content: center;

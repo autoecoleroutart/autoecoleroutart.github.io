@@ -1,0 +1,73 @@
+/* ===== STYLES GÉNÉRAUX DES SECTIONS DE CONTENU ===== */
+
+.content-section {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: 2.5rem 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.content-section h1,
+.content-section h2.section-title {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.content-section h2 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.content-section h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.content-section p {
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.1rem;
+    text-align: left;
+}
+
+.content-section ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    list-style-type: disc;
+}
+
+.content-section ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    list-style-type: decimal;
+}
+
+.content-section ul li,
+.content-section ol li {
+    margin-bottom: 0.5rem;
+}
+
+.content-section a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.content-section a:hover {
+    color: var(--accent-color);
+}
