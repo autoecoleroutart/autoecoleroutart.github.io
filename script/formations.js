@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showTable(selected) {
         tables.forEach(table => {
-            table.classList.add('hidden');
+            table.style.display = 'none';
         });
         const table = document.getElementById('table-' + selected);
         if (table) {
-            table.classList.remove('hidden');
+            table.style.display = 'table';
         }
     }
 

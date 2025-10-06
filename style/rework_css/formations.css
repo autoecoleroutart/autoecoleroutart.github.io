@@ -1,1 +1,257 @@
 @import url('general.css');
+@import url('variables.css');
+
+/* ===== SÉLECTEUR DE FORMATION ===== */
+
+.formation-selector-wrapper {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: var(--border-radius-md);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.formation-selector-wrapper label {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.formation-selector-wrapper select {
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--accent-color);
+    border-radius: var(--border-radius-sm);
+    background: var(--white-color);
+    font-size: 1rem;
+    min-width: 300px;
+    cursor: pointer;
+}
+
+.formation-selector-wrapper select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(69, 123, 157, 0.2);
+}
+
+/* ===== TABLEAUX DE FORMATIONS ===== */
+
+.formations-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.formations-table th {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white-color);
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.formations-table td {
+    padding: 1.2rem;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    line-height: 1.6;
+}
+
+.formations-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.formations-table tbody tr td:last-child {
+    border-left: 1px solid #eee;
+}
+
+.formations-table tbody tr:nth-child(even) td {
+    background-color: var(--light-gray);
+}
+
+.formations-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+/* ===== CONTENU DES TABLEAUX DE FORMATIONS ===== */
+
+.formations-table h3 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.formations-table p {
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.1rem;
+    text-align: left;
+}
+
+.formations-table ul {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+    padding: 1.2rem 1.5rem;
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    list-style: disc inside;
+}
+
+.formations-table ul li {
+    margin-bottom: 0.7em;
+    line-height: 1.6;
+}
+
+.formations-table .formation-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.formations-table .formation-images .formation-image-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.formations-table .formation-images img {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    max-width: 100%;
+    height: auto;
+}
+
+.formations-table a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.formations-table a:hover {
+    color: var(--accent-color);
+}
+
+/* ===== CONTENEUR DES DÉTAILS DE FORMATION ===== */
+
+#formation-details {
+    background: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#formation-details table {
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== SECTIONS DE FORMATION SPÉCIFIQUES ===== */
+
+.formation-b-section,
+.formation-moto-section,
+.formation-am-section,
+.formation-125-section,
+.formation-post-permis-section {
+    display: none;
+}
+
+.formation-b-section.active,
+.formation-moto-section.active,
+.formation-am-section.active,
+.formation-125-section.active,
+.formation-post-permis-section.active {
+    display: table;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ===== RESPONSIVE POUR FORMATIONS ===== */
+
+@media (max-width: 768px) {
+    .formations-table {
+        font-size: 0.9rem;
+    }
+    
+    .formations-table th {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+    }
+    
+    .formations-table td {
+        padding: 1rem;
+    }
+    
+    .formations-table h3 {
+        font-size: 1.1rem;
+    }
+    
+    .formations-table p {
+        font-size: 1rem;
+    }
+    
+    .formation-selector-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .formation-selector-wrapper select {
+        min-width: 250px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .formations-table {
+        font-size: 0.85rem;
+    }
+    
+    .formations-table th {
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+    
+    .formations-table td {
+        padding: 0.8rem;
+    }
+    
+    .formation-selector-wrapper {
+        padding: 1rem;
+    }
+    
+    .formation-selector-wrapper select {
+        min-width: 200px;
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .formations-table .formation-images .formation-image-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Formations - Auto-École Rout'Art</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../style/main.css">
+        <link rel="stylesheet" href="../style/rework_css/formations.css">
         <link rel="icon" href="../icon/logo_routart_modern.png" type="image/x-icon">
         <script src="../script/script.js"></script>
         <script src="../script/formations.js"></script>
@@ -52,7 +52,7 @@
                 <div class="formation-selector-wrapper">
                     <label for="formation-select">Choisissez une formation :</label>
                     <select id="formation-select">
-                        <option value="b-traditionnel">Permis B - Traditionnel</option>
+                        <option value="b-traditionnel" selected>Permis B - Traditionnel</option>
                         <option value="b-accompagnee">Permis B - Conduite Accompagnée</option>
                         <option value="b-supervisee">Permis B - Conduite Supervisée</option>
                         <option value="b-automatique">Permis B - Boite Automatique</option>
@@ -65,7 +65,7 @@
                     </select>
                 </div>
                 <div id="formation-details">
-                    <table class="horaires-table formations-table formation-b-section hidden" id="table-b-traditionnel">
+                    <table class="formations-table formation-b-section" id="table-b-traditionnel">
                         <thead>
                             <tr>
                                 <th colspan="2">Permis B - Traditionnel</th>
@@ -177,7 +177,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section hidden" id="table-b-accompagnee">
+                    <table class="formations-table formation-b-section hidden" id="table-b-accompagnee">
                         <thead>
                             <tr>
                                 <th colspan="2">APPRENTISSAGE ANTICIPÉ DE LA CONDUITE - CONDUITE ACCOMPAGNÉE</th>
@@ -274,7 +274,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section hidden" id="table-b-supervisee">
+                    <table class="formations-table formation-b-section hidden" id="table-b-supervisee">
                         <thead>
                             <tr>
                                 <th colspan="2">CONDUITE SUPERVISÉE</th>
@@ -309,7 +309,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section hidden" id="table-b-automatique">
+                    <table class="formations-table formation-b-section hidden" id="table-b-automatique">
                         <thead>
                             <tr>
                                 <th colspan="2">PERMIS B - BOÎTE AUTOMATIQUE</th>
@@ -352,7 +352,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section hidden" id="table-am-bsr">
+                    <table class="formations-table formation-b-section hidden" id="table-am-bsr">
                         <thead>
                             <tr>
                                 <th colspan="2">PERMIS AM (BSR)</th>
@@ -395,7 +395,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section hidden" id="table-moto-a1">
+                    <table class="formations-table formation-b-section hidden" id="table-moto-a1">
                         <thead>
                             <tr>
                                 <th colspan="2">PERMIS MOTO A1 - PERMIS 125</th>
@@ -468,7 +468,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section hidden" id="table-moto-a2">
+                    <table class="formations-table formation-b-section hidden" id="table-moto-a2">
                         <thead>
                             <tr>
                                 <th colspan="2">PERMIS MOTO A2</th>
@@ -506,7 +506,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section hidden" id="table-passerelle-a2-a">
+                    <table class="formations-table formation-b-section hidden" id="table-passerelle-a2-a">
                         <thead>
                             <tr>
                                 <th colspan="2">FORMATION MOTO PASSERELLE A2 VERS A</th>
@@ -559,7 +559,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section hidden" id="table-formation-125cc">
+                    <table class="formations-table formation-b-section hidden" id="table-formation-125cc">
                         <thead>
                             <tr>
                                 <th colspan="2">FORMATION 125CC</th>
@@ -611,7 +611,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="horaires-table formations-table formation-b-section hidden" id="table-post-permis">
+                    <table class="formations-table formation-b-section hidden" id="table-post-permis">
                         <thead>
                             <tr>
                                 <th colspan="2">FORMATION POST PERMIS</th>

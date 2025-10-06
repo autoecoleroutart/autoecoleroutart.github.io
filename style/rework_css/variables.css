@@ -201,6 +201,7 @@
     --shadow-card: 0 4px 15px var(--black-20);
     --shadow-card-hover: 0 6px 20px var(--black-30);
     --shadow-back-to-top: 0 3px 10px var(--black-20);
+    --primary-shadow-hover: rgba(29,53,87,0.25);
 
     /* Ombres de texte */
     --text-shadow-strong: 2px 2px 4px var(--black-50);
