@@ -302,3 +302,95 @@
 .positionnement-cta .positionnement-button:active {
     transform: translateY(0);
 }
+
+/* ===== STYLES RESPONSIVES ===== */
+
+/* Tablettes et petits écrans */
+@media (max-width: 768px) {
+    .positionnement-section {
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .positionnement-intro .section-title {
+        font-size: 2rem;
+    }
+
+    .positionnement-process,
+    .positionnement-benefits,
+    .positionnement-cta {
+        padding: 2rem;
+    }
+
+    .positionnement-process-title {
+        font-size: 1.6rem;
+    }
+
+    .positionnement-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .positionnement-benefits h3 {
+        font-size: 1.6rem;
+    }
+
+    .positionnement-benefits-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .positionnement-cta h3 {
+        font-size: 1.5rem;
+    }
+
+    .positionnement-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+    .positionnement-section {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+        margin: 1rem auto;
+    }
+
+    .positionnement-intro .section-title {
+        font-size: 1.8rem;
+    }
+
+    .positionnement-intro-text {
+        font-size: 1rem;
+    }
+
+    .positionnement-process,
+    .positionnement-benefits,
+    .positionnement-cta {
+        padding: 1.5rem;
+    }
+
+    .positionnement-process-title,
+    .positionnement-benefits h3,
+    .positionnement-cta h3 {
+        font-size: 1.4rem;
+    }
+
+    .positionnement-step-item,
+    .positionnement-benefit-card {
+        padding: 1.5rem;
+    }
+
+    .positionnement-step-content h4,
+    .positionnement-benefit-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .positionnement-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        letter-spacing: 0.3px;
+    }
+}

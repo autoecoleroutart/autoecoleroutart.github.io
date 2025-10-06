@@ -395,3 +395,100 @@
     box-shadow: var(--shadow-lg), 0 8px 25px var(--primary-shadow-hover);
 }
 
+/* ===== STYLES RESPONSIVES ===== */
+
+/* Tablettes et petits écrans */
+@media (max-width: 768px) {
+    .garantie-section {
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .garantie-intro .section-title {
+        font-size: 2rem;
+    }
+
+    .garantie-partner-card,
+    .garantie-guarantee-explanation,
+    .garantie-benefits-section {
+        padding: 2rem;
+    }
+
+    .garantie-explanation-header h3,
+    .garantie-benefits-title,
+    .garantie-coverage-title {
+        font-size: 1.6rem;
+    }
+
+    .garantie-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .garantie-coverage-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .garantie-contact-card {
+        padding: 2rem;
+    }
+
+    .guarantee-contact-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+    .garantie-section {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+        margin: 1rem auto;
+    }
+
+    .garantie-intro .section-title {
+        font-size: 1.8rem;
+    }
+
+    .garantie-intro-text {
+        font-size: 1rem;
+    }
+
+    .garantie-partner-card,
+    .garantie-guarantee-explanation,
+    .garantie-benefits-section,
+    .garantie-contact-card {
+        padding: 1.5rem;
+    }
+
+    .garantie-partner-header h3,
+    .garantie-explanation-header h3,
+    .garantie-benefits-title,
+    .garantie-coverage-title,
+    .garantie-contact-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .garantie-logo-groupama {
+        max-width: 200px;
+    }
+
+    .garantie-explanation-content {
+        gap: 1.5rem;
+    }
+
+    .garantie-explanation-card,
+    .garantie-benefit-card,
+    .garantie-coverage-item {
+        padding: 1.5rem;
+    }
+
+    .guarantee-contact-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        letter-spacing: 0.3px;
+    }
+}
+

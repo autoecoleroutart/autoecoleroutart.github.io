@@ -341,3 +341,97 @@
     color: var(--accent-color);
 }
 
+/* ===== STYLES RESPONSIVES ===== */
+
+/* Tablettes et petits écrans */
+@media (max-width: 768px) {
+    .reclamation-section {
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .reclamation-intro .section-title {
+        font-size: 2rem;
+    }
+
+    .reclamation-complaint-process,
+    .reclamation-quality-guarantees {
+        padding: 2rem;
+    }
+
+    .reclamation-process-title,
+    .reclamation-guarantees-title {
+        font-size: 1.6rem;
+    }
+
+    .reclamation-process-steps {
+        gap: 1.5rem;
+    }
+
+    .reclamation-guarantees-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .reclamation-contact-cta {
+        padding: 2rem;
+    }
+
+    .reclamation-contact-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+    .reclamation-section {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+        margin: 1rem auto;
+    }
+
+    .reclamation-intro .section-title {
+        font-size: 1.8rem;
+    }
+
+    .reclamation-intro-text {
+        font-size: 1rem;
+    }
+
+    .reclamation-complaint-process,
+    .reclamation-quality-guarantees,
+    .reclamation-contact-cta {
+        padding: 1.5rem;
+    }
+
+    .reclamation-process-title,
+    .reclamation-guarantees-title {
+        font-size: 1.4rem;
+    }
+
+    .reclamation-process-steps {
+        gap: 1rem;
+    }
+
+    .reclamation-process-step,
+    .reclamation-guarantee-item {
+        padding: 1.5rem;
+    }
+
+    .reclamation-step-content h4,
+    .reclamation-guarantee-item h4 {
+        font-size: 1.1rem;
+    }
+
+    .reclamation-contact-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        letter-spacing: 0.3px;
+    }
+
+    .reclamation-closure-info {
+        padding: 2rem 1.5rem;
+    }
+}
+

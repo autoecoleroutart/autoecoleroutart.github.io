@@ -419,3 +419,96 @@
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
+
+/* ===== STYLES RESPONSIVES ===== */
+
+/* Tablettes et petits écrans */
+@media (max-width: 768px) {
+    .resultat-section {
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .resultat-intro .section-title {
+        font-size: 2rem;
+    }
+
+    .resultat-results-check,
+    .resultat-production-tracking {
+        padding: 2rem;
+    }
+
+    .resultat-results-header h3,
+    .resultat-tracking-header h3 {
+        font-size: 1.6rem;
+    }
+
+    .resultat-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .resultat-outcomes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .resultat-support-card {
+        padding: 2rem;
+    }
+
+    .result-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+    .resultat-section {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+        margin: 1rem auto;
+    }
+
+    .resultat-intro .section-title {
+        font-size: 1.8rem;
+    }
+
+    .resultat-intro-text {
+        font-size: 1rem;
+    }
+
+    .resultat-results-check,
+    .resultat-production-tracking,
+    .resultat-support-card {
+        padding: 1.5rem;
+    }
+
+    .resultat-results-header h3,
+    .resultat-tracking-header h3,
+    .resultat-info-title,
+    .resultat-outcomes-title,
+    .resultat-support-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .resultat-required-info,
+    .resultat-outcome-card {
+        padding: 1.5rem;
+    }
+
+    .resultat-info-item {
+        padding: 1rem;
+    }
+
+    .result-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        letter-spacing: 0.3px;
+    }
+
+    .result-button.outline {
+        padding: 0.6rem 1.2rem;
+    }
+}
