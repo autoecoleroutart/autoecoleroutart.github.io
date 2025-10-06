@@ -1,0 +1,9 @@
+@import url('general.css');
+
+.home-cta-center {
+    text-align: center;
+}
+
+.home-cta-spacing {
+    margin-top: 2rem;
+}

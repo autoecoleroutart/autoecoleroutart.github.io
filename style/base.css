@@ -116,29 +116,8 @@ img {
     text-align: center;
 }
 
-.text-justify {
-    text-align: justify;
-}
-
-.text-bold {
-    font-weight: bold;
-}
-
 .home-cta-spacing {
     margin-top: 2rem;
-}
-
-/* Utility classes for spacing */
-.spacer-50 {
-    height: 50px;
-}
-
-.spacer-20 {
-    height: 20px;
-}
-
-.spacer-18 {
-    height: 18px;
 }
 
 /* Color utilities */

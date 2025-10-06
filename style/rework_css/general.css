@@ -1,4 +1,5 @@
 /* ===== STYLES GÉNÉRAUX DES SECTIONS DE CONTENU ===== */
+@import url('variables.css');
 
 .content-section {
     background: var(--white-color);
