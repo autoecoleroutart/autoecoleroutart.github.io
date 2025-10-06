@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+
+# Autoriser l'indexation de toutes les pages principales
+Allow: /index.html
+Allow: /page/formations.html
+Allow: /page/tarifs.html
+Allow: /page/financement.html
+Allow: /page/contact.html
+Allow: /page/code_de_la_route.html
+Allow: /page/equipe.html
+
+# Autoriser l'indexation des pages légales
+Allow: /page/reglement.html
+Allow: /page/satisfaction.html
+Allow: /page/positionnement.html
+Allow: /page/reclamation.html
+Allow: /page/resultat.html
+Allow: /page/garantie_financiere.html
+
+# Autoriser les ressources statiques
+Allow: /style/
+Allow: /images/
+Allow: /icon/
+Allow: /sounds/
+Allow: /files/
+
+# Interdire les fichiers techniques
+Disallow: /script/
+Disallow: /page/template.html
+Disallow: /.git/
+Disallow: /chrome_no_secu.sh
+
+# Référence du sitemap
+Sitemap: https://www.autoecoleroutart.com/sitemap.xml
+
+# Crawl-delay pour éviter la surcharge serveur
+Crawl-delay: 1
