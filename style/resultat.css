@@ -6,39 +6,39 @@
     background: var(--white-color);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-lg);
-    padding: 3rem 2.5rem;
-    margin: 2rem auto;
-    max-width: 1100px;
+    padding: var(--spacing-2xl) var(--spacing-2xl);
+    margin: var(--spacing-xl) auto;
+    max-width: var(--max-width-section);
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: var(--spacing-2xl);
 }
 
 .resultat-intro {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
 }
 
 .resultat-intro .section-title {
     color: var(--primary-color);
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-lg);
     position: relative;
 }
 
 .resultat-intro .section-title::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 4px;
+    width: var(--divider-width);
+    height: var(--divider-height);
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    margin: 1rem auto 0;
-    border-radius: 2px;
+    margin: var(--spacing-md) auto 0;
+    border-radius: var(--border-radius-small);
 }
 
 .resultat-intro-text {
-    font-size: 1.2rem;
+    font-size: var(--font-size-lg);
     color: var(--text-color);
     line-height: 1.7;
     max-width: 800px;
@@ -50,61 +50,61 @@
 .resultat-results-check {
     background: var(--light-gray);
     border-radius: var(--border-radius-md);
-    padding: 2.5rem;
-    margin: 1rem 0;
+    padding: var(--spacing-2xl);
+    margin: var(--spacing-md) 0;
 }
 
 .resultat-results-header, .resultat-tracking-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
 }
 
 .resultat-header-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
     display: block;
 }
 
 .resultat-results-header h3, .resultat-tracking-header h3 {
     color: var(--primary-color);
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
 }
 
 .resultat-header-desc {
     color: var(--text-color);
-    font-size: 1.1rem;
+    font-size: var(--font-size-base);
     opacity: 0.8;
     margin-bottom: 0;
 }
 
 /* Cartes d'information */
 .resultat-official-info, .resultat-tracking-info {
-    margin: 2rem 0;
+    margin: var(--spacing-xl) 0;
 }
 
 .resultat-info-card {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
-    padding: 2rem;
+    padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: var(--spacing-lg);
     border-left: 4px solid var(--accent-color);
 }
 
 .resultat-info-icon {
-    font-size: 2.5rem;
+    font-size: var(--font-size-4xl);
     flex-shrink: 0;
 }
 
 .resultat-info-content h4 {
     color: var(--primary-color);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-xs);
 }
 
 .resultat-info-content p {
@@ -116,18 +116,18 @@
 /* Centre d'action avec boutons */
 .resultat-action-center {
     text-align: center;
-    margin: 2.5rem 0;
+    margin: var(--spacing-2xl) 0;
 }
 
 .result-button {
-    padding: 1.2rem 3rem;
-    font-size: 1.3rem;
-    font-weight: 600;
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
     border-radius: var(--border-radius-md);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: var(--spacing-sm);
     transition: all 0.3s ease;
     box-shadow: var(--shadow-md);
     text-transform: uppercase;

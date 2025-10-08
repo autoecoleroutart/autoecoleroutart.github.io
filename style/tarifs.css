@@ -3,39 +3,39 @@
 
 /* ===== SECTION TARIFS ===== */
 .tarifs-section {
-    padding: 3rem 0;
+    padding: var(--spacing-2xl) 0;
     min-height: 50vh;
 }
 
 .formation-selector-wrapper {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
 }
 
 .tarifs-section label {
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
     display: block;
     color: var(--primary-color);
 }
 
 .tarifs-section select {
     width: 100%;
-    max-width: 400px;
-    padding: 0.75rem;
-    border: 2px solid var(--light-gray);
+    max-width: var(--max-width-card);
+    padding: var(--spacing-sm);
+    border: var(--border-medium);
     border-radius: var(--border-radius-sm);
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     background-color: var(--white-color);
     cursor: pointer;
-    transition: border-color 0.3s ease;
+    transition: var(--transition-colors);
 }
 
 .tarifs-section select:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(var(--accent-color), 0.1);
+    box-shadow: var(--shadow-focus);
 }
 
 .tarifs-section select:hover {
@@ -45,7 +45,7 @@
 #tarif-details {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: var(--spacing-xl);
 }
 
 /* ===== TABLEAUX TARIFS ===== */

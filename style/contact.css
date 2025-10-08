@@ -3,24 +3,24 @@
 
 /* ===== SECTION CONTACT ===== */
 .contact-section {
-    padding: 2rem 0;
+    padding: var(--spacing-xl) 0;
 }
 
 /* ===== GRILLE CONTACT ===== */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto 0;
+    gap: var(--spacing-3xl);
+    margin-top: var(--spacing-xl);
+    max-width: var(--max-width-content);
+    margin: var(--spacing-xl) auto 0;
     align-items: start;
 }
 
 .contact-form-wrapper,
 .contact-info-wrapper {
     background: var(--white-color);
-    padding: 2.5rem;
+    padding: var(--spacing-2xl);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-md);
     text-align: center;

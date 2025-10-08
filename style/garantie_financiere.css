@@ -6,42 +6,42 @@
     background: var(--white-color);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-lg);
-    padding: 3rem 2.5rem;
-    margin: 2rem auto;
-    max-width: 1100px;
+    padding: var(--spacing-2xl) var(--spacing-2xl);
+    margin: var(--spacing-xl) auto;
+    max-width: var(--max-width-section);
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: var(--spacing-2xl);
 }
 
 .garantie-intro {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: var(--spacing-2xl);
 }
 
 .garantie-intro .section-title {
     color: var(--primary-color);
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-lg);
     position: relative;
 }
 
 .garantie-intro .section-title::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 4px;
+    width: var(--divider-width);
+    height: var(--divider-height);
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    margin: 1rem auto 0;
-    border-radius: 2px;
+    margin: var(--spacing-md) auto 0;
+    border-radius: var(--border-radius-small);
 }
 
 .garantie-intro-text {
-    font-size: 1.2rem;
+    font-size: var(--font-size-lg);
     color: var(--text-color);
-    margin-top: 1rem;
-    max-width: 600px;
+    margin-top: var(--spacing-md);
+    max-width: var(--max-width-text);
     margin-left: auto;
     margin-right: auto;
     opacity: 0.9;
@@ -49,40 +49,40 @@
 
 /* Section partenaire */
 .garantie-partner-section {
-    margin: 2rem 0;
+    margin: var(--spacing-xl) 0;
 }
 
 .garantie-partner-card {
     background: var(--light-gray);
     border-radius: var(--border-radius-md);
-    padding: 2.5rem;
-    margin: 1rem 0;
+    padding: var(--spacing-2xl);
+    margin: var(--spacing-md) 0;
 }
 
 .garantie-partner-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
 }
 
 .garantie-partner-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
     display: block;
 }
 
 .garantie-partner-header h3 {
     color: var(--primary-color);
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
 }
 
 .garantie-logo-groupama-wrapper {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
-    padding: 2rem;
+    padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
-    margin: 2rem 0;
+    margin: var(--spacing-xl) 0;
     text-align: center;
 }
 
@@ -95,7 +95,7 @@
 
 .garantie-partner-desc {
     color: var(--text-color);
-    font-size: 1.1rem;
+    font-size: var(--font-size-base);
     opacity: 0.8;
     margin: 0;
     text-align: center;
@@ -105,7 +105,7 @@
 .garantie-guarantee-explanation {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     border-radius: var(--border-radius-md);
-    padding: 3rem 2.5rem;
+    padding: var(--spacing-2xl) var(--spacing-2xl);
     color: var(--white-color);
     position: relative;
     overflow: hidden;
@@ -125,27 +125,27 @@
 
 .garantie-explanation-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
     position: relative;
     z-index: 1;
 }
 
 .garantie-header-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
     display: block;
 }
 
 .garantie-explanation-header h3 {
     color: var(--white-color);
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
 }
 
 .garantie-header-desc {
     color: var(--white-color);
-    font-size: 1.1rem;
+    font-size: var(--font-size-base);
     opacity: 0.9;
     margin: 0;
 }
@@ -153,9 +153,9 @@
 .garantie-explanation-content {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: 2rem;
-    max-width: 600px;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    max-width: var(--max-width-text);
     margin-left: auto;
     margin-right: auto;
 }
@@ -166,7 +166,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-left: 4px solid var(--white-color);
     border-radius: var(--border-radius-md);
-    padding: 2rem;
+    padding: var(--spacing-xl);
     text-align: center;
     position: relative;
     z-index: 1;
@@ -179,18 +179,18 @@
 }
 
 .garantie-explanation-card .garantie-card-icon {
-    font-size: 2.5rem;
+    font-size: var(--font-size-4xl);
     display: block;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
     text-align: center;
     line-height: 2;
 }
 
 .garantie-card-content h4 {
     color: var(--white-color);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
 }
 
 .garantie-card-content p {
@@ -204,22 +204,22 @@
 .garantie-benefits-section {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     border-radius: var(--border-radius-md);
-    padding: 2.5rem;
-    margin: 1rem 0 1rem 0;
+    padding: var(--spacing-2xl);
+    margin: var(--spacing-md) 0 var(--spacing-md) 0;
 }
 
 .garantie-benefits-title {
     text-align: center;
     color: var(--white-color);
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-xl);
 }
 
 .garantie-benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: var(--spacing-xl);
 }
 
 /* Centrage du dernier élément pour benefits-grid avec 3 éléments */
@@ -236,7 +236,7 @@
 .garantie-benefit-card {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
-    padding: 2rem;
+    padding: var(--spacing-xl);
     text-align: center;
     box-shadow: var(--shadow-md);
     border-left: 4px solid var(--accent-color);
@@ -249,18 +249,18 @@
 }
 
 .garantie-benefit-icon {
-    font-size: 2.5rem;
+    font-size: var(--font-size-4xl);
     display: block;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
     text-align: center;
     line-height: 2;
 }
 
 .garantie-benefit-card h4 {
     color: var(--primary-color);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
 }
 
 .garantie-benefit-card p {
@@ -271,7 +271,7 @@
 
 /* Section situations couvertes */
 .garantie-coverage-section {
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
     background: var(--white-color);
     border-radius: var(--border-radius-lg);
 }
@@ -279,15 +279,15 @@
 .garantie-coverage-title {
     text-align: center;
     color: var(--primary-color);
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-xl);
 }
 
 .garantie-coverage-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: var(--spacing-lg);
     max-width: 800px;
     margin: 0 auto;
 }
@@ -302,7 +302,7 @@
 .garantie-coverage-item {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
-    padding: 2rem;
+    padding: var(--spacing-xl);
     text-align: center;
     box-shadow: var(--shadow-md);
     border-left: 4px solid var(--accent-color);
@@ -315,18 +315,18 @@
 }
 
 .garantie-coverage-icon {
-    font-size: 2.5rem;
+    font-size: var(--font-size-4xl);
     display: block;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
     text-align: center;
     line-height: 2;
 }
 
 .garantie-coverage-content h4 {
     color: var(--primary-color);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
 }
 
 .garantie-coverage-content p {
@@ -339,13 +339,13 @@
 .garantie-contact-section {
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
+    margin: var(--spacing-xl) 0;
 }
 
 .garantie-contact-card {
     background: var(--light-gray);
     border-radius: var(--border-radius-md);
-    padding: 2.5rem;
+    padding: var(--spacing-2xl);
     text-align: center;
     max-width: 500px;
     width: 100%;
@@ -353,34 +353,34 @@
 }
 
 .garantie-contact-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
     display: block;
 }
 
 .garantie-contact-card h3 {
     color: var(--primary-color);
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
 }
 
 .garantie-contact-card p {
     color: var(--text-color);
-    font-size: 1.1rem;
+    font-size: var(--font-size-base);
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
 }
 
 .guarantee-contact-button {
-    padding: 1.2rem 3rem;
-    font-size: 1.3rem;
-    font-weight: 600;
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
     border-radius: var(--border-radius-md);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: var(--spacing-sm);
     transition: all 0.3s ease;
     box-shadow: var(--shadow-md);
     text-transform: uppercase;

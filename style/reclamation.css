@@ -6,39 +6,39 @@
     background: var(--white-color);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-lg);
-    padding: 3rem 2.5rem;
-    margin: 2rem auto;
-    max-width: 1100px;
+    padding: var(--spacing-2xl) var(--spacing-2xl);
+    margin: var(--spacing-xl) auto;
+    max-width: var(--max-width-section);
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: var(--spacing-2xl);
 }
 
 .reclamation-intro {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
 }
 
 .reclamation-intro .section-title {
     color: var(--primary-color);
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-lg);
     position: relative;
 }
 
 .reclamation-intro .section-title::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 4px;
+    width: var(--divider-width);
+    height: var(--divider-height);
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    margin: 1rem auto 0;
-    border-radius: 2px;
+    margin: var(--spacing-md) auto 0;
+    border-radius: var(--border-radius-small);
 }
 
 .reclamation-intro-text {
-    font-size: 1.2rem;
+    font-size: var(--font-size-lg);
     color: var(--text-color);
     line-height: 1.7;
     max-width: 800px;
@@ -50,29 +50,29 @@
 .reclamation-complaint-process {
     background: var(--light-gray);
     border-radius: var(--border-radius-md);
-    padding: 2.5rem;
-    margin: 1rem 0;
+    padding: var(--spacing-2xl);
+    margin: var(--spacing-md) 0;
 }
 
 .reclamation-process-title {
     text-align: center;
     color: var(--primary-color);
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-lg);
 }
 
 .reclamation-process-title::before {
     content: '⚙️';
     display: block;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-xs);
 }
 
 .reclamation-process-steps {
     display: grid;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
 }
 
 /* Centrage du dernier élément quand il y a un nombre impair */
@@ -89,7 +89,7 @@
 .reclamation-process-step {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
-    padding: 2rem;
+    padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -113,33 +113,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
     box-shadow: var(--shadow-md);
 }
 
 .reclamation-step-content {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: var(--spacing-md);
 }
 
 .reclamation-step-content h4 {
     color: var(--primary-color);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
 }
 
 .reclamation-step-content p {
     color: var(--text-color);
     line-height: 1.6;
-    margin-bottom: 1rem;
-    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-base);
 }
 
 .reclamation-step-icon {
-    font-size: 2.5rem;
-    margin-top: 1rem;
+    font-size: var(--font-size-4xl);
+    margin-top: var(--spacing-md);
     opacity: 0.8;
 }
 
@@ -147,16 +147,16 @@
 .reclamation-important-info {
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
+    margin: var(--spacing-xl) 0;
 }
 
 .reclamation-closure-info {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     border-radius: var(--border-radius-md);
-    padding: 2.5rem;
+    padding: var(--spacing-2xl);
     color: var(--white-color);
     text-align: center;
-    max-width: 600px;
+    max-width: var(--max-width-text);
     position: relative;
     overflow: hidden;
 }
@@ -174,17 +174,17 @@
 }
 
 .reclamation-info-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
     position: relative;
     z-index: 1;
 }
 
 .reclamation-closure-info h3 {
     color: var(--white-color);
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
     position: relative;
     z-index: 1;
 }
@@ -192,7 +192,7 @@
 .reclamation-closure-info p {
     color: var(--white-color);
     line-height: 1.6;
-    font-size: 1.1rem;
+    font-size: var(--font-size-base);
     opacity: 0.95;
     position: relative;
     z-index: 1;
@@ -202,31 +202,31 @@
 .reclamation-quality-guarantees {
     background: var(--light-gray);
     border-radius: var(--border-radius-md);
-    padding: 2.5rem;
-    margin: 1rem 0;
+    padding: var(--spacing-2xl);
+    margin: var(--spacing-md) 0;
 }
 
 .reclamation-guarantees-title {
     text-align: center;
     color: var(--primary-color);
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 2.5rem;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-2xl);
     position: relative;
 }
 
 .reclamation-guarantees-title::before {
     content: '🛡️';
     display: block;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-xs);
 }
 
 .reclamation-guarantees-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
 }
 
 /* Centrage du dernier élément quand il y a un nombre impair */
@@ -242,7 +242,7 @@
 
 .reclamation-guarantee-item {
     background: var(--white-color);
-    padding: 2rem;
+    padding: var(--spacing-xl);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-md);
     text-align: center;
@@ -256,16 +256,16 @@
 }
 
 .reclamation-guarantee-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
     display: block;
 }
 
 .reclamation-guarantee-item h4 {
     color: var(--primary-color);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
 }
 
 .reclamation-guarantee-item p {
@@ -278,7 +278,7 @@
 .reclamation-contact-cta {
     background: var(--light-gray);
     border-radius: var(--border-radius-md);
-    padding: 2.5rem;
+    padding: var(--spacing-2xl);
     text-align: center;
     border: 2px solid var(--accent-color);
     position: relative;
@@ -286,29 +286,29 @@
 
 .reclamation-contact-cta h3 {
     color: var(--primary-color);
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-lg);
 }
 
 .reclamation-contact-cta p {
     color: var(--text-color);
     line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-base);
 }
 
 .reclamation-contact-button {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: var(--white-color);
     border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
+    padding: var(--spacing-md) var(--spacing-2xl);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
     border-radius: var(--border-radius-md);
     text-decoration: none;
     display: inline-block;
-    margin: 1rem 0;
+    margin: var(--spacing-md) 0;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-md);
     text-transform: uppercase;
