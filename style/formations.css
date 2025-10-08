@@ -195,9 +195,77 @@
 
 /* ===== RESPONSIVE POUR FORMATIONS ===== */
 
+/* Responsive Design */
+@media (max-width: 992px) {
+    .formations-table {
+        font-size: 0.95rem;
+    }
+    
+    .formations-table th {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+    }
+    
+    .formations-table td {
+        padding: 1rem;
+    }
+    
+    .formation-selector-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .formation-selector-wrapper select {
+        min-width: 250px;
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 768px) {
+    /* Transformation des tables en layout vertical sur mobile */
     .formations-table {
         font-size: 0.9rem;
+    }
+    
+    .formations-table thead th {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    /* Forcer toutes les cellules en mode vertical sur mobile */
+    .formations-table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border-radius: var(--border-radius-sm);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    /* Alternance des couleurs de fond pour séparer visuellement les lignes */
+    .formations-table tbody tr:nth-child(even) {
+        background-color: var(--light-gray);
+    }
+    
+    .formations-table tbody tr:nth-child(odd) {
+        background-color: var(--white-color);
+    }
+    
+    .formations-table tbody td {
+        display: block !important;
+        width: 100% !important;
+        border-left: none !important;
+        border-bottom: none !important;
+        padding: 1.2rem;
+        box-sizing: border-box;
+        background-color: transparent !important;
+    }
+    
+    .formations-table tbody td:last-child {
+        border-bottom: none;
+    }
+    
+    /* Style spécial pour les cellules qui spans 2 colonnes */
+    .formations-table tbody td[colspan="2"] {
+        margin-bottom: 0.5rem;
     }
     
     .formations-table th {
@@ -211,18 +279,50 @@
     
     .formations-table h3 {
         font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+        color: var(--primary-color);
     }
     
     .formations-table p {
         font-size: 1rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+    }
+    
+    .formations-table ul {
+        margin-bottom: 1rem;
+        padding-left: 1.2rem;
+    }
+    
+    .formations-table ul li {
+        margin-bottom: 0.4rem;
+    }
+    
+    /* Boutons plus adaptés au mobile */
+    .formations-table .pl_button {
+        display: block;
+        text-align: center;
+        margin: 0.5rem 0;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Améliorer l'affichage des liens */
+    .formations-table a {
+        word-break: break-word;
     }
     
     .formation-selector-wrapper {
-        padding: 1.5rem;
+        padding: 1.5rem 1rem;
+        margin: 1.5rem 0;
     }
     
     .formation-selector-wrapper select {
-        min-width: 250px;
+        min-width: auto;
+        width: 100%;
+        max-width: 100%;
         font-size: 0.9rem;
     }
 }
@@ -232,13 +332,23 @@
         font-size: 0.85rem;
     }
     
-    .formations-table th {
-        font-size: 1rem;
+    .formations-table thead th {
+        font-size: 0.95rem;
         padding: 0.6rem;
     }
     
-    .formations-table td {
-        padding: 0.8rem;
+    .formations-table tbody td {
+        padding: 1rem;
+    }
+    
+    .formations-table h3 {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .formations-table p {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
     }
     
     .formation-selector-wrapper {
@@ -246,12 +356,24 @@
     }
     
     .formation-selector-wrapper select {
-        min-width: 200px;
         padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
     }
     
     .formations-table .formation-images .formation-image-grid {
         flex-direction: column;
         align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .formations-table .formation-images img {
+        max-width: 100px;
+        height: auto;
+    }
+    
+    /* Boutons optimisés pour très petits écrans */
+    .formations-table .pl_button {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.85rem;
     }
 }

@@ -343,6 +343,27 @@
 
 /* ===== STYLES RESPONSIVES ===== */
 
+/* Écrans moyens */
+@media (max-width: 992px) {
+    .reclamation-section {
+        padding: 2.5rem 2rem;
+        gap: 2.5rem;
+    }
+    
+    .reclamation-intro .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .reclamation-guarantee-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.8rem;
+    }
+    
+    .reclamation-complaint-steps {
+        padding: 2.2rem;
+    }
+}
+
 /* Tablettes et petits écrans */
 @media (max-width: 768px) {
     .reclamation-section {
@@ -364,13 +385,30 @@
         font-size: 1.6rem;
     }
 
-    .reclamation-process-steps {
+    .reclamation-process-steps,
+    .reclamation-process-steps:has(.reclamation-process-step:nth-child(5):last-child) {
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
-    .reclamation-guarantees-grid {
+    .reclamation-process-step,
+    .reclamation-process-steps .reclamation-process-step:nth-child(5):last-child {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .reclamation-guarantees-grid,
+    .reclamation-guarantees-grid:has(.reclamation-guarantee-item:nth-child(3):last-child) {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .reclamation-guarantee-item,
+    .reclamation-guarantees-grid .reclamation-guarantee-item:nth-child(3):last-child {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
 
     .reclamation-contact-cta {
@@ -410,13 +448,26 @@
         font-size: 1.4rem;
     }
 
-    .reclamation-process-steps {
+    .reclamation-process-steps,
+    .reclamation-process-steps:has(.reclamation-process-step:nth-child(5):last-child) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .reclamation-guarantees-grid,
+    .reclamation-guarantees-grid:has(.reclamation-guarantee-item:nth-child(3):last-child) {
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
     .reclamation-process-step,
-    .reclamation-guarantee-item {
+    .reclamation-process-steps .reclamation-process-step:nth-child(5):last-child,
+    .reclamation-guarantee-item,
+    .reclamation-guarantees-grid .reclamation-guarantee-item:nth-child(3):last-child {
         padding: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
 
     .reclamation-step-content h4,

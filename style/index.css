@@ -239,6 +239,35 @@
 }
 
 /* Responsive Design */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .formations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.8rem;
+    }
+
+    .formation-card {
+        padding: 1.8rem;
+    }
+
+    .testimonials-carousel {
+        gap: 1.8rem;
+    }
+
+    .testimonial-card {
+        max-width: 350px;
+        padding: 1.8rem;
+    }
+
+    .contact-info-wrapper {
+        padding: 2.2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .section-title {
         font-size: 1.5rem;

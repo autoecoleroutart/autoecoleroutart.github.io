@@ -114,9 +114,33 @@
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .tarifs-section select {
+        max-width: 350px;
+    }
+    
+    .tarifs-table {
+        font-size: 0.95rem;
+    }
+    
+    .tarifs-table th {
+        font-size: 1.1rem;
+        padding: 0.9rem;
+    }
+    
+    .tarifs-table td {
+        padding: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .tarifs-section {
         padding: 2rem 0;
+    }
+    
+    .tarifs-section select {
+        max-width: 100%;
+        width: 100%;
     }
     
     #tarif-details {
@@ -136,6 +160,7 @@
     
     .tarifs-table td {
         padding: 1rem;
+        vertical-align: top;
     }
     
     .tarifs-table td:first-child {
@@ -145,21 +170,39 @@
     .tarifs-table td:last-child {
         width: 35%;
         font-size: 1rem;
+        font-weight: 600;
     }
     
     .table-list {
         padding-left: 1rem;
+        margin: 0;
     }
     
     .table-list li {
         font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    /* Améliorer l'espacement sur mobile */
+    .formation-selector-wrapper {
+        padding: 1.5rem 1rem;
+        margin: 1.5rem 0;
     }
 }
 
 @media (max-width: 480px) {
+    .tarifs-section {
+        padding: 1.5rem 0;
+    }
+    
     .tarifs-section select {
-        max-width: 100%;
         font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+    
+    #tarif-details {
+        padding: 1rem;
+        margin-top: 1rem;
     }
     
     .tarifs-table {
@@ -175,8 +218,22 @@
         padding: 0.8rem;
     }
     
+    .tarifs-table td:first-child {
+        width: 60%;
+    }
+    
+    .tarifs-table td:last-child {
+        width: 40%;
+        font-size: 0.9rem;
+    }
+    
     .table-list li {
         font-size: 0.8rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .formation-selector-wrapper {
+        padding: 1rem;
     }
 }
 

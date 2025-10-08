@@ -397,6 +397,28 @@
 
 /* ===== STYLES RESPONSIVES ===== */
 
+/* Écrans moyens */
+@media (max-width: 992px) {
+    .garantie-section {
+        padding: 2.5rem 2rem;
+        gap: 2.5rem;
+    }
+    
+    .garantie-intro .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .garantie-coverage-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.8rem;
+    }
+    
+    .garantie-benefit-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.8rem;
+    }
+}
+
 /* Tablettes et petits écrans */
 @media (max-width: 768px) {
     .garantie-section {
@@ -420,9 +442,17 @@
         font-size: 1.6rem;
     }
 
-    .garantie-benefits-grid {
+    .garantie-benefits-grid,
+    .garantie-benefits-grid:has(.garantie-benefit-card:nth-child(3):last-child) {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .garantie-benefit-card,
+    .garantie-benefits-grid:has(.garantie-benefit-card:nth-child(3):last-child) .garantie-benefit-card:nth-child(3) {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
 
     .garantie-coverage-list {
@@ -483,6 +513,14 @@
     .garantie-benefit-card,
     .garantie-coverage-item {
         padding: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .garantie-benefits-grid:has(.garantie-benefit-card:nth-child(3):last-child) .garantie-benefit-card:nth-child(3) {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
 
     .guarantee-contact-button {

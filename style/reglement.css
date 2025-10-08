@@ -272,6 +272,27 @@
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .reglement-section {
+        padding: 1.5rem 0;
+    }
+    
+    .reglement-intro .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .regulation-header,
+    .regulation-exam-requirements,
+    .regulation-download-card {
+        padding: 2.2rem;
+    }
+    
+    .regulation-categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.8rem;
+    }
+}
+
 @media (max-width: 768px) {
     .reglement-section {
         padding: 1rem 0;

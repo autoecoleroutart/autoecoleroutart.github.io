@@ -420,7 +420,46 @@
     margin-bottom: 1.5rem;
 }
 
+/* ===== CORRECTION AFFICHAGE ADDRESS-DETAILS ===== */
+.address-details p {
+    display: block;
+    text-align: left;
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.address-details p i {
+    display: inline-block;
+    margin-right: 0.5rem;
+    width: auto;
+    min-width: 20px;
+}
+
 /* ===== STYLES RESPONSIVES ===== */
+
+/* Écrans moyens */
+@media (max-width: 992px) {
+    .resultat-section {
+        padding: 2.5rem 2rem;
+        gap: 2.5rem;
+    }
+    
+    .resultat-intro .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .resultat-info-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.8rem;
+    }
+    
+    .resultat-outcome-cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.8rem;
+    }
+}
 
 /* Tablettes et petits écrans */
 @media (max-width: 768px) {
@@ -448,9 +487,17 @@
         gap: 1rem;
     }
 
-    .resultat-outcomes-grid {
+    .resultat-outcomes-grid,
+    .resultat-outcomes-grid:has(.resultat-outcome-card:nth-child(2):last-child) {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .resultat-outcome-card,
+    .resultat-outcome-card.success,
+    .resultat-outcome-card.failure {
+        width: 100%;
+        max-width: 100%;
     }
 
     .resultat-support-card {
@@ -460,6 +507,26 @@
     .result-button {
         padding: 1rem 2rem;
         font-size: 1.1rem;
+    }
+
+    /* Correction affichage address-details sur tablettes */
+    .address-details p {
+        display: block;
+        text-align: left;
+        justify-content: flex-start;
+        margin-bottom: 0.8rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .address-details p i {
+        display: inline-block;
+        margin-right: 0.5rem;
+        width: auto;
+        min-width: 18px;
+        margin-bottom: 0;
     }
 }
 
@@ -494,8 +561,12 @@
     }
 
     .resultat-required-info,
-    .resultat-outcome-card {
+    .resultat-outcome-card,
+    .resultat-outcome-card.success,
+    .resultat-outcome-card.failure {
         padding: 1.5rem;
+        width: 100%;
+        max-width: 100%;
     }
 
     .resultat-info-item {
@@ -510,5 +581,27 @@
 
     .result-button.outline {
         padding: 0.6rem 1.2rem;
+    }
+
+    /* Correction affichage address-details sur mobile */
+    .address-details p {
+        display: block;
+        text-align: left;
+        justify-content: flex-start;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        flex-direction: column;
+        align-items: flex-start;
+        word-wrap: break-word;
+    }
+
+    .address-details p i {
+        display: inline-block;
+        margin-right: 0.4rem;
+        width: auto;
+        min-width: 16px;
+        margin-bottom: 0;
+        font-size: 0.9rem;
     }
 }
