@@ -293,6 +293,11 @@
     color: var(--accent-color);
 }
 
+:root[data-theme="dark"] .positionnement-cta .positionnement-button {
+    background: var(--dark-gradient);
+    color: var(--text-color-rgb);
+}
+
 .positionnement-cta .positionnement-button {
     background: var(--primary-gradient);
     color: var(--white-color);
