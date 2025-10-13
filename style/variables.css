@@ -50,6 +50,9 @@
     --warning-color-rgb: rgba(255, 0, 0, 1);
     --light-gray-rgb: rgba(246, 248, 250, 1);
 
+    --primary-gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    --reverse-primary-gradient: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+
     /* Couleurs avec opacités prédéfinies */
     /* Primary color variations */
     --primary-10: rgba(29, 53, 87, 0.1);
@@ -328,18 +331,125 @@
 }
 
 /* ==========================================================================
-   VARIABLES POUR THÈME SOMBRE (si nécessaire dans le futur)
+   VARIABLES POUR THÈME SOMBRE
    ========================================================================== */
 
-/* @media (prefers-color-scheme: dark) {
-    :root {
-        Ces variables peuvent être modifiées pour un thème sombre
-        Pour l'instant, on garde les mêmes valeurs
-    }
-} */
+:root[data-theme="dark"] {
+    /* ==================== COULEURS PRINCIPALES DARK ==================== */
+    /* Couleurs de base avec plus de contraste */
+    --primary-color: #4a90e2;           /* Bleu plus vif et contrasté */
+    --primary-dark-color: #1e1e53;
+    --secondary-color: #2c2c2c;         /* Gris très foncé pour meilleur contraste */
+    --accent-color: #5ba8d6;            /* Accent plus saturé */
+    --text-color: #ffffff;              /* Texte blanc pur */
+    --white-color: #121212;             /* Fond très sombre */
+    --light-gray: #1e1e1e;              /* Gris foncé plus contrasté */
+
+    /* Couleurs d'état plus vives */
+    --error-color: #ff4757;             /* Rouge plus vif */
+    --success-color: #2ed573;           /* Vert plus brillant */
+    --info-color: #3742fa;              /* Bleu plus intense */
+    --warning-color: #ffa502;           /* Orange plus saturé */
+
+    /* Couleurs RGB pour rgba() - adaptées au dark avec plus de contraste */
+    --primary-contrast: rgba(64, 110, 210, 1);
+    --primary-color-rgb: rgba(74, 144, 226, 1);
+    --secondary-color-rgb: rgba(44, 44, 44, 1);
+    --accent-color-rgb: rgba(91, 168, 214, 1);
+    --text-color-rgb: rgba(255, 255, 255, 1);
+    --white-color-rgb: rgba(18, 18, 18, 1);
+    --black-color-rgb: rgba(255, 255, 255, 1);
+    --error-color-rgb: rgba(255, 71, 87, 1);
+    --success-color-rgb: rgba(46, 213, 115, 1);
+    --info-color-rgb: rgba(55, 66, 250, 1);
+    --warning-color-rgb: rgba(255, 165, 2, 1);
+    --light-gray-rgb: rgba(30, 30, 30, 1);
+
+    --dark-gradient: linear-gradient(135deg, var(--primary-dark-color), var(--secondary-color));
+    --reverse-dark-gradient: linear-gradient(135deg, var(--secondary-color), var(--primary-dark-color));
+    /* Couleurs avec opacités prédéfinies - avec plus de contraste */
+    /* Primary color variations */
+    --primary-10: rgba(74, 144, 226, 0.1);
+    --primary-15: rgba(74, 144, 226, 0.15);
+    --primary-20: rgba(74, 144, 226, 0.2);
+    --primary-30: rgba(74, 144, 226, 0.3);
+    --primary-50: rgba(74, 144, 226, 0.5);
+    --primary-70: rgba(74, 144, 226, 0.7);
+    --primary-80: rgba(74, 144, 226, 0.8);
+    --primary-90: rgba(74, 144, 226, 0.9);
+    --primary-98: rgba(74, 144, 226, 0.98);
+
+    /* Secondary color variations */
+    --secondary-10: rgba(44, 44, 44, 0.1);
+    --secondary-15: rgba(44, 44, 44, 0.15);
+    --secondary-20: rgba(44, 44, 44, 0.2);
+    --secondary-30: rgba(44, 44, 44, 0.3);
+    --secondary-50: rgba(44, 44, 44, 0.5);
+    --secondary-70: rgba(44, 44, 44, 0.7);
+    --secondary-80: rgba(44, 44, 44, 0.8);
+    --secondary-90: rgba(44, 44, 44, 0.9);
+
+    /* Accent color variations */
+    --accent-10: rgba(91, 168, 214, 0.1);
+    --accent-15: rgba(91, 168, 214, 0.15);
+    --accent-20: rgba(91, 168, 214, 0.2);
+    --accent-25: rgba(91, 168, 214, 0.25);
+    --accent-30: rgba(91, 168, 214, 0.3);
+    --accent-50: rgba(91, 168, 214, 0.5);
+    --accent-70: rgba(91, 168, 214, 0.7);
+    --accent-80: rgba(91, 168, 214, 0.8);
+    --accent-90: rgba(91, 168, 214, 0.9);
+
+    /* White/Black avec plus de contraste pour le dark mode */
+    --white-10: rgba(18, 18, 18, 0.1);
+    --white-15: rgba(18, 18, 18, 0.15);
+    --white-20: rgba(18, 18, 18, 0.2);
+    --white-30: rgba(18, 18, 18, 0.3);
+    --white-40: rgba(18, 18, 18, 0.4);
+    --white-50: rgba(18, 18, 18, 0.5);
+    --white-60: rgba(18, 18, 18, 0.6);
+    --white-70: rgba(18, 18, 18, 0.7);
+    --white-80: rgba(18, 18, 18, 0.8);
+    --white-90: rgba(18, 18, 18, 0.9);
+    --white-95: rgba(18, 18, 18, 0.95);
+
+    /* Black devient white dans le dark mode - plus contrasté */
+    --black-10: rgba(255, 255, 255, 0.1);
+    --black-15: rgba(255, 255, 255, 0.15);
+    --black-20: rgba(255, 255, 255, 0.2);
+    --black-30: rgba(255, 255, 255, 0.3);
+    --black-40: rgba(255, 255, 255, 0.4);
+    --black-50: rgba(255, 255, 255, 0.5);
+    --black-60: rgba(255, 255, 255, 0.6);
+    --black-70: rgba(255, 255, 255, 0.7);
+    --black-75: rgba(220, 220, 220, 0.75);
+    --black-80: rgba(255, 255, 255, 0.8);
+    --black-90: rgba(255, 255, 255, 0.9);
+
+    /* Couleurs spécialisées plus contrastées */
+    --star-color: #ffeb3b;              /* Jaune plus vif */
+    --purple-color: #9c27b0;            /* Violet plus saturé */
+    --gray-border: #555555;             /* Bordures plus visibles */
+    --light-border: #666666;            /* Bordures claires plus contrastées */
+    --medium-border: #777777;           /* Bordures moyennes plus visibles */
+
+    /* ==================== TRANSPARENCES DARK MODE ==================== */
+    /* Glassmorphism adapté pour le dark avec plus de contraste */
+    --glass-bg-light: rgba(30, 30, 30, 0.4);
+    --glass-bg-medium: rgba(30, 30, 30, 0.6);
+    --glass-bg-strong: rgba(18, 18, 18, 0.95);
+    --glass-border-light: rgba(44, 44, 44, 0.3);
+    --glass-border-medium: rgba(44, 44, 44, 0.4);
+    --glass-border-strong: rgba(44, 44, 44, 0.7);
+
+    /* Overlays plus contrastés */
+    --overlay-dark: rgba(0, 0, 0, 0.85);
+    --overlay-primary: rgba(74, 144, 226, 0.9);
+    --overlay-accent: rgba(91, 168, 214, 0.2);
+}
 
 /* ==========================================================================
-   UTILITAIRES POUR COMPATIBILITÉ
+   VARIABLES POUR THÈME CLAIR (par défaut)
    ========================================================================== */
 
 /* Classes utilitaires pour les couleurs les plus utilisées */

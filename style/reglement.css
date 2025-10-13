@@ -35,8 +35,13 @@
     box-shadow: var(--shadow-md);
 }
 
+:root[data-theme="dark"] .regulation-header {
+    background: var(--dark-gradient);
+    color: var(--text-color-rgb);
+}
+
 .regulation-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-gradient);
     color: var(--white-color);
     padding: var(--spacing-xl);
     text-align: center;
@@ -232,8 +237,13 @@
 }
 
 /* ===== CARTE DE TÉLÉCHARGEMENT ===== */
+:root[data-theme="dark"] .download-regulation {
+    background: var(--reverse-dark-gradient);
+    color: var(--text-color-rgb);
+}
+
 .download-regulation {
-    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    background: var(--reverse-primary-gradient);
     color: var(--white-color);
     padding: 3rem 2rem;
     border-radius: var(--border-radius-md);

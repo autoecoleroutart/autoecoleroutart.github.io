@@ -1,5 +1,6 @@
 @import url('general.css');
 @import url('variables.css');
+@import url('dark-mode.css');
 
 /* ===== SECTION TARIFS ===== */
 .tarifs-section {
@@ -59,8 +60,13 @@
     animation: fadeIn 0.5s ease-in-out;
 }
 
+:root[data-theme="dark"] .tarifs-table th {
+    background: var(--dark-gradient);
+    color: var(--text-color-rgb);
+}
+
 .tarifs-table th {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-gradient);
     color: var(--white-color);
     text-align: center;
     padding: 1rem;

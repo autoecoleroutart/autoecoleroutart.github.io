@@ -159,7 +159,7 @@
     font-size: 0.85rem;
     padding: 0.6rem 1.2rem;
     transition: all 0.15s ease;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-gradient);
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 25px;
     cursor: pointer;
@@ -196,7 +196,7 @@
 
 .toggle-more[aria-expanded="true"] {
     color: var(--white-color);
-    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    background: var(--reverse-primary-gradient);
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     transform: none;
@@ -204,7 +204,7 @@
 
 .toggle-more[aria-expanded="true"]:hover {
     color: var(--white-color);
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-gradient);
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);

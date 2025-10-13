@@ -135,7 +135,7 @@
 }
 
 .result-button.primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-gradient);
     color: var(--white-color);
     border: none;
 }
@@ -328,7 +328,7 @@
 
 /* Section suivi production */
 .resultat-production-tracking {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-gradient);
     border-radius: var(--border-radius-md);
     padding: 3rem 2.5rem;
     color: var(--white-color);

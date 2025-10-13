@@ -46,8 +46,13 @@
     margin: var(--spacing-xl) 0;
 }
 
+:root[data-theme="dark"] .formations-table th {
+    background: var(--dark-gradient);
+    color: var(--text-color-rgb);
+}
+
 .formations-table th {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-gradient);
     color: var(--white-color);
     text-align: center;
     padding: var(--spacing-md);

@@ -1,5 +1,6 @@
 @import url('general.css');
 @import url('variables.css');
+@import url('dark-mode.css');
 
 /* ===== SECTION CONTACT ===== */
 .contact-section {
@@ -43,6 +44,11 @@
 .horaires-table td {
     padding: 1rem;
     border-bottom: 1px solid #eee;
+}
+
+:root[data-theme="dark"] .horaires-table thead th {
+    background: var(--dark-gradient);
+    color: var(--text-color-rgb);
 }
 
 .horaires-table thead th {

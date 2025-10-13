@@ -103,7 +103,7 @@
 
 /* Section explication */
 .garantie-guarantee-explanation {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-gradient);
     border-radius: var(--border-radius-md);
     padding: var(--spacing-2xl) var(--spacing-2xl);
     color: var(--white-color);
@@ -202,7 +202,7 @@
 
 /* Section avantages */
 .garantie-benefits-section {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-gradient);
     border-radius: var(--border-radius-md);
     padding: var(--spacing-2xl);
     margin: var(--spacing-md) 0 var(--spacing-md) 0;
@@ -385,7 +385,7 @@
     box-shadow: var(--shadow-md);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-gradient);
     color: var(--white-color);
     border: none;
 }

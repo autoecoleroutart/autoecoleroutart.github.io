@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Fonctionnalité pour les boutons "Voir plus"
     document.querySelectorAll('.toggle-more').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
             var container = e.target.closest('.collapsible');
@@ -16,6 +17,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 more.hidden = false;
                 e.target.textContent = 'Voir moins';
                 e.target.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // Smooth scrolling pour les liens d'ancrage du sommaire
+    document.querySelectorAll('.quick-nav-list a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
     });

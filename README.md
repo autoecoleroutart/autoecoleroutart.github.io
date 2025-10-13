@@ -69,6 +69,7 @@ Rout-Art/
 │   ├── 📊 resultat.html                 # Consultation des résultats
 │   ├── 😊 satisfaction.html             # Enquêtes qualité
 │   ├── 💰 tarifs.html                   # Grilles tarifaires
+│   ├── 🌑 test-dark-mode.html           # Test du dark-mode
 │   └── 📄 template.html                 # Modèle de développement
 │
 ├── 📁 style/                         # Architecture CSS modulaire
