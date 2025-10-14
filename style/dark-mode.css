@@ -1,82 +1,36 @@
 /* ==========================================================================
-   DARK MODE TOGGLE - Bouton de basculement thème clair/sombre
+   DARK MODE NAVIGATION TOGGLE - Bouton de basculement thème clair/sombre dans la nav
    ========================================================================== */
 
-.theme-toggle {
-    position: fixed;
-    bottom: 140px;
-    right: 30px;
-    z-index: var(--z-back-to-top);
-    background: var(--glass-bg-medium);
-    border: var(--border-glass);
-    border-radius: var(--border-radius-round);
-    backdrop-filter: var(--blur-glass);
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition-all);
-    box-shadow: var(--shadow-card);
+.theme-toggle-nav {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
 }
 
-.theme-toggle:hover {
-    transform: var(--translate-up-sm);
-    box-shadow: var(--shadow-card-hover);
-    background: var(--glass-bg-strong);
+.theme-toggle-nav::before {
+    content: '🌙';
+    margin-right: 0.5rem;
 }
 
-.theme-toggle:focus {
-    outline: none;
-    box-shadow: var(--shadow-focus), var(--shadow-card);
+:root[data-theme="dark"] .theme-toggle-nav::before {
+    content: '☀️';
 }
 
-/* Icône du toggle */
-.theme-toggle-icon {
-    width: 24px;
-    height: 24px;
-    transition: var(--transition-all);
+.theme-toggle-nav:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-2px);
 }
 
-/* Icône soleil (thème clair) */
-.theme-toggle-icon.sun {
-    fill: var(--warning-color);
-    display: block;
-}
-
-/* Icône lune (thème sombre) */
-.theme-toggle-icon.moon {
-    fill: var(--accent-color);
-    display: none;
-}
-
-/* État dark mode */
-:root[data-theme="dark"] .theme-toggle-icon.sun {
-    display: none;
-}
-
-:root[data-theme="dark"] .theme-toggle-icon.moon {
-    display: block;
-}
-
-/* Animation de rotation lors du changement */
-.theme-toggle.changing .theme-toggle-icon {
-    transform: rotate(180deg);
-}
-
-/* Responsive */
+/* Responsive pour mobile */
 @media (max-width: 768px) {
-    .theme-toggle {
-        bottom: 120px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
+    .theme-toggle-nav {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
     }
     
-    .theme-toggle-icon {
-        width: 20px;
-        height: 20px;
+    .theme-toggle-nav::before {
+        margin-right: 0.3rem;
     }
 }
 

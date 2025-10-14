@@ -86,6 +86,10 @@
     margin: 0 auto;
 }
 
+:root[data-theme="dark"] .reclamation-process-step {
+    border-top: 4px solid var(--primary-dark-color);
+}
+
 .reclamation-process-step {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
@@ -101,10 +105,16 @@
     box-shadow: var(--shadow-lg), 0 10px 30px rgba(29,53,87,0.15);
 }
 
+:root[data-theme="dark"] .reclamation-step-number {
+    background: var(--dark-gradient);
+    color: var(--text-color-rgb);
+}
+
+
 .reclamation-step-number {
     position: absolute;
-    top: -15px;
-    left: 20px;
+    top: -20px;
+    left: 20px; /* 200px to have the things centered, the fifth will not be well centered*/
     background: var(--primary-gradient);
     color: var(--white-color);
     width: 40px;
@@ -150,6 +160,11 @@
     margin: var(--spacing-xl) 0;
 }
 
+:root[data-theme="dark"] .reclamation-closure-info {
+    background: var(--dark-gradient);
+    color: var(--text-color-rgb);
+}
+
 .reclamation-closure-info {
     background: var(--primary-gradient);
     border-radius: var(--border-radius-md);
@@ -180,6 +195,10 @@
     z-index: 1;
 }
 
+:root[data-theme="dark"] .reclamation-closure-info h3 {
+    color: var(--text-color-rgb);
+}
+
 .reclamation-closure-info h3 {
     color: var(--white-color);
     font-size: var(--font-size-xl);
@@ -187,6 +206,10 @@
     margin-bottom: var(--spacing-md);
     position: relative;
     z-index: 1;
+}
+
+:root[data-theme="dark"] .reclamation-closure-info p {
+    color: var(--text-color-rgb);
 }
 
 .reclamation-closure-info p {
@@ -231,13 +254,12 @@
 
 /* Centrage du dernier élément quand il y a un nombre impair */
 .reclamation-guarantees-grid:has(.reclamation-guarantee-item:nth-child(3):last-child) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
 }
 
-.reclamation-guarantees-grid .reclamation-guarantee-item:nth-child(3):last-child {
-    grid-column: 1 / -1;
-    max-width: 400px;
-    margin: 0 auto;
+:root[data-theme="dark"] .reclamation-guarantee-item {
+    border-top: 4px solid var(--primary-dark-color);
 }
 
 .reclamation-guarantee-item {
@@ -275,6 +297,10 @@
 }
 
 /* Call-to-action contact */
+:root[data-theme="dark"] .reclamation-contact-cta {
+    border: 2px solid var(--primary-dark-color);
+}
+
 .reclamation-contact-cta {
     background: var(--light-gray);
     border-radius: var(--border-radius-md);
@@ -296,6 +322,11 @@
     line-height: 1.6;
     margin-bottom: var(--spacing-lg);
     font-size: var(--font-size-base);
+}
+
+:root[data-theme="dark"] .reclamation-contact-button {
+    background: var(--dark-gradient);
+    color: var(--text-color-rgb);
 }
 
 .reclamation-contact-button {
@@ -354,17 +385,12 @@
         font-size: 2.2rem;
     }
     
-    .reclamation-guarantee-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.8rem;
-    }
-    
     .reclamation-complaint-steps {
         padding: 2.2rem;
     }
 }
 
-/* Tablettes et petits écrans */
+/* Tablettes et petits écrans - Passage en une colonne à 768px */
 @media (max-width: 768px) {
     .reclamation-section {
         padding: 2rem 1.5rem;
@@ -398,14 +424,15 @@
         margin: 0;
     }
 
+    /* Force la grille des garanties en une colonne dès 768px */
     .reclamation-guarantees-grid,
     .reclamation-guarantees-grid:has(.reclamation-guarantee-item:nth-child(3):last-child) {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 1.5rem;
+        justify-items: stretch;
     }
 
-    .reclamation-guarantee-item,
-    .reclamation-guarantees-grid .reclamation-guarantee-item:nth-child(3):last-child {
+    .reclamation-guarantee-item {
         width: 100%;
         max-width: 100%;
         margin: 0;
@@ -454,16 +481,14 @@
         gap: 1rem;
     }
 
-    .reclamation-guarantees-grid,
-    .reclamation-guarantees-grid:has(.reclamation-guarantee-item:nth-child(3):last-child) {
+    .reclamation-guarantees-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
 
     .reclamation-process-step,
     .reclamation-process-steps .reclamation-process-step:nth-child(5):last-child,
-    .reclamation-guarantee-item,
-    .reclamation-guarantees-grid .reclamation-guarantee-item:nth-child(3):last-child {
+    .reclamation-guarantee-item {
         padding: 1.5rem;
         width: 100%;
         max-width: 100%;

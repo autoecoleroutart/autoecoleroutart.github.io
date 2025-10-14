@@ -784,6 +784,22 @@ iframe {
         height: 80px;
     }
 
+    :root[data-theme="dark"] .main-nav .nav-list {
+        background: var(--dark-gradient);
+    }
+
+    :root[data-theme="dark"] .main-nav .nav-list::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    :root[data-theme="dark"] .main-nav .nav-list::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    :root[data-theme="dark"] .main-nav .nav-list::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
     .main-nav .nav-list {
         position: fixed;
         top: 100px; /* Commencer sous le header */
@@ -792,12 +808,15 @@ iframe {
         height: calc(100vh - 100px); /* Hauteur moins le header */
         background: var(--primary-gradient);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start; /* Changé de center à flex-start */
         align-items: center;
-        gap: 1.5rem;
+        gap: 1.25rem;
         transition: left 0.3s ease;
         z-index: 998;
-        padding: 2rem;
+        padding: 2rem 1rem; /* Augmenté le padding top pour espacer du haut */
+        overflow-y: auto; /* Permettre le scroll vertical */
+        overflow-x: hidden; /* Empêcher le scroll horizontal */
+        -webkit-overflow-scrolling: touch; /* Scroll fluide sur iOS */
     }
 
     .main-nav.active .nav-list {
@@ -816,6 +835,12 @@ iframe {
         color: var(--white-color);
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
+        margin: 0.25rem 0; /* Ajouter une marge verticale pour espacement */
+        min-height: 60px; /* Hauteur minimale pour touch-friendly */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
     }
 
     .main-nav .nav-list button:hover,
@@ -823,6 +848,51 @@ iframe {
         background: rgba(255, 255, 255, 0.9);
         color: var(--primary-color);
         transform: scale(1.05);
+    }
+
+    /* Ajouter un espacement en bas pour éviter que le dernier bouton soit collé au bord */
+    .main-nav .nav-list button:last-child {
+        margin-bottom: 2rem;
+    }
+
+    /* Améliorer la barre de défilement pour le menu mobile */
+    .main-nav .nav-list::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .main-nav .nav-list::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+    }
+
+    .main-nav .nav-list::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+    }
+
+    .main-nav .nav-list::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Indicateur visuel de défilement */
+    .main-nav .nav-list::before {
+        content: '';
+        position: sticky;
+        top: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        margin-bottom: 1rem;
+        z-index: 10;
+    }
+
+    .main-nav .nav-list::after {
+        content: '';
+        position: sticky;
+        bottom: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        margin-top: 1rem;
+        z-index: 10;
     }
 
     .hamburger-menu {

@@ -8,8 +8,8 @@ class DarkModeToggle {
     }
 
     init() {
-        // Créer le bouton de toggle
-        this.createToggleButton();
+        // Attacher l'événement au bouton de navigation
+        this.attachToNavButton();
         
         // Charger le thème sauvegardé ou détecter les préférences système
         this.loadSavedTheme();
@@ -18,53 +18,29 @@ class DarkModeToggle {
         this.listenToSystemChanges();
     }
 
-    createToggleButton() {
-        // Créer le bouton
-        const toggleButton = document.createElement('button');
-        toggleButton.className = 'theme-toggle';
-        toggleButton.setAttribute('aria-label', 'Basculer entre thème clair et sombre');
-        toggleButton.setAttribute('title', 'Changer le thème');
-
-        // Créer les icônes SVG
-        toggleButton.innerHTML = `
-            <svg class="theme-toggle-icon sun" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zM12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-            </svg>
-            <svg class="theme-toggle-icon moon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-        `;
-
-        // Ajouter l'événement de clic
-        toggleButton.addEventListener('click', () => this.toggleTheme());
-
-        // Ajouter le bouton au body
-        document.body.appendChild(toggleButton);
-
-        this.toggleButton = toggleButton;
+    attachToNavButton() {
+        const navToggleButton = document.getElementById('theme-toggle-nav');
+        if (navToggleButton) {
+            navToggleButton.addEventListener('click', () => this.toggleTheme());
+            this.toggleButton = navToggleButton;
+        }
     }
 
     toggleTheme() {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
-        // Ajouter une classe pour l'animation
-        this.toggleButton.classList.add('changing');
-        
-        setTimeout(() => {
-            this.setTheme(newTheme);
-            this.toggleButton.classList.remove('changing');
-        }, 150);
+        this.setTheme(newTheme);
     }
 
     setTheme(theme) {
         // Appliquer le thème
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
-            this.updateToggleLabel('Passer au thème clair');
+            this.updateToggleText('Thème Clair');
         } else {
             document.documentElement.removeAttribute('data-theme');
-            this.updateToggleLabel('Passer au thème sombre');
+            this.updateToggleText('Thème Sombre');
         }
 
         // Mettre à jour les images selon le thème
@@ -79,10 +55,11 @@ class DarkModeToggle {
         }));
     }
 
-    updateToggleLabel(label) {
+    updateToggleText(text) {
         if (this.toggleButton) {
-            this.toggleButton.setAttribute('aria-label', label);
-            this.toggleButton.setAttribute('title', label);
+            this.toggleButton.textContent = text;
+            this.toggleButton.setAttribute('aria-label', `Passer au ${text.toLowerCase()}`);
+            this.toggleButton.setAttribute('title', `Passer au ${text.toLowerCase()}`);
         }
     }
 
