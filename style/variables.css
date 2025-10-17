@@ -348,7 +348,7 @@
     /* Couleurs d'état plus vives */
     --error-color: #ff4757;             /* Rouge plus vif */
     --success-color: #2ed573;           /* Vert plus brillant */
-    --info-color: #3742fa;              /* Bleu plus intense */
+    --info-color: #1a23c0;              /* Bleu plus intense */
     --warning-color: #ffa502;           /* Orange plus saturé */
 
     /* Couleurs RGB pour rgba() - adaptées au dark avec plus de contraste */
@@ -357,10 +357,10 @@
     --secondary-color-rgb: rgba(44, 44, 44, 1);
     --accent-color-rgb: rgba(91, 168, 214, 1);
     --text-color-rgb: rgba(255, 255, 255, 1);
-    --white-color-rgb: rgba(18, 18, 18, 1);
-    --black-color-rgb: rgba(255, 255, 255, 1);
+    --black-color-rgb: rgba(18, 18, 18, 1);
+    --white-color-rgb: rgba(255, 255, 255, 1);
     --error-color-rgb: rgba(255, 71, 87, 1);
-    --success-color-rgb: rgba(46, 213, 115, 1);
+    --success-color-rgb: rgb(11, 128, 59, 1);
     --info-color-rgb: rgba(55, 66, 250, 1);
     --warning-color-rgb: rgba(255, 165, 2, 1);
     --light-gray-rgb: rgba(30, 30, 30, 1);
@@ -428,7 +428,7 @@
 
     /* Couleurs spécialisées plus contrastées */
     --star-color: #ffeb3b;              /* Jaune plus vif */
-    --purple-color: #9c27b0;            /* Violet plus saturé */
+    --purple-color: #810d96;            /* Violet plus saturé */
     --gray-border: #555555;             /* Bordures plus visibles */
     --light-border: #666666;            /* Bordures claires plus contrastées */
     --medium-border: #777777;           /* Bordures moyennes plus visibles */

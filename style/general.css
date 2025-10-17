@@ -381,6 +381,10 @@ iframe {
 }
 
 /* Special button styles for file downloads */
+:root[data-theme="dark"] .pl_button {
+    color: var(--text-color-rgb);
+}
+
 .pl_button {
     display: inline-block;
     margin: 0.5rem 0.5rem 1rem 0;
@@ -392,8 +396,14 @@ iframe {
     text-align: center;
     text-decoration: none;
     transition: all 0.2s ease;
-    color: var(--white-color);
+    color: var(--white-color-rgb);
     width: 230px;
+}
+
+/* Boutons en ligne pour les formations */
+.formations-table .pl_button {
+    width: auto;
+    margin: 0.3rem 0.5rem 0.5rem 0;
 }
 
 .pl_button:hover {
@@ -404,6 +414,10 @@ iframe {
 .pl_button.primary {
     background-color: var(--info-color);
     border-color: var(--white-color);
+}
+
+:root[data-theme="dark"] .pl_button.success {
+    background-color: var(--success-color-rgb);
 }
 
 .pl_button.success {

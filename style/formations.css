@@ -138,8 +138,30 @@
     height: auto;
 }
 
-.formations-table a {
+/* ===== LIENS DE TEXTE SPÉCIAUX ===== */
+
+.formations-table .ftextlink {
     color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    font-weight: var(--font-weight-medium);
+}
+
+.formations-table .ftextlink:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+:root[data-theme="dark"]  .formations-table .ftextlink {
+    color: var(--primary-color);
+}
+
+:root[data-theme="dark"] .formations-table .ftextlink:hover {
+    color: var(--accent-color);
+}
+
+.formations-table a {
+    color: var(--white-color);
     text-decoration: underline;
     transition: color 0.2s;
 }
@@ -305,12 +327,12 @@
     
     /* Boutons plus adaptés au mobile */
     .formations-table .pl_button {
-        display: block;
+        display: inline-block;
         text-align: center;
-        margin: 0.5rem 0;
+        margin: 0.3rem 0.2rem;
         padding: 0.8rem 1rem;
         font-size: 0.9rem;
-        width: 100%;
+        width: auto;
         box-sizing: border-box;
     }
     
