@@ -747,6 +747,12 @@ iframe {
 }
 
 /* Bouton retour en haut */
+
+:root[data-theme="dark"] .back-to-top {
+    background: var(--dark-gradient);
+    color: var(--text-color-rgb);
+}
+
 .back-to-top {
     position: fixed;
     bottom: 2rem;

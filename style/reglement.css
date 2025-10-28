@@ -121,6 +121,10 @@
     padding: var(--spacing-xl);
 }
 
+:root[data-theme="dark"] .obligation-regulation {
+    border-top: 4px solid var(--primary-dark-color);
+}
+
 .obligation-regulation {
     background: var(--white-color);
     border-radius: var(--border-radius-md);
@@ -194,6 +198,10 @@
     font-size: 1.5rem;
     margin-bottom: 2rem;
     text-align: center;
+}
+
+:root[data-theme="dark"] .requirement-item {
+    border-top: 4px solid var(--primary-dark-color);
 }
 
 .requirement-item {

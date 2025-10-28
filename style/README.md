@@ -336,6 +336,4 @@ Pour signaler un problème CSS :
 
 ---
 
-> *"Un design cohérent, c'est une expérience utilisateur réussie"* - Équipe Développement Rout'Art
-
-**Dernière mise à jour** : Octobre 2025 | **Version** : 2.0
+**Dernière mise à jour** : Octobre 2025 | **Version** : 2.1 - Ajout du Dark Mode
