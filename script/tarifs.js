@@ -15,17 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateHeroImage(selected) {
         if (selected === 'b-traditionnel') {
-            heroImg.src = '../images/permis-b-traditionnel.png';
+            heroImg.src = '../images/voiture/permis-b-traditionnel.png';
         } else if (selected === 'b-accompagnee' || selected === 'b-supervisee') {
-            heroImg.src = '../images/permis-b-accompagnee.png';
+            heroImg.src = '../images/voiture/permis-b-accompagnee.png';
         } else if (selected === 'b-automatique') {
-            heroImg.src = '../images/permis-b-automatique.png';
+            heroImg.src = '../images/voiture/permis-b-automatique.png';
         } else if (selected === 'moto-a2' || selected === 'passerelle-a2-a') {
-            heroImg.src = '../images/permis-a2.png';
+            heroImg.src = '../images/moto/permis-a2.png';
         } else if (selected === 'moto-a1' || selected === 'formation-125cc') {
-            heroImg.src = '../images/permis-a1-125.png';
+            heroImg.src = '../images/moto/permis-a1-125.png';
         } else if (selected === 'am-bsr') {
-            heroImg.src = '../images/am-bsr.png';
+            heroImg.src = '../images/moto/am-bsr.png';
         } else {
             heroImg.src = '../images/hero-car-road.png';
         }
