@@ -319,9 +319,7 @@ Pour signaler un problème CSS :
 ### 🔄 Évolutions Prévues
 
 - **v2.1** : Système de thèmes (clair/sombre)
-- **v2.2** : Animations avancées avec CSS animations
-- **v2.3** : Optimisation pour les très hautes résolutions
-- **v2.4** : Support des nouvelles fonctionnalités CSS4
+- **v2.2** : Optimisation pour les très hautes résolutions
 
 ## 📈 Métriques & Analytics
 

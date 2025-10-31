@@ -9,8 +9,6 @@ Allow: /page/financement.html
 Allow: /page/contact.html
 Allow: /page/code_de_la_route.html
 Allow: /page/equipe.html
-
-# Autoriser l'indexation des pages légales
 Allow: /page/reglement.html
 Allow: /page/satisfaction.html
 Allow: /page/positionnement.html

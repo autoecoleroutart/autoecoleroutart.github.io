@@ -53,11 +53,11 @@ Site web vitrine moderne et entièrement responsive pour l'auto-école Rout'Art,
 
 ```text
 Rout-Art/
-├── 📄 index.html                     # Page d'accueil principale
-├── 📖 README.md                      # Documentation complète
-├── 🔧 chrome_no_secu.sh             # Script de développement local
+├── 📄 index.html                     # Page d'accueil principale 🏠
+├── 📖 README.md                      # Documentation complète du projet 📋
+├── 🔧 chrome_no_secu.sh             # Script de développement local (Chrome sans sécurité)
 │
-├── 📁 page/                          # Pages HTML organisées
+├── 📁 page/                          # Pages HTML organisées 🌐
 │   ├── 📚 code_de_la_route.html         # Formation théorique
 │   ├── 📞 contact.html                  # Contact et localisation
 │   ├── 👥 equipe.html                   # Présentation de l'équipe
@@ -66,51 +66,93 @@ Rout-Art/
 │   ├── 🏦 garantie_financiere.html      # Garanties légales
 │   ├── 📋 positionnement.html           # Évaluation initiale
 │   ├── 📝 reclamation.html              # Gestion des réclamations
+│   ├── 📜 reglement.html                # Règlement intérieur
 │   ├── 📊 resultat.html                 # Consultation des résultats
 │   ├── 😊 satisfaction.html             # Enquêtes qualité
 │   ├── 💰 tarifs.html                   # Grilles tarifaires
-│   ├── 🌑 test-dark-mode.html           # Test du dark-mode
 │   └── 📄 template.html                 # Modèle de développement
 │
-├── 📁 style/                         # Architecture CSS modulaire
-│   ├── 🎨 variables.css                 # Variables de design système
-│   ├── 🏗️ general.css                   # Styles de base globaux
-│   ├── � README.md                     # Documentation CSS
-│   ├── 🏠 index.css                     # Styles page d'accueil
-│   ├── 🎓 formations.css                # Styles page formations
-│   ├── 💰 tarifs.css                    # Styles page tarifs
+├── 📁 style/                         # Architecture CSS modulaire 🎨
+│   ├── 📚 README.md                     # Documentation CSS
+│   ├── 📚 code_de_la_route.css          # Styles page code
 │   ├── 📞 contact.css                   # Styles page contact
+│   ├── 🌑 dark-mode.css                 # Styles pour le mode sombre
 │   ├── 👥 equipe.css                    # Styles page équipe
 │   ├── 💳 financement.css               # Styles page financement
-│   ├── 📚 code_de_la_route.css          # Styles page code
+│   ├── 🎓 formations.css                # Styles page formations
 │   ├── 🏦 garantie_financiere.css       # Styles page garantie
+│   ├── 🏗️ general.css                   # Styles de base globaux
+│   ├── 🏠 index.css                     # Styles page d'accueil
 │   ├── 📋 positionnement.css            # Styles page positionnement
 │   ├── 📝 reclamation.css               # Styles page réclamation
+│   ├── 📜 reglement.css                 # Styles page règlement
 │   ├── 📊 resultat.css                  # Styles page résultat
 │   ├── 😊 satisfaction.css              # Styles page satisfaction
-│   └── 📜 reglement.css                 # Styles page règlement
+│   ├── 💰 tarifs.css                    # Styles page tarifs
+│   └── 🎨 variables.css                 # Variables de design système
 │
-├── 📁 script/                        # Scripts JavaScript
-│   ├── ⚙️ script.js                     # Fonctionnalités principales
+├── 📁 script/                        # Scripts JavaScript ⚙️
+│   ├── 🌑 dark-mode.js                  # Logique du mode sombre
+│   ├── 💳 financement.js                # Logique page financement
 │   ├── 🎓 formations.js                 # Logique page formations
-│   ├── 💰 tarifs.js                     # Logique page tarifs
-│   └── 💳 financement.js                # Logique page financement
+│   ├── ⚙️ script.js                     # Fonctionnalités principales
+│   └── 💰 tarifs.js                     # Logique page tarifs
 │
-├── 📁 images/                        # Ressources visuelles
-│   ├── 🎨 logo_routart_modern.png       # Logo principal
+├── 📁 images/                        # Ressources visuelles 🖼️
+│   ├── 👤 avatar/                      # Photos de l'équipe
+│   │   ├── avatar-emma.png
+│   │   └── avatar-paul.png
+│   ├── 🇫🇷 france-travail-sombre.png     # Logo France Travail (dark mode)
+│   ├── 🇫🇷 france-travail.png            # Logo France Travail
 │   ├── 🌅 hero-car-road.png            # Image hero section
-│   ├── 👤 avatar-*.png                  # Photos équipe
-│   ├── 🎯 icon-*.png                    # Icônes fonctionnelles
-│   ├── 🎓 permis-*.png                  # Visuels formations
-│   └── 🏢 logo-groupama.png             # Logos pour la garantie financière
+│   ├── 🚗 icon-car.png                  # Icône voiture
+│   ├── 📘 icon-facebook.ico             # Icône Facebook
+│   ├── 📸 icon-instagram.png            # Icône Instagram
+│   ├── 🏍️ icon-moto.png                 # Icône moto
+│   ├── 🏦 logo-groupama.png             # Logos pour la garantie financière
+│   ├── 🎨 logo_routart_modern.png       # Logo principal
+│   ├── 🏍️ moto/                        # Visuels moto
+│   │   ├── am-bsr.png
+│   │   ├── permis-a1-125.png
+│   │   └── permis-a2.png
+│   ├── 🚗 permis-1e.png                 # Visuel permis 1€/jour
+│   ├── 📚 prepa_code.png                # Visuel préparation au code
+│   └── 🚗 voiture/                      # Visuels voiture
+│       ├── permis-b-accompagnee.png     # Conduite accompagnée
+│       ├── permis-b-automatique.png     # Boîte automatique
+│       └── permis-b-traditionnel.png    # Permis B classique
 │
-├── 📁 files/                         # Documents officiels
-│   ├── 📋 programme_formation_*.pdf     # Programmes détaillés
-│   ├── ⚖️ enjeux_formation_*.pdf        # Documents légaux
-│   └── 📜 reglement_interieur.docx      # Règlement interne
+├── 📁 files/                         # Documents officiels 📝
+│   ├── 🏍️ moto/                        # Documents formations moto
+│   │   ├── 125cm3/
+│   │   │   └── programme_formation_125cm3.pdf
+│   │   ├── a1/
+│   │   │   ├── parcours_formation_a1.pdf
+│   │   │   └── programme_formation_a1.pdf
+│   │   ├── a2/
+│   │   │   ├── enjeux_formation_a2.pdf
+│   │   │   ├── parcours_formation_a2.pdf
+│   │   │   └── programme_formation_a2.pdf
+│   │   ├── a2_a/
+│   │   │   └── parcours_formation_a.pdf
+│   │   └── am/
+│   │       ├── enjeux_formation_permis_am.pdf
+│   │       └── programme_formation_permis_am.pdf
+│   ├── 📜 reglement_interieur.docx      # Règlement interne
+│   └── 🚗 voiture/                      # Documents formations voiture
+│       ├── auto/
+│       │   └── programme_auto_manuel.pdf
+│       ├── enjeux_formation_permis_b.pdf
+│       ├── parcours_formation_b.pdf
+│       └── programme_formation_b.pdf
 │
-└── 📁 icon/                          # Favicon et icônes
-    └── 🎯 logo_routart_modern.png
+├── 📁 icon/                          # Favicon et icônes 🎯
+│   └── 🎯 logo_routart_modern.png
+│
+├── 🤖 robots.txt                      # Fichier robots pour le SEO
+├── 🗺️ sitemap.xml                    # Plan du site pour les moteurs de recherche
+└── 🔊 sounds/                        # Ressources sonores (e.g. pour UX)
+    └── change_page.mp3
 ```
 
 ## 🎨 Système de Design
