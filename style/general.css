@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: auto;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
@@ -42,11 +46,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.5rem; }
-
-img {
-    max-width: 100%;
-    height: auto;
-}
 
 .container {
     max-width: 1200px;
@@ -534,7 +533,7 @@ iframe {
 }
 
 .logo img {
-    height: 150px;
+    width: 200px;
 }
 
 .main-nav .nav-list {
@@ -619,7 +618,7 @@ iframe {
 
 @media (max-width: 1000px) and (min-width: 769px) {
     .logo img {
-        height: 120px;
+        width: 150px;
     }
     
     .main-nav .nav-list button {
@@ -792,7 +791,80 @@ iframe {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive design pour le bouton */
+
+@media (max-width: 1378px) {
+    :root[data-theme="dark"] .main-nav .nav-list {
+        background: var(--dark-gradient);
+    }
+
+    .main-nav .nav-list {
+        position: fixed;
+        top: 140px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background: var(--primary-gradient);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1.25rem;
+        transition: left 0.3s ease;
+        z-index: 998;
+        padding: 2rem 1rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .main-nav.active .nav-list {
+        left: 0;
+    }
+
+    .main-nav .nav-list button {
+        max-width: 320px;
+        padding: 1.2rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.15);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 30px;
+        color: var(--white-color);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        margin: 0.25rem 0;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    .main-nav .nav-list button:hover,
+    .main-nav .nav-list button.active {
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--primary-color);
+        transform: scale(1.05);
+    }
+
+    .main-nav .nav-list button:last-child {
+        margin-bottom: 2rem;
+    }
+
+    /* Afficher le hamburger sur petits et moyens écrans */
+    .hamburger-menu {
+        display: flex;
+        z-index: 1001;
+        position: relative;
+    }
+
+    /* Empêcher l'affichage de la nav en ligne */
+    .main-nav .nav-list {
+        display: flex; /* nécessaire pour le off-canvas */
+    }
+}
+
+/* Conserver l'ancien comportement plus restreint pour très petits écrans */
 @media (max-width: 768px) {
     .header-content {
         padding: 0 1rem;
@@ -801,31 +873,19 @@ iframe {
     }
 
     .logo img {
-        height: 80px;
+        width: 200px;
     }
 
     :root[data-theme="dark"] .main-nav .nav-list {
         background: var(--dark-gradient);
     }
 
-    :root[data-theme="dark"] .main-nav .nav-list::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.05);
-    }
-
-    :root[data-theme="dark"] .main-nav .nav-list::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.2);
-    }
-
-    :root[data-theme="dark"] .main-nav .nav-list::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 255, 255, 0.4);
-    }
-
     .main-nav .nav-list {
         position: fixed;
-        top: 100px; /* Commencer sous le header */
+        top: 150px; /* Commencer sous le header */
         left: -100%;
         width: 100%;
-        height: calc(100vh - 100px); /* Hauteur moins le header */
+        height: calc(100vh - 150px); /* Hauteur moins le header */
         background: var(--primary-gradient);
         flex-direction: column;
         justify-content: flex-start; /* Changé de center à flex-start */
@@ -834,9 +894,9 @@ iframe {
         transition: left 0.3s ease;
         z-index: 998;
         padding: 2rem 1rem; /* Augmenté le padding top pour espacer du haut */
-        overflow-y: auto; /* Permettre le scroll vertical */
-        overflow-x: hidden; /* Empêcher le scroll horizontal */
-        -webkit-overflow-scrolling: touch; /* Scroll fluide sur iOS */
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
     }
 
     .main-nav.active .nav-list {
@@ -873,25 +933,6 @@ iframe {
     /* Ajouter un espacement en bas pour éviter que le dernier bouton soit collé au bord */
     .main-nav .nav-list button:last-child {
         margin-bottom: 2rem;
-    }
-
-    /* Améliorer la barre de défilement pour le menu mobile */
-    .main-nav .nav-list::-webkit-scrollbar {
-        width: 4px;
-    }
-
-    .main-nav .nav-list::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 2px;
-    }
-
-    .main-nav .nav-list::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 2px;
-    }
-
-    .main-nav .nav-list::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 255, 255, 0.5);
     }
 
     /* Indicateur visuel de défilement */
