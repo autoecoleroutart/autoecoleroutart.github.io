@@ -210,7 +210,7 @@ Rout-Art/
 - **Navigation horizontale → Menu hamburger** tactile
 - **Images → Format adaptatif** selon l'écran
 
-##   Technologies & Performance
+## Technologies & Performance
 
 ### 💻 Stack Technique
 
