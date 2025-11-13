@@ -321,7 +321,6 @@ const formations = {
 ### 🏢 Auto-École Rout'Art
 
 - **📧 Email** : [autoecoleroutart@hotmail.com](mailto:autoecoleroutart@hotmail.com)
-- **📱 Sécrétariat** : [06 25 39 87 22](tel:+33625398722)
 - **📱 Cédric (Gérant)** : [06 24 07 18 39](tel:+33624071839)
 - **📍 Adresse** : 79 Rue d'Alsace, 54300 Lunéville
 - **🌐 Réseaux sociaux** : Facebook, Instagram

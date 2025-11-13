@@ -61,6 +61,7 @@ class ServerManager:
         self.thread = None
         self.running = False
         self.request_handler = None
+        self._stop_requested = False
 
     def start(self, repo_path, port=8000, callback=None):
         """Démarrer le serveur HTTP"""
@@ -87,22 +88,25 @@ class ServerManager:
             socketserver.TCPServer.allow_reuse_address = True
             self.server = socketserver.TCPServer(
                 ("localhost", port), create_handler)
-            self.server.timeout = 0.5  # Timeout pour serve_forever
+
+            # Timeout court pour permettre l'arrêt
+            self.server.timeout = 0.5
             self.running = True
+            self._stop_requested = False
 
             message = f"✓ Serveur démarré sur http://localhost:{port}"
             if callback:
                 callback(message)
             self.logger.log(message)
 
-            # Servir les requêtes (sans bloquer infiniment)
-            while self.running:
+            # Servir les requêtes
+            # On traite les requêtes avec handle_request() et on check le flag _stop_requested
+            while self.running and not self._stop_requested:
                 try:
                     self.server.handle_request()
                 except Exception as e:
-                    if self.running:
+                    if self.running and not self._stop_requested:
                         self.logger.log(f"Erreur serveur: {e}")
-                    break
 
         except OSError as e:
             if "Address already in use" in str(e):
@@ -119,13 +123,24 @@ class ServerManager:
                 callback(message)
             self.logger.log(message)
             self.running = False
+        finally:
+            self.running = False
+            if self.server:
+                try:
+                    self.server.server_close()
+                except:
+                    pass
 
     def stop(self):
         """Arrêter le serveur HTTP"""
         try:
+            self._stop_requested = True
             self.running = False
             if self.server:
-                self.server.server_close()
+                try:
+                    self.server.server_close()
+                except:
+                    pass
             self.logger.log("Serveur arrêté")
             return True
         except Exception as e:
