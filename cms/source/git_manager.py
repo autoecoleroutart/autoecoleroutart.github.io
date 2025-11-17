@@ -7,6 +7,32 @@ Gestionnaire Git - Opérations de synchronisation avec GitHub
 from git import Repo, GitCommandError
 from pathlib import Path
 import datetime
+import os
+import subprocess
+
+
+class GitManager:
+    """Gère les opérations Git (pull, push, statut)"""
+
+    def __init__(self, logger):
+        self.logger = logger
+        self._setup_git_safe_directory()
+
+    def _setup_git_safe_directory(self):
+        """Configurer le répertoire comme safe directory pour éviter les erreurs de propriété"""
+        try:
+            repo_path = Path(__file__).parent.parent.parent
+            result = subprocess.run(
+                ["git", "config", "--global", "--add",
+                    "safe.directory", str(repo_path.resolve())],
+                capture_output=True,
+                text=True
+            )
+            if result.returncode == 0:
+                self.logger.log("Git safe directory configuré")
+        except Exception as e:
+            self.logger.log(
+                f"Attention: impossible de configurer git safe directory: {e}")
 
 
 class GitManager:
@@ -19,6 +45,7 @@ class GitManager:
         """Vérifier si le chemin est un repository Git valide"""
         try:
             repo = Repo(repo_path)
+            self._ensure_git_config(repo_path)
             return {
                 "valid": True,
                 "message": f"✓ Repository valide\nBranche: {repo.active_branch.name}\nURL: {repo.remotes.origin.url}"
@@ -29,9 +56,22 @@ class GitManager:
                 "message": f"✗ Erreur: {str(e)}"
             }
 
+    def _ensure_git_config(self, repo_path):
+        """S'assurer que le répertoire est configuré comme safe"""
+        try:
+            subprocess.run(
+                ["git", "config", "--global", "--add",
+                    "safe.directory", str(Path(repo_path).resolve())],
+                capture_output=True,
+                cwd=repo_path
+            )
+        except:
+            pass
+
     def pull(self, repo_path):
         """Pull les dernières modifications"""
         try:
+            self._ensure_git_config(repo_path)
             repo = Repo(repo_path)
 
             # Fetch
@@ -58,6 +98,7 @@ class GitManager:
     def push(self, repo_path, commit_message):
         """Push les modifications vers le repository distant"""
         try:
+            self._ensure_git_config(repo_path)
             repo = Repo(repo_path)
 
             # Ajouter tous les fichiers modifiés
