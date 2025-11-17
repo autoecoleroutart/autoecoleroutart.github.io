@@ -1,11 +1,11 @@
 // Menu hamburger functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const mainNav = document.querySelector('.main-nav');
     const body = document.body;
 
     // Fonction pour jouer le son de changement de page au chargement
-    function playPageLoadSound() {
+    /*function playPageLoadSound() {
         // Attendre un petit délai pour s'assurer que la page est bien chargée
         setTimeout(() => {
             try {
@@ -40,20 +40,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Erreur avec le son de chargement
             }
         }, 200); // Délai de 200ms après le chargement du DOM
-    }
+    }*/
 
     // Jouer le son au chargement de la page
     playPageLoadSound();
 
     if (hamburgerMenu && mainNav) {
-        hamburgerMenu.addEventListener('click', function() {
+        hamburgerMenu.addEventListener('click', function () {
             // Toggle navigation visibility
             mainNav.classList.toggle('active');
             hamburgerMenu.classList.toggle('active');
-            
+
             // Toggle body scroll
             body.classList.toggle('menu-open');
-            
+
             // Update aria-label for accessibility
             const isOpen = mainNav.classList.contains('active');
             hamburgerMenu.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close menu when clicking on a navigation link
         const navButtons = mainNav.querySelectorAll('.nav-btn');
         navButtons.forEach(button => {
-            button.addEventListener('click', function(event) {
+            button.addEventListener('click', function (event) {
                 mainNav.classList.remove('active');
                 hamburgerMenu.classList.remove('active');
                 body.classList.remove('menu-open');
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             if (!hamburgerMenu.contains(event.target) && !mainNav.contains(event.target)) {
                 mainNav.classList.remove('active');
                 hamburgerMenu.classList.remove('active');
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close menu on escape key
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape' && mainNav.classList.contains('active')) {
                 mainNav.classList.remove('active');
                 hamburgerMenu.classList.remove('active');
@@ -103,10 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
         backToTopBtn.className = 'back-to-top';
         backToTopBtn.setAttribute('aria-label', 'Retour en haut de la page');
         backToTopBtn.style.display = 'none';
-        
+
         // Ajouter le bouton au body
         document.body.appendChild(backToTopBtn);
-        
+
         // Fonction pour afficher/masquer le bouton selon le scroll
         function toggleBackToTopButton() {
             if (window.scrollY > 300) {
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 300); // Délai correspondant à la transition CSS
             }
         }
-        
+
         // Fonction pour remonter en haut avec animation fluide
         function scrollToTop() {
             window.scrollTo({
@@ -129,15 +129,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth'
             });
         }
-        
+
         // Event listeners
         window.addEventListener('scroll', toggleBackToTopButton);
         backToTopBtn.addEventListener('click', scrollToTop);
-        
+
         // Vérifier la position initiale
         toggleBackToTopButton();
     }
-    
+
     // Initialiser le bouton retour en haut
     createBackToTopButton();
 
@@ -160,13 +160,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (navList && navList.contains(e.target)) {
                 // Appliquer le smooth scroll pour le menu
                 e.preventDefault();
-                
+
                 menuTargetY += e.deltaY;
-                
+
                 // Limiter entre 0 et la hauteur scrollable du menu
                 const maxScroll = navList.scrollHeight - navList.clientHeight;
                 menuTargetY = Math.max(0, Math.min(menuTargetY, maxScroll));
-                
+
                 if (!isMenuSmoothing) {
                     isMenuSmoothing = true;
                     menuCurrentY = navList.scrollTop;
@@ -174,16 +174,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 return;
             }
-            
+
             // Smooth scroll pour la page principale
             e.preventDefault();
-            
+
             // Ajouter le delta à la position cible
             targetY += e.deltaY;
-            
+
             // Limiter entre 0 et la hauteur maximale
             targetY = Math.max(0, Math.min(targetY, document.documentElement.scrollHeight - window.innerHeight));
-            
+
             // Démarrer l'animation si elle n'est pas déjà en cours
             if (!isSmoothing) {
                 isSmoothing = true;
@@ -195,15 +195,15 @@ document.addEventListener('DOMContentLoaded', function() {
         function smoothScrollAnimation() {
             // Interpolation pour un mouvement fluide (0.15 = vitesse de transition)
             currentY += (targetY - currentY) * 0.15;
-            
+
             // Arrondir pour éviter les micro-mouvements
             if (Math.abs(targetY - currentY) < 0.5) {
                 currentY = targetY;
                 isSmoothing = false;
             }
-            
+
             window.scrollTo(0, currentY);
-            
+
             // Continuer l'animation si nécessaire
             if (isSmoothing) {
                 requestAnimationFrame(smoothScrollAnimation);
@@ -220,15 +220,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Interpolation pour un mouvement fluide
             menuCurrentY += (menuTargetY - menuCurrentY) * 0.15;
-            
+
             // Arrondir pour éviter les micro-mouvements
             if (Math.abs(menuTargetY - menuCurrentY) < 0.5) {
                 menuCurrentY = menuTargetY;
                 isMenuSmoothing = false;
             }
-            
+
             navList.scrollTop = menuCurrentY;
-            
+
             // Continuer l'animation si nécessaire
             if (isMenuSmoothing) {
                 requestAnimationFrame(smoothScrollMenu);
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Synchroniser lors de scroll direct du menu
         const navList = document.querySelector('.main-nav .nav-list');
         if (navList) {
-            navList.addEventListener('scroll', function() {
+            navList.addEventListener('scroll', function () {
                 if (!isMenuSmoothing) {
                     menuTargetY = navList.scrollTop;
                     menuCurrentY = navList.scrollTop;
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Synchroniser lors de scroll direct de la page (touches clavier, barre de défilement, etc.)
         let scrollTimeout;
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
                 if (!isSmoothing) {
