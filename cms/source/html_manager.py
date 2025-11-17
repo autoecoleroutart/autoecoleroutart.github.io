@@ -110,6 +110,48 @@ class HTMLManager:
         except Exception as e:
             return {"success": False, "error": str(e)}
 
+    def extract_editable_elements(self, content):
+        """Extraire uniquement les éléments avec la classe 'editable'"""
+        try:
+            soup = BeautifulSoup(content, 'html.parser')
+            editable_elements = soup.find_all(class_='editable')
+
+            if not editable_elements:
+                return {"success": False, "error": "Aucun élément éditable trouvé (class='editable')", "elements": []}
+
+            elements_data = []
+            for index, elem in enumerate(editable_elements):
+                elem_id = elem.get('id', None)
+                elem_tag = elem.name
+                elem_class = ' '.join(elem.get('class', []))
+                elem_content = str(elem)
+
+                elements_data.append({
+                    "index": index,
+                    "id": elem_id,
+                    "tag": elem_tag,
+                    "class": elem_class,
+                    "content": elem_content
+                })
+
+            return {"success": True, "count": len(elements_data), "elements": elements_data}
+        except Exception as e:
+            return {"success": False, "error": str(e), "elements": []}
+
+    def update_editable_element(self, content, element_id, new_content):
+        """Mettre à jour un élément éditable spécifique"""
+        try:
+            soup = BeautifulSoup(content, 'html.parser')
+            element = soup.find(id=element_id, class_='editable')
+
+            if not element:
+                return {"success": False, "error": f"Élément éditable non trouvé: {element_id}"}
+
+            element.string = new_content
+            return {"success": True, "content": str(soup.prettify())}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+
     def get_file_info(self, file_path):
         """Obtenir les informations du fichier"""
         try:

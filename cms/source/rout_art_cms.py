@@ -15,6 +15,7 @@ import json
 import os
 import sys
 from pathlib import Path
+from bs4 import BeautifulSoup
 
 # Imports locaux
 from git_manager import GitManager
@@ -48,6 +49,7 @@ class RoutArtCMS:
         self.repo_path = tk.StringVar(
             value=self.config_manager.get_repo_path())
         self.current_file = None
+        self.current_file_content = None
         self.server_thread = None
         self.server_running = False
 
@@ -160,26 +162,66 @@ class RoutArtCMS:
         ctk.CTkButton(file_frame, text="🔄 Actualiser",
                       command=self._refresh_files, width=120).pack(side=tk.LEFT, padx=5)
 
-        # Contenu éditable
+        # Contenu éditable - Zone scrollable pour les éléments éditables
         content_section = ctk.CTkFrame(editor_frame)
         content_section.pack(fill=tk.BOTH, expand=True, padx=15, pady=15)
 
-        ctk.CTkLabel(content_section, text="Contenu HTML:", font=(
+        ctk.CTkLabel(content_section, text="Éléments Éditables (class='editable'):", font=(
             "Arial", 12, "bold")).pack(anchor="w", pady=5)
 
-        self.editor_text = scrolledtext.ScrolledText(content_section, height=20, wrap=tk.WORD,
-                                                     bg="#2b2b2b", fg="#ffffff", font=("Courier", 10))
-        self.editor_text.pack(fill=tk.BOTH, expand=True, pady=5)
+        # Container avec scroll horizontal et vertical
+        scroll_container = ctk.CTkFrame(content_section)
+        scroll_container.pack(fill=tk.BOTH, expand=True)
+
+        # Cadre scrollable pour afficher les éléments éditables
+        self.editable_canvas = tk.Canvas(
+            scroll_container, bg="#2b2b2b", highlightthickness=0)
+        v_scrollbar = ttk.Scrollbar(
+            scroll_container, orient="vertical", command=self.editable_canvas.yview)
+        h_scrollbar = ttk.Scrollbar(
+            scroll_container, orient="horizontal", command=self.editable_canvas.xview)
+
+        self.editable_scrollframe = ctk.CTkFrame(
+            self.editable_canvas, fg_color="#2b2b2b")
+
+        self.editable_scrollframe.bind(
+            "<Configure>",
+            lambda e: self.editable_canvas.configure(
+                scrollregion=self.editable_canvas.bbox("all"))
+        )
+
+        self.editable_canvas.create_window(
+            (0, 0), window=self.editable_scrollframe, anchor="nw")
+        self.editable_canvas.configure(
+            yscrollcommand=v_scrollbar.set, xscrollcommand=h_scrollbar.set)
+
+        # Bind mouse wheel scrolling
+        self.editable_canvas.bind("<MouseWheel>", self._on_mousewheel)
+        self.editable_canvas.bind("<Button-4>", self._on_mousewheel)
+        self.editable_canvas.bind("<Button-5>", self._on_mousewheel)
+
+        # Bind pour les éléments enfants aussi
+        self.editable_scrollframe.bind("<MouseWheel>", self._on_mousewheel)
+        self.editable_scrollframe.bind("<Button-4>", self._on_mousewheel)
+        self.editable_scrollframe.bind("<Button-5>", self._on_mousewheel)
+
+        self.editable_canvas.grid(row=0, column=0, sticky="nsew")
+        v_scrollbar.grid(row=0, column=1, sticky="ns")
+        h_scrollbar.grid(row=1, column=0, sticky="ew")
+
+        scroll_container.grid_rowconfigure(0, weight=1)
+        scroll_container.grid_columnconfigure(0, weight=1)
+
+        # Dictionnaire pour stocker les widgets des éléments éditables
+        self.editable_fields = {}
 
         # Boutons d'action
         button_frame = ctk.CTkFrame(editor_frame)
         button_frame.pack(fill=tk.X, padx=15, pady=15)
 
-        ctk.CTkButton(button_frame, text="💾 Sauvegarder", command=self._save_file,
+        ctk.CTkButton(button_frame, text="💾 Sauvegarder", command=self._save_editable_file,
                       width=150, height=35).pack(side=tk.LEFT, padx=5)
         ctk.CTkButton(button_frame, text="↻ Recharger", command=self._reload_file,
-                      width=150, height=35).pack(side=tk.LEFT, padx=5)
-        ctk.CTkButton(button_frame, text="🔍 Rechercher", command=self._show_find_dialog,
                       width=150, height=35).pack(side=tk.LEFT, padx=5)
 
     def _create_preview_tab(self):
@@ -424,6 +466,15 @@ class RoutArtCMS:
 
     # ======= Méthodes Éditeur =======
 
+    def _on_mousewheel(self, event):
+        """Gérer le scroll à la molette de la souris"""
+        if event.num == 5 or event.delta < 0:
+            # Scroll down
+            self.editable_canvas.yview_scroll(3, "units")
+        elif event.num == 4 or event.delta > 0:
+            # Scroll up
+            self.editable_canvas.yview_scroll(-3, "units")
+
     def _get_page_files(self):
         """Récupérer la liste des fichiers HTML disponibles"""
         page_dir = Path(self.repo_path.get()) / "page"
@@ -439,7 +490,7 @@ class RoutArtCMS:
         messagebox.showinfo("Succès", f"{len(files)} fichiers trouvés")
 
     def _on_file_selected(self, choice):
-        """Charger le fichier sélectionné"""
+        """Charger le fichier sélectionné et afficher les éléments éditables"""
         if not choice:
             return
 
@@ -451,73 +502,155 @@ class RoutArtCMS:
                 with open(file_path, 'r', encoding='utf-8') as f:
                     content = f.read()
 
-                self.editor_text.config(state=tk.NORMAL)
-                self.editor_text.delete("1.0", tk.END)
-                self.editor_text.insert("1.0", content)
-                self.editor_text.config(state=tk.NORMAL)
-
                 self.current_file = file_path
-                self.logger.log(f"Fichier ouvert: {choice}")
+                self.current_file_content = content
+
+                # Extraire les éléments éditables
+                result = self.html_manager.extract_editable_elements(content)
+
+                # Nettoyer les champs précédents
+                for widget in self.editable_scrollframe.winfo_children():
+                    widget.destroy()
+                self.editable_fields = {}
+
+                if result["success"]:
+                    # Afficher les éléments éditables
+                    for elem in result["elements"]:
+                        self._create_editable_field(elem)
+                    self.logger.log(
+                        f"Fichier ouvert: {choice} ({result['count']} éléments éditables)")
+                else:
+                    error_label = ctk.CTkLabel(
+                        self.editable_scrollframe,
+                        text=f"⚠️ {result['error']}",
+                        text_color="orange",
+                        font=("Arial", 11)
+                    )
+                    error_label.pack(pady=10, padx=10)
+                    self.logger.log(
+                        f"Aucun élément éditable trouvé dans: {choice}")
             except Exception as e:
                 messagebox.showerror(
                     "Erreur", f"Impossible de charger le fichier: {e}")
         else:
             messagebox.showerror("Erreur", f"Fichier introuvable: {file_path}")
 
-    def _save_file(self):
-        """Sauvegarder le fichier modifié"""
+    def _create_editable_field(self, elem_info):
+        """Créer un champ pour un élément éditable avec meilleure présentation"""
+        elem_index = elem_info.get("index", 0)
+        elem_id = elem_info.get("id")
+        elem_tag = elem_info.get("tag", "unknown")
+
+        field_frame = ctk.CTkFrame(
+            self.editable_scrollframe, fg_color="#1e1e1e", corner_radius=10, border_width=2, border_color="#404040", width=1600, height=200)
+        field_frame.pack(fill=tk.X, padx=12, pady=8)
+        field_frame.pack_propagate(False)
+
+        # En-tête/Info à gauche
+        info_frame = ctk.CTkFrame(
+            field_frame, fg_color="#252525", corner_radius=8, width=150)
+        info_frame.pack(side=tk.LEFT, fill=tk.Y, padx=10, pady=10)
+        info_frame.pack_propagate(False)
+
+        # Afficher le tag avec couleur
+        tag_label = ctk.CTkLabel(
+            info_frame,
+            text=f"<{elem_tag.upper()}>",
+            text_color="#00D4FF",
+            font=("Arial", 12, "bold")
+        )
+        tag_label.pack(anchor="w", padx=8, pady=(8, 2))
+
+        # Afficher l'ID ou l'index
+        id_display = elem_id if elem_id else f"[{elem_index}]"
+        id_label = ctk.CTkLabel(
+            info_frame,
+            text=f"#{id_display}",
+            text_color="#90EE90",
+            font=("Arial", 10)
+        )
+        id_label.pack(anchor="w", padx=8, pady=(2, 8))
+
+        # Champ de texte pour le contenu - à droite
+        text_frame = ctk.CTkFrame(field_frame, fg_color="#1e1e1e")
+        text_frame.pack(side=tk.LEFT, fill=tk.BOTH,
+                        expand=True, padx=(0, 10), pady=10)
+
+        text_widget = ctk.CTkTextbox(
+            text_frame,
+            height=50,
+            font=("Montserrat", 15),
+            text_color="#FFFFFF",
+            fg_color="#2b2b2b",
+            corner_radius=6
+        )
+        text_widget.pack(fill=tk.BOTH, expand=True)
+
+        # Extraire le contenu texte de l'élément (sans les balises)
+        content_html = elem_info.get("content", "")
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(content_html, 'html.parser')
+        text_content = soup.get_text().strip()
+
+        text_widget.insert("1.0", text_content)
+
+        # Stocker la référence du widget avec l'index comme clé
+        self.editable_fields[elem_index] = {
+            "widget": text_widget,
+            "tag": elem_tag,
+            "original_html": content_html,
+            "index": elem_index
+        }
+
+    def _save_editable_file(self):
+        """Sauvegarder les modifications des éléments éditables"""
         if not self.current_file:
             messagebox.showerror("Erreur", "Aucun fichier sélectionné")
             return
 
         try:
-            content = self.editor_text.get("1.0", tk.END)
+            content = self.current_file_content
+            soup = BeautifulSoup(content, 'html.parser')
+
+            # Récupérer tous les éléments éditables du HTML
+            editable_elements = soup.find_all(class_='editable')
+
+            # Parcourir les champs modifiés et mettre à jour le contenu
+            for elem_index, field_info in self.editable_fields.items():
+                text_widget = field_info["widget"]
+                new_content = text_widget.get("1.0", "end-1c")
+
+                # Vérifier que l'index est valide
+                if isinstance(elem_index, int) and elem_index < len(editable_elements):
+                    element = editable_elements[elem_index]
+                    # Vider complètement l'élément et insérer le nouveau contenu
+                    element.clear()
+                    element.string = new_content
+                    self.logger.log(f"Élément [{elem_index}] mis à jour")
+                else:
+                    self.logger.log(
+                        f"Index {elem_index} invalide ou hors limites")
+
+            # Sauvegarder le fichier modifié
+            updated_content = str(soup.prettify())
             with open(self.current_file, 'w', encoding='utf-8') as f:
-                f.write(content)
+                f.write(updated_content)
 
             messagebox.showinfo(
                 "Succès", f"Fichier sauvegardé: {self.current_file.name}")
             self.logger.log(f"Fichier sauvegardé: {self.current_file.name}")
+
+            # Recharger le fichier pour mettre à jour la vue
+            self._on_file_selected(self.file_combo.get())
         except Exception as e:
             messagebox.showerror("Erreur", f"Impossible de sauvegarder: {e}")
+            self.logger.log(f"Erreur sauvegarde: {e}")
 
     def _reload_file(self):
         """Recharger le fichier"""
         if self.file_combo.get():
             self._on_file_selected(self.file_combo.get())
             messagebox.showinfo("Succès", "Fichier rechargé")
-
-    def _show_find_dialog(self):
-        """Afficher la boîte de dialogue de recherche"""
-        find_window = tk.Toplevel(self.root)
-        find_window.title("Rechercher")
-        find_window.geometry("400x150")
-
-        ctk.CTkLabel(find_window, text="Rechercher:",
-                     font=("Arial", 11)).pack(pady=5)
-        search_entry = ctk.CTkEntry(find_window, height=35)
-        search_entry.pack(fill=tk.X, padx=10, pady=5)
-
-        ctk.CTkLabel(find_window, text="Remplacer par:",
-                     font=("Arial", 11)).pack(pady=5)
-        replace_entry = ctk.CTkEntry(find_window, height=35)
-        replace_entry.pack(fill=tk.X, padx=10, pady=5)
-
-        def do_replace_all():
-            search_text = search_entry.get()
-            replace_text = replace_entry.get()
-            if search_text:
-                content = self.editor_text.get("1.0", tk.END)
-                new_content = content.replace(search_text, replace_text)
-                self.editor_text.config(state=tk.NORMAL)
-                self.editor_text.delete("1.0", tk.END)
-                self.editor_text.insert("1.0", new_content)
-                messagebox.showinfo(
-                    "Succès", f"Remplacé {content.count(search_text)} occurrence(s)")
-                find_window.destroy()
-
-        ctk.CTkButton(find_window, text="Remplacer tout",
-                      command=do_replace_all).pack(pady=10)
 
     # ======= Méthodes Serveur =======
 
