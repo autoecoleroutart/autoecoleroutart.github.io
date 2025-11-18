@@ -11,9 +11,9 @@ block_cipher = None
 
 a = Analysis(
     ['rout_art_cms.py'],
-    pathex=[],
+    pathex=['.'],
     binaries=[],
-    datas=[('cms', 'cms'), ('icon', 'icon')],
+    datas=[('../../icon', 'icon'), ('../../page', 'page'), ('../../style', 'style'), ('../../script', 'script'), ('.', '.')],
     hiddenimports=[
         'customtkinter',
         'tkinter',
@@ -21,6 +21,11 @@ a = Analysis(
         'bs4',
         'http.server',
         'socketserver',
+        'git_manager',
+        'html_manager',
+        'server_manager',
+        'config_manager',
+        'logger',
     ] + collect_submodules('customtkinter'),
     hookspath=[],
     hooksconfig={},
@@ -53,5 +58,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon='icon/logo_routart_modern.png',
+    icon='../icon/logo_routart.ico',
 )

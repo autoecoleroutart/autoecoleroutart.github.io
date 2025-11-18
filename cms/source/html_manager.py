@@ -126,12 +126,23 @@ class HTMLManager:
                 elem_class = ' '.join(elem.get('class', []))
                 elem_content = str(elem)
 
+                # Pour les iframes, extraire l'attribut src
+                editable_value = None
+                is_iframe = elem_tag == 'iframe'
+                if is_iframe:
+                    editable_value = elem.get('src', '')
+                else:
+                    # Pour les autres éléments, extraire le texte
+                    editable_value = elem.get_text().strip()
+
                 elements_data.append({
                     "index": index,
                     "id": elem_id,
                     "tag": elem_tag,
                     "class": elem_class,
-                    "content": elem_content
+                    "content": elem_content,
+                    "is_iframe": is_iframe,
+                    "editable_value": editable_value
                 })
 
             return {"success": True, "count": len(elements_data), "elements": elements_data}

@@ -138,28 +138,39 @@ class GitManager:
 
             # Info de base
             status = f"📊 STATUT DU REPOSITORY\n"
-            status += f"{'='*50}\n\n"
+            status += f"{'='*60}\n\n"
 
             # Branche actuelle
             status += f"🌳 Branche actuelle: {repo.active_branch.name}\n"
 
-            # Fichiers modifiés
-            if repo.is_dirty(untracked_files=False):
-                modified = [item.a_path for item in repo.index.diff(None)]
-                status += f"\n✏️  Fichiers modifiés ({len(modified)}):\n"
-                for file in modified:
+            # Fichiers staged (à commiter)
+            staged_files = [item.a_path for item in repo.index.diff("HEAD")]
+            if staged_files:
+                status += f"\n✅ Changements suivi ({len(staged_files)}):\n"
+                for file in staged_files:
                     status += f"   • {file}\n"
             else:
-                status += f"\n✓ Aucun fichier modifié\n"
+                status += f"\n✓ Aucun changement staged\n"
+
+            # Fichiers modifiés non staged
+            unstaged_files = [item.a_path for item in repo.index.diff(None)]
+            if unstaged_files:
+                status += f"\n❌ Changements non suivi ({len(unstaged_files)}):\n"
+                for file in unstaged_files:
+                    status += f"   • {file}\n"
+            else:
+                status += f"\n✓ Aucun fichier modifié non staged\n"
 
             # Fichiers non suivis
             untracked = repo.untracked_files
             if untracked:
                 status += f"\n📄 Fichiers non suivis ({len(untracked)}):\n"
-                for file in untracked[:10]:  # Limiter à 10
+                for file in untracked[:15]:  # Limiter à 15
                     status += f"   • {file}\n"
-                if len(untracked) > 10:
-                    status += f"   ... et {len(untracked) - 10} autres\n"
+                if len(untracked) > 15:
+                    status += f"   ... et {len(untracked) - 15} autres\n"
+            else:
+                status += f"\n✓ Aucun fichier non suivi\n"
 
             # Dernier commit
             if repo.head.is_valid():

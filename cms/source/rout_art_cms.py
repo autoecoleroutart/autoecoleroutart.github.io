@@ -6,6 +6,11 @@ Application desktop pour gérer le contenu du site Rout'Art
 Permet: Pull Git, édition HTML, préview local et Push Git
 """
 
+from git_manager import GitManager
+from html_manager import HTMLManager
+from server_manager import ServerManager
+from config_manager import ConfigManager
+from logger import Logger
 import tkinter as tk
 from tkinter import messagebox, filedialog, scrolledtext
 from tkinter import ttk
@@ -17,12 +22,18 @@ import sys
 from pathlib import Path
 from bs4 import BeautifulSoup
 
-# Imports locaux
-from git_manager import GitManager
-from html_manager import HTMLManager
-from server_manager import ServerManager
-from config_manager import ConfigManager
-from logger import Logger
+# Ajouter le chemin correct pour les imports (important pour PyInstaller)
+# DOIT être fait AVANT les imports locaux
+if getattr(sys, 'frozen', False):
+    # Exécutable PyInstaller - les modules Python sont dans le répertoire racine
+    base_dir = Path(sys._MEIPASS)
+else:
+    # Mode développement
+    base_dir = Path(__file__).parent
+
+sys.path.insert(0, str(base_dir))
+
+# Imports locaux - APRÈS sys.path.insert()
 
 # Configuration du thème CustomTkinter
 ctk.set_appearance_mode("dark")
@@ -90,7 +101,7 @@ class RoutArtCMS:
         repo_section.pack(fill=tk.X, padx=15, pady=15)
 
         ctk.CTkLabel(repo_section, text="Chemin du Repository:",
-                     font=("Arial", 12, "bold")).pack(anchor="w", pady=5)
+                     font=("Montserrat", 12, "bold")).pack(anchor="w", pady=5)
 
         repo_frame = ctk.CTkFrame(repo_section)
         repo_frame.pack(fill=tk.X, pady=5)
@@ -107,21 +118,23 @@ class RoutArtCMS:
         actions_section.pack(fill=tk.X, padx=15, pady=15)
 
         ctk.CTkLabel(actions_section, text="Actions Git:", font=(
-            "Arial", 12, "bold")).pack(anchor="w", pady=5)
+            "Montserrat", 12, "bold")).pack(anchor="w", pady=5)
 
         buttons_frame = ctk.CTkFrame(actions_section)
         buttons_frame.pack(fill=tk.X, pady=10)
 
         ctk.CTkButton(buttons_frame, text="⬇️  Pull (Récupérer les modifications)",
-                      command=self._git_pull, width=200, height=40, font=("Arial", 11)).pack(side=tk.LEFT, padx=5)
+                      command=self._git_pull, width=200, height=40, font=("Montserrat", 11)).pack(side=tk.LEFT, padx=5)
         ctk.CTkButton(buttons_frame, text="⬆️  Push (Envoyer les modifications)",
-                      command=self._git_push, width=200, height=40, font=("Arial", 11)).pack(side=tk.LEFT, padx=5)
+                      command=self._git_push, width=200, height=40, font=("Montserrat", 11)).pack(side=tk.LEFT, padx=5)
         ctk.CTkButton(buttons_frame, text="📊 Statut",
                       command=self._git_status, width=100, height=40).pack(side=tk.LEFT, padx=5)
+        ctk.CTkButton(buttons_frame, text="➕ Ajouter fichiers non suivis",
+                      command=self._git_add_untracked, width=200, height=40, font=("Montserrat", 11)).pack(side=tk.LEFT, padx=5)
 
         # Message de commit
         ctk.CTkLabel(actions_section, text="Message de commit:",
-                     font=("Arial", 11)).pack(anchor="w", pady=(15, 5))
+                     font=("Montserrat", 11)).pack(anchor="w", pady=(15, 5))
         self.commit_message = ctk.CTkEntry(
             actions_section, placeholder_text="Exemple: Mise à jour des tarifs", height=35)
         self.commit_message.pack(fill=tk.X, pady=5)
@@ -132,7 +145,7 @@ class RoutArtCMS:
         status_section.pack(fill=tk.BOTH, expand=True, padx=15, pady=15)
 
         ctk.CTkLabel(status_section, text="Statut du Repository:",
-                     font=("Arial", 12, "bold")).pack(anchor="w", pady=5)
+                     font=("Montserrat", 12, "bold")).pack(anchor="w", pady=5)
 
         self.git_status_display = ctk.CTkTextbox(
             status_section, height=200, state="disabled")
@@ -148,7 +161,7 @@ class RoutArtCMS:
         file_section.pack(fill=tk.X, padx=15, pady=15)
 
         ctk.CTkLabel(file_section, text="Fichier à éditer:", font=(
-            "Arial", 12, "bold")).pack(anchor="w", pady=5)
+            "Montserrat", 12, "bold")).pack(anchor="w", pady=5)
 
         file_frame = ctk.CTkFrame(file_section)
         file_frame.pack(fill=tk.X, pady=5)
@@ -167,7 +180,7 @@ class RoutArtCMS:
         content_section.pack(fill=tk.BOTH, expand=True, padx=15, pady=15)
 
         ctk.CTkLabel(content_section, text="Éléments Éditables (class='editable'):", font=(
-            "Arial", 12, "bold")).pack(anchor="w", pady=5)
+            "Montserrat", 12, "bold")).pack(anchor="w", pady=5)
 
         # Container avec scroll horizontal et vertical
         scroll_container = ctk.CTkFrame(content_section)
@@ -234,17 +247,17 @@ class RoutArtCMS:
         server_section.pack(fill=tk.X, padx=15, pady=15)
 
         ctk.CTkLabel(server_section, text="Serveur Local HTTP:",
-                     font=("Arial", 12, "bold")).pack(anchor="w", pady=5)
+                     font=("Montserrat", 12, "bold")).pack(anchor="w", pady=5)
 
         server_frame = ctk.CTkFrame(server_section)
         server_frame.pack(fill=tk.X, pady=10)
 
         self.server_status_label = ctk.CTkLabel(
-            server_frame, text="⚫ Arrêté", font=("Arial", 11), text_color="red")
+            server_frame, text="⚫ Arrêté", font=("Montserrat", 11), text_color="red")
         self.server_status_label.pack(side=tk.LEFT, padx=5)
 
         ctk.CTkLabel(server_frame, text="Port:", font=(
-            "Arial", 11)).pack(side=tk.LEFT, padx=5)
+            "Montserrat", 11)).pack(side=tk.LEFT, padx=5)
         self.port_entry = ctk.CTkEntry(server_frame, width=100, height=35)
         self.port_entry.pack(side=tk.LEFT, padx=5)
         self.port_entry.insert(0, "8000")
@@ -258,13 +271,13 @@ class RoutArtCMS:
         url_section.pack(fill=tk.X, padx=15, pady=15)
 
         ctk.CTkLabel(url_section, text="URL de prévisualisation:",
-                     font=("Arial", 11)).pack(anchor="w", pady=5)
+                     font=("Montserrat", 11)).pack(anchor="w", pady=5)
 
         url_frame = ctk.CTkFrame(url_section)
         url_frame.pack(fill=tk.X, pady=5)
 
         self.url_label = ctk.CTkLabel(url_frame, text="http://localhost:8000",
-                                      text_color="cyan", font=("Arial", 11, "underline"))
+                                      text_color="cyan", font=("Montserrat", 11, "underline"))
         self.url_label.pack(side=tk.LEFT, padx=5)
 
         ctk.CTkButton(url_frame, text="🌐 Ouvrir dans le navigateur",
@@ -275,7 +288,7 @@ class RoutArtCMS:
         info_section.pack(fill=tk.BOTH, expand=True, padx=15, pady=15)
 
         ctk.CTkLabel(info_section, text="Instructions:", font=(
-            "Arial", 12, "bold")).pack(anchor="w", pady=5)
+            "Montserrat", 12, "bold")).pack(anchor="w", pady=5)
 
         instructions = """
 1️⃣  Cliquez sur "Démarrer Serveur" pour lancer un serveur local
@@ -286,7 +299,7 @@ class RoutArtCMS:
         """
 
         info_label = ctk.CTkLabel(
-            info_section, text=instructions, justify="left", font=("Arial", 10))
+            info_section, text=instructions, justify="left", font=("Montserrat", 10))
         info_label.pack(anchor="nw", pady=10)
 
         # Logs du serveur
@@ -294,7 +307,7 @@ class RoutArtCMS:
         logs_section.pack(fill=tk.BOTH, expand=True, padx=15, pady=15)
 
         ctk.CTkLabel(logs_section, text="Logs du serveur:",
-                     font=("Arial", 11)).pack(anchor="w", pady=5)
+                     font=("Montserrat", 11)).pack(anchor="w", pady=5)
 
         self.server_logs = ctk.CTkTextbox(
             logs_section, height=100, state="disabled")
@@ -310,11 +323,11 @@ class RoutArtCMS:
         config_section.pack(fill=tk.X, padx=15, pady=15)
 
         ctk.CTkLabel(config_section, text="Configuration Générale:",
-                     font=("Arial", 12, "bold")).pack(anchor="w", pady=5)
+                     font=("Montserrat", 12, "bold")).pack(anchor="w", pady=5)
 
         # Repo par défaut
         ctk.CTkLabel(config_section, text="Chemin du repository par défaut:", font=(
-            "Arial", 11)).pack(anchor="w", pady=(10, 5))
+            "Montserrat", 11)).pack(anchor="w", pady=(10, 5))
         self.default_repo = ctk.CTkEntry(config_section, height=35)
         self.default_repo.pack(fill=tk.X, pady=5)
         self.default_repo.insert(0, self.config_manager.get_repo_path())
@@ -460,6 +473,46 @@ class RoutArtCMS:
         self.git_status_display.insert("1.0", status["output"])
         self.git_status_display.configure(state="disabled")
 
+    def _git_add_untracked(self):
+        """Ajouter tous les fichiers non suivis"""
+        path = self.repo_path.get()
+        if not path:
+            messagebox.showerror(
+                "Erreur", "Veuillez spécifier le chemin du repository")
+            return
+
+        thread = threading.Thread(
+            target=self._git_add_untracked_thread, args=(path,))
+        thread.daemon = True
+        thread.start()
+
+    def _git_add_untracked_thread(self, path):
+        """Thread pour ajouter les fichiers non suivis"""
+        try:
+            import subprocess
+            result = subprocess.run(
+                ['git', 'add', '.'],
+                cwd=path,
+                capture_output=True,
+                text=True,
+                timeout=30
+            )
+
+            if result.returncode == 0:
+                self.root.after(0, lambda: messagebox.showinfo(
+                    "Succès", "Tous les fichiers non suivis ont été ajoutés"))
+                self.logger.log("Fichiers non suivis ajoutés avec succès")
+            else:
+                self.root.after(0, lambda: messagebox.showerror(
+                    "Erreur", f"Erreur lors de l'ajout: {result.stderr}"))
+                self.logger.log(f"Erreur ajout: {result.stderr}")
+        except Exception as e:
+            self.root.after(0, lambda: messagebox.showerror(
+                "Erreur", str(e)))
+            self.logger.log(f"Erreur: {e}")
+        finally:
+            self.root.after(0, self._update_git_status)
+
     def _update_git_status(self):
         """Mettre à jour le statut Git"""
         self._git_status()
@@ -477,11 +530,21 @@ class RoutArtCMS:
 
     def _get_page_files(self):
         """Récupérer la liste des fichiers HTML disponibles"""
-        page_dir = Path(self.repo_path.get()) / "page"
+        files = []
+        repo_path = Path(self.repo_path.get())
+
+        # Ajouter index.html s'il existe à la racine
+        index_file = repo_path / "index.html"
+        if index_file.exists():
+            files.append("index.html")
+
+        # Ajouter les fichiers du dossier page/
+        page_dir = repo_path / "page"
         if page_dir.exists():
-            files = sorted([f.name for f in page_dir.glob("*.html")])
-            return files
-        return []
+            page_files = sorted([f.name for f in page_dir.glob("*.html")])
+            files.extend(page_files)
+
+        return files
 
     def _refresh_files(self):
         """Rafraîchir la liste des fichiers"""
@@ -494,84 +557,127 @@ class RoutArtCMS:
         if not choice:
             return
 
-        repo_path = self.repo_path.get()
-        file_path = Path(repo_path) / "page" / choice
+        repo_path = Path(self.repo_path.get())
+
+        # Vérifier si c'est index.html (à la racine) ou un fichier du dossier page/
+        if choice == "index.html":
+            file_path = repo_path / "index.html"
+        else:
+            file_path = repo_path / "page" / choice
 
         if file_path.exists():
             try:
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    content = f.read()
-
-                self.current_file = file_path
-                self.current_file_content = content
-
-                # Extraire les éléments éditables
-                result = self.html_manager.extract_editable_elements(content)
-
-                # Nettoyer les champs précédents
-                for widget in self.editable_scrollframe.winfo_children():
-                    widget.destroy()
-                self.editable_fields = {}
-
-                if result["success"]:
-                    # Afficher les éléments éditables
-                    for elem in result["elements"]:
-                        self._create_editable_field(elem)
-                    self.logger.log(
-                        f"Fichier ouvert: {choice} ({result['count']} éléments éditables)")
-                else:
-                    error_label = ctk.CTkLabel(
-                        self.editable_scrollframe,
-                        text=f"⚠️ {result['error']}",
-                        text_color="orange",
-                        font=("Arial", 11)
-                    )
-                    error_label.pack(pady=10, padx=10)
-                    self.logger.log(
-                        f"Aucun élément éditable trouvé dans: {choice}")
+                # Charger le fichier dans un thread pour ne pas bloquer l'interface
+                threading.Thread(target=self._load_file_async, args=(
+                    file_path, choice), daemon=True).start()
             except Exception as e:
                 messagebox.showerror(
                     "Erreur", f"Impossible de charger le fichier: {e}")
         else:
             messagebox.showerror("Erreur", f"Fichier introuvable: {file_path}")
 
+    def _load_file_async(self, file_path, choice):
+        """Charger le fichier de manière asynchrone"""
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            self.current_file = file_path
+            self.current_file_content = content
+
+            # Extraire les éléments éditables
+            result = self.html_manager.extract_editable_elements(content)
+
+            # Planifier l'update dans le thread principal
+            self.root.after(0, self._display_editable_elements, result, choice)
+
+        except Exception as e:
+            self.logger.log(f"Erreur chargement fichier: {e}")
+            self.root.after(0, lambda: messagebox.showerror(
+                "Erreur", f"Erreur lors de la lecture: {e}"))
+
+    def _display_editable_elements(self, result, choice):
+        """Afficher les éléments éditables (exécuté dans le thread principal)"""
+        # Nettoyer les champs précédents
+        for widget in self.editable_scrollframe.winfo_children():
+            widget.destroy()
+        self.editable_fields = {}
+
+        if result["success"]:
+            # Afficher les éléments progressivement par batch
+            elements = result["elements"]
+            batch_size = 10  # Afficher 10 éléments par batch
+
+            def display_batch(batch_index):
+                start_idx = batch_index * batch_size
+                end_idx = min(start_idx + batch_size, len(elements))
+
+                for elem in elements[start_idx:end_idx]:
+                    self._create_editable_field(elem)
+
+                # Si il y a d'autres éléments, planifier le batch suivant
+                if end_idx < len(elements):
+                    self.root.after(50, display_batch, batch_index + 1)
+                else:
+                    # Tous les éléments sont affichés
+                    self.logger.log(
+                        f"Fichier ouvert: {choice} ({result['count']} éléments éditables)")
+                    messagebox.showinfo(
+                        "Succès", f"Fichier chargé: {result['count']} éléments éditables")
+
+            display_batch(0)
+        else:
+            error_label = ctk.CTkLabel(
+                self.editable_scrollframe,
+                text=f"⚠️ {result['error']}",
+                text_color="orange",
+                font=("Montserrat", 11)
+            )
+            error_label.pack(pady=10, padx=10)
+            self.logger.log(f"Aucun élément éditable trouvé dans: {choice}")
+
     def _create_editable_field(self, elem_info):
-        """Créer un champ pour un élément éditable avec meilleure présentation"""
+        """Créer un champ pour un élément éditable (optimisé)"""
         elem_index = elem_info.get("index", 0)
         elem_id = elem_info.get("id")
         elem_tag = elem_info.get("tag", "unknown")
+        is_iframe = elem_info.get("is_iframe", False)
+        editable_value = elem_info.get("editable_value", "")
 
+        # Conteneur principal
         field_frame = ctk.CTkFrame(
-            self.editable_scrollframe, fg_color="#1e1e1e", corner_radius=10, border_width=2, border_color="#404040", width=1600, height=200)
+            self.editable_scrollframe, fg_color="#1e1e1e", corner_radius=10,
+            border_width=2, border_color="#404040", width=1600, height=100)
         field_frame.pack(fill=tk.X, padx=12, pady=8)
         field_frame.pack_propagate(False)
 
-        # En-tête/Info à gauche
+        # Info à gauche
         info_frame = ctk.CTkFrame(
             field_frame, fg_color="#252525", corner_radius=8, width=150)
         info_frame.pack(side=tk.LEFT, fill=tk.Y, padx=10, pady=10)
         info_frame.pack_propagate(False)
 
-        # Afficher le tag avec couleur
-        tag_label = ctk.CTkLabel(
+        # Tag
+        tag_label = f"<{elem_tag.upper()}>"
+        if is_iframe:
+            tag_label += " [SRC]"
+        ctk.CTkLabel(
             info_frame,
-            text=f"<{elem_tag.upper()}>",
+            text=tag_label,
             text_color="#00D4FF",
-            font=("Arial", 12, "bold")
-        )
-        tag_label.pack(anchor="w", padx=8, pady=(8, 2))
+            font=("Montserrat", 12, "bold")
+        ).pack(anchor="w", padx=8, pady=(8, 2))
 
-        # Afficher l'ID ou l'index
+        # ID ou index
         id_display = elem_id if elem_id else f"[{elem_index}]"
-        id_label = ctk.CTkLabel(
+        ctk.CTkLabel(
             info_frame,
             text=f"#{id_display}",
             text_color="#90EE90",
-            font=("Arial", 10)
-        )
-        id_label.pack(anchor="w", padx=8, pady=(2, 8))
+            font=("Montserrat", 10)
+        ).pack(anchor="w", padx=8, pady=(2, 8))
 
-        # Champ de texte pour le contenu - à droite
+        # Champ de texte à droite
         text_frame = ctk.CTkFrame(field_frame, fg_color="#1e1e1e")
         text_frame.pack(side=tk.LEFT, fill=tk.BOTH,
                         expand=True, padx=(0, 10), pady=10)
@@ -579,27 +685,30 @@ class RoutArtCMS:
         text_widget = ctk.CTkTextbox(
             text_frame,
             height=50,
-            font=("Montserrat", 15),
+            font=("Montserrat", 14),
             text_color="#FFFFFF",
             fg_color="#2b2b2b",
             corner_radius=6
         )
         text_widget.pack(fill=tk.BOTH, expand=True)
 
-        # Extraire le contenu texte de l'élément (sans les balises)
-        content_html = elem_info.get("content", "")
-        from bs4 import BeautifulSoup
-        soup = BeautifulSoup(content_html, 'html.parser')
-        text_content = soup.get_text().strip()
+        # Extraire et insérer le contenu
+        if is_iframe:
+            # Pour les iframes, afficher l'URL du src
+            text_widget.insert("1.0", editable_value)
+        else:
+            # Pour les autres éléments, extraire le texte
+            content_html = elem_info.get("content", "")
+            soup = BeautifulSoup(content_html, 'html.parser')
+            text_content = soup.get_text().strip()
+            text_widget.insert("1.0", text_content)
 
-        text_widget.insert("1.0", text_content)
-
-        # Stocker la référence du widget avec l'index comme clé
+        # Stocker la référence
         self.editable_fields[elem_index] = {
             "widget": text_widget,
             "tag": elem_tag,
-            "original_html": content_html,
-            "index": elem_index
+            "index": elem_index,
+            "is_iframe": is_iframe
         }
 
     def _save_editable_file(self):
@@ -608,6 +717,11 @@ class RoutArtCMS:
             messagebox.showerror("Erreur", "Aucun fichier sélectionné")
             return
 
+        # Sauvegarder de manière asynchrone
+        threading.Thread(target=self._save_file_async, daemon=True).start()
+
+    def _save_file_async(self):
+        """Sauvegarder le fichier de manière asynchrone"""
         try:
             content = self.current_file_content
             soup = BeautifulSoup(content, 'html.parser')
@@ -619,38 +733,41 @@ class RoutArtCMS:
             for elem_index, field_info in self.editable_fields.items():
                 text_widget = field_info["widget"]
                 new_content = text_widget.get("1.0", "end-1c")
+                is_iframe = field_info.get("is_iframe", False)
 
                 # Vérifier que l'index est valide
                 if isinstance(elem_index, int) and elem_index < len(editable_elements):
                     element = editable_elements[elem_index]
-                    # Vider complètement l'élément et insérer le nouveau contenu
-                    element.clear()
-                    element.string = new_content
-                    self.logger.log(f"Élément [{elem_index}] mis à jour")
-                else:
-                    self.logger.log(
-                        f"Index {elem_index} invalide ou hors limites")
 
-            # Sauvegarder le fichier modifié
+                    if is_iframe:
+                        # Pour les iframes, mettre à jour l'attribut src
+                        element['src'] = new_content
+                        self.logger.log(
+                            f"iframe [{elem_index}] src mis à jour: {new_content}")
+                    else:
+                        # Pour les autres éléments, mettre à jour le contenu texte
+                        element.clear()
+                        element.string = new_content
+                        self.logger.log(f"Élément [{elem_index}] mis à jour")
+
+            # Sauvegarder le fichier
             updated_content = str(soup.prettify())
             with open(self.current_file, 'w', encoding='utf-8') as f:
                 f.write(updated_content)
 
-            messagebox.showinfo(
-                "Succès", f"Fichier sauvegardé: {self.current_file.name}")
             self.logger.log(f"Fichier sauvegardé: {self.current_file.name}")
+            self.root.after(0, lambda: messagebox.showinfo(
+                "Succès", f"Fichier sauvegardé: {self.current_file.name}"))
 
-            # Recharger le fichier pour mettre à jour la vue
-            self._on_file_selected(self.file_combo.get())
         except Exception as e:
-            messagebox.showerror("Erreur", f"Impossible de sauvegarder: {e}")
             self.logger.log(f"Erreur sauvegarde: {e}")
+            self.root.after(0, lambda: messagebox.showerror(
+                "Erreur", f"Impossible de sauvegarder: {e}"))
 
     def _reload_file(self):
         """Recharger le fichier"""
         if self.file_combo.get():
             self._on_file_selected(self.file_combo.get())
-            messagebox.showinfo("Succès", "Fichier rechargé")
 
     # ======= Méthodes Serveur =======
 
@@ -757,10 +874,23 @@ class RoutArtCMS:
     def _refresh_logs_display(self):
         """Rafraîchir l'affichage des logs"""
         logs = self.logger.get_logs()
-        self.logs_display.configure(state="normal")
-        self.logs_display.delete("1.0", tk.END)
-        self.logs_display.insert("1.0", "\n".join(logs))
-        self.logs_display.configure(state="disabled")
+        current_content = self.logs_display.get("1.0", tk.END)
+        new_content = "\n".join(logs)
+
+        # Seulement mettre à jour si le contenu a changé
+        if current_content != new_content + "\n":
+            # Sauvegarder la position du scroll
+            was_at_bottom = self.logs_display.yview()[1] >= 0.95
+
+            self.logs_display.configure(state="normal")
+            self.logs_display.delete("1.0", tk.END)
+            self.logs_display.insert("1.0", new_content)
+
+            # Restaurer le scroll en bas seulement si l'utilisateur était en bas
+            if was_at_bottom:
+                self.logs_display.see(tk.END)
+
+            self.logs_display.configure(state="disabled")
 
         # Refresh periodic
         self.root.after(1000, self._refresh_logs_display)
@@ -798,6 +928,22 @@ class RoutArtCMS:
 def main():
     """Point d'entrée principal"""
     root = ctk.CTk()
+
+    # Déterminer le chemin vers l'icône
+    if getattr(sys, 'frozen', False):
+        # Exécutable PyInstaller
+        icon_path = Path(sys._MEIPASS) / 'icon' / 'logo_routart.ico'
+    else:
+        # Mode développement
+        icon_path = Path(__file__).parent.parent / 'icon' / 'logo_routart.ico'
+
+    # Définir l'icône si le fichier existe
+    if icon_path.exists():
+        try:
+            root.iconbitmap(str(icon_path))
+        except Exception as e:
+            print(f"⚠️  Impossible de charger l'icône: {e}")
+
     app = RoutArtCMS(root)
     root.mainloop()
 
