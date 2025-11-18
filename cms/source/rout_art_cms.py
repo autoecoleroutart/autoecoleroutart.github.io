@@ -109,9 +109,9 @@ class RoutArtCMS:
         ctk.CTkEntry(repo_frame, textvariable=self.repo_path, height=35).pack(
             side=tk.LEFT, fill=tk.X, expand=True, padx=5)
         ctk.CTkButton(repo_frame, text="📁 Parcourir",
-                      command=self._browse_repo, width=120).pack(side=tk.LEFT, padx=5)
+                      command=self._browse_repo, width=120, font=("Montserrat", 11)).pack(side=tk.LEFT, padx=5)
         ctk.CTkButton(repo_frame, text="✓ Vérifier",
-                      command=self._verify_repo, width=120).pack(side=tk.LEFT, padx=5)
+                      command=self._verify_repo, width=120, font=("Montserrat", 11)).pack(side=tk.LEFT, padx=5)
 
         # Section Actions Git
         actions_section = ctk.CTkFrame(git_frame)
@@ -148,7 +148,7 @@ class RoutArtCMS:
                      font=("Montserrat", 12, "bold")).pack(anchor="w", pady=5)
 
         self.git_status_display = ctk.CTkTextbox(
-            status_section, height=200, state="disabled")
+            status_section, height=200, state="disabled", font=("Montserrat", 12))
         self.git_status_display.pack(fill=tk.BOTH, expand=True, pady=5)
 
     def _create_editor_tab(self):
@@ -291,15 +291,15 @@ class RoutArtCMS:
             "Montserrat", 12, "bold")).pack(anchor="w", pady=5)
 
         instructions = """
-1️⃣  Cliquez sur "Démarrer Serveur" pour lancer un serveur local
-2️⃣  Le serveur servira les fichiers depuis votre repository
-3️⃣  Cliquez sur "Ouvrir dans le navigateur" pour voir le site en direct
-4️⃣  Les modifications sauvegardées s'affichent immédiatement
-5️⃣  Cliquez sur "Arrêter Serveur" pour terminer la session
+    1\t Cliquez sur "Démarrer Serveur" pour lancer un serveur local
+    2\t Le serveur servira les fichiers depuis votre repository
+    3\t Cliquez sur "Ouvrir dans le navigateur" pour voir le site en direct
+    4\t Les modifications sauvegardées s'affichent immédiatement
+    5\t Cliquez sur "Arrêter Serveur" pour terminer la session
         """
 
         info_label = ctk.CTkLabel(
-            info_section, text=instructions, justify="left", font=("Montserrat", 10))
+            info_section, text=instructions, justify="left", font=("Montserrat", 13))
         info_label.pack(anchor="nw", pady=10)
 
         # Logs du serveur
@@ -367,7 +367,8 @@ class RoutArtCMS:
                       command=self._export_logs, width=150).pack(side=tk.LEFT, padx=5)
 
         # Logs display
-        self.logs_display = ctk.CTkTextbox(logs_frame, state="disabled")
+        self.logs_display = ctk.CTkTextbox(
+            logs_frame, state="disabled", font=("Montserrat", 13))
         self.logs_display.pack(fill=tk.BOTH, expand=True, padx=15, pady=15)
 
         # Refresh logs periodically

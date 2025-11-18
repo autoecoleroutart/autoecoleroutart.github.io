@@ -148,7 +148,7 @@ class GitManager:
             if staged_diffs:
                 status += f"\n✅ Changements suivi ({len(staged_diffs)}):\n"
                 for item in staged_diffs:
-                    file_path = item.a_path
+                    file_path = item.a_path if item.a_path else item.b_path
                     change_type = item.change_type
 
                     # Déterminer l'icône selon le type de changement
