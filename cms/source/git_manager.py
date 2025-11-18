@@ -150,7 +150,7 @@ class GitManager:
                 for file in staged_files:
                     status += f"   • {file}\n"
             else:
-                status += f"\n✓ Aucun changement staged\n"
+                status += f"\n✓ Aucun changement suivi\n"
 
             # Fichiers modifiés non staged
             unstaged_files = [item.a_path for item in repo.index.diff(None)]
@@ -159,7 +159,7 @@ class GitManager:
                 for file in unstaged_files:
                     status += f"   • {file}\n"
             else:
-                status += f"\n✓ Aucun fichier modifié non staged\n"
+                status += f"\n✓ Aucun fichier modifié non suivi\n"
 
             # Fichiers non suivis
             untracked = repo.untracked_files
