@@ -128,7 +128,7 @@ class RoutArtCMS:
         ctk.CTkButton(buttons_frame, text="⬆️  Push (Envoyer les modifications)",
                       command=self._git_push, width=200, height=40, font=("Montserrat", 11)).pack(side=tk.LEFT, padx=5)
         ctk.CTkButton(buttons_frame, text="📊 Statut",
-                      command=self._git_status, width=100, height=40).pack(side=tk.LEFT, padx=5)
+                      command=self._git_status, width=200, height=40, font=("Montserrat", 11)).pack(side=tk.LEFT, padx=5)
         ctk.CTkButton(buttons_frame, text="➕ Ajouter des fichiers non suivis",
                       command=self._git_add_untracked, width=200, height=40, font=("Montserrat", 11)).pack(side=tk.LEFT, padx=5)
 
