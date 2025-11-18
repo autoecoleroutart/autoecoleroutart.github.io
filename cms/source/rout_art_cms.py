@@ -931,11 +931,11 @@ def main():
 
     # Déterminer le chemin vers l'icône
     if getattr(sys, 'frozen', False):
-        # Exécutable PyInstaller
+        # Exécutable PyInstaller - l'icône est au niveau racine de _MEIPASS
         icon_path = Path(sys._MEIPASS) / 'icon' / 'logo_routart.ico'
     else:
-        # Mode développement
-        icon_path = Path(__file__).parent.parent / 'icon' / 'logo_routart.ico'
+        # Mode développement - l'icône est dans cms/icon/
+        icon_path = Path(__file__).parent / 'icon' / 'logo_routart.ico'
 
     # Définir l'icône si le fichier existe
     if icon_path.exists():

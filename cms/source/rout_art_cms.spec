@@ -13,7 +13,7 @@ a = Analysis(
     ['rout_art_cms.py'],
     pathex=['.'],
     binaries=[],
-    datas=[('../../icon', 'icon'), ('../../page', 'page'), ('../../style', 'style'), ('../../script', 'script'), ('.', '.')],
+    datas=[('../icon', 'icon'), ('../../page', 'page'), ('../../style', 'style'), ('../../script', 'script'), ('.', '.')],
     hiddenimports=[
         'customtkinter',
         'tkinter',

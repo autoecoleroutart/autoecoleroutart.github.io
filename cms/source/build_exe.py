@@ -39,16 +39,6 @@ def check_pyinstaller():
         return False
 
 
-def prepare_icon():
-    """Préparer l'icône pour PyInstaller"""
-    try:
-        from convert_icon import convert_png_to_ico
-        return convert_png_to_ico()
-    except Exception as e:
-        print(f"⚠️  Impossible de convertir l'icône: {e}")
-        return False
-
-
 def compile_to_exe():
     """Compiler l'application en .exe"""
 
@@ -58,10 +48,6 @@ def compile_to_exe():
     # Fermer l'exécutable s'il est en cours d'exécution
     print("\n🛑 Vérification de l'application en cours d'exécution...\n")
     kill_exe_process()
-
-    # Préparer l'icône
-    print("\n🎨 Préparation de l'icône...\n")
-    prepare_icon()
 
     print("\n🔨 Compilation en cours...\n")
 

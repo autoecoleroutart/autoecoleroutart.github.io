@@ -143,21 +143,47 @@ class GitManager:
             # Branche actuelle
             status += f"🌳 Branche actuelle: {repo.active_branch.name}\n"
 
-            # Fichiers staged (à commiter)
-            staged_files = [item.a_path for item in repo.index.diff("HEAD")]
-            if staged_files:
-                status += f"\n✅ Changements suivi ({len(staged_files)}):\n"
-                for file in staged_files:
-                    status += f"   • {file}\n"
+            # Fichiers staged (à commiter) avec leur type
+            staged_diffs = repo.index.diff("HEAD")
+            if staged_diffs:
+                status += f"\n✅ Changements suivi ({len(staged_diffs)}):\n"
+                for item in staged_diffs:
+                    file_path = item.a_path
+                    change_type = item.change_type
+
+                    # Déterminer l'icône selon le type de changement
+                    if change_type == 'A':  # Added
+                        icon = "[AJOUTER]"
+                    elif change_type == 'D':  # Deleted
+                        icon = "[SUPPRIMER]"
+                    elif change_type == 'R':  # Renamed
+                        icon = "[RENOMMER]"
+                    else:  # Modified
+                        icon = "[MODIFIER]"
+
+                    status += f"   {icon} {file_path}\n"
             else:
                 status += f"\n✓ Aucun changement suivi\n"
 
-            # Fichiers modifiés non staged
-            unstaged_files = [item.a_path for item in repo.index.diff(None)]
-            if unstaged_files:
-                status += f"\n❌ Changements non suivi ({len(unstaged_files)}):\n"
-                for file in unstaged_files:
-                    status += f"   • {file}\n"
+            # Fichiers modifiés non staged avec leur type
+            unstaged_diffs = repo.index.diff(None)
+            if unstaged_diffs:
+                status += f"\n❌ Changements non suivi ({len(unstaged_diffs)}):\n"
+                for item in unstaged_diffs:
+                    file_path = item.a_path
+                    change_type = item.change_type
+
+                    # Déterminer l'icône selon le type de changement
+                    if change_type == 'A':  # Added
+                        icon = "[AJOUTER]"
+                    elif change_type == 'D':  # Deleted
+                        icon = "[SUPPRIMER]"
+                    elif change_type == 'R':  # Renamed
+                        icon = "[RENOMMER]"
+                    else:  # Modified
+                        icon = "[MODIFIER]"
+
+                    status += f"   {icon} {file_path}\n"
             else:
                 status += f"\n✓ Aucun fichier modifié non suivi\n"
 
@@ -165,10 +191,8 @@ class GitManager:
             untracked = repo.untracked_files
             if untracked:
                 status += f"\n📄 Fichiers non suivis ({len(untracked)}):\n"
-                for file in untracked[:15]:  # Limiter à 15
-                    status += f"   • {file}\n"
-                if len(untracked) > 15:
-                    status += f"   ... et {len(untracked) - 15} autres\n"
+                for file in untracked:
+                    status += f"   [EN AJOUT] {file}\n"
             else:
                 status += f"\n✓ Aucun fichier non suivi\n"
 
