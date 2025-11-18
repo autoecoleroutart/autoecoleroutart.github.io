@@ -51,12 +51,15 @@ def compile_to_exe():
 
     print("\n🔨 Compilation en cours...\n")
 
-    spec_file = Path(__file__).parent / "rout_art_cms.spec"
+    # Le répertoire parent du script est cms/source, on doit remonter à la racine du projet
+    source_dir = Path(__file__).parent
+    project_root = source_dir.parent.parent
+    spec_file = source_dir / "rout_art_cms.spec"
 
     try:
-        # Nettoyer les anciens builds et dist
-        build_dir = Path(__file__).parent / "build"
-        dist_dir = Path(__file__).parent / "dist"
+        # Nettoyer les anciens builds et dist à la racine du projet
+        build_dir = project_root / "build"
+        dist_dir = project_root / "dist"
 
         if build_dir.exists():
             shutil.rmtree(build_dir)
@@ -70,28 +73,30 @@ def compile_to_exe():
             except Exception as e:
                 print(f"⚠️  Impossible de supprimer dist: {e}")
 
-        # Compiler
-        subprocess.check_call([
-            sys.executable,
-            "-m",
-            "PyInstaller",
-            str(spec_file),
-            "--noconfirm"
-        ])
+        # Changer le répertoire de travail à la racine du projet pour la compilation
+        original_cwd = os.getcwd()
+        os.chdir(project_root)
+
+        try:
+            # Compiler
+            subprocess.check_call([
+                sys.executable,
+                "-m",
+                "PyInstaller",
+                str(spec_file),
+                "--noconfirm"
+            ])
+        finally:
+            os.chdir(original_cwd)
 
         # Nettoyer les dossiers intermédiaires après la compilation
         if build_dir.exists():
             shutil.rmtree(build_dir)
-            print("🧹 Dossier build intermédiaire supprimé")
+            print("🧹 Dossier build supprimé")
 
-        # Nettoyer les fichiers .spec générés
-        spec_temp = build_dir / "rout_art_cms"
-        if spec_temp.exists():
-            shutil.rmtree(spec_temp)
-
+        exe_path = dist_dir / "Rout'Art CMS.exe"
         print("\n✅ Compilation réussie!")
-        print(
-            f"\n📦 L'exécutable se trouve dans: {dist_dir / 'Rout\'Art CMS.exe'}")
+        print(f"\n📦 L'exécutable se trouve dans: {exe_path}")
         print("\n🎉 Vous pouvez maintenant distribuer ce fichier .exe!")
 
         return True
