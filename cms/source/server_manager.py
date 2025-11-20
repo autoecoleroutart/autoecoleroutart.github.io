@@ -23,11 +23,8 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         """Traiter les requêtes GET"""
         path = unquote(self.path)
-
-        # Rediriger les URLs sans fichier vers index.html
         if path == '/' or path == '':
             path = '/index.html'
-
         self.path = path
         return super().do_GET()
 
@@ -44,7 +41,6 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
 
     def end_headers(self):
         """Ajouter les headers personnalisés"""
-        # Activer le cache-busting pour le développement
         self.send_header(
             'Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
         self.send_header('Pragma', 'no-cache')
@@ -67,24 +63,18 @@ class ServerManager:
         """Démarrer le serveur HTTP"""
         try:
             repo_path = Path(repo_path)
-
             if not repo_path.exists():
                 message = f"❌ Le chemin n'existe pas: {repo_path}"
                 if callback:
                     callback(message)
                 self.logger.log(message)
                 return False
-
-            # Changer de répertoire
             os.chdir(repo_path)
 
-            # Créer le handler
             def create_handler(*args, **kwargs):
                 return CustomHTTPRequestHandler(
                     *args, directory=str(repo_path), **kwargs
                 )
-
-            # Créer le serveur avec allow_reuse_address
             socketserver.TCPServer.allow_reuse_address = True
             self.server = socketserver.TCPServer(
                 ("localhost", port), create_handler)
@@ -98,16 +88,12 @@ class ServerManager:
             if callback:
                 callback(message)
             self.logger.log(message)
-
-            # Servir les requêtes
-            # On traite les requêtes avec handle_request() et on check le flag _stop_requested
             while self.running and not self._stop_requested:
                 try:
                     self.server.handle_request()
                 except Exception as e:
                     if self.running and not self._stop_requested:
                         self.logger.log(f"Erreur serveur: {e}")
-
         except OSError as e:
             if "Address already in use" in str(e):
                 message = f"❌ Le port {port} est déjà utilisé. Essayez un autre port."

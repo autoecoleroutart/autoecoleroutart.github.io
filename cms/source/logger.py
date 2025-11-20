@@ -21,18 +21,12 @@ class Logger:
         """Ajouter un log"""
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         formatted_message = f"[{timestamp}] [{level}] {message}"
-
-        # Ajouter à la mémoire
         self.logs.append(formatted_message)
-
-        # Écrire dans le fichier
         try:
             with open(self.log_file, 'a', encoding='utf-8') as f:
                 f.write(formatted_message + "\n")
         except Exception as e:
             print(f"Erreur lors de l'écriture du log: {e}")
-
-        # Afficher dans la console aussi
         print(formatted_message)
 
     def log_error(self, message):

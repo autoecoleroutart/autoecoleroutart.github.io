@@ -1,188 +1,206 @@
- editable<!DOCTYPE html>
+editable
+<!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Résultats du permis - Auto-École Rout'Art</title>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../style/variables.css">
-        <link rel="stylesheet" href="../style/resultat.css">
-        <link rel="stylesheet" href="../style/dark-mode.css">
-        <link rel="icon" href="../icon/logo_routart_modern.png" type="image/x-icon">
-        <script src="../script/script.js"></script>
-            <script src="../script/dark-mode.js"></script>
-    </head>
-    <body>
-        <header class="main-header">
-            <div class="container header-content">
-                <div class="logo">
-                    <a href="../index.html">
-                        <img src="../images/logo_routart_modern.png" alt="Logo Auto-École Rout'Art">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats du permis - Auto-École Rout'Art</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style/variables.css">
+    <link rel="stylesheet" href="../style/resultat.css">
+    <link rel="stylesheet" href="../style/dark-mode.css">
+    <link rel="icon" href="../icon/logo_routart_modern.png" type="image/x-icon">
+    <script src="../script/script.js"></script>
+    <script src="../script/dark-mode.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo_routart_modern.png" alt="Logo Auto-École Rout'Art">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><button class="nav-btn" onclick="location.href='../index.html'">Accueil</button></li>
+                    <li><button class="nav-btn" onclick="location.href='formations.html'">Formations</button></li>
+                    <li><button class="nav-btn" onclick="location.href='tarifs.html'">Tarifs</button></li>
+                    <li><button class="nav-btn" onclick="location.href='financement.html'">Financement</button></li>
+                    <li><button class="nav-btn" onclick="location.href='contact.html'">Contact</button></li>
+                    <li><button class="nav-btn" onclick="location.href='page/code_de_la_route.html'">Code de la
+                            Route</button></li>
+                    <li><button class="nav-btn" onclick="location.href='equipe.html'">Équipe</button></li>
+                    <li><button class="nav-btn theme-toggle-nav" id="theme-toggle-nav">Thème Sombre</button></li>
+                </ul>
+            </nav>
+            <button class="hamburger-menu" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <section class="hero-section">
+        <div class="hero-bg">
+            <img src="../images/hero-car-road.png" alt="Voiture sur une route côtière au lever du soleil"
+                class="hero-image">
+        </div>
+        <div class="container hero-content">
+            <h1>Résultats du permis</h1>
+            <p>Consultez ici les démarches pour accéder à vos résultats d'examen du permis de conduire.</p>
+        </div>
+    </section>
+    <main>
+        <section class="container resultat-section">
+            <div class="resultat-intro">
+                <h2 class="section-title editable">Consultez vos résultats d'examen</h2>
+                <p class="resultat-intro-text editable">Découvrez comment accéder facilement à vos résultats et suivre
+                    la production de votre permis de conduire en ligne.</p>
+            </div>
+
+            <!-- Section résultats -->
+            <div class="resultat-results-check">
+                <div class="resultat-results-header">
+                    <div class="resultat-header-icon">🎯</div>
+                    <h3>Résultat à l'examen du permis de conduire</h3>
+                    <p class="resultat-header-desc">Consultez votre résultat sur le site officiel de la sécurité
+                        routière</p>
+                </div>
+
+                <div class="resultat-official-info">
+                    <div class="resultat-info-card">
+                        <div class="resultat-info-icon">📅</div>
+                        <div class="resultat-info-content">
+                            <h4>Disponibilité</h4>
+                            <p><strong>24 heures après l'examen</strong>, les résultats de l'épreuve pratique sont
+                                consultables sur le site officiel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resultat-action-center">
+                    <a class="result-button primary large editable"
+                        href="http://www.securite-routiere.gouv.fr/permis-de-conduire/resultats-du-permis-de-conduire"
+                        rel="nofollow" target="_blank">
+                        <span class="result-button-icon">🔍</span>
+                        Consulter mes résultats
                     </a>
-                </div>
-                <nav class="main-nav">
-                    <ul class="nav-list">
-                        <li><button class="nav-btn" onclick="location.href='../index.html'">Accueil</button></li>
-                        <li><button class="nav-btn" onclick="location.href='formations.html'">Formations</button></li>
-                        <li><button class="nav-btn" onclick="location.href='tarifs.html'">Tarifs</button></li>
-                        <li><button class="nav-btn" onclick="location.href='financement.html'">Financement</button></li>
-                        <li><button class="nav-btn" onclick="location.href='contact.html'">Contact</button></li>
-                        <li><button class="nav-btn" onclick="location.href='page/code_de_la_route.html'">Code de la Route</button></li>
-                        <li><button class="nav-btn" onclick="location.href='equipe.html'">Équipe</button></li>
-                        <li><button class="nav-btn theme-toggle-nav" id="theme-toggle-nav">Thème Sombre</button></li>
-                    </ul>
-                </nav>
-                <button class="hamburger-menu" aria-label="Ouvrir le menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </header>
-        <section class="hero-section">
-            <div class="hero-bg">
-                <img src="../images/hero-car-road.png" alt="Voiture sur une route côtière au lever du soleil" class="hero-image">
-            </div>
-            <div class="container hero-content">
-                <h1>Résultats du permis</h1>
-                <p>Consultez ici les démarches pour accéder à vos résultats d'examen du permis de conduire.</p>
-            </div>
-        </section>
-        <main>
-            <section class="container resultat-section">
-                <div class="resultat-intro">
-                    <h2 class="section-title editable">Consultez vos résultats d'examen</h2>
-                    <p class="resultat-intro-text editable">Découvrez comment accéder facilement à vos résultats et suivre la production de votre permis de conduire en ligne.</p>
+                    <p class="resultat-action-note">Redirection vers le site officiel securite-routiere.gouv.fr</p>
                 </div>
 
-                <!-- Section résultats -->
-                <div class="resultat-results-check">
-                    <div class="resultat-results-header">
-                        <div class="resultat-header-icon">🎯</div>
-                        <h3>Résultat à l'examen du permis de conduire</h3>
-                        <p class="resultat-header-desc">Consultez votre résultat sur le site officiel de la sécurité routière</p>
-                    </div>
-
-                    <div class="resultat-official-info">
-                        <div class="resultat-info-card">
-                            <div class="resultat-info-icon">📅</div>
-                            <div class="resultat-info-content">
-                                <h4>Disponibilité</h4>
-                                <p><strong>24 heures après l'examen</strong>, les résultats de l'épreuve pratique sont consultables sur le site officiel.</p>
-                            </div>
+                <!-- Informations nécessaires -->
+                <div class="resultat-required-info">
+                    <h4 class="resultat-info-title">Informations nécessaires pour la consultation</h4>
+                    <div class="resultat-info-grid">
+                        <div class="resultat-info-item">
+                            <div class="resultat-item-icon">🏷️</div>
+                            <h5 class="editable">Numéro NEPH</h5>
+                            <p class="editable">Votre numéro de dossier d'examen</p>
                         </div>
-                    </div>
-
-                    <div class="resultat-action-center">
-                        <a class="result-button primary large editable" href="http://www.securite-routiere.gouv.fr/permis-de-conduire/resultats-du-permis-de-conduire" rel="nofollow" target="_blank">
-                            <span class="result-button-icon">🔍</span>
-                            Consulter mes résultats
-                        </a>
-                        <p class="resultat-action-note">Redirection vers le site officiel securite-routiere.gouv.fr</p>
-                    </div>
-
-                    <!-- Informations nécessaires -->
-                    <div class="resultat-required-info">
-                        <h4 class="resultat-info-title">Informations nécessaires pour la consultation</h4>
-                        <div class="resultat-info-grid">
-                            <div class="resultat-info-item">
-                                <div class="resultat-item-icon">🏷️</div>
-                                <h5 class="editable">Numéro NEPH</h5>
-                                <p class="editable">Votre numéro de dossier d'examen</p>
-                            </div>
-                            <div class="resultat-info-item">
-                                <div class="resultat-item-icon">🎂</div>
-                                <h5 class="editable">Date de naissance</h5>
-                                <p class="editable">Votre date de naissance complète</p>
-                            </div>
-                            <div class="resultat-info-item">
-                                <div class="resultat-item-icon">🚗</div>
-                                <h5 class="editable">Catégorie du permis</h5>
-                                <p class="editable">Type de permis passé (B, A, AM...)</p>
-                            </div>
+                        <div class="resultat-info-item">
+                            <div class="resultat-item-icon">🎂</div>
+                            <h5 class="editable">Date de naissance</h5>
+                            <p class="editable">Votre date de naissance complète</p>
                         </div>
-                    </div>
-
-                    <!-- Résultats possibles -->
-                    <div class="resultat-results-outcomes">
-                        <h4 class="resultat-outcomes-title">Que faire selon le résultat ?</h4>
-                        <div class="resultat-outcomes-grid">
-                            <div class="resultat-outcome-card success">
-                                <div class="resultat-outcome-icon">✅</div>
-                                <h5 class="editable">En cas de réussite</h5>
-                                <ul>
-                                    <li class="editable">Téléchargez et imprimez votre CEPC</li>
-                                    <li class="editable">Valable 4 mois comme permis provisoire</li>
-                                    <li class="editable">À présenter avec pièce d'identité</li>
-                                    <li class="editable">Utilisable sur smartphone/tablette</li>
-                                </ul>
-                            </div>
-                            <div class="resultat-outcome-card failure">
-                                <div class="resultat-outcome-icon">❌</div>
-                                <h5 class="editable">En cas d'échec</h5>
-                                <ul>
-                                    <li class="editable">Contactez notre auto-école</li>
-                                    <li class="editable">Programmation d'une nouvelle session (sous réserve de session disponible)</li>
-                                    <li class="editable">Accompagnement personnalisé</li>
-                                    <li class="editable">Préparation renforcée</li>
-                                </ul>
-                            </div>
+                        <div class="resultat-info-item">
+                            <div class="resultat-item-icon">🚗</div>
+                            <h5 class="editable">Catégorie du permis</h5>
+                            <p class="editable">Type de permis passé (B, A, AM...)</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Section suivi production -->
-                <div class="resultat-production-tracking">
-                    <div class="resultat-tracking-header">
-                        <div class="resultat-header-icon">📋</div>
-                        <h3 class="editable">Suivi de la production de votre permis</h3>
-                        <p class="resultat-header-desc editable">Suivez l'avancement de la fabrication de votre permis définitif</p>
-                    </div>
-
-                    <div class="resultat-tracking-info">
-                        <div class="resultat-info-card">
-                            <div class="resultat-info-icon">🏛️</div>
-                            <div class="resultat-info-content">
-                                <h4 class="editable">Service ANTS</h4>
-                                <p class="editable">Depuis mars 2014, l'<strong class="editable">Agence Nationale des Titres Sécurisés</strong> vous permet de suivre la production de votre permis en ligne.</p>
-                            </div>
+                <!-- Résultats possibles -->
+                <div class="resultat-results-outcomes">
+                    <h4 class="resultat-outcomes-title">Que faire selon le résultat ?</h4>
+                    <div class="resultat-outcomes-grid">
+                        <div class="resultat-outcome-card success">
+                            <div class="resultat-outcome-icon">✅</div>
+                            <h5 class="editable">En cas de réussite</h5>
+                            <ul>
+                                <li class="editable">Téléchargez et imprimez votre CEPC</li>
+                                <li class="editable">Valable 4 mois comme permis provisoire</li>
+                                <li class="editable">À présenter avec pièce d'identité</li>
+                                <li class="editable">Utilisable sur smartphone/tablette</li>
+                            </ul>
+                        </div>
+                        <div class="resultat-outcome-card failure">
+                            <div class="resultat-outcome-icon">❌</div>
+                            <h5 class="editable">En cas d'échec</h5>
+                            <ul>
+                                <li class="editable">Contactez notre auto-école</li>
+                                <li class="editable">Programmation d'une nouvelle session (sous réserve de session
+                                    disponible)</li>
+                                <li class="editable">Accompagnement personnalisé</li>
+                                <li class="editable">Préparation renforcée</li>
+                            </ul>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="resultat-action-center">
-                        <a class="result-button secondary large" href="https://ants.gouv.fr/monespace/s-inscrire" rel="nofollow" target="_blank">
-                            <span class="result-button-icon">📱</span>
-                            Suivre mon permis
-                        </a>
-                        <p class="resultat-action-note editable">Création de compte nécessaire sur ants.gouv.fr</p>
-                    </div>                <!-- Contact et support -->
+            <!-- Section suivi production -->
+            <div class="resultat-production-tracking">
+                <div class="resultat-tracking-header">
+                    <div class="resultat-header-icon">📋</div>
+                    <h3 class="editable">Suivi de la production de votre permis</h3>
+                    <p class="resultat-header-desc editable">Suivez l'avancement de la fabrication de votre permis
+                        définitif</p>
+                </div>
+
+                <div class="resultat-tracking-info">
+                    <div class="resultat-info-card">
+                        <div class="resultat-info-icon">🏛️</div>
+                        <div class="resultat-info-content">
+                            <h4 class="editable">Service ANTS</h4>
+                            <p class="editable">Depuis mars 2014, l'<strong class="editable">Agence Nationale des Titres
+                                    Sécurisés</strong> vous permet de suivre la production de votre permis en ligne.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resultat-action-center">
+                    <a class="result-button secondary large" href="https://ants.gouv.fr/monespace/s-inscrire"
+                        rel="nofollow" target="_blank">
+                        <span class="result-button-icon">📱</span>
+                        Suivre mon permis
+                    </a>
+                    <p class="resultat-action-note editable">Création de compte nécessaire sur ants.gouv.fr</p>
+                </div> <!-- Contact et support -->
                 <div class="resultat-support-section">
                     <div class="resultat-support-card">
                         <div class="resultat-support-icon">🤝</div>
                         <h3 class="editable">Besoin d'aide ?</h3>
-                        <p class="editable">Notre équipe est là pour vous accompagner dans toutes vos démarches administratives.</p>
+                        <p class="editable">Notre équipe est là pour vous accompagner dans toutes vos démarches
+                            administratives.</p>
                         <a href="contact.html" class="result-button outline">Nous contacter</a>
                     </div>
                 </div>
-            </section>
-        </main>
-        <footer class="main-footer">
-            <div class="container footer-content">
-                <div class="footer-row">
-                    <div class="footer-links">
-                        <a href="reglement.html">Règlement intérieur</a>
-                        <a href="satisfaction.html">Enquête de satisfaction</a>
-                        <a href="positionnement.html">Procédé de positionnement</a>
-                        <a href="reclamation.html">Gestion des réclamations</a>
-                        <a href="resultat.html" class="active">Résultats du permis</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="garantie_financiere.html">Garantie financière</a>
-                    </div>
-                </div>
-                <div class="footer-row">
-                    <p>&copy; 2025 Auto-École Rout'Art. Tous droits réservés.</p>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-row">
+                <div class="footer-links">
+                    <a href="reglement.html">Règlement intérieur</a>
+                    <a href="satisfaction.html">Enquête de satisfaction</a>
+                    <a href="positionnement.html">Procédé de positionnement</a>
+                    <a href="reclamation.html">Gestion des réclamations</a>
+                    <a href="resultat.html" class="active">Résultats du permis</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="garantie_financiere.html">Garantie financière</a>
                 </div>
             </div>
-        </footer>
-    </body>
+            <div class="footer-row">
+                <p>&copy; 2025 Auto-École Rout'Art. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>

@@ -88,21 +88,15 @@ class HTMLManager:
         """Valider la structure HTML"""
         try:
             soup = BeautifulSoup(content, 'html.parser')
-
             issues = []
-
-            # Vérifier les balises essentielles
             if not soup.find('html'):
                 issues.append("Balise <html> manquante")
             if not soup.find('head'):
                 issues.append("Balise <head> manquante")
             if not soup.find('body'):
                 issues.append("Balise <body> manquante")
-
-            # Vérifier les balises mal fermées
             if content.count('<') != content.count('>'):
                 issues.append("Nombre de balises ouvrantes/fermantes mismatch")
-
             if issues:
                 return {"success": False, "valid": False, "issues": issues}
             else:
@@ -115,26 +109,20 @@ class HTMLManager:
         try:
             soup = BeautifulSoup(content, 'html.parser')
             editable_elements = soup.find_all(class_='editable')
-
             if not editable_elements:
                 return {"success": False, "error": "Aucun élément éditable trouvé (class='editable')", "elements": []}
-
             elements_data = []
             for index, elem in enumerate(editable_elements):
                 elem_id = elem.get('id', None)
                 elem_tag = elem.name
                 elem_class = ' '.join(elem.get('class', []))
                 elem_content = str(elem)
-
-                # Pour les iframes, extraire l'attribut src
                 editable_value = None
                 is_iframe = elem_tag == 'iframe'
                 if is_iframe:
                     editable_value = elem.get('src', '')
                 else:
-                    # Pour les autres éléments, extraire le texte
                     editable_value = elem.get_text().strip()
-
                 elements_data.append({
                     "index": index,
                     "id": elem_id,
@@ -144,20 +132,17 @@ class HTMLManager:
                     "is_iframe": is_iframe,
                     "editable_value": editable_value
                 })
-
             return {"success": True, "count": len(elements_data), "elements": elements_data}
         except Exception as e:
             return {"success": False, "error": str(e), "elements": []}
-
+    
     def update_editable_element(self, content, element_id, new_content):
         """Mettre à jour un élément éditable spécifique"""
         try:
             soup = BeautifulSoup(content, 'html.parser')
             element = soup.find(id=element_id, class_='editable')
-
             if not element:
                 return {"success": False, "error": f"Élément éditable non trouvé: {element_id}"}
-
             element.string = new_content
             return {"success": True, "content": str(soup.prettify())}
         except Exception as e:

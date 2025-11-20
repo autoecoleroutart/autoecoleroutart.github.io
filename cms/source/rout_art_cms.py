@@ -726,32 +726,21 @@ class RoutArtCMS:
         try:
             content = self.current_file_content
             soup = BeautifulSoup(content, 'html.parser')
-
-            # Récupérer tous les éléments éditables du HTML
             editable_elements = soup.find_all(class_='editable')
-
-            # Parcourir les champs modifiés et mettre à jour le contenu
             for elem_index, field_info in self.editable_fields.items():
                 text_widget = field_info["widget"]
                 new_content = text_widget.get("1.0", "end-1c")
                 is_iframe = field_info.get("is_iframe", False)
-
-                # Vérifier que l'index est valide
                 if isinstance(elem_index, int) and elem_index < len(editable_elements):
                     element = editable_elements[elem_index]
-
                     if is_iframe:
-                        # Pour les iframes, mettre à jour l'attribut src
                         element['src'] = new_content
                         self.logger.log(
                             f"iframe [{elem_index}] src mis à jour: {new_content}")
                     else:
-                        # Pour les autres éléments, mettre à jour le contenu texte
                         element.clear()
                         element.string = new_content
                         self.logger.log(f"Élément [{elem_index}] mis à jour")
-
-            # Sauvegarder le fichier
             updated_content = str(soup.prettify())
             with open(self.current_file, 'w', encoding='utf-8') as f:
                 f.write(updated_content)
@@ -929,16 +918,10 @@ class RoutArtCMS:
 def main():
     """Point d'entrée principal"""
     root = ctk.CTk()
-
-    # Déterminer le chemin vers l'icône
     if getattr(sys, 'frozen', False):
-        # Exécutable PyInstaller - l'icône est au niveau racine de _MEIPASS
         icon_path = Path(sys._MEIPASS) / 'icon' / 'logo_routart.ico'
     else:
-        # Mode développement - l'icône est dans cms/icon/
         icon_path = Path(__file__).parent / 'icon' / 'logo_routart.ico'
-
-    # Définir l'icône si le fichier existe
     if icon_path.exists():
         try:
             root.iconbitmap(str(icon_path))

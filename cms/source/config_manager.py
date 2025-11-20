@@ -11,7 +11,6 @@ import os
 
 class ConfigManager:
     """Gère la configuration persistante de l'application"""
-
     def __init__(self):
         self.config_dir = Path.home() / ".rout_art_cms"
         self.config_file = self.config_dir / "config.json"
@@ -24,11 +23,7 @@ class ConfigManager:
             "window_width": 1400,
             "window_height": 800
         }
-
-        # Créer le répertoire de config s'il n'existe pas
         self.config_dir.mkdir(parents=True, exist_ok=True)
-
-        # Charger ou créer la config
         self.config = self.default_config.copy()
         self.load_config()
 
