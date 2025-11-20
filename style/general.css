@@ -37,15 +37,28 @@ ul {
     list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
 
 .container {
     max-width: 1200px;
@@ -99,17 +112,42 @@ h3 { font-size: 1.5rem; }
 }
 
 /* Color utilities */
-.text-primary { color: var(--primary-color); }
-.text-accent { color: var(--accent-color); }
-.text-error { color: var(--error-color); }
-.text-warning { color: var(--warning-color); }
-.text-success { color: var(--success-color); }
-.text-info { color: var(--info-color); }
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-accent {
+    color: var(--accent-color);
+}
+
+.text-error {
+    color: var(--error-color);
+}
+
+.text-warning {
+    color: var(--warning-color);
+}
+
+.text-success {
+    color: var(--success-color);
+}
+
+.text-info {
+    color: var(--info-color);
+}
 
 /* Display utilities */
-.hidden { display: none; }
-.block { display: block; }
-.inline-block { display: inline-block; }
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
 
 /* Helper class for visually hidden elements */
 .sr-only {
@@ -595,21 +633,29 @@ iframe {
     .container {
         padding: 0 1.5rem;
     }
-    
+
     .section {
         padding: 3rem 0;
     }
-    
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    h3 { font-size: 1.3rem; }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 1200px) and (min-width: 769px) {
     .main-nav .nav-list {
         gap: 0.5rem;
     }
-    
+
     .main-nav .nav-list button {
         font-size: 0.8rem;
         padding: 0.5rem 1rem;
@@ -620,7 +666,7 @@ iframe {
     .logo img {
         width: 150px;
     }
-    
+
     .main-nav .nav-list button {
         font-size: 0.75rem;
         padding: 0.5rem 0.8rem;
@@ -716,14 +762,14 @@ iframe {
     font-size: 3rem;
     font-weight: 700;
     color: var(--white-color);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 1rem;
 }
 
 .hero-content p {
     font-size: 1.2rem;
     color: var(--white-color);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     margin-bottom: 2rem;
 }
 
@@ -860,7 +906,8 @@ iframe {
 
     /* Empêcher l'affichage de la nav en ligne */
     .main-nav .nav-list {
-        display: flex; /* nécessaire pour le off-canvas */
+        display: flex;
+        /* nécessaire pour le off-canvas */
     }
 }
 
@@ -882,18 +929,22 @@ iframe {
 
     .main-nav .nav-list {
         position: fixed;
-        top: 150px; /* Commencer sous le header */
+        top: 150px;
+        /* Commencer sous le header */
         left: -100%;
         width: 100%;
-        height: calc(100vh - 150px); /* Hauteur moins le header */
+        height: calc(100vh - 150px);
+        /* Hauteur moins le header */
         background: var(--primary-gradient);
         flex-direction: column;
-        justify-content: flex-start; /* Changé de center à flex-start */
+        justify-content: flex-start;
+        /* Changé de center à flex-start */
         align-items: center;
         gap: 1.25rem;
         transition: left 0.3s ease;
         z-index: 998;
-        padding: 2rem 1rem; /* Augmenté le padding top pour espacer du haut */
+        padding: 2rem 1rem;
+        /* Augmenté le padding top pour espacer du haut */
         overflow-y: auto;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
@@ -915,8 +966,10 @@ iframe {
         color: var(--white-color);
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
-        margin: 0.25rem 0; /* Ajouter une marge verticale pour espacement */
-        min-height: 60px; /* Hauteur minimale pour touch-friendly */
+        margin: 0.25rem 0;
+        /* Ajouter une marge verticale pour espacement */
+        min-height: 60px;
+        /* Hauteur minimale pour touch-friendly */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1010,7 +1063,7 @@ iframe {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -1046,7 +1099,8 @@ iframe {
     transition: color 0.3s ease;
 }
 
-.footer-links a:hover, .footer-links a.active {
+.footer-links a:hover,
+.footer-links a.active {
     color: var(--accent-color);
 }
 

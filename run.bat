@@ -22,7 +22,7 @@ REM Verifier si les dependances sont installees
 python -c "import customtkinter" >nul 2>&1
 if errorlevel 1 (
     echo Installation des dependances...
-    python cms/source/setup_dependencies.py
+    .\dependecies.bat
     if errorlevel 1 (
         echo Erreur lors de l'installation
         pause
