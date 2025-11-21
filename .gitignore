@@ -1,4 +1,6 @@
 *.pyc
 cms/source/__pycache__
+__pycache__/
+cms/__pycache__
 build/
 dist/
