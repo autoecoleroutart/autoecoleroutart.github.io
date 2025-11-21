@@ -9,6 +9,8 @@ Allow: /page/financement.html
 Allow: /page/contact.html
 Allow: /page/code_de_la_route.html
 Allow: /page/equipe.html
+Allow: /page/presse.html
+Allow: /page/remerciement.html
 Allow: /page/reglement.html
 Allow: /page/satisfaction.html
 Allow: /page/positionnement.html
@@ -20,7 +22,6 @@ Allow: /page/garantie_financiere.html
 Allow: /style/
 Allow: /images/
 Allow: /icon/
-Allow: /sounds/
 Allow: /files/
 
 # Interdire les fichiers techniques
@@ -28,6 +29,12 @@ Disallow: /script/
 Disallow: /page/template.html
 Disallow: /.git/
 Disallow: /chrome_no_secu.sh
+Disallow: /README.md
+Disallow: /app.py
+Disallow: /.gitignore
+Disallow: /dependencies.bat
+Disallow: /compile.bat
+Disallow: /cms/
 
 # Référence du sitemap
 Sitemap: https://www.autoecoleroutart.com/sitemap.xml
