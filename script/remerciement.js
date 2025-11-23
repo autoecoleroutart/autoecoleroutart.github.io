@@ -7,7 +7,7 @@
 function updateSocialIconsForTheme() {
     const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
 
-    // GitHub icon
+    // GitHub icon (section réseaux sociaux)
     const githubImg = document.querySelector('img[alt="Logo GitHub"]');
     if (githubImg) {
         githubImg.src = isDarkMode
@@ -21,6 +21,22 @@ function updateSocialIconsForTheme() {
         portfolioImg.src = isDarkMode
             ? '../images/remerciement/portfolio_ico_darkmode.png'
             : '../images/remerciement/portfolio_ico.png';
+    }
+
+    // HTML icon (section technologies)
+    const htmlImg = document.querySelector('img[alt="logo html"]');
+    if (htmlImg) {
+        htmlImg.src = isDarkMode
+            ? '../images/remerciement/techno/html_dark.png'
+            : '../images/remerciement/techno/html.png';
+    }
+
+    // GitHub icon (section technologies)
+    const githubTechImg = document.querySelector('img[alt="logo github"]');
+    if (githubTechImg) {
+        githubTechImg.src = isDarkMode
+            ? '../images/remerciement/techno/github_ico_dark.svg'
+            : '../images/remerciement/techno/github_ico.svg';
     }
 }
 

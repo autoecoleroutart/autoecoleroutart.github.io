@@ -50,7 +50,7 @@
     font-size: var(--font-size-2xl);
     margin-top: var(--spacing-xl);
     margin-bottom: var(--spacing-md);
-    text-align: left;
+    text-align: center;
     font-weight: var(--font-weight-semibold);
 }
 
