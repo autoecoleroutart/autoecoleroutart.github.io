@@ -73,9 +73,9 @@ class GitManager:
         try:
             self._ensure_git_config(repo_path)
             repo = Repo(repo_path)
-            origin = repo.remotes.origin # Fetch
+            origin = repo.remotes.origin  # Fetch
             origin.fetch()
-            current_branch = repo.active_branch # Pull
+            current_branch = repo.active_branch  # Pull
             origin.pull(current_branch.name)
             message = f"✓ Pull réussi\nBranche: {current_branch.name}\nTimestamp: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
             self.logger.log(f"Git pull réussi depuis {current_branch.name}")
@@ -233,7 +233,7 @@ class GitManager:
             status += f"\n📜 Historique récent:\n"
             for i, commit in enumerate(repo.iter_commits(max_count=5)):
                 commit_hash = commit.hexsha[:7]
-                status += f"   {i+1}. [{commit_hash}] {commit.message.strip()[:60]}\n"
+                status += f"   {i+1}. [{commit_hash}] {commit.message.strip()}\n"
             return {"success": True, "output": status}
         except Exception as e:
             error_msg = f"✗ Erreur lors du statut: {str(e)}"

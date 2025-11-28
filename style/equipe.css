@@ -80,7 +80,7 @@
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 1rem;
-    line-height: 1.4;
+    line-height: 0.4;
 }
 
 .team-text {
@@ -91,7 +91,7 @@
 }
 
 /* ===== SECTION INFORMATIVE ===== */
-.team-section > .container > p {
+.team-section>.container>p {
     background: var(--white-color);
     padding: 2rem;
     border-radius: var(--border-radius-md);
@@ -138,19 +138,19 @@
         grid-template-columns: 1fr;
         gap: 1.8rem;
     }
-    
+
     .team-card {
         padding: 1.8rem;
     }
-    
+
     .team-section .section-title {
         font-size: 2rem;
     }
-    
+
     .team-section .lead {
         font-size: 1.1rem;
     }
-    
+
     .team-avatar {
         width: 130px;
         height: 130px;
@@ -162,44 +162,44 @@
     .team-section {
         padding: 3rem 0;
     }
-    
+
     .team-section .section-title {
         font-size: 1.8rem;
     }
-    
+
     .team-section .lead {
         font-size: 1.1rem;
         margin-bottom: 2rem;
     }
-    
+
     .team-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         margin-bottom: 2rem;
     }
-    
+
     .team-card {
         padding: 1.5rem;
     }
-    
+
     .team-avatar {
         width: 120px;
         height: 120px;
     }
-    
+
     .team-title {
         font-size: 1.2rem;
     }
-    
+
     .team-subtitle {
         font-size: 0.9rem;
     }
-    
+
     .team-text {
         font-size: 0.9rem;
     }
-    
-    .team-section > .container > p {
+
+    .team-section>.container>p {
         padding: 1.5rem;
         font-size: 1rem;
     }
@@ -209,39 +209,38 @@
     .team-section {
         padding: 2rem 0;
     }
-    
+
     .team-section .section-title {
         font-size: 1.6rem;
     }
-    
+
     .team-section .lead {
         font-size: 1rem;
     }
-    
+
     .team-card {
         padding: 1rem;
     }
-    
+
     .team-avatar {
         width: 100px;
         height: 100px;
     }
-    
+
     .team-title {
         font-size: 1.1rem;
     }
-    
+
     .team-subtitle {
         font-size: 0.85rem;
     }
-    
+
     .team-text {
         font-size: 0.85rem;
     }
-    
-    .team-section > .container > p {
+
+    .team-section>.container>p {
         padding: 1rem;
         font-size: 0.95rem;
     }
 }
-
