@@ -4,3 +4,5 @@ __pycache__/
 cms/__pycache__
 build/
 dist/
+*.tmp
+~$mment regler les soucis du CMS.docx
