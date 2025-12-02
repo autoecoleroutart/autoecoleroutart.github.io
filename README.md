@@ -30,15 +30,15 @@ Site web vitrine moderne et entièrement responsive pour l'auto-école Rout'Art,
 
 ### 📱 Pages & Contenu Complet
 
-| Page | Description | Fonctionnalités |
-|------|-------------|-----------------|
-| **🏠 Accueil** | Présentation générale avec hero section | Cartes interactives, informations de contact |
-| **🎓 Formations** | Détail des permis (B, A1, A2, AM/BSR) | Tableaux comparatifs, documents téléchargeables |
-| **💰 Tarifs** | Grilles tarifaires transparentes | Tables responsives, options de financement |
-| **💳 Financement** | Solutions de paiement | CPF, aides disponibles, simulateurs |
-| **📚 Code de la Route** | Apprentissage théorique | Méthodes pédagogiques, outils numériques |
-| **👥 Équipe** | Présentation des moniteurs | Photos, spécialités, expériences |
-| **📞 Contact** | Informations pratiques | Formulaire, géolocalisation, horaires |
+| Page                   | Description                             | Fonctionnalités                                 |
+| ---------------------- | --------------------------------------- | ----------------------------------------------- |
+| **🏠 Accueil**          | Présentation générale avec hero section | Cartes interactives, informations de contact    |
+| **🎓 Formations**       | Détail des permis (B, A1, A2, AM/BSR)   | Tableaux comparatifs, documents téléchargeables |
+| **💰 Tarifs**           | Grilles tarifaires transparentes        | Tables responsives, options de financement      |
+| **💳 Financement**      | Solutions de paiement                   | CPF, aides disponibles, simulateurs             |
+| **📚 Code de la Route** | Apprentissage théorique                 | Méthodes pédagogiques, outils numériques        |
+| **👥 Équipe**           | Présentation des moniteurs              | Photos, spécialités, expériences                |
+| **📞 Contact**          | Informations pratiques                  | Formulaire, géolocalisation, horaires           |
 
 ### 🔧 Fonctionnalités Techniques Avancées
 
@@ -55,75 +55,102 @@ Site web vitrine moderne et entièrement responsive pour l'auto-école Rout'Art,
 Rout-Art/
 ├── 📄 index.html                     # Page d'accueil principale 🏠
 ├── 📖 README.md                      # Documentation complète du projet 📋
-├── 🔧 chrome_no_secu.sh             # Script de développement local (Chrome sans sécurité)
+├── 📝 app.py                         # Application serveur Flask
+├── 🤖 robots.txt                     # Fichier robots pour le SEO
+├── 🗺️ sitemap.xml                   # Plan du site pour les moteurs de recherche
+├── 📋 Comment regler les soucis du CMS.docx  # Guide de dépannage CMS
 │
-├── 📁 page/                          # Pages HTML organisées 🌐
-│   ├── 📚 code_de_la_route.html         # Formation théorique
-│   ├── 📞 contact.html                  # Contact et localisation
-│   ├── 👥 equipe.html                   # Présentation de l'équipe
-│   ├── 💳 financement.html              # Solutions de paiement
-│   ├── 🎓 formations.html               # Détails des formations
-│   ├── 🏦 garantie_financiere.html      # Garanties légales
-│   ├── 📋 positionnement.html           # Évaluation initiale
-│   ├── 📝 reclamation.html              # Gestion des réclamations
-│   ├── 📜 reglement.html                # Règlement intérieur
-│   ├── 📊 resultat.html                 # Consultation des résultats
-│   ├── 😊 satisfaction.html             # Enquêtes qualité
-│   ├── 💰 tarifs.html                   # Grilles tarifaires
-│   └── 📄 template.html                 # Modèle de développement
+├── 🚀 Fichiers Batch (Windows)
+│   ├── ⚙️ compile.bat                # Compilation PyInstaller
+│   ├── 📦 dependecies.bat            # Installation dépendances
+│   ├── 🔐 setup_git_safe.bat         # Configuration Git safe directory
+│   └── ▶️ run.bat                    # Lanceur d'application
+│
+├── 📁 page/                          # Pages HTML du site 🌐
+│   ├── 📚 code_de_la_route.html      # Formation théorique - Code
+│   ├── 📞 contact.html               # Formulaire contact & localisation
+│   ├── 👥 equipe.html                # Présentation équipe
+│   ├── 💳 financement.html           # Solutions paiement & aide financière
+│   ├── 🎓 formations.html            # Détail des formations
+│   ├── 🏦 garantie_financiere.html   # Garanties légales
+│   ├── 📋 positionnement.html        # Évaluation initiale
+│   ├── 📰 presse.html                # Page presse/média
+│   ├── 📝 reclamation.html           # Gestion réclamations
+│   ├── 📜 reglement.html             # Règlement intérieur
+│   ├── 📊 resultat.html              # Consultation résultats
+│   ├── 😊 satisfaction.html          # Enquêtes de qualité
+│   ├── 🙏 remerciement.html          # Page remerciements
+│   ├── 💰 tarifs.html                # Grilles tarifaires
+│   └── 📄 template.html              # Modèle de développement
 │
 ├── 📁 style/                         # Architecture CSS modulaire 🎨
-│   ├── 📚 README.md                     # Documentation CSS
-│   ├── 📚 code_de_la_route.css          # Styles page code
-│   ├── 📞 contact.css                   # Styles page contact
-│   ├── 🌑 dark-mode.css                 # Styles pour le mode sombre
-│   ├── 👥 equipe.css                    # Styles page équipe
-│   ├── 💳 financement.css               # Styles page financement
-│   ├── 🎓 formations.css                # Styles page formations
-│   ├── 🏦 garantie_financiere.css       # Styles page garantie
-│   ├── 🏗️ general.css                   # Styles de base globaux
-│   ├── 🏠 index.css                     # Styles page d'accueil
-│   ├── 📋 positionnement.css            # Styles page positionnement
-│   ├── 📝 reclamation.css               # Styles page réclamation
-│   ├── 📜 reglement.css                 # Styles page règlement
-│   ├── 📊 resultat.css                  # Styles page résultat
-│   ├── 😊 satisfaction.css              # Styles page satisfaction
-│   ├── 💰 tarifs.css                    # Styles page tarifs
-│   └── 🎨 variables.css                 # Variables de design système
+│   ├── 📚 README.md                  # Documentation CSS
+│   ├── 📚 code_de_la_route.css       # Styles - Code
+│   ├── 📞 contact.css                # Styles - Contact
+│   ├── 🌑 dark-mode.css              # Styles mode sombre
+│   ├── 👥 equipe.css                 # Styles - Équipe
+│   ├── 💳 financement.css            # Styles - Financement
+│   ├── 🎓 formations.css             # Styles - Formations
+│   ├── 🏦 garantie_financiere.css    # Styles - Garantie
+│   ├── 🏗️ general.css                # Styles globaux
+│   ├── 🏠 index.css                  # Styles - Accueil
+│   ├── 📋 positionnement.css         # Styles - Positionnement
+│   ├── 📰 presse.css                 # Styles - Presse
+│   ├── 📝 reclamation.css            # Styles - Réclamation
+│   ├── 📜 reglement.css              # Styles - Règlement
+│   ├── 🙏 remerciement.css           # Styles - Remerciements
+│   ├── 📊 resultat.css               # Styles - Résultats
+│   ├── 😊 satisfaction.css           # Styles - Satisfaction
+│   ├── 💰 tarifs.css                 # Styles - Tarifs
+│   └── 🎨 variables.css              # Variables de design système
 │
 ├── 📁 script/                        # Scripts JavaScript ⚙️
-│   ├── 🌑 dark-mode.js                  # Logique du mode sombre
-│   ├── 💳 financement.js                # Logique page financement
-│   ├── 🎓 formations.js                 # Logique page formations
-│   ├── ⚙️ script.js                     # Fonctionnalités principales
-│   └── 💰 tarifs.js                     # Logique page tarifs
+│   ├── 🌑 dark-mode.js               # Mode sombre
+│   ├── 💳 financement.js             # Logique financement
+│   ├── 🎓 formations.js              # Logique formations
+│   ├── 🙏 remerciement.js            # Logique remerciements
+│   ├── ⚙️ script.js                  # Fonctionnalités principales
+│   └── 💰 tarifs.js                  # Logique tarifs
 │
 ├── 📁 images/                        # Ressources visuelles 🖼️
-│   ├── 👤 avatar/                      # Photos de l'équipe
+│   ├── 👤 avatar/                    # Photos équipe
 │   │   ├── avatar-emma.png
 │   │   └── avatar-paul.png
-│   ├── 🇫🇷 france-travail-sombre.png     # Logo France Travail (dark mode)
-│   ├── 🇫🇷 france-travail.png            # Logo France Travail
-│   ├── 🌅 hero-car-road.png            # Image hero section
-│   ├── 🚗 icon-car.png                  # Icône voiture
-│   ├── 📘 icon-facebook.ico             # Icône Facebook
-│   ├── 📸 icon-instagram.png            # Icône Instagram
-│   ├── 🏍️ icon-moto.png                 # Icône moto
-│   ├── 🏦 logo-groupama.png             # Logos pour la garantie financière
-│   ├── 🎨 logo_routart_modern.png       # Logo principal
-│   ├── 🏍️ moto/                        # Visuels moto
+│   ├── 🇫🇷 france-travail.png        # Logo France Travail
+│   ├── 🇫🇷 france-travail-sombre.png # Logo France Travail (dark)
+│   ├── 🏦 garantie-financiere.png    # Image garantie
+│   ├── 🌅 hero-car-road.png          # Hero section
+│   ├── 🚗 icon-car.png               # Icône voiture
+│   ├── 📘 icon-facebook.ico          # Icône Facebook
+│   ├── 📸 icon-instagram.png         # Icône Instagram
+│   ├── 🏍️ icon-moto.png              # Icône moto
+│   ├── 🎨 logo_routart_modern.png    # Logo principal
+│   ├── 🚗 permis-1e.png              # Visuel permis 1€
+│   ├── 📚 prepa_code.png             # Visuel préparation code
+│   ├── 🏍️ moto/                      # Visuels formations moto
 │   │   ├── am-bsr.png
 │   │   ├── permis-a1-125.png
 │   │   └── permis-a2.png
-│   ├── 🚗 permis-1e.png                 # Visuel permis 1€/jour
-│   ├── 📚 prepa_code.png                # Visuel préparation au code
-│   └── 🚗 voiture/                      # Visuels voiture
-│       ├── permis-b-accompagnee.png     # Conduite accompagnée
-│       ├── permis-b-automatique.png     # Boîte automatique
-│       └── permis-b-traditionnel.png    # Permis B classique
+│   ├── 🚗 voiture/                   # Visuels formations voiture
+│   │   ├── permis-b-accompagnee.png
+│   │   ├── permis-b-automatique.png
+│   │   └── permis-b-traditionnel.png
+│   └── 🙏 remerciement/              # Page remerciements
+│       ├── avatar_jean-baptiste.png
+│       ├── github_ico.svg
+│       ├── github_ico_darkmode.svg
+│       ├── linkedin_ico.png
+│       ├── portfolio_ico.png
+│       ├── portfolio_ico_darkmode.png
+│       └── techno/                   # Logos technologies
+│           ├── github_ico.svg
+│           ├── github_ico_dark.svg
+│           ├── html.png
+│           ├── html_dark.png
+│           └── python.png
 │
-├── 📁 files/                         # Documents officiels 📝
-│   ├── 🏍️ moto/                        # Documents formations moto
+├── 📁 files/                         # Documents PDF officiels 📝
+│   ├── 🏍️ moto/                      # Documents formations moto
 │   │   ├── 125cm3/
 │   │   │   └── programme_formation_125cm3.pdf
 │   │   ├── a1/
@@ -138,8 +165,8 @@ Rout-Art/
 │   │   └── am/
 │   │       ├── enjeux_formation_permis_am.pdf
 │   │       └── programme_formation_permis_am.pdf
-│   ├── 📜 reglement_interieur.docx      # Règlement interne
-│   └── 🚗 voiture/                      # Documents formations voiture
+│   ├── 📜 reglement_interieur.docx   # Règlement intérieur
+│   └── 🚗 voiture/                   # Documents formations voiture
 │       ├── auto/
 │       │   └── programme_auto_manuel.pdf
 │       ├── enjeux_formation_permis_b.pdf
@@ -149,10 +176,31 @@ Rout-Art/
 ├── 📁 icon/                          # Favicon et icônes 🎯
 │   └── 🎯 logo_routart_modern.png
 │
-├── 🤖 robots.txt                      # Fichier robots pour le SEO
-├── 🗺️ sitemap.xml                    # Plan du site pour les moteurs de recherche
-└── 🔊 sounds/                        # Ressources sonores (e.g. pour UX)
-    └── change_page.mp3
+├── 📁 cms/                           # CMS Desktop - Gestion du contenu 🖥️
+│   ├── 📋 README_CMS.md              # Documentation CMS
+│   ├── 📋 DOCUMENTATION.md           # Documentation détaillée
+│   ├── 📋 CMS.md                     # Notes du CMS
+│   ├── 📦 requirements.txt           # Dépendances Python
+│   ├── 📁 icon/                      # Icônes du CMS
+│   │   ├── logo-routart.png
+│   │   └── logo_routart.ico
+│   ├── 📁 source/                    # Code source Python
+│   │   ├── __init__.py
+│   │   ├── 🐍 rout_art_cms.py        # Point d'entrée principal
+│   │   ├── 🛠️ config_manager.py      # Gestion configuration
+│   │   ├── 🎨 html_manager.py        # Gestion contenu HTML
+│   │   ├── 📝 logger.py              # Système logging
+│   │   ├── 🔨 build_exe.py           # Compilation PyInstaller
+│   │   ├── 🌳 git_manager.py         # Gestion Git/GitHub
+│   │   ├── 🔧 server_manager.py      # Serveur web
+│   │   └── 📦 rout_art_cms.spec      # Config PyInstaller
+│   └── __pycache__/                  # Cache Python
+│
+├── 📁 dist/                          # Builds compilés 🖥️
+│   └── Rout'Art CMS.exe              # Application compilée
+│
+└── 🔊 sounds/                        # Ressources sonores 🎵
+    └── change_page.mp3               # Son changement page
 ```
 
 ## 🎨 Système de Design
@@ -196,12 +244,12 @@ Rout-Art/
 
 ### 📐 Breakpoints Stratégiques
 
-| Appareil | Largeur | Optimisations |
-|----------|---------|---------------|
-| 📱 **Mobile** | < 480px | Menu hamburger, navigation tactile |
-| 📱 **Large Mobile** | 480px - 768px | Grilles 1-2 colonnes |
-| 💻 **Tablette** | 768px - 992px | Grilles 2-3 colonnes |
-| 🖥️ **Desktop** | > 992px | Grilles complètes, hover effects |
+| Appareil           | Largeur       | Optimisations                      |
+| ------------------ | ------------- | ---------------------------------- |
+| 📱 **Mobile**       | < 480px       | Menu hamburger, navigation tactile |
+| 📱 **Large Mobile** | 480px - 768px | Grilles 1-2 colonnes               |
+| 💻 **Tablette**     | 768px - 992px | Grilles 2-3 colonnes               |
+| 🖥️ **Desktop**      | > 992px       | Grilles complètes, hover effects   |
 
 ### 🔄 Transformations Adaptatives
 
