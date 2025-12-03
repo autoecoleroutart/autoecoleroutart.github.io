@@ -21,10 +21,10 @@ file_tree_text = """
 │   ├── CMS.md
 │   ├── DOCUMENTATION.md
 │   ├── README_CMS.md
+│   ├── requirements.txt
 │   ├── icon
 │   │   ├── logo-routart.png
 │   │   └── logo_routart.ico
-│   ├── requirements.txt
 │   └── source
 │       ├── __init__.py
 │       ├── build_exe.py
@@ -33,11 +33,13 @@ file_tree_text = """
 │       ├── html_manager.py
 │       ├── logger.py
 │       ├── rout_art_cms.py
-│       ├── rout_art_cms.spec
-│       └── server_manager.py
+│       ├── server_manager.py
+│       ├── sitemap_generator.py
+│       └── rout_art_cms.spec
 ├── dist
 │   └── Rout_Art_CMS.exe
 ├── files
+│   ├── reglement_interieur.docx
 │   ├── moto
 │   │   ├── 125cm3
 │   │   │   └── programme_formation_125cm3.pdf
@@ -53,19 +55,15 @@ file_tree_text = """
 │   │   └── am
 │   │   │   ├── enjeux_formation_permis_am.pdf
 │   │   │   └── programme_formation_permis_am.pdf
-│   ├── reglement_interieur.docx
 │   └── voiture
-│       ├── auto
-│       │   └── programme_auto_manuel.pdf
 │       ├── enjeux_formation_permis_b.pdf
 │       ├── parcours_formation_b.pdf
-│       └── programme_formation_b.pdf
+│       ├── programme_formation_b.pdf
+│       └── auto
+│           └── programme_auto_manuel.pdf
 ├── icon
 │   └── logo_routart_modern.png
 ├── images
-│   ├── avatar
-│   │   ├── avatar-emma.png
-│   │   └── avatar-paul.png
 │   ├── france-travail-sombre.png
 │   ├── france-travail.png
 │   ├── garantie-financiere.png
@@ -75,12 +73,15 @@ file_tree_text = """
 │   ├── icon-instagram.png
 │   ├── icon-moto.png
 │   ├── logo_routart_modern.png
+│   ├── permis-1e.png
+│   ├── prepa_code.png
+│   ├── avatar
+│   │   ├── avatar-emma.png
+│   │   └── avatar-paul.png
 │   ├── moto
 │   │   ├── am-bsr.png
 │   │   ├── permis-a1-125.png
 │   │   └── permis-a2.png
-│   ├── permis-1e.png
-│   ├── prepa_code.png
 │   ├── remerciement
 │   │   ├── avatar_jean-baptiste.png
 │   │   ├── github_ico.svg
