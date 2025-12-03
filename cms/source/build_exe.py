@@ -17,12 +17,12 @@ def kill_exe_process():
     """Tuer les processus de l'exécutable CMS s'il est en cours d'exécution"""
     try:
         subprocess.run(
-            ['taskkill', '/IM', "Rout'Art CMS.exe", '/F'],
+            ['taskkill', '/IM', "Rout_Art_CMS.exe", '/F'],
             capture_output=True,
             timeout=5
         )
         print("🛑 Processus de l'application fermé")
-    except Exception: # Pas en cours d'utilisation
+    except Exception:  # Pas en cours d'utilisation
         pass
 
 
@@ -78,7 +78,7 @@ def compile_to_exe():
         if build_dir.exists():
             shutil.rmtree(build_dir)
             print("🧹 Dossier build supprimé")
-        exe_path = dist_dir / "Rout'Art CMS.exe"
+        exe_path = dist_dir / "Rout_Art_CMS.exe"
         print("\n✅ Compilation réussie!")
         print(f"\n📦 L'exécutable se trouve dans: {exe_path}")
         print("\n🎉 Vous pouvez maintenant distribuer ce fichier .exe!")
