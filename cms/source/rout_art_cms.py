@@ -11,6 +11,7 @@ from html_manager import HTMLManager
 from server_manager import ServerManager
 from config_manager import ConfigManager
 from logger import Logger
+from sitemap_generator import SitemapGenerator
 import tkinter as tk
 from tkinter import messagebox, filedialog, scrolledtext
 from tkinter import ttk
@@ -55,6 +56,7 @@ class RoutArtCMS:
         self.git_manager = GitManager(self.logger)
         self.html_manager = HTMLManager(self.logger)
         self.server_manager = ServerManager(self.logger)
+        self.sitemap_generator = SitemapGenerator(self.logger)
 
         # État de l'application
         self.repo_path = tk.StringVar(
@@ -746,8 +748,17 @@ class RoutArtCMS:
                 f.write(updated_content)
 
             self.logger.log(f"Fichier sauvegardé: {self.current_file.name}")
+
+            # Générer automatiquement le sitemap après la sauvegarde
+            repo_path = self.repo_path.get()
+            sitemap_result = self.sitemap_generator.update_sitemap(repo_path)
+            if sitemap_result['success']:
+                self.logger.log("Sitemap mis à jour automatiquement")
+            else:
+                self.logger.log(f"Attention: {sitemap_result['error']}")
+
             self.root.after(0, lambda: messagebox.showinfo(
-                "Succès", f"Fichier sauvegardé: {self.current_file.name}"))
+                "Succès", f"Fichier sauvegardé: {self.current_file.name}\nSitemap mis à jour automatiquement"))
 
         except Exception as e:
             self.logger.log(f"Erreur sauvegarde: {e}")

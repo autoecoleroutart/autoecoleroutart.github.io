@@ -1,43 +1,237 @@
+# ============================================================
+# CONFIGURATION ROBOTS.TXT - Auto-École Rout'Art
+# ============================================================
+
+# Configuration par défaut - TOUT BLOQUÉ
 User-agent: *
+Disallow: /
+
+# ============================================================
+# AUTORISER LES ROBOTS RESPECTUEUX
+# ============================================================
+
+# Google
+User-agent: Googlebot
 Allow: /
-
-# Autoriser l'indexation de toutes les pages principales
 Allow: /index.html
-Allow: /page/formations.html
-Allow: /page/tarifs.html
-Allow: /page/financement.html
-Allow: /page/contact.html
-Allow: /page/code_de_la_route.html
-Allow: /page/equipe.html
-Allow: /page/presse.html
-Allow: /page/remerciement.html
-Allow: /page/reglement.html
-Allow: /page/satisfaction.html
-Allow: /page/positionnement.html
-Allow: /page/reclamation.html
-Allow: /page/resultat.html
-Allow: /page/garantie_financiere.html
-
-# Autoriser les ressources statiques
-Allow: /style/
+Allow: /page/
 Allow: /images/
+Allow: /style/
 Allow: /icon/
+Allow: /script/
 Allow: /files/
-
-# Interdire les fichiers techniques
-Disallow: /script/
 Disallow: /page/template.html
 Disallow: /.git/
-Disallow: /chrome_no_secu.sh
 Disallow: /README.md
 Disallow: /app.py
 Disallow: /.gitignore
 Disallow: /dependencies.bat
 Disallow: /compile.bat
+Disallow: /run.bat
+Disallow: /setup_git_safe.bat
+Disallow: /graph.py
 Disallow: /cms/
+
+# Google Extended (pour l'IA de Google)
+User-agent: Googlebot-Extended
+Allow: /
+Allow: /index.html
+Allow: /page/
+Allow: /images/
+Allow: /style/
+Allow: /icon/
+Allow: /script/
+Allow: /files/
+Disallow: /page/template.html
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /app.py
+Disallow: /.gitignore
+Disallow: /dependencies.bat
+Disallow: /compile.bat
+Disallow: /run.bat
+Disallow: /setup_git_safe.bat
+Disallow: /graph.py
+Disallow: /cms/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Allow: /index.html
+Allow: /page/
+Allow: /images/
+Allow: /style/
+Allow: /icon/
+Allow: /script/
+Allow: /files/
+Disallow: /page/template.html
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /app.py
+Disallow: /.gitignore
+Disallow: /dependencies.bat
+Disallow: /compile.bat
+Disallow: /run.bat
+Disallow: /setup_git_safe.bat
+Disallow: /graph.py
+Disallow: /cms/
+
+# Claude Web (Anthropic)
+User-agent: claude-web
+Allow: /
+Allow: /index.html
+Allow: /page/
+Allow: /images/
+Allow: /style/
+Allow: /icon/
+Allow: /script/
+Allow: /files/
+Disallow: /page/template.html
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /app.py
+Disallow: /.gitignore
+Disallow: /dependencies.bat
+Disallow: /compile.bat
+Disallow: /run.bat
+Disallow: /setup_git_safe.bat
+Disallow: /graph.py
+Disallow: /cms/
+
+# Anthropic-IA
+User-agent: anthropic-ia
+Allow: /
+Allow: /index.html
+Allow: /page/
+Allow: /images/
+Allow: /style/
+Allow: /icon/
+Allow: /script/
+Allow: /files/
+Disallow: /page/template.html
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /app.py
+Disallow: /.gitignore
+Disallow: /dependencies.bat
+Disallow: /compile.bat
+Disallow: /run.bat
+Disallow: /setup_git_safe.bat
+Disallow: /graph.py
+Disallow: /cms/
+
+# ChatGPT
+User-agent: ChatGPT-User
+Allow: /
+Allow: /index.html
+Allow: /page/
+Allow: /images/
+Allow: /style/
+Allow: /icon/
+Allow: /script/
+Allow: /files/
+Disallow: /page/template.html
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /app.py
+Disallow: /.gitignore
+Disallow: /dependencies.bat
+Disallow: /compile.bat
+Disallow: /run.bat
+Disallow: /setup_git_safe.bat
+Disallow: /graph.py
+Disallow: /cms/
+
+# PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+Allow: /index.html
+Allow: /page/
+Allow: /images/
+Allow: /style/
+Allow: /icon/
+Allow: /script/
+Allow: /files/
+Disallow: /page/template.html
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /app.py
+Disallow: /.gitignore
+Disallow: /dependencies.bat
+Disallow: /compile.bat
+Disallow: /run.bat
+Disallow: /setup_git_safe.bat
+Disallow: /graph.py
+Disallow: /cms/
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Allow: /index.html
+Allow: /page/
+Allow: /images/
+Allow: /style/
+Allow: /icon/
+Allow: /script/
+Allow: /files/
+Disallow: /page/template.html
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /app.py
+Disallow: /.gitignore
+Disallow: /dependencies.bat
+Disallow: /compile.bat
+Disallow: /run.bat
+Disallow: /setup_git_safe.bat
+Disallow: /graph.py
+Disallow: /cms/
+
+# YandexBot
+User-agent: YandexBot
+Allow: /
+Allow: /index.html
+Allow: /page/
+Allow: /images/
+Allow: /style/
+Allow: /icon/
+Allow: /script/
+Allow: /files/
+Disallow: /page/template.html
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /app.py
+Disallow: /.gitignore
+Disallow: /dependencies.bat
+Disallow: /compile.bat
+Disallow: /run.bat
+Disallow: /setup_git_safe.bat
+Disallow: /graph.py
+Disallow: /cms/
+
+# ============================================================
+# BLOQUER EXPLICITEMENT LES IA NON AUTORISÉES
+# ============================================================
+
+# OpenAI (sauf ChatGPT-User)
+User-agent: GPTBot
+Disallow: /
+
+# Autres IA
+User-agent: CCBot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+# ============================================================
+# CONFIGURATION GÉNÉRALE
+# ============================================================
 
 # Référence du sitemap
 Sitemap: https://www.autoecoleroutart.com/sitemap.xml
 
-# Crawl-delay pour éviter la surcharge serveur
+# Crawl-delay pour les robots par défaut
 Crawl-delay: 1
