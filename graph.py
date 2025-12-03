@@ -29,7 +29,7 @@ Rout-Art/
 ├── compile.bat
 ├── dependecies.bat
 ├── dist
-│   └── Rout'Art CMS.exe
+│   └── Rout_Art_CMS.exe
 ├── file_tree_stable.png
 ├── files
 │   ├── moto
