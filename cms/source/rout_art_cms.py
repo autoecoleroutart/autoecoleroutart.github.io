@@ -50,13 +50,16 @@ class RoutArtCMS:
         self.root.geometry("1400x800")
         self.root.minsize(1000, 600)
 
-        # Gestionnaires
+        # Gestionnaires - INITIALISER AVANT _build_ui()
         self.config_manager = ConfigManager()
         self.logger = Logger()
         self.git_manager = GitManager(self.logger)
         self.html_manager = HTMLManager(self.logger)
         self.server_manager = ServerManager(self.logger)
         self.sitemap_generator = SitemapGenerator(self.logger)
+
+        # Charger la configuration sauvegardée AVANT _build_ui()
+        self.config_manager.load_config()
 
         # État de l'application
         self.repo_path = tk.StringVar(
@@ -65,9 +68,6 @@ class RoutArtCMS:
         self.current_file_content = None
         self.server_thread = None
         self.server_running = False
-
-        # Charger la configuration sauvegardée
-        self.config_manager.load_config()
 
         # Construire l'interface
         self._build_ui()
@@ -262,7 +262,14 @@ class RoutArtCMS:
             "Montserrat", 11)).pack(side=tk.LEFT, padx=5)
         self.port_entry = ctk.CTkEntry(server_frame, width=100, height=35)
         self.port_entry.pack(side=tk.LEFT, padx=5)
-        self.port_entry.insert(0, "8000")
+        # Charger le port depuis la config
+        port = self.config_manager.get_default_port()
+        if isinstance(port, int) and 1 <= port <= 65535:
+            self.port_entry.insert(0, str(port))
+        else:
+            self.port_entry.insert(0, "8000")
+        # Ajouter un callback pour mettre à jour l'URL
+        self.port_entry.bind("<KeyRelease>", self._update_preview_url)
 
         self.server_toggle_btn = ctk.CTkButton(server_frame, text="▶️  Démarrer Serveur",
                                                command=self._toggle_server, width=150, height=35)
@@ -770,6 +777,25 @@ class RoutArtCMS:
         if self.file_combo.get():
             self._on_file_selected(self.file_combo.get())
 
+    def _update_preview_url(self, event=None):
+        """Mettre à jour l'URL de prévisualisation quand le port change"""
+        port_str = self.port_entry.get().strip()
+
+        try:
+            port = int(port_str)
+            # Valider le port
+            if 1 <= port <= 65535:
+                self.url_label.configure(text=f"http://localhost:{port}")
+            else:
+                # Fallback : afficher l'URL avec le port par défaut si invalide
+                self.url_label.configure(
+                    text=f"http://localhost:8000 (⚠️  Port {port} invalide)"
+                )
+        except ValueError:
+            # Fallback : afficher l'URL avec le port par défaut si non numérique
+            self.url_label.configure(
+                text="http://localhost:8000 (⚠️  Port invalide)")
+
     # ======= Méthodes Serveur =======
 
     def _toggle_server(self):
@@ -782,7 +808,31 @@ class RoutArtCMS:
     def _start_server(self):
         """Démarrer le serveur local"""
         try:
-            port = int(self.port_entry.get())
+            port_str = self.port_entry.get().strip()
+
+            # Valider et convertir le port
+            try:
+                port = int(port_str)
+            except ValueError:
+                messagebox.showerror(
+                    "Erreur", "Le port doit être un nombre valide")
+                self.port_entry.delete(0, "end")
+                self.port_entry.insert(0, "8000")
+                self._update_preview_url()
+                return
+
+            # Vérifier que le port est dans la bonne plage
+            if port < 1 or port > 65535:
+                messagebox.showerror(
+                    "Erreur",
+                    f"Le port doit être entre 1 et 65535 (reçu: {port})\n"
+                    "Utilisation du port par défaut: 8000"
+                )
+                self.port_entry.delete(0, "end")
+                self.port_entry.insert(0, "8000")
+                self._update_preview_url()
+                return
+
             repo_path = self.repo_path.get()
 
             if not Path(repo_path).exists():
@@ -808,8 +858,6 @@ class RoutArtCMS:
             messagebox.showinfo(
                 "Succès", f"Serveur local démarré sur http://localhost:{port}")
 
-        except ValueError:
-            messagebox.showerror("Erreur", "Le port doit être un nombre")
         except Exception as e:
             messagebox.showerror(
                 "Erreur", f"Impossible de démarrer le serveur: {e}")

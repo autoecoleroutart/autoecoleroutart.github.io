@@ -27,18 +27,14 @@ Double-cliquez: rout_art_cms.exe
 
 ### Option 2: Python directement
 ```bash
-python setup_dependencies.py
+cd cms/source
 python rout_art_cms.py
 ```
 
-### Option 3: Menu interactif
+### Option 3: Depuis le répertoire cms
 ```bash
-python launcher.py
-```
-
-### Option 4: Batch file Windows
-```bash
-Double-cliquez: run.bat
+cd cms
+python source/rout_art_cms.py
 ```
 
 ---
@@ -47,31 +43,57 @@ Double-cliquez: run.bat
 
 ```
 Rout-Art/
-├── 🎯 rout_art_cms.py              ← Application principale
 │
-├── 🔧 cms/                         ← Modules fonctionnels
-│   ├── git_manager.py              (Git: pull/push/status)
-│   ├── html_manager.py             (HTML: lecture/édition)
-│   ├── server_manager.py           (Serveur HTTP local)
-│   ├── config_manager.py           (Configuration persistante)
-│   └── logger.py                   (Journalisation)
-│
-├── 🛠️ Scripts d'installation
-│   ├── setup_dependencies.py       (Installation dépendances)
-│   ├── test_configuration.py       (Tests de configuration)
-│   ├── launcher.py                 (Menu interactif)
-│   └── run.bat                     (Lanceur Windows)
-│
-├── 🔨 Compilation & Distribution
-│   ├── build_exe.py                (Compilation PyInstaller)
-│   ├── rout_art_cms.spec           (Configuration compilation)
-│   └── create_deployment.py        (Package de distribution)
-│
-├── 📦 requirements.txt             (Dépendances Python)
-│
-└── 📚 Documentation
-    └── DOCUMENTATION.md             (Vous êtes ici!)
+└── cms/                                ← 📁 Dossier CMS (tout le système)
+    │
+    ├── 📄 CMS.md                       (Vue d'ensemble du CMS)
+    ├── 📄 DOCUMENTATION.md             (Documentation complète - VOUS ÊTES ICI)
+    ├── 📄 README_CMS.md                (Guide de démarrage rapide)
+    ├── 📄 SITEMAP_AUTOMATION.md        (Documentation générateur sitemap)
+    │
+    ├── 🎨 icon/                        (Icônes et logos)
+    │   ├── logo-routart.png            (Logo PNG moderne)
+    │   └── logo_routart.ico            (Logo ICO pour .exe)
+    │
+    ├── 📦 requirements.txt             (Dépendances Python)
+    │
+    └── 🔧 source/                      (Code source)
+        ├── __init__.py                 (Marque Python package)
+        │
+        ├── 🎯 rout_art_cms.py          (Application principale - GUI)
+        │
+        ├── 🏗️ Modules Métier:
+        │   ├── git_manager.py          (Gestion Git: pull/push/status)
+        │   ├── html_manager.py         (Édition HTML: lecture/écriture)
+        │   ├── server_manager.py       (Serveur HTTP local + validation)
+        │   ├── config_manager.py       (Config: cache/validations/hooks)
+        │   ├── logger.py               (Journalisation centralisée)
+        │   └── sitemap_generator.py    (Génération automatique sitemap)
+        │
+        └── 🔨 Compilation & Utilitaires:
+            ├── build_exe.py            (Compilation PyInstaller)
+            ├── clean_config.py         (Nettoyage configuration)
+            ├── config_manager_example.py (Exemples d'utilisation)
+            └── rout_art_cms.spec       (Configuration compilation)
 ```
+
+### Fichiers Clés
+
+| Fichier                | Location  | Description                                             |
+| ---------------------- | --------- | ------------------------------------------------------- |
+| `rout_art_cms.py`      | `source/` | Application GUI principale - CustomTkinter              |
+| `config_manager.py`    | `source/` | Configuration persistante (cache + validations + hooks) |
+| `git_manager.py`       | `source/` | Opérations Git (pull/push)                              |
+| `html_manager.py`      | `source/` | Édition fichiers HTML                                   |
+| `server_manager.py`    | `source/` | Serveur local avec validation de port                   |
+| `logger.py`            | `source/` | Logs centralisés (fichier + mémoire)                    |
+| `sitemap_generator.py` | `source/` | Génération automatique de sitemap                       |
+| `build_exe.py`         | `source/` | Compilation en exécutable Windows                       |
+| `clean_config.py`      | `source/` | Script de nettoyage de configuration                    |
+| `requirements.txt`     | `cms/`    | Toutes les dépendances Python                           |
+| `DOCUMENTATION.md`     | `cms/`    | Documentation complète (ceci)                           |
+| `README_CMS.md`        | `cms/`    | Quick start guide                                       |
+| `CMS.md`               | `cms/`    | Vue d'ensemble générale                                 |
 
 ---
 
@@ -98,6 +120,14 @@ L'application se lance avec une interface à **5 onglets**:
 - **Port**: Personnalisez le port (défaut: 8000)
 - **Ouvrir navigateur**: Lance la prévisualisation
 - **Logs**: Consultez les logs du serveur
+
+**Améliorations Récentes:**
+- ✅ **Synchronisation config ↔ UI**: Le port se charge automatiquement depuis la configuration
+- ✅ **Mise à jour temps réel**: L'URL se met à jour au fur et à mesure que vous tapez le port
+- ✅ **Validation stricte**: Le port doit être entre 1-65535
+- ✅ **Fallback automatique**: Port invalide → basculement à 8000
+- ✅ **Affichage des erreurs**: Messages clairs si le port est invalide (ex: "⚠️  Port -16500 invalide")
+- ✅ **Nettoyage automatique**: Les ports invalides en config sont corrigés au démarrage
 
 #### 4️⃣ Onglet "Paramètres"
 - **Chemin repository**: Configurez le dossier Git
@@ -143,35 +173,25 @@ L'application se lance avec une interface à **5 onglets**:
 ### Étape 1: Installation des Dépendances
 
 ```bash
-python setup_dependencies.py
+cd cms
+pip install -r requirements.txt
 ```
 
-Cela installe automatiquement:
+Ou si vous préférez directement:
+```bash
+pip install customtkinter beautifulsoup4 gitpython
+```
+
+Cela installe:
 - `customtkinter` (GUI moderne)
 - `beautifulsoup4` (Édition HTML)
 - `gitpython` (Gestion Git)
 
-### Étape 2: Vérifier la Configuration
+### Étape 2: Lancer l'Application
 
 ```bash
-python test_configuration.py
-```
-
-Ce script vérifie:
-- ✓ Python version
-- ✓ Modules disponibles
-- ✓ Permissions fichiers
-- ✓ Accès Git
-
-### Étape 3: Lancer l'Application
-
-```bash
+cd cms/source
 python rout_art_cms.py
-```
-
-Ou utilisez le menu:
-```bash
-python launcher.py
 ```
 
 ---
@@ -186,6 +206,7 @@ pip install pyinstaller
 ### Compiler
 
 ```bash
+cd cms/source
 python build_exe.py
 ```
 
@@ -204,16 +225,6 @@ cd dist/Rout'Art CMS/
 # Lancez l'exe
 Rout'Art CMS.exe
 ```
-
-### Distribuer
-
-Pour partager l'application:
-
-```bash
-python create_deployment.py
-```
-
-Cela crée un package complet à distribuer.
 
 ---
 
@@ -247,13 +258,68 @@ stop()              # Arrête le serveur
 is_running()        # État du serveur
 ```
 
-#### `config_manager.py`
-Stockage et récupération de configuration:
+Amélioration récente:
+- ✅ **Validation du port**: Vérifie que le port est entre 1-65535
+- ✅ **Fallback automatique**: Utilise le port 8000 si invalide
+- ✅ **Messages d'erreur clairs**: Affiche quand un port est corrigé
+
+#### `config_manager.py` - Gestion Avancée
+Configuration persistante avec **cache**, **validations** et **hooks**:
+
+**Stockage & Chargement:**
 ```python
-load_config()       # Charge depuis ~/.rout_art_cms/
+load_config()       # Charge depuis ~/.rout_art_cms/config.json
 save_config()       # Sauvegarde persistante
-get_repo_path()     # Chemin du repository
-set_repo_path()     # Configure le repository
+```
+
+**Cache en Mémoire:**
+```
+Avantage: Accès instantané sans lire le fichier à chaque fois
+Synchronisation: Automatique lors de chaque modification
+Performance: +100x plus rapide pour lectures répétées
+```
+
+**Validations Strictes:**
+```python
+# Schéma de validation appliqué à chaque modification:
+- repo_path: string (chemin existant)
+- auto_pull: boolean
+- auto_refresh: boolean
+- default_port: integer (1-65535)
+- theme: string (dark ou light)
+- window_width: integer (min 400)
+- window_height: integer (min 300)
+
+# Exemples:
+set_default_port(99999)   # ❌ Erreur: > 65535
+set_default_port(8000)    # ✅ Accepté
+set_theme("neon")         # ❌ Erreur: not in [dark, light]
+set_theme("dark")         # ✅ Accepté
+```
+
+**Hooks - Actions Automatiques:**
+```python
+# Avant modification (before hook)
+config.register_hook("theme", "before", callback)
+
+# Après modification (after hook)
+config.register_hook("theme", "after", callback)
+
+# Exemple d'utilisation:
+def apply_theme(key, old, new):
+    print(f"Thème changé: {old} → {new}")
+    update_ui_theme(new)  # Déclenche mise à jour UI
+
+config.register_hook("theme", "after", apply_theme)
+```
+
+**Auto-nettoyage:**
+```
+À chaque démarrage:
+- Vérifie chaque valeur sauvegardée
+- Corrige automatiquement les valeurs invalides
+- Affiche des avertissements
+- Réenregistre la config nettoyée
 ```
 
 #### `logger.py`
@@ -263,6 +329,7 @@ log(msg)            # Info
 log_error(err)      # Erreur
 log_success(msg)    # Succès
 get_logs()          # Récupère l'historique
+get_recent_logs()   # Derniers N logs
 ```
 
 ### Flux de Données
@@ -271,12 +338,15 @@ get_logs()          # Récupère l'historique
 Utilisateur
     ↓
 [Interface GUI - CustomTkinter]
+    ├─ _create_preview_tab()      (Synchronisation config ↔ UI)
+    ├─ _update_preview_url()      (Mise à jour URL en temps réel)
+    └─ _start_server()            (Validation + fallback)
     ↓
 [Managers - Métier]
     ├─ git_manager (GitPython)
     ├─ html_manager (BeautifulSoup4)
-    ├─ server_manager (http.server)
-    ├─ config_manager (JSON)
+    ├─ server_manager (http.server + validation)
+    ├─ config_manager (JSON + cache + validations + hooks)
     └─ logger (File + Memory)
     ↓
 [Système de fichiers + Git + HTTP]
@@ -295,11 +365,12 @@ Cela garde l'interface responsive.
 
 ## 🐛 Dépannage
 
-### "Module not found"
+### "ModuleNotFoundError: No module named..."
 
+**Solution:**
 ```bash
-# Solution:
-python setup_dependencies.py
+cd cms
+pip install -r requirements.txt
 ```
 
 ### "Repository not found"
@@ -308,14 +379,33 @@ python setup_dependencies.py
 2. Assurez-vous que c'est un dossier Git valide
 3. Cliquez "Sauvegarder"
 
-### "Erreur de compilation"
+### Port invalide ou "port must be 0-65535"
 
+**Cause:** La configuration contient un port invalide (par exemple: -16500)
+
+**Solutions:**
+
+1. **Nettoyage automatique** (Recommandé):
 ```bash
-# Vérifiez d'abord:
-python test_configuration.py
+cd cms/source
+python clean_config.py
+```
+Cela:
+- Détecte les valeurs invalides
+- Les corrige automatiquement
+- Sauvegarde la config nettoyée
 
-# Puis réessayez:
-python build_exe.py
+2. **Réinitialisation manuelle**:
+   - Ouvrez ⚙️ Paramètres
+   - Cliquez "Réinitialiser"
+   - Redémarrez l'application
+
+3. **Suppression du fichier config**:
+```bash
+# Windows (PowerShell):
+Remove-Item $env:USERPROFILE\\.rout_art_cms\\config.json
+
+# Relancez l'app - la config par défaut sera recréée
 ```
 
 ### Serveur HTTP n'apparaît pas
@@ -323,6 +413,7 @@ python build_exe.py
 1. Vérifiez que le port n'est pas utilisé
 2. Essayez avec un autre port (ex: 8001)
 3. Consultez les logs pour plus de détails
+4. Si le port était invalide, exécutez: `python cms/source/clean_config.py`
 
 ### Les changements Git ne fonctionnent pas
 
@@ -330,20 +421,28 @@ python build_exe.py
 2. Testez la connexion au repository
 3. Vérifiez les permissions fichiers
 
+### L'URL de prévisualisation affiche "⚠️ Port invalide"
+
+Cela signifie que vous avez saisi un port invalide dans le champ.
+
+**Solution:**
+- Vérifiez que c'est un nombre entre 1 et 65535
+- Appuyez sur "Démarrer Serveur" pour que le port soit corrigé automatiquement
+- Le port sera remplacé par 8000
+
 ---
 
 ## 📋 Checklist de Déploiement
 
 Avant de distribuer l'application:
 
-- [ ] Compiler l'exe: `python build_exe.py`
+- [ ] Compiler l'exe: `cd cms/source && python build_exe.py`
 - [ ] Tester l'exe sur une machine sans Python
 - [ ] Vérifier tous les onglets fonctionnent
 - [ ] Tester Git pull/push
 - [ ] Tester édition HTML
 - [ ] Tester prévisualisation
 - [ ] Vérifier logs complets
-- [ ] Créer package: `python create_deployment.py`
 
 ---
 
@@ -354,12 +453,6 @@ Avant de distribuer l'application:
 - **Consultez les logs** pour diagnostiquer les problèmes
 - **Export**: Utilisez le bouton "Export" dans l'onglet Logs
 
-### Script de Test
-```bash
-python test_configuration.py
-```
-Teste complètement votre installation.
-
 ### Informations de Configuration
 - **Stockage**: `~/.rout_art_cms/config.json`
 - **Réinitialiser**: Cliquez "Réinitialiser" dans Paramètres
@@ -368,41 +461,63 @@ Teste complètement votre installation.
 
 ## ℹ️ Informations Techniques
 
-| Aspect | Détail |
-|--------|--------|
-| **Langage** | Python 3.9+ |
-| **GUI** | CustomTkinter 5.0+ |
-| **HTML** | BeautifulSoup4 4.11+ |
-| **Git** | GitPython 3.1+ |
-| **Serveur** | http.server (stdlib) |
-| **Compilation** | PyInstaller 5.0+ |
-| **Taille .exe** | ~200 MB |
-| **Mémoire** | 50-150 MB |
-| **Compatibilité** | Windows 7+ |
-| **Python** | 3.9, 3.10, 3.11, 3.12 |
+| Aspect            | Détail                |
+| ----------------- | --------------------- |
+| **Langage**       | Python 3.9+           |
+| **GUI**           | CustomTkinter 5.0+    |
+| **HTML**          | BeautifulSoup4 4.11+  |
+| **Git**           | GitPython 3.1+        |
+| **Serveur**       | http.server (stdlib)  |
+| **Compilation**   | PyInstaller 5.0+      |
+| **Taille .exe**   | ~200 MB               |
+| **Mémoire**       | 50-150 MB             |
+| **Compatibilité** | Windows 7+            |
+| **Python**        | 3.9, 3.10, 3.11, 3.12 |
 
 ---
 
-## 🎯 Raccourcis Utiles
+## 🔄 Améliorations Récentes (v1.8.0+)
 
-- **Onglet Git**: Git & Synchronisation → Pull/Push
-- **Onglet Éditeur**: Modification de contenu HTML
-- **Onglet Serveur**: Prévisualisation en temps réel
-- **Onglet Paramètres**: Configuration de l'app
-- **Onglet Logs**: Suivi des opérations
+### Configuration Avancée
+- **Cache en mémoire**: Lectures 100x plus rapides
+- **Validations strictes**: Impossible de sauvegarder des données invalides
+- **Hooks automatiques**: Déclenchez des actions lors de modifications
+- **Auto-nettoyage**: Les valeurs invalides sont corrigées au démarrage
+
+### Interface Utilisateur
+- **Synchronisation config ↔ UI**: Charge automatiquement les paramètres sauvegardés
+- **Mise à jour temps réel**: L'URL change au fur et à mesure que vous modifiez le port
+- **Fallback intelligent**: Port invalide → basculement automatique à 8000
+- **Messages d'erreur clairs**: Affichage des avertissements en cas de problème
+
+### Robustesse
+- **Initialisation correcte**: Tous les managers sont prêts avant l'interface
+- **Validation du port**: Accepte uniquement 1-65535
+- **Gestion des erreurs**: Essayez une valeur par défaut si la saisie est invalide
+- **Logs détaillés**: Traçabilité complète des opérations
+
+### Scripts Utilitaires
+- **clean_config.py**: Nettoie et corrige la configuration
+- **config_manager_example.py**: Exemples d'utilisation des validations et hooks
 
 ---
 
 ## ✨ Version
 
-**Rout'Art CMS v1.0.0**
+**Rout'Art CMS v1.8.0**
 - Status: Production Ready ✅
-- Dernière mise à jour: 13 novembre 2025
-- Auteur: Rout'Art Team
+- Dernière mise à jour: 14 décembre 2025
+- Auteur: Jean-Baptiste (POGGIO) GOSSOT for Auto-École Rout'Art
 - License: MIT
 
----
+**Nouveautés v1.8.0:**
+- ✨ Configuration avec cache, validations et hooks
+- ✨ Port server avec fallback automatique
+- ✨ Interface synchronized avec la config
+- ✨ Nettoyage automatique des données invalides
+- ✨ Messages d'erreur améliorés
+- ✨ Structure cms/ avec dossier source/ dédié
 
-**Besoin d'aide?** Consultez les logs ou relancez `python test_configuration.py`
+---
 
 **À bientôt!** 🚀

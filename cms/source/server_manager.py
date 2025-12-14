@@ -62,6 +62,14 @@ class ServerManager:
     def start(self, repo_path, port=8000, callback=None):
         """Démarrer le serveur HTTP"""
         try:
+            # Valider et corriger le port
+            if not isinstance(port, int) or port < 1 or port > 65535:
+                message = f"⚠️  Port invalide: {port}. Utilisation du port par défaut: 8000"
+                if callback:
+                    callback(message)
+                self.logger.log(message)
+                port = 8000
+
             repo_path = Path(repo_path)
             if not repo_path.exists():
                 message = f"❌ Le chemin n'existe pas: {repo_path}"

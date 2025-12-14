@@ -29,8 +29,6 @@ Ceci est la fonction centrale qui sera déclenchée par le bouton **"Mettre le S
 
 L'idée est de créer une fonction qui prend en entrée le chemin du fichier, l'ID de la table et le nouveau prix, puis qui met à jour le fichier local.
 
-Étant donné que votre HTML n'a pas d'ID sur les cellules de prix, nous allons **modifier votre HTML une fois** pour y ajouter des marqueurs uniques pour les 3-4 prix les plus importants.
-
 **Action à faire (Modification Manuelle du HTML) :**
 
 Dans `page/tarifs.html`, ajoutez une classe unique (ex: `data-price`) aux prix que l'on doit pouvoir modifier :
