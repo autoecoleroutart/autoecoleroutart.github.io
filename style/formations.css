@@ -38,6 +38,7 @@
 
 .formations-table {
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     background: var(--white-color);
     border-radius: var(--border-radius-md);
@@ -248,14 +249,42 @@
 }
 
 @media (max-width: 768px) {
+    /* Force le conteneur principal à ne pas dépasser */
+    .tarifs-section.container {
+        padding: 0 1rem;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    #formation-details {
+        padding: 1rem;
+        margin-top: 1rem;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
     /* Transformation des tables en layout vertical sur mobile */
     .formations-table {
         font-size: 0.9rem;
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .formations-table thead,
+    .formations-table tbody,
+    .formations-table th,
+    .formations-table td,
+    .formations-table tr {
+        display: block;
     }
     
     .formations-table thead th {
         font-size: 1rem;
-        padding: 0.8rem;
+        padding: 1rem;
+        text-align: center;
+        width: 100%;
     }
     
     /* Forcer toutes les cellules en mode vertical sur mobile */
@@ -265,6 +294,7 @@
         border-radius: var(--border-radius-sm);
         overflow: hidden;
         box-shadow: var(--shadow-sm);
+        width: 100%;
     }
     
     /* Alternance des couleurs de fond pour séparer visuellement les lignes */
@@ -281,9 +311,11 @@
         width: 100% !important;
         border-left: none !important;
         border-bottom: none !important;
-        padding: 1.2rem;
+        padding: 1rem;
         box-sizing: border-box;
         background-color: transparent !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     .formations-table tbody td:last-child {
@@ -295,15 +327,6 @@
         margin-bottom: 0.5rem;
     }
     
-    .formations-table th {
-        font-size: 1.1rem;
-        padding: 0.8rem;
-    }
-    
-    .formations-table td {
-        padding: 1rem;
-    }
-    
     .formations-table h3 {
         font-size: 1.1rem;
         margin-bottom: 0.8rem;
@@ -311,18 +334,21 @@
     }
     
     .formations-table p {
-        font-size: 1rem;
+        font-size: 0.95rem;
         margin-bottom: 0.8rem;
         line-height: 1.5;
+        word-wrap: break-word;
     }
     
     .formations-table ul {
         margin-bottom: 1rem;
-        padding-left: 1.2rem;
+        padding: 1rem;
+        word-wrap: break-word;
     }
     
     .formations-table ul li {
         margin-bottom: 0.4rem;
+        word-wrap: break-word;
     }
     
     /* Boutons plus adaptés au mobile */

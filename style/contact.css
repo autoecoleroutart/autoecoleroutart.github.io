@@ -10,10 +10,10 @@
 /* ===== GRILLE CONTACT ===== */
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-3xl);
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
     margin-top: var(--spacing-xl);
-    max-width: var(--max-width-content);
+    max-width: var(--ultra-max-width-content);
     margin: var(--spacing-xl) auto 0;
     align-items: start;
 }
@@ -21,7 +21,7 @@
 .contact-form-wrapper,
 .contact-info-wrapper {
     background: var(--white-color);
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-xl);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-md);
     text-align: center;
@@ -141,6 +141,32 @@
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) and (min-width: 1001px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info-wrapper {
+        grid-column: 1 / -1;
+        max-width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1000px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info-wrapper {
+        grid-column: auto;
+        max-width: 100%;
+        margin: 0;
+    }
+}
+
 @media (max-width: 992px) {
     .contact-grid {
         gap: 1.5rem;
@@ -163,11 +189,6 @@
 }
 
 @media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
     .contact-form-wrapper,
     .contact-info-wrapper {
         padding: 2rem;
@@ -192,7 +213,6 @@
 
 @media (max-width: 600px) {
     .contact-grid {
-        grid-template-columns: 1fr;
         gap: 1rem;
     }
     

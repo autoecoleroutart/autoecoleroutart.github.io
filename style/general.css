@@ -467,6 +467,16 @@ iframe {
     border-color: var(--white-color);
 }
 
+.pl_button.eval {
+    background-color: #f00;
+    border-color: var(--white-color);
+}
+
+.pl_button.fascicule {
+    background-color: #F54927;
+    border-color: var(--white-color);
+}
+
 .center-btn {
     text-align: center;
 }

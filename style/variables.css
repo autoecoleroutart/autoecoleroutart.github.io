@@ -226,6 +226,7 @@
 
     /* ==================== TAILLES ==================== */
     /* Largeurs maximales */
+    --ultra-max-width-content: 1600px;
     --max-width-content: 1200px;
     --max-width-text: 800px;
     --max-width-form: 900px;
