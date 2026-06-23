@@ -24,9 +24,9 @@ Allow: /style/
 Allow: /images/
 Allow: /icon/
 Allow: /files/
+Allow: /script/
 
 # Interdire les fichiers techniques
-Disallow: /script/
 Disallow: /page/template.html
 Disallow: /.git/
 Disallow: /chrome_no_secu.sh
@@ -36,6 +36,7 @@ Disallow: /.gitignore
 Disallow: /dependencies.bat
 Disallow: /compile.bat
 Disallow: /cms/
+Disallow: /graph.py
 
 # Référence du sitemap
 Sitemap: https://www.autoecoleroutart.com/sitemap.xml
