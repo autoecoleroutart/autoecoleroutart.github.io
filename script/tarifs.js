@@ -24,8 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
             heroImg.src = '../images/moto/permis-a2.png';
         } else if (selected === 'moto-a1' || selected === 'formation-125cc') {
             heroImg.src = '../images/moto/permis-a1-125.png';
-        } else if (selected === 'am-bsr') {
-            heroImg.src = '../images/moto/am-bsr.png';
+        } else if (selected === 'am-moto') {
+            heroImg.src = '../images/moto/am-moto.png';
+        } else if (selected === 'am-voiture') {
+            heroImg.src = '../images/voiture/am-voiture.png';
         } else {
             heroImg.src = '../images/hero-car-road.png';
         }

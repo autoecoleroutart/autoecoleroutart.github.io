@@ -33,6 +33,120 @@
     <script src="../script/script.js"></script>
     <script src="../script/tarifs.js"></script>
     <script src="../script/dark-mode.js"></script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Tarifs des Formations - Auto-école Rout'Art",
+    "provider": {
+        "@type": "DrivingSchool",
+        "name": "Auto-école Rout'Art",
+        "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "79 rue d'Alsace",
+        "addressLocality": "Lunéville",
+        "postalCode": "54300",
+        "addressCountry": "FR"
+        },
+        "telephone": "0624071839",
+        "url": "https://autoecoleroutart.github.io"
+    },
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Catalogue des Tarifs",
+        "itemListElement": [
+        {
+            "@type": "OfferCatalog",
+            "name": "Permis B (Voiture)",
+            "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Code de la route permis B" },
+                "price": "275.00",
+                "priceCurrency": "EUR"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Frais d'inscription permis B" },
+                "price": "70.00",
+                "priceCurrency": "EUR"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Prix heure de conduite permis B (Boîte Manuelle / Automatique)" },
+                "price": "50.00",
+                "priceCurrency": "EUR"
+            }
+            ]
+        },
+        {
+            "@type": "OfferCatalog",
+            "name": "Permis AM (BSR)",
+            "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Formation permis AM (2 roues)" },
+                "price": "280.00",
+                "priceCurrency": "EUR"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Formation permis AM (4 roues)" },
+                "price": "350.00",
+                "priceCurrency": "EUR"
+            }
+            ]
+        },
+        {
+            "@type": "OfferCatalog",
+            "name": "Permis Moto & Scooter (A1/A2/A)",
+            "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Code de la route permis A1/A2" },
+                "price": "100.00",
+                "priceCurrency": "EUR"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Prix heure (Plateau / Circulation) A1/A2" },
+                "price": "36.00",
+                "priceCurrency": "EUR"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Accompagnement examen (Plateau / Circulation) A1/A2" },
+                "price": "55.00",
+                "priceCurrency": "EUR"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Passerelle A2 vers A" },
+                "price": "280.00",
+                "priceCurrency": "EUR"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Formation 125cc (Permis B depuis plus de 2 ans)" },
+                "price": "280.00",
+                "priceCurrency": "EUR"
+            }
+            ]
+        },
+        {
+            "@type": "OfferCatalog",
+            "name": "Autres Formations",
+            "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Formation post-permis (Contactez-nous pour les tarifs)" }
+            }
+            ]
+        }
+        ]
+    }
+    }
+    </script>
 </head>
 
 <body>
@@ -84,7 +198,8 @@
                     <option value="b-accompagnee">Permis B - Conduite Accompagnée</option>
                     <option value="b-supervisee">Permis B - Conduite Supervisée</option>
                     <option value="b-automatique">Permis B - Boite Automatique</option>
-                    <option value="am-bsr">Permis AM (BSR)</option>
+                    <option value="am-moto">Permis AM - Moto</option>
+                    <option value="am-voiture">Permis AM - Voiture</option>
                     <option value="moto-a1">Permis Moto A1 (125cc)</option>
                     <option value="moto-a2">Permis Moto A2</option>
                     <option value="passerelle-a2-a">Formation Moto passerelle A2 vers A</option>
@@ -401,8 +516,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <!-- Tableau Permis AM / BSR -->
-                <table class="tarifs-table" id="table-am-bsr">
+                <!-- Tableau Permis AM Moto -->
+                <table class="tarifs-table" id="table-am-moto">
                     <thead>
                         <tr>
                             <th>Prestation</th>
@@ -417,6 +532,25 @@
                                 </ul>
                             </td>
                             <td class="editable" id="prix_formation">280€</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Tableau Permis AM Voiture -->
+                <table class="tarifs-table" id="table-am-voiture">
+                    <thead>
+                        <tr>
+                            <th>Prestation</th>
+                            <th>Tarif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Permis AM
+                                <ul class="table-list">
+                                    <li class="editable" id="duree"> Formation de 8h</li>
+                                </ul>
+                            </td>
+                            <td class="editable" id="prix_formation">350€</td>
                         </tr>
                     </tbody>
                 </table>
