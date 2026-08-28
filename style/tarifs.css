@@ -13,6 +13,33 @@
     margin-bottom: var(--spacing-xl);
 }
 
+.tarifs-disclaimer {
+    margin: 0 auto var(--spacing-xl);
+    padding: 0.9rem 1.25rem;
+    width: 100%;
+    max-width: 980px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-align: center;
+    border-left: 4px solid var(--warning-color);
+    border-radius: var(--border-radius-sm);
+    background-color: rgba(255, 0, 0, 0.08);
+    color: var(--warning-color);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.5;
+    box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 993px) {
+    .tarifs-disclaimer {
+        border-left: none;
+        border-top: 4px solid var(--warning-color);
+        border-radius: var(--border-radius-md);
+        background-color: rgba(255, 0, 0, 0.06);
+        font-size: 0.95rem;
+    }
+}
+
 .tarifs-section label {
     font-weight: var(--font-weight-semibold);
     font-size: var(--font-size-lg);
@@ -124,6 +151,17 @@
     .tarifs-section select {
         max-width: 350px;
     }
+
+    .tarifs-disclaimer {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto var(--spacing-lg);
+        padding: 0.9rem 1rem;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        text-wrap: balance;
+        line-height: 1.45;
+    }
     
     .tarifs-table {
         font-size: 0.95rem;
@@ -147,6 +185,17 @@
     .tarifs-section select {
         max-width: 100%;
         width: 100%;
+    }
+
+    .tarifs-disclaimer {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        padding: 0.95rem 1rem;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        text-wrap: balance;
+        border-left-width: 3px;
+        font-size: 0.95rem;
     }
     
     #tarif-details {
@@ -209,6 +258,13 @@
     #tarif-details {
         padding: 1rem;
         margin-top: 1rem;
+    }
+
+    .tarifs-disclaimer {
+        font-size: 0.9rem;
+        padding: 0.85rem 0.95rem;
+        line-height: 1.45;
+        text-wrap: pretty;
     }
     
     .tarifs-table {
