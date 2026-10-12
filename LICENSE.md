@@ -45,3 +45,11 @@ En complément, les droits sur ce code sont répartis comme suit :
   `files/`). Ces contenus restent soumis aux conditions décrites dans les
   mentions légales du site
   (https://autoecoleroutart.github.io/page/mentions_legales.html).
+- Les documents du dossier `files/` sont la propriété exclusive de l'Auto-École
+  Rout'Art, à l'exception des fichiers suivants, qui sont la propriété de la
+  société ENPC-EDISER, éditrice de la plateforme Prépacode
+  (https://www.prepacode-enpc.fr) :
+  - `files/voiture/depliant-aac.pdf`
+  - `files/voiture/depliant-cs.pdf`
+  - `files/voiture/evaluation.pdf`
+  - `files/moto/evaluation.pdf`

@@ -307,10 +307,10 @@ showScrollToTop()
 
 ```bash
 # Cloner le projet
-git clone https://github.com/gossotjeanbaptiste/Rout-Art.git
+git clone https://github.com/gossotjeanbaptiste/MyCMS.git
 
 # Naviguer dans le dossier
-cd Rout-Art
+cd MyCMS
 
 # Ouvrir avec un serveur local
 # Avec Live Server (VS Code)
@@ -399,7 +399,14 @@ const formations = {
 
 ## 📄 Licence & Droits
 
-Ce projet est la propriété exclusive de **l'Auto-École Rout'Art**. Tous droits réservés © 2025.
+Le code source du site est distribué sous **licence MIT** (voir [LICENSE.md](LICENSE.md)) :
+
+- **Jean-Baptiste GOSSOT** est l'auteur et le propriétaire du code, et conserve le droit de le modifier.
+- **L'Auto-École Rout'Art** dispose du droit d'exploiter le code pour son site et du droit de le modifier.
+
+Le CMS (dossier `cms/`) est également sous licence MIT, propriété de Jean-Baptiste GOSSOT (voir [cms/LICENSE.md](cms/LICENSE.md)).
+
+Les contenus du site (textes, images, logos, photographies, documents) ne sont pas couverts par ces licences : voir la page [Mentions légales](page/mentions_legales.html).
 
 **Développement** : Réalisé avec ❤️ pour offrir la meilleure expérience aux futurs conducteurs de Lunéville et ses environs.
 

@@ -7,7 +7,7 @@
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python)](https://www.python.org/)
 [![CustomTkinter](https://img.shields.io/badge/GUI-CustomTkinter-green?style=flat-square)](https://github.com/TomSchimansky/CustomTkinter)
 [![PyInstaller](https://img.shields.io/badge/Compile-PyInstaller-orange?style=flat-square)](https://pyinstaller.org/)
-[![License MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
+[![License MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE.md)
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen?style=flat-square)]()
 
 ---
@@ -359,7 +359,7 @@ Rout-Art/
 
 ### Problèmes?
 - **📋 Logs:** Consulter l'onglet Logs
-- **🐛 Issues:** https://github.com/gossotjeanbaptiste/Rout-Art/issues
+- **🐛 Issues:** https://github.com/gossotjeanbaptiste/MyCMS/issues
 - **📧 Email:** support@routart.fr
 
 ### Suggestions?
@@ -376,7 +376,7 @@ MIT License - Voir LICENSE.md
 ```
 MIT License
 
-Copyright (c) 2025 Rout'Art
+Copyright (c) 2025 Jean-Baptiste GOSSOT
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -425,7 +425,7 @@ python launcher.py
 
 **Made with ❤️ by Rout'Art Team**
 
-[🌐 Site Web](https://routart.fr) • [💻 GitHub](https://github.com/gossotjeanbaptiste/Rout-Art) • [📧 Support](mailto:support@routart.fr)
+[🌐 Site Web](https://routart.fr) • [💻 GitHub](https://github.com/gossotjeanbaptiste/MyCMS) • [📧 Support](mailto:support@routart.fr)
 
 **Version 1.0.0** | Novembre 2025
 
