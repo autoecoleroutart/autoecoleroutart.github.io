@@ -18,6 +18,7 @@ Allow: /page/positionnement.html
 Allow: /page/reclamation.html
 Allow: /page/resultat.html
 Allow: /page/garantie_financiere.html
+Allow: /page/mentions_legales.html
 
 # Autoriser les ressources statiques
 Allow: /style/
@@ -39,7 +40,7 @@ Disallow: /cms/
 Disallow: /graph.py
 
 # Référence du sitemap
-Sitemap: https://www.autoecoleroutart.com/sitemap.xml
+Sitemap: https://autoecoleroutart.github.io/sitemap.xml
 
 # Crawl-delay pour éviter la surcharge serveur
 Crawl-delay: 1
