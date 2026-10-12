@@ -27,6 +27,7 @@ class SitemapGenerator:
             "page/financement.html": {"changefreq": "monthly", "priority": 0.8},
             "page/formations.html": {"changefreq": "monthly", "priority": 0.9},
             "page/garantie_financiere.html": {"changefreq": "yearly", "priority": 0.3},
+            "page/mentions_legales.html": {"changefreq": "yearly", "priority": 0.3},
             "page/positionnement.html": {"changefreq": "yearly", "priority": 0.4},
             "page/reclamation.html": {"changefreq": "yearly", "priority": 0.4},
             "page/reglement.html": {"changefreq": "yearly", "priority": 0.5},

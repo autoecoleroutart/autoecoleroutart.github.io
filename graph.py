@@ -106,6 +106,7 @@ file_tree_text = """
 │   ├── financement.html
 │   ├── formations.html
 │   ├── garantie_financiere.html
+│   ├── mentions_legales.html
 │   ├── positionnement.html
 │   ├── presse.html
 │   ├── reclamation.html
@@ -132,6 +133,7 @@ file_tree_text = """
     ├── formations.css
     ├── garantie_financiere.css
     ├── general.css
+    ├── mentions_legales.css
     ├── index.css
     ├── positionnement.css
     ├── presse.css

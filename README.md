@@ -73,6 +73,7 @@ Rout-Art/
 │   ├── 💳 financement.html           # Solutions paiement & aide financière
 │   ├── 🎓 formations.html            # Détail des formations
 │   ├── 🏦 garantie_financiere.html   # Garanties légales
+│   ├── ⚖️ mentions_legales.html      # Mentions légales
 │   ├── 📋 positionnement.html        # Évaluation initiale
 │   ├── 📰 presse.html                # Page presse/média
 │   ├── 📝 reclamation.html           # Gestion réclamations
@@ -93,6 +94,7 @@ Rout-Art/
 │   ├── 🎓 formations.css             # Styles - Formations
 │   ├── 🏦 garantie_financiere.css    # Styles - Garantie
 │   ├── 🏗️ general.css                # Styles globaux
+│   ├── ⚖️ mentions_legales.css       # Styles - Mentions légales
 │   ├── 🏠 index.css                  # Styles - Accueil
 │   ├── 📋 positionnement.css         # Styles - Positionnement
 │   ├── 📰 presse.css                 # Styles - Presse
