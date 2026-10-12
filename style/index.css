@@ -191,6 +191,17 @@
     width: 20px;
 }
 
+.address-details a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.address-details a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
 .social-links {
     display: flex;
     gap: 1rem;

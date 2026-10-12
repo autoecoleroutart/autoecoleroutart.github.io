@@ -218,3 +218,47 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+/**
+ * Liens dynamiques (data-link)
+ * Génère l'attribut href des liens à partir de leur texte, afin qu'une
+ * modification faite via le CMS (qui ne change que le texte) mette aussi
+ * à jour la destination du lien.
+ * Usage : <a data-link="mail">contact@exemple.fr</a>
+ *         <a data-link="tel">06 12 34 56 78</a>
+ *         <a data-link="url">https://exemple.fr</a>
+ */
+function buildLinkHref(type, text) {
+    const value = text.trim();
+    if (!value) return null;
+
+    switch (type) {
+        case 'mail': {
+            const email = value.match(/[^\s@:]+@[^\s@]+\.[^\s@]+/);
+            return email ? 'mailto:' + email[0] : null;
+        }
+        case 'tel': {
+            // Garde uniquement les chiffres et le "+", format international pour les numéros français
+            const phone = value.match(/\+?\d[\d\s.()-]{5,}\d/);
+            if (!phone) return null;
+            let number = phone[0].replace(/[^\d+]/g, '');
+            if (/^0\d{9}$/.test(number)) {
+                number = '+33' + number.slice(1);
+            }
+            return 'tel:' + number;
+        }
+        case 'url':
+            return /^https?:\/\//i.test(value) ? value : 'https://' + value;
+        default:
+            return null;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[data-link]').forEach(function (link) {
+        const href = buildLinkHref(link.dataset.link, link.textContent);
+        if (href) {
+            link.href = href;
+        }
+    });
+});
