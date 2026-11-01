@@ -5,39 +5,12 @@ from pathlib import Path
 # --- Arborescence de fichiers ---
 file_tree_text = """
 .
-├── Comment_regler_les_soucis_du_CMS.docx
 ├── README.md
-├── app.py
-├── compile.bat
-├── dependecies.bat
 ├── file_tree_colored.png
 ├── graph.py
 ├── index.html
 ├── robots.txt
-├── run.bat
-├── setup_git_safe.bat
 ├── sitemap.xml
-├── cms
-│   ├── CMS.md
-│   ├── DOCUMENTATION.md
-│   ├── README_CMS.md
-│   ├── requirements.txt
-│   ├── icon
-│   │   ├── logo-routart.png
-│   │   └── logo_routart.ico
-│   └── source
-│       ├── __init__.py
-│       ├── build_exe.py
-│       ├── config_manager.py
-│       ├── git_manager.py
-│       ├── html_manager.py
-│       ├── logger.py
-│       ├── rout_art_cms.py
-│       ├── server_manager.py
-│       ├── sitemap_generator.py
-│       └── rout_art_cms.spec
-├── dist
-│   └── Rout_Art_CMS.exe
 ├── files
 │   ├── reglement_interieur.docx
 │   ├── moto
@@ -84,8 +57,6 @@ file_tree_text = """
 │   │   └── permis-a2.png
 │   ├── remerciement
 │   │   ├── avatar_jean-baptiste.png
-│   │   ├── github_ico.svg
-│   │   ├── github_ico_darkmode.svg
 │   │   ├── linkedin_ico.png
 │   │   ├── portfolio_ico.png
 │   │   ├── portfolio_ico_darkmode.png
@@ -292,7 +263,7 @@ def create_file_tree_graph(file_tree_text, output_filename="file_tree_print"):
     # 2. Création de la racine (Taille 24)
     dot.node(root_name, label=root_name,
              fillcolor=ROOT_COLOR['fill'], fontcolor=ROOT_COLOR['font'],
-             fontname='Arial-Bold', fontsize='24', height='0.6')
+             fontname='Arial Bold', fontsize='24', height='0.6')
 
     # 3. Ancrage de la légende
     dot.edge('Legend', root_name, style='invis', minlen='1')
@@ -317,7 +288,7 @@ def create_file_tree_graph(file_tree_text, output_filename="file_tree_print"):
                     fontcolor=FOLDER_COLOR['font'],
                     color=FOLDER_COLOR['border'],
                     penwidth='1.5',  # Bordure plus épaisse
-                    fontname='Arial-Bold',
+                    fontname='Arial Bold',
                     # fontsize hérité de node_attr (16)
                 )
             else:
